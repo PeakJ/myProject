@@ -1,0 +1,35 @@
+<ion-view view-title="知会给我的出差" hide-back-button="true"  cache-view="false">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="goBackList();"></button>
+    </ion-nav-buttons>
+    <ion-content class="backGround">
+        <ion-list>
+            <ion-item class="item-remove-animate" ng-repeat="businessTrip in businessTrips" type="item-text-wrap" ng-click="detail(businessTrip.id);">
+                <div class="row">
+                    <div class="col" id="reason-project">
+                        <label class="applyReason" ng-bind="businessTrip.applyReason"></label>
+                        <label class="applyProject" ng-bind="businessTrip.applyProject" ></label>
+                    </div>
+                    <div class="col col-center" id="status">
+                        <i class="waiting-check" ng-if="businessTrip.status==0">待审核</i>
+                        <i class="pass" ng-if="businessTrip.status==1">审核通过</i>
+                        <i class="unpass" ng-if="businessTrip.status==2">申请驳回</i>
+                    </div>
+                    <div class="col price-date">
+                        <label ng-bind="businessTrip.price"></label>
+                        <div>
+                            <span ng-bind="businessTrip.startDate"></span>
+                            <span>-</span>
+                            <span ng-bind="businessTrip.endDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item">
+                <label  ng-bind="prompt"></label>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll   on-infinite="load_more();" ng-if="!noMoreItemsAvailable"   distance="1%" immediate-check="true">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

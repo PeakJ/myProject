@@ -1,0 +1,121 @@
+<ion-view view-title="知会出差" hide-back-button="true" cache-view="false">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="$ionicGoBack();"></button>
+    </ion-nav-buttons>
+    <!--<ion-nav-buttons side="right">
+        <button class="button icon ion-chatbubble-working button-clear"></button>
+    </ion-nav-buttons>-->
+    <ion-content>
+        <div class="list" id="staff-information">
+            <div class="item item-avatar-left" id="staff-photo">
+                <img src="{{photo}}">
+                <div class="row">
+                    <i class="col" id="staff-name" ng-bind="name"></i>
+                    <i class="col" id="trip-date" ng-bind="showdate"></i>
+                </div>
+                <div class="row">
+                    <i class="col" id="staff-number" ng-bind="no"></i>
+                </div>
+            </div>
+            <div class="row" id="trip-date-information">
+                <label class="col-25" id="trip-date-information-sign">出差时间：</label>
+                <label class="col-75">
+                    <label class="trip-date" ng-bind="startdate"></label>
+                    <label class="trip-date">至</label>
+                    <label class="trip-date" ng-bind="enddate"></label>
+                    <label class="sum-date" ng-bind="sumdate"></label>
+                </label>
+            </div>
+            <div class="row" id="project-information">
+                <label class="col-25" id="project-information-sign">所属项目：</label>
+                <label class="col-75" ng-bind="project" id="project"></label>
+            </div>
+            <div class="row" id="trip-reason">
+                <label class="col-25" id="trip-reason-sign">出差事由：</label>
+                <label class="col-75" ng-bind="reason" id="reason"></label>
+            </div>
+            <div class="list padding">
+                <div class="item item-divider" id="traffic-plan">
+                    <div class="row">
+                        <label class="col" id="traffic-plan-title">交通计划</label>
+                        <label class="col-9" id="traffic-plan-img"></label>
+                        <label class="col"></label>
+                    </div>
+                </div>
+                <div class="item " ng-repeat="item in tripapplys" id="show-traffic-information">
+                    <div class="row">
+                        <label class="col" id="plan-create-clock" ng-bind="item.plancreateclock"></label>
+                        <label class="col" id="traffic-price" ng-bind="item.price"></label>
+                    </div>
+                    <div class="row">
+                        <label class="col" id="plan-create-date" ng-bind="item.plancreatedate"></label>
+                        <label class="col" id="discount" ng-bind="item.discount"></label>
+                    </div>
+                    <div class="row" id="traffic-place">
+                        <label class="col " id="departure-place" ng-bind="item.departureplace"></label>
+
+                        <div class="col-15" id="transportation-information">
+                            <i class="add-traffic-top col" ng-bind="item.traffictype"></i>
+                            <i class="add-traffic-line col">————</i>
+                            <i class="add-traffic-bottom col" ng-bind="item.number"></i>
+                        </div>
+                        <label class="col " id="destination" ng-bind="item.destination"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="list padding">
+                <div class="item item-divider" id="check-information">
+                    <div class="row">
+                        <label class="col" id="check-information-title">审批信息</label>
+                        <label class="col-9" id="check-information-img"></label>
+                        <label class="col"></label>
+                    </div>
+                </div>
+                <div class="item" id="show-check-information">
+                    <div class="row">
+                        <i class="col" id="applicant-name" ng-bind="name"></i>
+                        <i class="col-10 col-center icon ion-checkmark" id="apply-status"></i>
+                        <i class="col" id="create-apply">发起申请</i>
+                    </div>
+                    <div class="row">
+                        <i class="col" id="create-date" ng-bind="createdate"></i>
+                        <i class="col-10 col-center">
+                            <img src="img/line.png" class="add-line-at-page">
+                        </i>
+                        <i class="col"></i>
+                    </div>
+                    <div class="row">
+                        <i class="col" id="pm-name" ng-bind="pmname"></i>
+                        <i class="col-10 col-center" ng-class="pmphoto" ng-style="pm_sign_color" id="pm-check-sign"></i>
+                        <i class="col" id="pm-check-status" ng-bind="pmcheckstatus"></i>
+                    </div>
+                    <div class="row">
+                        <i class="col" id="pm-check-date" ng-bind="pmcheckdate"></i>
+                        <i class="col-10 col-center">
+                            <img src="img/line.png" class="add-line-at-page">
+                        </i>
+                        <i class="col" id="pm-check-reason" ng-bind="pmreason"></i>
+                    </div>
+                    <div class="row">
+                        <i class="col" id="bll-name" ng-bind="bllname"></i>
+                        <i class="col-10 col-center" ng-class="bllphoto" ng-style="bll_sign_color" id="bll-check-sign"></i>
+                        <i class="col" id="bll-check-status" ng-bind="bllcheckstatus"></i>
+                    </div>
+                    <div class="row">
+                        <i class="col" id="bll-check-date" ng-bind="bllcheckdate"></i>
+                        <i class="col-10 col-center"></i>
+                        <i class="col" id="bll-check-reason" ng-bind="bllreason"></i>
+                    </div>
+                    <div>
+                        <p class="attention">知会:候惠明、陈烁琳</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" id="check-button-style">
+            <div id="check-button" ng-if="judge">
+                <a class="button button-outline" id="disagree-button" ng-click="onclick(2);">驳回</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

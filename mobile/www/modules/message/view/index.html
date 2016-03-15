@@ -1,0 +1,46 @@
+<ion-view  title="我的消息" hide-back-button="true" cache-view="false" ng-controller="messageCtrl">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ui-sref="home"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list type="list">
+            <a class="doReadMessage item item-avatar item-button-right" ng-click="outMessage();">
+                <img src="img/user-logo.png">
+                <div class="toDo"><h2>出差申请消息</h2>
+                    <p>出差未读消息</p>
+                </div>
+                <i class="toDoIcon icon ion-ios-arrow-right" ></i>
+                <i class="toReadAmount badge" id="unReadMessage" ng-if="noMessageAmount">{{messageAmount}}</i>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ion-view  title="我的消息" hide-back-button="true" ng-controller="messageCtrl">-->
+    <!--<ion-nav-buttons side="left">-->
+        <!--<button class="button icon ion-ios-arrow-left button-clear" ui-sref="home"></button>-->
+    <!--</ion-nav-buttons>-->
+    <!--<ion-content>-->
+        <!--<ion-list type="list">-->
+            <!--<a class="item item-avatar item-button-right" ng-click="outMessage();">-->
+                <!--<img src="img/user-logo.png">-->
+                <!--<h2>未完成任务</h2>-->
+                <!--<p>未审核任务</p>-->
+                <!--&lt;!&ndash;<i class="ion-ios-arrow-right item-button-right" ></i>&ndash;&gt;-->
+                <!--<i class="badge" style="color: red">{{messageAmount}}</i>-->
+            <!--</a>-->
+        <!--</ion-list>-->
+    <!--</ion-content>-->
+<!--</ion-view>-->

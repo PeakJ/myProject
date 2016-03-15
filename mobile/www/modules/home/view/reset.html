@@ -1,0 +1,24 @@
+<ion-view view-title="修改密码" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="$ionicGoBack();"></button>
+
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button  icon ion-android-done button-clear" ng-click="submit();">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="item-input" id="reset-password">
+            <span class="input-label">初始密码</span>
+            <input type="password" ng-model="password.original" placeholder="密码">
+        </div>
+        <div class="item-input" id="reset-newpassword">
+            <span class="input-label">输入密码</span>
+            <input type="password" ng-model="password.new" placeholder="******">
+        </div>
+        <div class="item-input" id="reset-repassword">
+            <span class="input-label">确认密码</span>
+            <input type="password" ng-model="password.renew" placeholder="******">
+        </div>
+    </ion-content>
+</ion-view>

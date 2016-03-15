@@ -1,0 +1,81 @@
+<!--Luan Zhicheng-->
+<ion-view view-title="出差申请" cache-view="false" hide-back-button="true" ng-controller="businessTripAddCtrl">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="clear();" ui-sref="tab.businessTrip">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-android-done button-clear" ng-click="submit();"></button>
+    </ion-nav-buttons>
+    <ion-content class="scroll-content has-header">
+        <ion-list>
+            <ion-item class="tripAdd-item item item-icon-left item-icon-right item-select" ng-controller="projectCtrl">
+                <span class = 'selectProject'>所属项目</span>
+                <select class="tripAdd-select" ng-model="businessTrip.applyProjectId"
+                        ng-options="project.id as project.name for project in projects">
+                    <option value="">请选择</option>
+                </select>
+            </ion-item>
+            <ion-item class="tripAdd-item date item item-icon-left item-icon-right">
+                <span class="tripPeriod">期间</span>
+                <span class="tripPeriodCount" id="period">{{businessTrip.period}} 天</span>
+                <input type="text" class="dateFinish" ng-model="businessTrip.endDate" id="appDateFinish"
+                       placeholder="结束日期" ng-change="periodCount();" onclick="dateId('appDateFinish');"/>
+                <span style="float: right">—</span>
+                <input type="text" class="dateStart" ng-model="businessTrip.startDate" id="appDateStart"
+                       placeholder="开始日期" ng-change="periodCount();" onclick="dateId('appDateStart');"/>
+            </ion-item>
+            <ion-item class="tripAdd-item item item-icon-left item-icon-right">
+                <h2 class="tripReason">出差事由</h2>
+                <textarea class="input-tripReason" ng-model="businessTrip.applyReason" rows="1" cols="5" maxlength="30"
+                          onchange="this.value=this.value.substring(0, 29)"
+                          onkeydown="this.value=this.value.substring(0, 29)"
+                          onkeyup="this.value=this.value.substring(0, 29)"
+                          placeholder="30字以内">
+                </textarea>
+            </ion-item>
+        </ion-list>
+
+        <div class="trafficPlanlist list list-inset">
+            <div class="trafficPlanTitle item">
+                <span>交通计划</span>
+                <span class="icon ion-paper-airplane"></span>
+            </div>
+            <div class="item " ng-repeat="p in plans" id="show-traffic-information" class="planItem" ui-sref='businessTripAddPlan({planId:p.id})'>
+                <div class="row">
+                    <label class="col" id="plan-create-clock" ng-bind="p.planDepartureDate"></label>
+                    <label class="col" id="traffic-price">{{p.price}} 元</label>
+                </div>
+                <div class="row">
+                    <label class="col" id="plan-create-date" ng-bind="p.planDepartureTime"></label>
+                    <label class="col" id="discount">{{p.discount}} 折</label>
+                </div>
+                <div class="row" id="traffic-place">
+                    <label class="col col-center" id="departure-place" ng-bind="p.departurePlace"></label>
+                    <div class="col-15" id="transportation-information">
+                        <i class="add-traffic-top col" ng-bind="p.planTypeName"></i>
+                        <i class="add-traffic-line col">————</i>
+                        <i class="add-traffic-bottom col" ng-bind="p.trafficNumber"></i>
+                    </div>
+                    <label class="col col-center" id="destination" ng-bind="p.destination"></label>
+                </div>
+            </div>
+            <div class="buttonAdd item" style="text-align: center;" ng-click="saveBusinessTripData();">
+                <a class=" ion-android-create"></a>
+            </div>
+        </div>
+
+        <ion-list class="tripRoom list" ng-controller="stayCtrl">
+            <ion-item class="tripAdd-item item-icon-left item-icon-right item-select">
+                <span class="selectStay">住宿</span>
+                <select class="tripAdd-select" ng-model="businessTrip.stayType" ng-options="a.id as a.name for a in stay">
+                    <option value="">请选择</option>
+                </select>
+            </ion-item>
+            <ion-item class="tripAdd-item item-icon-left item-icon-right" ng-if="stayCostIf">
+                <span class="labelCost">费用</span>
+                <input type="text" ng-model="businessTrip.stayCost" class="stayCost" placeholder="住宿费用">
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,83 @@
+<ion-view view-title="出差申请规划" hide-back-button="true" >
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="goBack();"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right" >
+        <a class="button icon ion-android-add button-clear" ng-click="addBtu();"></a>
+    </ion-nav-buttons>
+    <ion-tabs class="tabs-striped tabs-top" delegate-handle="tabsHandle">
+        <ion-tab title="我的出差" on-select="onTabs(1);">
+            <ion-view>
+                <ion-content class="backGround">
+                    <input ng-model="ad.name" />
+                    <ion-list>
+                        <ion-item class="item-remove-animate" ng-repeat="businessTrip in businessTrips" type="item-text-wrap" ng-click=" detail(businessTrip.id);">
+                            <div class="row">
+                                <div class="col-40">
+                                    <label class="applyReason" ng-bind="businessTrip.applyReason"></label>
+                                    <div>
+                                        <i class="icon ion-clock"></i>
+                                        <span ng-bind="businessTrip.startDate"></span>
+                                        <span>-</span>
+                                        <span ng-bind="businessTrip.endDate"></span>
+                                    </div>
+                                    <label ng-bind="businessTrip.applyProject" ></label>
+                                </div>
+                                <div class="col col-center">
+                                    <h2 class="status" ng-if="businessTrip.status==0">待审核</h2>
+                                    <h2 class="status" ng-if="businessTrip.status==1">审核通过</h2>
+                                    <h2 class="status" ng-if="businessTrip.status==2">申请驳回</h2>
+                                </div>
+                                <div class="col col-center">
+                                    <span>￥</span>
+                                    <label ng-bind="businessTrip.price"></label>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="item">
+                            <label  ng-bind="prompt"></label>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll   on-infinite="load_more();" ng-if="!noMoreItemsAvailable"   distance="1%" immediate-check="true">
+                    </ion-infinite-scroll>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="待我审批"  on-select="onTabs(2)">
+            <ion-view>
+                <ion-content class="backGround">
+                    <ion-list>
+                        <ion-item class="item-remove-animate" ng-repeat="chat in chats" type="item-text-wrap"  ng-click=" approval(chat.id);">
+
+                            <div class="row">
+                                <div class="col-40">
+                                    <label class="applyReason" ng-bind="chat.applyReason"></label>
+                                    <div>
+                                        <i class="icon ion-clock"></i>
+                                        <span ng-bind="chat.startDate"></span>
+                                        <span>-</span>
+                                        <span ng-bind="chat.endDate"></span>
+                                    </div>
+                                    <label ng-bind="chat.applyProject"></label>
+                                </div>
+                                <div class="col">
+                                    <span>￥</span>
+                                    <label ng-bind="chat.price"></label>
+                                    <h2 ng-bind="chat.name"></h2>
+                                    <h2 ng-if="chat.status==0">未处理</h2>
+                                    <h2 ng-if="chat.status==1">已通过</h2>
+                                    <h2 ng-if="chat.status==2">未通过</h2>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="item">
+                            <label ng-bind="chatsPrompt"></label>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll   on-infinite="chats_more();" ng-if="!noMoreItems"   distance="1%" immediate-check="true">
+                    </ion-infinite-scroll>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-view  title="出差申请消息" hide-back-button="false" cache-view="false">
+    <ion-nav-buttons side="left">
+        <button class="button icon button-clear" ng-click="goBack();"></button>
+    </ion-nav-buttons>
+    <ion-content ng-controller="outMessageCtrl">
+        <div class="list">
+            <a class="item item-avatar has-badge" ng-repeat="item in message | orderBy:'readFlag'" ng-click="goUrl(item.type,item.files,item.recordId);" >
+                <img src="{{item.photo}}">
+                <h2 ng-bind="item.title" ng-style="item.css" ></h2>
+                <p ng-bind="item.content"></p>
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>

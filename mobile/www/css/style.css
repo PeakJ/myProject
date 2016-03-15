@@ -1,0 +1,1166 @@
+/* Empty. Add your own CSS if you like */
+
+/*chenjie*/
+.messageselect{
+    color: gray;
+}
+.col {
+    text-align: center;
+
+}
+.abc{
+    background-color: gray;
+}
+.reportForm {
+    border: 1px solid;
+    width: 95%;
+    margin:0 auto;
+}
+.reportForm tr {
+    border-bottom: 1px solid;
+
+}
+.reportForm tr td {
+    height: 30px;
+    background-color: #FFFFFF;
+    text-align: center;
+    line-height:20px;
+    height:20px;
+
+}
+
+.date {
+    padding-right: 5%;
+}
+
+.tabs-positive > .tabs, .tabs.tabs-positive {
+    background-color: #5FA9D8;
+    color: #fff;
+}
+.tab-item .icon{
+    display: block;
+    margin: 0 auto;
+    height: 32px;
+    font-size: 32px;
+    margin-left: 20%;
+    /*width: 50%;*/
+}
+
+/*chenjie*/
+
+/*Luan Zhicheng*/
+.tripReason {
+    float: left;
+}
+
+.input-tripReason {
+    float: right;
+    resize: none;
+    width: 70%;
+    text-align: right;
+}
+
+.tripRoute {
+    padding-left: 30%;
+}
+
+.tripTime {
+    float: right;
+}
+
+.tripDiscount {
+    padding-left: 30%;
+}
+
+.tripCost {
+    float: right;
+}
+
+.tripPlanPlus {
+    color: #464D77;
+    padding: 50%;
+}
+
+.item-icon-left {
+    padding-left: 5%;
+}
+
+.ion-plus:before {
+    content: "\f218";
+    margin-left: 45%;
+}
+.currentLocation{
+    float: left;
+}
+
+/*.trafficPlanlist {*/
+/*border: solid 3px #5FA9D8;*/
+/*}*/
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+    background-color: #5FA9D8;
+}
+
+.bar .button.button-clear {
+    padding-right: 2px;
+    padding-left: 2px;
+    font-weight: 300;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.selectProject {
+    float: left;
+}
+
+.selectStay {
+    float: left;
+}
+
+[nav-bar-transition="ios"] .title, [nav-bar-transition="ios"] .buttons, [nav-bar-transition="ios"] .back-text {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+    transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    color: #FFFFFF;
+}
+
+.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.trafficPlanTitle {
+    background: #5FA9D8;
+    color: #FFFFFF;
+}
+
+.card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.dateStart {
+    width: 25%;
+    height: 10% !important;
+    text-align: center;
+    background-color: white;
+    float: right;
+}
+
+.tripPeriod {
+    float: left;
+}
+
+.dateFinish {
+    width: 25%;
+    height: 10% !important;
+    text-align: center;
+    background-color: white;
+    margin-right: 5%;
+    float: right;
+}
+
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+    background-color: #f8f8f8;
+    cursor: not-allowed;
+    color: red;
+    width: 6em;
+}
+
+.tripItem {
+    padding-right: 5%;
+}
+
+.stayType {
+    float: right;
+    height: 10% !important;
+    border: solid 1px #999999 !important;
+}
+
+.business {
+    float: right;
+    height: 10% !important;
+    border: solid 1px #999999 !important;
+}
+
+.item-icon-left .icon:before, .item-icon-right .icon:before {
+    padding-top: 36%;
+}
+
+.stayCost {
+    height: 10% !important;
+    float: right;
+    text-align: right;
+    width: 70%;
+}
+
+.tripRemarks {
+    float: right;
+    height: 10% !important;
+    border: solid 1px #999999 !important;
+}
+
+.stayCostItem {
+    padding-right: 5%;
+}
+
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+    /* background-color: #f8f8f8; */
+    cursor: not-allowed;
+    color: black;
+    width: 6em;
+    background-color: white;
+}
+
+.item h1:last-child, .item h2:last-child, .item h3:last-child, .item h4:last-child, .item h5:last-child, .item h6:last-child, .item p:last-child {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.tripPeriodCount {
+    float: right;
+}
+
+.card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+.add-traffic-top{
+    padding-bottom: 0;
+}
+.add-traffic-line{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.add-traffic-bottom{
+    padding-top: 0;
+}
+
+.planItem {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.labelCost {
+    float: left;
+}
+
+.labelLocation {
+    float: left;
+}
+
+.plan-type-list {
+    text-align: right;
+    padding-right: 0% !important;
+}
+
+.iconCleanSearch {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.labelCancelSearch {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.plan-departdate {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.plan-trafficname {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.plan-discount {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.plan-price {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.toReadAmount {
+    float: right;
+    margin-right: -35px;
+    background-color: tomato;
+    color: white;
+}
+
+#unReadMessage{
+    margin-top: 11px;
+}
+.toDo {
+    float: left;
+}
+
+.toDoIcon {
+    float: right;
+    padding-top: 5%;
+}
+
+.doReadMessage {
+    padding-right: 5% !important;
+}
+
+.tripAdd-item {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+.cleanSearchHistory{
+    float: right;
+}
+.tripAdd-select{
+    padding-right: 12% !important;
+}
+/*
+*字母索引
+*/
+.city-alphabet {
+    margin-top: 3rem;
+    margin-bottom: 1em;
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 44px;
+    bottom: 0;
+    height: auto;
+    overflow: hidden;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.city-alphabet-li {
+    width: 25px;
+    text-align: center;
+    font-size: 0.815rem;
+    line-height: 1.12rem;
+
+}
+.scroll-bar-v {
+    top: 2px;
+    right: 3px;
+    bottom: 2px;
+    width: 0px;
+}
+.homeTabs-homepage-highlight{
+    background-image: url(../img/home.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-homepage-normal{
+    background-image: url(../img/home.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-bom-highlight{
+    background-image: url(../img/tab_business.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-bom-normal{
+    background-image: url(../img/tab_business.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-trip-highlight{
+    background-image: url(../img/tab_business_travel.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-trip-normal{
+    background-image: url(../img/tab_business_travel.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-daily-highlight{
+    background-image: url(../img/tab_journal.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-daily-normal{
+    background-image: url(../img/tab_journal.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-check-highlight{
+    background-image: url(../img/tab_statistics.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+.homeTabs-check-normal{
+    background-image: url(../img/tab_statistics.png);
+    background-size: 38px;
+    background-repeat: no-repeat;
+}
+/*Luan Zhicheng*/
+
+/*韩旭*/
+/*详情和审核界面显示*/
+#staff-information {
+    margin-bottom: 0;
+}
+
+#staff-photo {
+    border-style: none;
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
+#staff-name {
+    text-align: left;
+    font-size: 18px;
+}
+
+#trip-date {
+    text-align: right;
+    font-size: 14px;
+}
+
+#staff-number {
+    text-align: left;
+    font-size: 14px;
+}
+
+#trip-date-information {
+    border-style: none;
+    font-size: 14px;
+}
+
+#trip-date-information-sign {
+    font-size: 14px;
+    text-align: center;
+}
+
+.trip-date {
+    color: red;
+    font-size: 14px;
+}
+
+.sum-date {
+    color: black;
+    font-size: 14px;
+}
+
+#project-information {
+    padding-top: 5px;
+    border-style: none;
+    font-size: 14px;
+}
+
+#project-information-sign {
+    font-size: 14px;
+    text-align: center;
+}
+
+#project {
+    font-size: 14px;
+}
+
+#trip-reason {
+    padding-top: 5px;
+    border-style: none;
+    font-size: 14px;
+}
+
+#trip-reason-sign {
+    font-size: 14px;
+    text-align: center;
+}
+
+#reason {
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#traffic-plan {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    background: #5FA9D8;
+    color: #FFFFFF;
+}
+
+#traffic-plan-title {
+    text-align: left;
+    font-size: 18px;
+}
+
+#traffic-plan-img {
+    background: url(../img/sign.png);
+    background-repeat: no-repeat;
+    background-position: 0px -223px;
+    height: 44px;
+    width: 56px;
+    display: inline-block;
+    text-align: center;
+}
+
+#show-traffic-information {
+    border-top-style: none;
+    border-bottom: 4px solid #5FA9D8;
+}
+
+#plan-create-clock {
+    padding-bottom: 0;
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+#traffic-price {
+    padding-bottom: 0;
+    text-align: right;
+    color: red;
+    font-size: 20px;
+}
+
+#plan-create-date {
+    padding-top: 0;
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+#discount {
+    padding-top: 0;
+    text-align: right;
+    font-size: 14px;
+}
+
+#traffic-place {
+    height: 85px;
+    padding-top: 5px;
+    /*overflow: visible;*/
+}
+
+#departure-place {
+    margin-bottom: 0;
+    font-size: 1.2em;
+    height: 75px;
+    line-height: 75px;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+#transportation-information {
+    text-align: center;
+    font-size: 12px;
+}
+
+#destination {
+    font-size: 1.2em;
+    height: 75px;
+    line-height: 75px;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    /*word-wrap: break-word;
+    word-break: break-all;*/
+}
+
+#check-information {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    background: #53d6b0;
+    color: #FFFFFF;
+}
+
+#check-information-title {
+    text-align: left;
+    font-size: 18px;
+}
+
+#check-information-img {
+    background: url(../img/sign.png);
+    background-repeat: no-repeat;
+    background-position: -70px -223px;
+    height: 44px;
+    width: 56px;
+    display: inline-block;
+    text-align: center;
+}
+
+#show-check-information {
+    border-top-style: none;
+    border-bottom: 4px solid #53d6b0;
+}
+
+#applicant-name {
+    text-align: right;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+#apply-status {
+    text-align: center;
+    color: green;
+}
+
+#create-apply {
+    text-align: left;
+    color: #5FA9D8;
+    font-size: 18px;
+}
+
+#create-date {
+    text-align: right;
+    color: #999;
+    font-size: 14px;
+}
+
+#pm-name {
+    text-align: right;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+#pm-check-sign {
+    text-align: center;
+}
+
+#pm-check-status {
+    text-align: left;
+    color: #5FA9D8;
+    height: 29px;
+    font-size: 18px;
+}
+
+#pm-check-date {
+    text-align: right;
+    color: #999;
+    font-size: 14px;
+}
+
+#pm-check-reason {
+    text-align: left;
+    color: #999;
+    font-size: 14px;
+}
+
+#bll-name {
+    text-align: right;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+#bll-check-sign {
+    text-align: center;
+}
+
+#bll-check-status {
+    text-align: left;
+    color: #5FA9D8;
+    height: 29px;
+    font-size: 18px;
+}
+
+#bll-check-date {
+    text-align: right;
+    color: #999;
+    font-size: 14px;
+}
+
+#bll-check-reason {
+    text-align: left;
+    color: #999;
+    font-size: 14px;
+}
+
+.attention {
+    text-align: center;
+    font-size: 14px;
+}
+
+#check-button-style {
+    border-style: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#check-button {
+    text-align: center;
+}
+
+#agree-button {
+    background-color: #53d6b0;
+    color: white;
+    border-style: none;
+    height: 40px;
+    line-height: 48px;
+    width: 80px;
+}
+
+#reject-button {
+    color: #53d6b0;
+    border-color: #53d6b0;
+    height: 40px;
+    line-height: 48px;
+    width: 80px;
+}
+#disagree-button{
+    background-color: red;
+    color: white;
+    border-style: none;
+    height: 40px;
+    line-height: 48px;
+    width: 80px;
+}
+.add-line-at-page{
+    width: 5px;
+    height: 30px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*#tabs-color{*/
+    /*color: #5FA9D8;*/
+/*}*/
+
+/**
+*主界面显示
+*王爽
+*/
+.notice-img {
+    height: 40%;
+    width:auto;
+}
+
+.journal-img {
+    height: 40%;
+    width:auto;
+}
+
+.message-index-img {
+    height: 50%;
+    width:auto;
+}
+
+.businessOpportunity-img {
+    height: 50%;
+    width:auto;
+}
+
+.businessTrip-img {
+    height: 50%;
+    width:auto;
+}
+#messageAmount{
+    color: white;
+    right: 50px;
+    margin-right: 0px;
+    background-color: red;
+}
+#businessTripMessageAmount{
+    color: white;
+    right: 50px;
+    margin-right: 0px;
+    background-color: red;
+}
+
+.statistical-index-img {
+    height: 50%;
+    width:auto;
+}
+
+.remain-img {
+    height: 40%;
+    width:auto;
+}
+
+.more-img {
+    height: 40%;
+    width:auto;
+}
+
+.hometext {
+    text-align: center;
+}
+
+#home-div-height {
+    height: 100%;
+}
+
+#home-journal-notice {
+    height: 40%;
+    position: relative;
+    top: 10%
+}
+
+#home-message-opportunity {
+    height: 30%
+}
+
+#home-businesstrip-remain {
+    height: 30%
+}
+
+#home-statistical {
+    height: 40%;
+    position: relative;
+    top: 10%
+}
+
+ /*
+ *交通计划页面
+ *王爽
+ */
+.traffic-plan-type-list::-webkit-input-placeholder {
+    font-size: small;
+    text-align: right;
+}
+
+/* Mozilla Firefox 4 to 18 */
+.traffic-plan-type-list::-moz-placeholder {
+    opacity: 1;
+    font-size: small;
+    text-align: right;
+}
+.traffic-plan-type-list:-moz-placeholder {
+    opacity: 1;
+    font-size: small;
+        text-align: right;
+}
+/* Internet Explorer 10+ */
+.traffic-plan-type-list:-ms-input-placeholder {
+    font-size: small;
+    text-align: right;
+}
+#plan-destination {
+    float: right;
+}
+.traffic-plan-type-list {
+    text-align: right;
+    /*padding-right: 0 !important;*/
+}
+#plan-departure-place-icon {
+    padding-right: 5%
+}
+
+#plan-destination-icon {
+    padding-right: 5%
+}
+
+#plan-departure-city-select-show-icon {
+    float: right;
+}
+
+.plan-place-city-select-show {
+    float: right;
+    padding-right: 1em;
+}
+
+#plan-destination-city-select-show-icon {
+    float: right;
+}
+#revise-button{
+    background-color: #5FA9D8;
+    color: white;
+    border-style: none;
+    height: 40px;
+    line-height: 48px;
+    width: 80px;
+}
+#delete-button{
+    background-color: red;
+    color: white;
+    border-style: none;
+    height: 40px;
+    line-height: 48px;
+    width: 80px;
+}
+
+/*
+姜峰
+出差列表&
+审批列表*/
+ion-content.backGround {
+    background-color: #e6e6e6;
+}
+
+.applyReason {
+    display: block;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.applyProject {
+    display: block;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.pass {
+    color: #53d6b0;
+}
+
+.unpass {
+    color: #f4636e;
+}
+
+.waiting-check {
+    color: #5fa9d8;
+}
+
+div.price-date {
+    text-align: right;
+    width: 118px;
+}
+
+ion-item.item {
+    text-align: center;
+    padding-left: 1px;
+    padding-right: 2px;
+}
+
+#reason-project {
+    text-align: left;
+}
+
+.list-button{
+    margin-right: -20px;
+    margin-top: -2px;
+}
+
+.item-remove-animate{
+    width: 100%;
+}
+/*
+朱宝胜
+首页
+*/
+.front-backgroud {
+    background: #e6e6e6;
+}
+
+.front-img {
+    background: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-position: 0.6px -155px;
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    margin: auto;
+    margin-bottom: 10%;
+    margin-top: 30%;
+}
+
+.font-input {
+    font-size: large !important;
+}
+
+.font-button {
+    color: white;
+    background: #5FA9D8;
+    border-radius: 10px;
+    font-size: large;
+}
+
+/*
+张帅
+我的信息
+*/
+#MyInformation-head{
+    font-family : 微软雅黑;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    color: #aaaaaa;
+}
+#MyInformation-username{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+    border-top-width: 15px ;
+    color: #aaaaaa;
+}
+#MyInformation-username-style{
+    font-family : 微软雅黑;
+    color: #000000;
+}
+#MyInformation-work{
+    font-family : 微软雅黑;
+    color: #aaaaaa;
+    border-bottom-width: 4px;
+}
+#MyInformation-work-style{
+    font-family : 微软雅黑;
+    color: #000000;
+}
+#MyInformation-company{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+    color: #aaaaaa;
+}
+#MyInformation-company-style{
+    color: #000000;
+    font-family : 微软雅黑;
+}
+#MyInformation-depart{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+    color: #aaaaaa;
+}
+#MyInformation-depart-style{
+    color: #000000;
+    font-family : 微软雅黑;
+}
+#MyInformation-userType{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+    color: #aaaaaa;
+}
+#MyInformation-userType-style{
+    color: #000000;
+    font-family : 微软雅黑;
+}
+#MyInformation-number{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+    color: #aaaaaa;
+}
+#MyInformation-number-style{
+    color: #000000;
+    font-family : 微软雅黑;
+}
+#MyInformation-email{
+    font-family : 微软雅黑;
+    border-bottom-width: 15px;
+    color: #aaaaaa;
+}
+#MyInformation-email-style{
+    color: #000000;
+    font-family : 微软雅黑;
+}
+#MyInformation-password{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+    color: #aaaaaa;
+}
+#MyInformation-setting{
+    font-family : 微软雅黑;
+    border-bottom-width: 4px;
+}
+#MyInformation-password-style{
+    padding-left: 100%;
+    color: #000000;
+}
+#MyInformation-exit{
+    font-size: 150%;
+}
+/*
+张帅
+修改密码
+*/
+#reset-password{
+    font-family : 微软雅黑;
+    border-bottom: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    border-bottom-width: 4px;
+    /*border-bottom-color: #aaaaaa;*/
+    /*background-color: rgba(0, 0, 0, 0.13);*/
+}
+#reset-newpassword{
+    font-family : 微软雅黑;
+    border-bottom: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    border-bottom-width: 4px;
+}
+#reset-repassword{
+    border-bottom-width: 15px;
+    font-family : 微软雅黑;
+    /*background-color: rgba(0, 0, 0, 0.13);*/
+    /*border-bottom: groove;*/
+}
+
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, Roboto, 'Droid Sans', "Lucida Grande", sans-serif;
+}
+
+.slider {
+    height: 100%;
+}
+
+.slider-slide {
+    text-align: center;
+    font-weight: 300;
+}
+
+.box {
+    height: 100%;
+}
+
+.box h1 {
+    color: #fff;
+}
+
+.blue {
+    background-color: #4a87ee;
+}
+
+.yellow {
+    background-color: #f0b840;
+}
+
+.pink {
+    background-color: #8a6de9;
+}
+
+.pink a {
+    right: 0;
+}
+
+.btn-start {
+    top: initial;
+    bottom: 40px;
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.selected {
+    background-color: #d2dced;
+}
+
+.cdfg-personal-order-table-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.scroll-view div{
+    height: 100%;
+}
+

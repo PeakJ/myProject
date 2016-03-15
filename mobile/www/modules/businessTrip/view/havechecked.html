@@ -1,0 +1,37 @@
+<ion-view view-title="我审核过的出差" hide-back-button="true" cache-view="false">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="goBackList();"></button>
+    </ion-nav-buttons>
+    <ion-content class="backGround">
+        <ion-list>
+            <ion-item class="item-remove-animate" ng-repeat="chat in chats" type="item-text-wrap"  ng-click=" approval(chat.id);">
+                <div class="row">
+                    <div class="col">
+                        <label class="col applyReason" ng-bind="chat.applyReason"></label>
+                        <label class="col applyProject" ng-bind="chat.applyProject"></label>
+                    </div>
+                    <div class="col-40 col-center">
+                        <div class="col">
+                            <i class="waiting-check" ng-if="chat.status==0">审核中</i>
+                            <i class="pass" ng-if="chat.status==1">已通过</i>
+                            <i class="unpass" ng-if="chat.status==2">未通过</i>
+                        </div>
+                    </div>
+                    <div class="col price-date">
+                        <label ng-bind="chat.price"></label>
+                        <div>
+                            <span ng-bind="chat.startDate"></span>
+                            <span>-</span>
+                            <span ng-bind="chat.endDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item">
+                <label ng-bind="chatsPrompt"></label>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll   on-infinite="chats_more();" ng-if="!noMoreItems"   distance="1%" immediate-check="true">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

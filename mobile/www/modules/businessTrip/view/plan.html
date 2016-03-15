@@ -1,0 +1,61 @@
+<ion-view view-title="交通计划" cache-view="false" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="clearAll();"
+                ui-sref="businessTripAdd">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-android-done button-clear" ng-click="onclick();"></button>
+    </ion-nav-buttons>
+    <ion-tabs class="tabs-striped tabs-top" delegate-handle="trafficTabs">
+        <ion-tab title="Plane" icon-on="ion-android-plane" icon-off="ion-android-plane" on-select="tabSelect(0);">
+        </ion-tab>
+        <ion-tab title="Train" icon-on="ion-android-train" icon-off="ion-android-train" on-select="tabSelect(1);">
+        </ion-tab>
+        <ion-tab title="Bus" icon-on="ion-android-bus" icon-off="ion-android-bus" on-select="tabSelect(2);">
+        </ion-tab>
+        <ion-tab title="Boat" icon-on="ion-android-boat" icon-off="ion-android-boat" on-select="tabSelect(3);">
+        </ion-tab>
+    </ion-tabs>
+    <ion-content class="content has-tabs-top">
+        <div class="list">
+            <a class="plan-place item item-icon-left item-icon-right" ng-click="getDeparture();"
+               id="plan-departure-place-icon">
+                <span>出发地</span>
+                <span class="icon-right ion-ios-arrow-right" id="plan-departure-city-select-show-icon"></span>
+                <span class="plan-place-city-select-show">{{plandata.departurePlace}}</span>
+            </a>
+            <a class="item item-icon-left item-icon-right" ng-click="getDestination();" id="plan-destination-icon">
+                <span>目的地</span>
+                <span class="icon-right ion-ios-arrow-right" id="plan-destination-city-select-show-icon"></span>
+                <span class="plan-place-city-select-show">{{plandata.destination}}</span>
+            </a>
+            <a class="plan-departdate item item-input item-icon-right item-input-inset">
+                <span>出发时间</span>
+                <input type="text" class="traffic-plan-type-list" id="departdate" name="departdate"
+                       ng-model="plandata.departDate" placeholder="请选择出发时间" onclick="dateTimeId('departdate');">
+            </a>
+            <a class="plan-trafficname item item-input item-input-inset">
+                <span ng-bind="trafficname"></span>
+                <input type="text" class="traffic-plan-type-list" ng-model="plandata.trafficNumber"
+                       placeholder="请输入{{trafficname}}" maxlength="8"/>
+            </a>
+            <a class="plan-discount item item-input item-input-inset" ng-if="discountHide">
+                <span>折扣</span>
+                <input type="text" class="traffic-plan-type-list" ng-model="plandata.discount"
+                       placeholder="请输入折扣 [ 1～10 ]"/>
+            </a>
+            <a class="plan-price item item-input item-input-inset">
+                <span>总金额</span>
+                <input type="text" class="traffic-plan-type-list" ng-model="plandata.price" placeholder="请输入总金额"/>
+            </a>
+        </div>
+        <div class="item" id="check-button-style" ng-if="editTrafficplan">
+            <div class="row">
+                <i class="col">
+                    <a class="button button-outline" id="delete-button" ng-click="removePlan();">删除</a>
+                </i>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-view view-title="我的信息" cache-view="false">
+    <ion-content>
+        <div class="list">
+            <div class="item item-avatar-right" id="MyInformation-head" ng-click="addPhoto();">
+                头像
+                <img  ng-src="{{userInfo.photo}}" ui-sref="userImage({imageUrl:userInfo.photo})">
+            </div>
+            <!--姓名-->
+            <div class="item item-icon-left" id="MyInformation-username" href="#">
+                姓名
+                <span class="item-note" ng-bind="userInfo.name" id="MyInformation-username-style">
+                </span>
+            </div>
+            <!--工号-->
+            <div class="item item-icon-left" id="MyInformation-work"  href="#">
+                工号
+                <span class="item-note" ng-bind="userInfo.no" id="MyInformation-work-style">
+                </span>
+            </div>
+            <!--公司-->
+            <div class="item item-icon-left" id="MyInformation-company" href="#">
+                公司
+                <span class="item-note" ng-bind="userInfo.company" id="MyInformation-company-style">
+                </span>
+            </div>
+            <!--部门-->
+            <div class="item item-icon-left" id="MyInformation-depart" href="#">
+
+                部门
+                <span class="item-note" ng-bind="userInfo.office" id="MyInformation-depart-style">
+                </span>
+            </div>
+            <!--用户级别-->
+            <div class="item item-icon-left" id="MyInformation-userType">
+
+                级别
+                <span class="item-note" ng-bind="userInfo.userType" id="MyInformation-userType-style"></span>
+            </div>
+            <!--电话-->
+            <div class="item item-icon-left" id="MyInformation-number" href="#" >
+                电话
+                <span class="item-note" ng-bind="userInfo.mobile" id="MyInformation-number-style">
+                </span>
+            </div>
+            <!--邮箱-->
+            <div class="item item-icon-left" id="MyInformation-email" href="#" >
+                邮箱
+                <span class="item-note" ng-bind="userInfo.email" id="MyInformation-email-style"></span>
+            </div>
+            <!--密码-->
+            <div class="item item-icon-right" id="MyInformation-password" ui-sref="reset">
+                <i class="icon ion-ios-arrow-right " id="MyInformation-password-style" ></i>
+                修改密码
+            </div>
+            <!--退出-->
+            <button class="button button-full button-assertive" id="MyInformation-exit" ng-click="outBut();">
+                退出登录
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

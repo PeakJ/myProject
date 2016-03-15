@@ -1,0 +1,19 @@
+<ion-view view-title="登录界面" hide-nav-bar="true"class="front-backgroud">
+    <ion-content class="padding" ng-controller="loginController">
+        <div  style="text-align: center">
+            <div class="front-img"></div>
+        </div>
+        <div class="list "> <!-- 待测加边框出现串行现象  list-inset-->
+            <label class="item item-input">
+                <input class="font-input" type="text" ng-model="userNo" placeholder="输入用户名/手机号">
+            </label>
+            <label class="item item-input">
+                <input class="font-input" type="password" ng-model="userPassword" placeholder="输入密码">
+            </label>
+        </div>
+        <label style="color: red;text-align: center" ng-bind="prompt" ></label>
+        <button class="button button-full font-button" ng-click="Submit();">
+            登录
+        </button>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,264 @@
+<ion-view view-title="出差统计" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ui-sref="home"></button>
+    </ion-nav-buttons>
+    <!--<ion-nav-buttons side="right" >
+        <button class="button icon ion-android-add button-clear" ui-sref=""></button>
+    </ion-nav-buttons>-->
+    <ion-tabs class=" tabs-striped tabs-top">
+        <ion-tab title="项目" on-select="tabIndex0();" ng-controller="statisticalCtrl">
+            <ion-view>
+                <ion-content>
+                    <script type="text/javascript">
+                        $(function () {
+                            var currYear = (new Date()).getFullYear();
+                            var opt = {};
+                            opt.date = {preset: 'date'};
+                            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+                            opt.datetime = {preset: 'datetime'};
+                            opt.time = {preset: 'time'};
+                            opt.default = {
+                                theme: 'android-ics light', //皮肤样式
+                                display: 'modal', //显示方式
+                                mode: 'scroller', //日期选择模式
+                                lang: 'zh',
+                                startYear: currYear - 10, //开始年份
+                                endYear: currYear + 10 //结束年份
+                            };
+
+                            $("#statisticalprojectstar").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            $("#statisticalprojectend").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            var optDateTime = $.extend(opt['datetime'], opt['default']);
+                            var optTime = $.extend(opt['time'], opt['default']);
+                            $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+                            $("#appTime").mobiscroll(optTime).time(optTime);
+
+                        });
+                    </script>
+                    <div class="item-input">
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.startDate" placeholder="开始日期" id="statisticalprojectstar"
+                                   name="statisticalprojectstar">
+                        </label>
+                        <span>—</span>
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.endDate" placeholder="结束日期" id="statisticalprojectend"
+                                   name="statisticalprojectend">
+                        </label>
+                        <a class="button button-clear item-icon-right ion-ios-search" ng-click="submit();"></a>
+                    </div>
+                    <div style="background-color: #e6e6e6">
+                    <div id="objectmain" ></div>
+                    <table class="reportForm">
+                        <tr>
+                            <td style="background-color: #eeeeee">项目</td>
+                            <td style="background-color: #eeeeee">次数</td>
+                            <td style="background-color: #eeeeee">费用</td>
+                        </tr>
+                        <tr ng-repeat="item in traffic">
+                            <td>{{item.applyProject}}</td>
+                            <td>{{item.count}}</td>
+                            <td>{{item.price}}</td>
+                        </tr>
+                    </table>
+                    <br style="clear:both">
+                    <br style="clear:both">
+                    <br style="clear:both">
+                        </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="人员" on-select="tabIndex1();" ng-controller="statisticalUserCtrl">
+            <ion-view>
+                <ion-content>
+                    <script type="text/javascript">
+                        $(function () {
+                            var currYear = (new Date()).getFullYear();
+                            var opt = {};
+                            opt.date = {preset: 'date'};
+                            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+                            opt.datetime = {preset: 'datetime'};
+                            opt.time = {preset: 'time'};
+                            opt.default = {
+                                theme: 'android-ics light', //皮肤样式
+                                display: 'modal', //显示方式
+                                mode: 'scroller', //日期选择模式
+                                lang: 'zh',
+                                startYear: currYear - 10, //开始年份
+                                endYear: currYear + 10 //结束年份
+                            };
+
+                            $("#statisticaluserstar").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            $("#statisticaluserend").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            var optDateTime = $.extend(opt['datetime'], opt['default']);
+                            var optTime = $.extend(opt['time'], opt['default']);
+                            $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+                            $("#appTime").mobiscroll(optTime).time(optTime);
+                        });
+                    </script>
+                    <div class="item-input">
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.startDate" placeholder="开始日期" id="statisticaluserstar"
+                                   name="statisticaluserstar">
+                        </label>
+                        <span>—</span>
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.endDate" placeholder="结束日期" id="statisticaluserend"
+                                   name="statisticaluserend">
+                        </label>
+                        <a class="button button-clear item-icon-right ion-ios-search" ng-click="submit();"></a>
+                    </div>
+                    <div style="background-color: #e6e6e6">
+                    <div id="usermain"></div>
+                    <table class="reportForm">
+                        <tr>
+                            <td style="background-color: #eeeeee">人员</td>
+                            <td style="background-color: #eeeeee">次数</td>
+                            <td style="background-color: #eeeeee">费用</td>
+                        </tr>
+                        <tr ng-repeat="item in traffic">
+                            <td>{{item.userName}}</td>
+                            <td>{{item.count}}</td>
+                            <td>{{item.price}}</td>
+                        </tr>
+                    </table>
+                    <br style="clear:both">
+                    <br style="clear:both">
+                    <br style="clear:both">
+                        </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="交通" on-select="tabIndex2();" ng-controller="statisticalTrafficCtrl">
+            <ion-view>
+                <ion-content>
+                    <script type="text/javascript">
+                        $(function () {
+                            var currYear = (new Date()).getFullYear();
+                            var opt = {};
+                            opt.date = {preset: 'date'};
+                            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+                            opt.datetime = {preset: 'datetime'};
+                            opt.time = {preset: 'time'};
+                            opt.default = {
+                                theme: 'android-ics light', //皮肤样式
+                                display: 'modal', //显示方式
+                                mode: 'scroller', //日期选择模式
+                                lang: 'zh',
+                                startYear: currYear - 10, //开始年份
+                                endYear: currYear + 10 //结束年份
+                            };
+                            $("#statisticaltrafficstar").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            $("#statisticaltrafficend").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            var optDateTime = $.extend(opt['datetime'], opt['default']);
+                            var optTime = $.extend(opt['time'], opt['default']);
+                            $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+                            $("#appTime").mobiscroll(optTime).time(optTime);
+                        });
+                    </script>
+                    <div class="item-input">
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.startDate" placeholder="开始日期" id="statisticaltrafficstar"
+                                   name="statisticaltrafficstar">
+                        </label>
+                        <span>—</span>
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.endDate" placeholder="结束日期" id="statisticaltrafficend"
+                                   name="statisticaltrafficend">
+                        </label>
+                        <a class="button button-clear item-icon-right ion-ios-search" ng-click="submit();"></a>
+                    </div>
+                    <div style="background-color: #e6e6e6">
+                    <div id="trafficmain" style="height:300px"></div>
+                    <table class="reportForm">
+                        <tr>
+                            <td style="background-color: #eeeeee">交通</td>
+                            <td style="background-color: #eeeeee">次数</td>
+                            <td style="background-color: #eeeeee">费用</td>
+                        </tr>
+                        <tr ng-repeat="item in traffic">
+                            <td>{{item.type}}</td>
+                            <td>{{item.countType}}</td>
+                            <td>{{item.price}}</td>
+                        </tr>
+                    </table>
+                    <br style="clear:both">
+                    <br style="clear:both">
+                    <br style="clear:both">
+                        </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="目的地" on-select="tabIndex3();" ng-controller="statisticalDestinationCtrl">
+            <ion-view>
+                <ion-content>
+                    <script type="text/javascript">
+                        $(function () {
+                            var currYear = (new Date()).getFullYear();
+                            var opt = {};
+                            opt.date = {preset: 'date'};
+                            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+                            opt.datetime = {preset: 'datetime'};
+                            opt.time = {preset: 'time'};
+                            opt.default = {
+                                theme: 'android-ics light', //皮肤样式
+                                display: 'modal', //显示方式
+                                mode: 'scroller', //日期选择模式
+                                lang: 'zh',
+                                startYear: currYear - 10, //开始年份
+                                endYear: currYear + 10 //结束年份
+                            };
+
+                            $("#statisticaldestinationstar").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            $("#statisticaldestinationend").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+                            var optDateTime = $.extend(opt['datetime'], opt['default']);
+                            var optTime = $.extend(opt['time'], opt['default']);
+                            $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+                            $("#appTime").mobiscroll(optTime).time(optTime);
+                        });
+                    </script>
+                    <div class="item-input">
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.startDate" placeholder="开始日期" id="statisticaldestinationstar"
+                                   name="statisticaldestinationstar">
+                        </label>
+                        <span>—</span>
+                        <label class="item-input">
+                            <input style="width: 324px;padding-right: 10px; text-align: center" type="text"
+                                   ng-model="trafficData.endDate" placeholder="结束日期" id="statisticaldestinationend"
+                                   name="statisticaldestinationend">
+                        </label>
+                        <a class="button button-clear item-icon-right ion-ios-search" ng-click="submit();"></a>
+                    </div>
+                    <div style="background-color: #e6e6e6">
+                    <div id="destinationmain"></div>
+                    <table class="reportForm">
+                        <tr>
+                            <td style="background-color: #eeeeee">目的地</td>
+                            <td style="background-color: #eeeeee">次数</td>
+                            <td style="background-color: #eeeeee">费用</td>
+                        </tr>
+                        <tr ng-repeat="item in traffic">
+                            <td>{{item.destination}}</td>
+                            <td>{{item.countType}}</td>
+                            <td>{{item.price}}</td>
+                        </tr>
+                    </table>
+                    <br style="clear:both">
+                    <br style="clear:both">
+                    <br style="clear:both">
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>
+

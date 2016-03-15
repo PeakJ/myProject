@@ -1,0 +1,84 @@
+<ion-view title="选择地点" cache-view="false" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-arrow-left button-clear" ng-click="backDirect();">
+        </button>
+    </ion-nav-buttons>
+    <ion-content delegate-handle="city-scroll">
+        <div class="list">
+            <div on-touch="alphabetHide($event)">
+                <div class="item item-input">
+                    <label ng-if="isShowHot">查找：</label>
+                    <input placeholder="输入要查找的城" type="text" ng-model="pageContent.search"
+                           ng-click="changeDetection();"
+                           ng-change="changeDetection();" style="padding-right: 0%">
+                    <label class="iconCleanSearch icon ion-close-circled" ng-if="!isShowHot"
+                           ng-click="cleanSearch();"></label>
+                    <label class="labelCancelSearch" ng-if="!isShowHot" ng-click="cancelSearch();">取消</label>
+                </div>
+
+                <div class="item item-divider" ng-if="isShowHot">
+                    <label class="currentLocation">当前位置</label>
+                    <!--<div class="currentLocation" ng-model="pageContent.location" id="currentLocation"-->
+                    <!--ng-click="historySearch(pageContent.location);" ng-bind="pageContent.location"></div>-->
+                </div>
+                <div class="item" ng-if="isShowHot" ng-model="pageContent.location" id="currentLocation"
+                     ng-click="historySearch(pageContent.location);" ng-bind="pageContent.location"></div>
+
+                <!--<div class="item" id="allmap" ng-hide="!isShowHot" style="height: 8em"></div>-->
+                <div ng-if="isShowHot">
+                    <div ng-if="isShowHistory">
+                        <div class="item item-divider">最近搜索<span class="cleanSearchHistory"
+                                                                 ng-click="cleanHistory()">清空历史</span></div>
+                        <div class="item" ng-repeat="s in cityHistory" ng-click="historySearch(s)">
+                            <div>{{s}}</div>
+                        </div>
+                    </div>
+
+                    <div class="item item-divider">热门城市</div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col" ng-click="backToPlan(38,'大连')"> 大连</div>
+                            <div class="col" ng-click="backToPlan(1,'北京')"> 北京</div>
+                            <div class="col" ng-click="backToPlan(235,'成都')"> 成都</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-click="backToPlan(234,'重庆')"> 重庆</div>
+                            <div class="col" ng-click="backToPlan(197,'广州')"> 广州</div>
+                            <div class="col" ng-click="backToPlan(87,'杭州')"> 杭州</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-click="backToPlan(74,'南京')"> 南京</div>
+                            <div class="col" ng-click="backToPlan(73,'上海')"> 上海</div>
+                            <div class="col" ng-click="backToPlan(199,'深圳')"> 深圳</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-click="backToPlan(2,'天津')"> 天津</div>
+                            <div class="col" ng-click="backToPlan(169,'武汉')"> 武汉</div>
+                            <div class="col" ng-click="backToPlan(288,'西安')"> 西安</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 城列表 -->
+            <ul ng-repeat="item in cityList | filter:city " id="city-menu" on-touch="alphabetShow($event)">
+                <li class="item item-divider" ng-if="item.ifStater" id="city-{{item.letter | limitTo : 1 | uppercase}}">
+                    {{item.letter}}
+                </li>
+                <div class="item" ng-if="!item.ifStater" type="item-text-wrap"
+                     ng-click="backToPlan(item.id,item.name);">
+                    <a>{{item.name}}</a>
+                </div>
+            </ul>
+        </div>
+    </ion-content>
+
+    <!-- 字母索引 -->
+    <ul class="city-alphabet" city-alphabet-touch id="city-alphabet">
+        <li class="city-alphabet-li" ng-repeat="item in cityListLetter"
+            letter="city-{{item.letter | limitTo : 1 | uppercase}}">
+            {{item.letter | limitTo : 1 | uppercase}}
+        </li>
+    </ul>
+
+</ion-view>

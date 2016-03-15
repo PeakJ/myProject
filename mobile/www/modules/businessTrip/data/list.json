@@ -1,0 +1,36 @@
+[
+  {
+    "userId": "1",
+    "userName": "张俊辉",
+    "applyReason": "出去看看",
+    "applyProject": "BOM",
+    "startDate": "2015-07-15 17:11:42",
+    "endDate": "2015-07-18 17:11:47",
+    "stayType": "0",
+    "stayCost": 500.00,
+    "status": "0",
+    "remarks": "世界这么大，我想去看看",
+    "createDate": "2015-07-17 17:12:32",
+    "updateDate": "2015-07-17 17:13:42",
+    "delFlag": "0",
+    "id": "1",
+    "isNewRecord": false
+  },
+  {
+    "userId": "2",
+    "userName": "张三",
+    "applyReason": "呵呵",
+    "applyProject": "BOM",
+    "startDate": "2015-07-13 11:54:19",
+    "endDate": "2015-07-22 11:54:24",
+    "stayType": "0",
+    "stayCost": 321.00,
+    "status": "0",
+    "remarks": "看完回来了 ",
+    "createDate": "2015-07-20 11:54:47",
+    "updateDate": "2015-07-20 11:55:08",
+    "delFlag": "0",
+    "id": "2",
+    "isNewRecord": false
+  }
+]

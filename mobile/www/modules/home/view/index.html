@@ -1,0 +1,64 @@
+<ion-view view-title="拇指间" hide-back-button="true" cache-view="false">
+    <ion-nav-buttons side="right" >
+        <button class="button button-clear icon ion-android-person"  ui-sref="homeUser"></button>
+    </ion-nav-buttons>
+    <ion-slide-box does-continue="false" auto-play="false" show-pager="true" id="home-div-height">
+        <ion-slide>
+            <div class="row" id="home-journal-notice" >
+                <div class="col col-50 tab-item has-badge">
+                    <img src="img/home_notice.png" class="notice-img">
+                    <p class="hometext">公告</p>
+                </div>
+                <div class="col col-50 tab-item has-badge">
+                    <a href="#/tab/daily">
+                        <img src="img/home_journal.png" class="journal-img">
+                        </a>
+                    <p class="hometext">日志</p>
+                </div>
+            </div>
+            <div class="row" id="home-message-opportunity" >
+                <div class="col col-50 tab-item has-badge">
+                    <a ui-sref="message">
+                        <img src="img/home_message.png" class="message-index-img">
+                        <i class="badge" id="messageAmount" ng-if="noMessageAmount">{{messageAmount}}</i>
+     				</a>
+                    <p class="hometext">消息</p>
+                </div>
+                <div class="col col-50 tab-item has-badge">
+                    <a href="#/tab/business">
+                        <img src="img/home_business.png" class="businessOpportunity-img">
+                        </a>
+                    <p class="hometext">商机</p>
+                </div>
+            </div>
+            <div class="row" id="home-businesstrip-remain" >
+                <div class="col col-50 tab-item has-badge">
+                    <a href="#/tab/businessTrip">
+                        <img src="img/home_business_travel.png" class="businessOpportunity-img">
+                        <!--<img src="img/home_business_travel.png" class="businessTrip-img">-->
+                        <span class="badge" id="businessTripMessageAmount" ng-if="noBusinessTripMessageAmount">{{businessTripMessageAmount}}</span>
+                    </a>
+                    <p class="hometext">出差</p>
+                </div>
+                <div class="col col-50 tab-item has-badge">
+                    <a href="#/tab/statistical">
+                        <img src="img/home_statistics.png" class="statistical-index-img">
+                    </a>
+                    <p class="hometext">统计</p>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="row" id="home-statistical" >
+                 <div class="col col-50 tab-item has-badge">
+                    <img src="img/home_statistics.png" class="remain-img">
+                    <p class="hometext">待办</p>
+                </div>
+                <!--<div class="col col-50 tab-item has-badge">
+                    <div class="more-img"></div>
+                    <p class="hometext">更多</p>
+                </div>-->
+            </div>
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>

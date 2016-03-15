@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=044YVCLuKiYZPSRs2gIxZwG9"></script>
+        <script src="js/datePicker/jquery-1.9.1.js"></script>
+        <script src="js/datePicker/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+        <script src="js/datePicker/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+        <link href="js/datePicker/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+        <script src="js/datePicker/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+        <script src="js/datePicker/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+        <!-- S 可根据自己喜好引入样式风格文件 -->
+        <script src="js/datePicker/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+        <link href="js/datePicker/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+        <!-- E 可根据自己喜好引入样式风格文件 -->
+
+        <!--css-->
+        <link href="libs/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- ionic/angularjs js -->
+        <script src="libs/ionic/js/ionic.bundle.js"></script>
+        <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+        <script src="js/dateUtil.js"></script>
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="libs/ngCordova/dist/ng-cordova.js"></script>
+        <script src="cordova.js"></script>
+
+        <script src="modules/app.js"></script>
+        <script src="modules/directives.js"></script>
+        <script src="modules/services/localhost.js"></script>
+        <script src="modules/services/services.js"></script>
+        <script src="modules/services/user.js"></script>
+        <script src="modules/services/checkUtil.js"></script>
+        <script src="modules/services/messageUtil.js"></script>
+        <script src="modules/services/loadingUtil.js"></script>
+        <script src="modules/services/fileTransferUtil.js"></script>
+
+        <!--home-->
+        <script src="modules/home/services.js"></script>
+        <script src="modules/home/router.js"></script>
+        <script src="modules/home/controller/index.js"></script>
+        <script src="modules/home/controller/login.js"></script>
+        <script src="modules/home/controller/user.js"></script>
+        <script src="modules/home/controller/main.js"></script>
+        <script src="modules/home/controller/reset.js"></script>
+        <script src="modules/home/controller/userImage.js"></script>
+        <!--businessTrip-->
+        <script src="modules/businessTrip/services.js"></script>
+        <script src="modules/businessTrip/router.js"></script>
+        <script src="modules/businessTrip/controller/index.js"></script>
+        <script src="modules/businessTrip/controller/add.js"></script>
+        <script src="modules/businessTrip/controller/details.js"></script>
+        <script src="modules/businessTrip/controller/plan.js"></script>
+        <script src="modules/businessTrip/controller/city.js"></script>
+        <script src="modules/businessTrip/controller/approval.js"></script>
+        <script src="modules/businessTrip/controller/list.js"></script>
+        <script src="modules/businessTrip/controller/mybusinesstripapply.js"></script>
+        <script src="modules/businessTrip/controller/waitingcheck.js"></script>
+        <script src="modules/businessTrip/controller/havechecked.js"></script>
+        <script src="modules/businessTrip/controller/sendcopybusinesstrip.js"></script>
+        <script src="modules/businessTrip/controller/tellme.js"></script>
+        <!--statistical-->
+        <script src="modules/statistical/controller/index.js"></script>
+        <script src="modules/statistical/services.js"></script>
+        <!--message-->
+        <script src="modules/message/controller/index.js"></script>
+        <script src="modules/message/controller/outMessage.js"></script>
+        <script src="modules/message/services.js"></script>
+        <!--business-->
+        <script src="modules/business/controller/index.js"></script>
+
+        <!--daily-->
+        <script src="modules/daily/controller/index.js"></script>
+
+    </head>
+    <body ng-app="bomApp">
+        <ion-nav-bar class="bar-calm" animation="nav-title-slide-ios7"
+                     type="bar-positive"
+                     back-button-type="button-icon"
+                     back-button-icon="ion-arrow-left-c"
+                     align-title="center">
+            <ion-nav-back-button class="button-icon icon ion-ios-arrow-left"></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view>
+        </ion-nav-view>
+    </body>
+</html>
