@@ -1,0 +1,62 @@
+  <ion-view view-title="购物车" hide-nav-bar="true" class="bg-background">
+    <ion-header-bar class="cyx-common-title"  align-title="center">
+      <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+      <span class="title">购物车</span>
+    </ion-header-bar>
+  <ion-content class="cyx-shopping-cart-content ">
+    <div ng-if="!hadData" >购物车还没商品～</div>
+    <div ng-if="hadData" class="content-div border position-r bg-white" ng-repeat="shopItem in shoppingCartData"
+       >
+
+      <div class=" goods-check-div" ng-click="checkGoods($index)"
+           ng-class="{true:'goods-check-div',false:'goods-no-check-div'}[shopItem.isSelected]"
+        ></div>
+      <img class="goods-img  " ng-src="{{shopItem.picPath}}" ng-click="onGoodsDetailClick(shopItem.goodsId)">
+      <div class=" cyx-shopping-cart-goods-div">
+
+        <div class=" font-size-14 color-text-l hide-text"  ng-bind="shopItem.goodsName"></div>
+        <div class=" font-size-12 color-text-s  hide-text">  零售价&nbsp:&nbsp
+          <span class="color-text-s  "ng-bind="shopItem.retaiPrice| currency:'&yen'">元</span>
+            </div>
+          <div class="font-size-12 color-text-s   hide-text">抵值券&nbsp:&nbsp
+            <span class="color-text-red  " ng-bind="shopItem.couponAmount| currency:'&yen'"></span>
+        </div>
+        <div class=" goods-count-div">
+          <div class="goods-minus-div"  ng-class="{true:'goods-minus-div',false:'goods-un-minus-div'}[shopItem.amount>1]"
+               ng-click="onCountMinusClick($index)"></div>
+          <input type="tel"  class="goods-count-value-input"
+                 ng-model="shopItem.amount" ng-change="onInputChange($index,shopItem.amount)">
+          <div class="goods-plus-div" ng-click="onCountAddClick($index)"></div>
+        </div>
+        <img class="goods-del-img" src="./img/goods-del.png" ng-click="onDeleteGoodsClick(shopItem.id)">
+      </div>
+
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar ng-if="hadData" class="padding-0  cyx-shopping-cart-footer border-top bg-background">
+    <div class="footer-div">
+      <div class="footer-price-div ">
+        <span class="footer-total-price-div font-size-12 color-text-l">零售价合计:<span ng-bind="goodsPriceToall| currency:'&yen'"></span></span>
+        <span class="footer-coupon-price-div font-size-12 color-text-l">抵值券:<span
+          class="color-text-red  "
+          ng-bind="couponPriceTotal| currency:'&yen'"></span></span>
+      </div>
+      <div class=" footer-total-div border-top border-bottom position-r bg-white  " >
+        <div class="margin-top-15">
+        <div  class="float-l  footer-check-div margin-left-10"   ng-class="{true:'float-l  footer-check-div margin-left-10',false:'float-l  footer-un-check-div margin-left-10'}[isAllSelected]"ng-click="checkGoodsAll()"></div>
+        <span  class="float-l color-text-s font-size-10 margin-left-5">全选&nbsp&nbsp共&nbsp
+          <span class="font-size-10 color-text-s" ng-bind="totalCount">0</span>&nbsp件商品</span>
+       </div>
+        <div class="float-r footer-btn-div ">
+          <div class="footer-browse-btn"  ui-sref="home">
+            <span class="color-text-white font-size-14 ">继续逛逛</span></div>
+          <div class="footer-pay-btn" ng-click="onBuildOrderClick() ">
+            <span class="color-text-white font-size-14 text-center ">生成订单</span></div>
+        </div>
+      </div>
+      <div class="width-full bg-white" ng-include="'templates/common/tabs.html'"></div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

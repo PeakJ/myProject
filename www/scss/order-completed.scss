@@ -1,0 +1,94 @@
+.cyx-completed-order-div {
+  width: 100%;
+  height:170px;
+  .num-div {
+    height: 30px;
+    width: 100%;
+    .cyx-order-div{
+      padding-top: 5px;
+      text-align: center;
+      height: 30px;
+      width:80px;
+      font-size: $font-size-14;
+      color: $color-text-white;
+      position: absolute;
+      right:0;
+      top:0;
+      background: url(../img/go_pay_img.png);
+      background-size: 100% 100%;
+      border-radius: 5px;
+    }
+  }
+  .goods-div {
+    width: 100%;
+    height: 80px;
+    position: relative;
+
+    .completed-goods-img {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: url('../data/temp-img/home-ad1.png') no-repeat;
+      background-size: 70px 70px;
+    }
+    .goods-name {
+      position: absolute;
+      left: 80px;
+      margin-left: 5px;
+    }
+    .goods-price-div {
+      position: absolute;
+      left: 80px;
+      top: 25px;
+      margin-left: 5px;
+      .goods-count-div{
+      margin-left: 100px;
+        top:-10px;
+        position: relative;
+        .goods-count-txt-span{
+          position: absolute;
+          margin-left: 50px;
+          padding-top: 8px;
+        }
+        .goods-count-span{
+          position: absolute;
+          margin-left: 60px;
+          padding-top: 5px;
+        }
+    }
+    }
+    .goods-coupon-div {
+      position: absolute;
+      left: 80px;
+      top: 50px;
+      margin-left: 5px;
+    }
+  }
+  .goods-price-total-div {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+
+}
+.cyx-order-completed-num-div {
+  position: absolute;
+  right:0;
+  top:0
+
+}
+.margin-right-100{
+ margin-right: 100px;
+}
+.cyx-order-completed-cart{
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  background: rgba(0,0,0,0.58);
+  width: 45px;
+  height: 45px;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 50%;
+  text-align: center;
+}

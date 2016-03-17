@@ -1,0 +1,222 @@
+.cyx-shopping-cart-content {
+  margin-top: 7px;
+  bottom: 140px;
+
+  .content-div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 108px;
+    width: 100%;
+
+    .goods-check-div {
+      width: 20px;
+      height: 20px;
+      margin-top: 44px;
+      margin-bottom: 44px;
+      background: url(../img/goods-check.png);
+      background-size: 100% auto;
+      margin-left: 10px;
+      border: none;
+    }
+    .goods-no-check-div {
+      width: 20px;
+      height: 20px;
+      margin-top: 44px;
+      margin-bottom: 44px;
+      background: url(../img/goods-un-check.png);
+      background-size: 100% auto;
+      margin-left: 10px;
+      border: none;
+    }
+
+    .goods-img {
+      width: 132px;
+      height: 81px;
+      margin-top: 13px;
+      flaot: left;
+      margin-left: 5px;
+      background: url(../img/shopping_cart_goods_img.png);
+      background-size: 100% 100%;
+    }
+    .cyx-shopping-cart-goods-div {
+      margin-top: 13px;
+      vertical-align: middle;
+      font-size: $font-size-14;
+      margin-left: 13px;
+      .goods-coupon-div {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        text-align: right;
+        flaot: left;
+      }
+      .goods-count-div {
+        width: 80px;
+        margin-top: 5px;
+        position: relative;
+
+        .goods-minus-div {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          background: url(../img/goods-minus.png);
+          background-size: 100% 100%;
+
+        }
+        .goods-un-minus-div {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          background: url(../img/goods-un-minus.png);
+          background-size: 100% 100%;
+
+        }
+        .goods-plus-div {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          background: url(../img/goods-plus.png);
+          background-size: 100% 100%;
+          right: 0px;
+        }
+        .goods-count-value-input {
+          width: 40px;
+          height: 20px;
+          text-align: center;
+          position: absolute;
+          left: 20px;
+        }
+      }
+    }
+  }
+}
+.cyx-shopping-cart-footer {
+  height: 150px;
+  background-image: none;
+  .footer-div {
+    width: 100%;
+    height: 150px;
+    padding-top: 10px;
+    .footer-total-div {
+      width: 100%;
+      height: 52px;
+
+      .footer-check-div {
+          height: 20px;
+          width: 20px;
+          vertical-align: middle;
+          background: url(../img/goods-check.png);
+          background-size: 100% auto;
+          flaot: left;
+        }
+      .footer-un-check-div {
+        height: 20px;
+        width: 20px;
+        vertical-align: middle;
+        background: url(../img/goods-un-check.png);
+        background-size: 100% auto;
+        flaot: left;
+      }
+      .footer-select-div {
+        text-align: right;
+        padding-right: 15px;
+        margin-left: 10px;
+      }
+      .footer-btn-div {
+        width: 60%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        .footer-browse-btn {
+          width: 50%;
+          height:50px;
+          float: left;
+          background: $color-orange;
+          text-align: center;
+          padding-top: 14px;
+        }
+        .footer-pay-btn {
+          width: 50%;
+          height:50px;
+          float: left;
+          background: $color-red;
+          text-align: center;
+          padding-top: 14px;
+        }
+      }
+    }
+    .footer-price-div {
+      width: 100%;
+      height: 35px;
+
+      position: relative;
+      .footer-total-price-div {
+        position: absolute;
+        left:15px;
+        margin-left: 30px;
+      }
+      .footer-coupon-price-div {
+        position: absolute;
+        right:15px;
+        margin-right: 30px;
+      }
+    }
+  }
+}
+.hide-text{
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cyx-order-tabs {
+  .tab-item-active {
+    color: $color-text-active !important;
+    border-color: $color-text-active !important;
+  }
+  .tab-item.activated {
+    border-color: $color-text-active !important;
+    color: $color-text-active !important;
+  }
+  .tab-item{
+
+    color: $color-text-l ;
+    border-color: $color-text-l ;
+  }
+}
+.cyx-favorite-tabs {
+  .tab-item-active {
+    color: $color-text-active !important;
+    border-color: $color-text-active !important;
+  }
+  .tab-item.activated {
+    border-color: $color-text-active !important;
+    color: $color-text-active !important;
+  }
+  .tab-item{
+
+    color: $color-text-l ;
+    border-color: $color-text-l ;
+  }
+}
+.goods-del-img {
+  width: 15px;
+  height: 15px;
+  right: 10px;
+  position: absolute;
+  top: 35px
+
+}
+
+
+

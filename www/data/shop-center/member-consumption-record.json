@@ -1,0 +1,41 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "orderCode": "1234567",
+            "couponMoney": "123.23",
+            "goodsId": "123",
+            "goodsName": "止咳糖浆",
+            "shopName": "成大药房沈阳店",
+            "payDate": "2016-01-06 09：03：23",
+            "amount":3
+        },
+        {
+            "orderCode": "2234567",
+            "couponMoney": "201.00",
+            "goodsId": "124",
+            "goodsName": "白加黑",
+            "shopName": "成大药房铁东店",
+            "payDate": "2016-02-19 18：03：23",
+            "amount":9
+        },
+        {
+            "orderCode": "3234567",
+            "couponMoney": "321.32",
+            "goodsId": "15",
+            "goodsName": "甘草片",
+            "shopName": "成大药房东区店",
+            "payDate": "2016-03-25 18：03：23",
+            "amount":3
+        },
+        {
+            "orderCode": "4234567",
+            "couponMoney": "98.36",
+            "goodsId": "66",
+            "goodsName": "咽炎片",
+            "shopName": "沈阳铁东区店",
+            "payDate": "2016-04-19 18：03：23",
+            "amount":5
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "date": "2016-01-12",
+            "salesCount": "89",
+            "salesMoney": "123.23"
+        },
+        {
+            "date": "2016-02-12",
+            "salesCount": "126",
+            "salesMoney": "326.23"
+        },
+        {
+            "date": "2016-03-12",
+            "salesCount": "62",
+            "salesMoney": "98.23"
+        },
+        {
+            "date": "2016-04-12",
+            "salesCount": "98",
+            "salesMoney": "520.23"
+        },
+        {
+            "date": "2016-09-12",
+            "salesCount": "96",
+            "salesMoney": "210.00"
+        }
+    ]
+}

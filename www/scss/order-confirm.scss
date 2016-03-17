@@ -1,0 +1,130 @@
+.cyx-order-title{
+  padding-top: 15px;
+  height: 50px;
+  width: 100%;
+
+}
+  .cyx-order-confirm-div {
+    width: 100%;
+    height: 180px;
+    padding-left: 10px;
+    margin-bottom: 1px;
+    .cyx-deal-order-num-div {
+      height: 30px;
+      width: 100%;
+      .cyx-order-div {
+        padding-top: 5px;
+        text-align: center;
+        height: 30px;
+        width: 80px;
+        font-size: $font-size-14;
+        color: $color-text-white;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url(../img/go_pay_img.png);
+        background-size: 100% 100%;
+        border-radius: 5px;
+      }
+    }
+    .goods-div {
+      width: 100%;
+      height: 80px;
+      position: relative;
+
+      .confirm-goods-img {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background: url('../data/temp-img/home-ad1.png') no-repeat;
+        background-size: 70px 70px;
+      }
+      .goods-name {
+        position: absolute;
+        left: 80px;
+        margin-left: 5px;
+      }
+      .confirm-goods-price-div {
+        position: absolute;
+        left: 80px;
+        top: 25px;
+        margin-left: 5px;
+        .goods-count-div {
+          margin-left: 100px;
+          top: -10px;
+          position: relative;
+          .goods-count-txt-span {
+            position: absolute;
+            margin-left: 50px;
+            padding-top: 8px;
+          }
+          .goods-count-span {
+            position: absolute;
+            margin-left: 60px;
+            padding-top: 5px;
+          }
+        }
+      }
+      .goods-coupon-div {
+        position: absolute;
+        left: 80px;
+        top: 50px;
+        margin-left: 5px;
+      }
+    }
+    .goods-price-total-div {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    .goods-btn-div {
+      width: 100px;
+      height: 35px;
+      margin: 0 auto;
+      background: url(../img/go_pay_img.png);
+      background-size: 100% 100%;
+      border-radius: 5px;
+
+    }
+    .goods-btn {
+      font-size: $font-size-14;
+      color: $color-text-white;
+      text-align: center;
+      line-height: 35px;
+    }
+
+  }
+  .cyx-confirm-footer-div {
+    height:50px;
+    width: 100%;
+
+    .cyx-confirm-ok-btn {
+      height:50px;
+      width: 50%;
+      float: right;
+      text-align: center;
+      background-color:#ff8d39;
+      padding-top: 15px;
+    }
+    .cyx-confirm-cancel-btn {
+      border:solid 1px #ff8d39;
+      height:50px;
+      width: 50%;
+      float: left;
+      text-align: center;
+      padding-top: 15px;
+    }
+  }
+.cyx-confirm-order-title-bg{
+  background: #c8a775;
+  height: 50px;
+  width: 5px;
+  float: left;
+  margin-top: -15px;
+}
+.cyx-confirm-user-title-bg{
+  background: #c8a775;
+  height: 42px;
+  width: 5px;
+  float: left;
+  margin-top: -10px;
+}

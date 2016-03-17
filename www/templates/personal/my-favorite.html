@@ -1,0 +1,58 @@
+    <ion-view view-title="我的收藏" hide-nav-bar="true" class="bg-background">
+      <ion-header-bar class="cyx-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">我的收藏</span>
+      </ion-header-bar>
+<ion-tabs class="tabs-top tabs-striped cyx-favorite-tabs cyx-home-tabs bg-background">
+  <ion-tab title="收藏的商品" class="font-bold" on-select="selectTab()" >
+   <ion-view class="bg-background">
+     <ion-content class="cyx-favorite-goods-content ">
+       <div class="content-div border position-r bg-white margin-bottom-10" ng-repeat="goodsItem in collectGoodsList">
+         <img class="favorite-goods-img  "  ng-click="onGoodsDetailClick(goodsItem.goodsId)" ng-src="{{goodsItem.picturePath}}">
+         <div class=" cyx-favorite-goods-div">
+           <span class=" font-size-14 color-text-l favorite-hide-text"  ng-bind="goodsItem.goodsName"></span>
+           <div class=" font-size-10 color-text-s  ">  规格&nbsp:&nbsp
+             <span class="color-text-s  "ng-bind="goodsItem.specifications"></span>
+           </div>
+           <div class=" font-size-12 color-text-s  ">  零售价&nbsp:&nbsp
+             <span class="color-text-s  "ng-bind="goodsItem.retaiPrice| currency:'&yen'">元</span>
+           </div>
+           <div class="font-size-12 color-text-s   ">抵值券&nbsp:&nbsp
+             <span class="color-text-red  " ng-bind="goodsItem.couponAmount| currency:'&yen'"></span>
+           </div>
+           <img class="goods-del-img" src="./img/goods-del.png" ng-click="onCancelCollectGoodsClick(goodsItem.goodsId)">
+         </div>
+       </div>
+       <ion-infinite-scroll distance="2%" ng-if="hasMoreGoods" icon="icon-svg-loading" on-infinite="loadMoreGoods()"></ion-infinite-scroll>
+     </ion-content>
+   </ion-view>
+  </ion-tab>
+  <ion-tab title="收藏的店铺" class="font-bold" on-select="selectTab()">
+    <ion-view class="bg-background">
+      <ion-content class="cyx-favorite-store-content ">
+        <div class="store-content-div border position-r bg-white margin-bottom-10" ng-repeat="shopsItem in collectShopsList">
+          <img class="favorite-store-img  "  ng-click="onShopDetailClick(shopsItem.storeId)" ng-src="{{shopsItem.storeLogoPath}}">
+          <div class=" cyx-store-div">
+            <div class=" font-size-14 color-text-l  margin-top-10 position-r favorite-store-hide-text" >
+              <img class="shop" src="./img/icon-shop.png"><span class=" "  ng-bind="shopsItem.storeName"></span></div>
+            <div class=" font-size-12 color-text-s     margin-top-5 " >
+              <img class="tel" src="./img/icon-tel.png">  电话&nbsp:&nbsp
+              <span class="color-text-s  "ng-bind="shopsItem.telephone"></span>
+            </div>
+            <div class=" font-size-12 color-text-s   margin-top-5 favorite-store-hide-text" >
+              <img class="address" ng-src="img/icon-location.png">  地址&nbsp:&nbsp
+              <span class="color-text-s "ng-bind="shopsItem.address"></span>
+            </div>
+            <img class="store-del-img" src="./img/goods-del.png" ng-click="onCancelCollectShopClick(shopsItem.storeId)">
+          </div>
+        </div>
+        <ion-infinite-scroll distance="2%" ng-if="hasMoreStores" icon="icon-svg-loading" on-infinite="loadMoreStores()"></ion-infinite-scroll>
+
+      </ion-content>
+    </ion-view>
+  </ion-tab>
+  </ion-tabs>
+      <ion-footer-bar class="height-50">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+      </ion-footer-bar>
+ </ion-view>

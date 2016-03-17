@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/plugins/android.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/data/home-ads.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/data/order/order-records-by-tel.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/data/shopping-cart/create-order.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/data/verify-records.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/framework/jquery.qrcode.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/framework/local-storage.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/framework/user-service.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/home/home.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/bunch-input.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/order-completed.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/order-confirm.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/order-deal.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/order-detail.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/order-pending.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/order/order-record.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/personal/my-favorite.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/personal/personal-center.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/personal/shop-center/shop-center.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/shop/shop-home.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/shopping-cart/shopping-cart.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/util/test.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/lib/ionic/scss/_tabs.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/bunch-input.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/home.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/ionic.app.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/my-favorite.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/order-completed.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/order-confirm.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/order-detail.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/order-pending.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/order-record.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/personal-center.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/scss/shopping-cart.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/bunch-input.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/order-completed.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/order-confirm.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/order-deal.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/order-detail.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/order-pending.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/order/order-record.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/shop/shop-home.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/shopping-cart/shopping-cart.html" charset="UTF-8" />
+  </component>
+</project>

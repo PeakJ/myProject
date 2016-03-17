@@ -1,0 +1,25 @@
+{
+  "code":0,
+  "data":[
+    {
+      "id":"t001",
+      "name":"补气药",
+      "img":"data/temp-img/14.png"
+    },
+    {
+      "id":"t001",
+      "name":"补血药",
+      "img":"data/temp-img/14.png"
+    },
+    {
+      "id":"t001",
+      "name":"补阴药",
+      "img":"data/temp-img/14.png"
+    },
+    {
+      "id":"t001",
+      "name":"补阳药",
+      "img":"data/temp-img/14.png"
+    }
+  ]
+}

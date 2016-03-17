@@ -1,0 +1,33 @@
+{
+    "code": 0,
+    "data": {
+        "totalSalesCount": "12000",
+        "totalSalesMoney": "23656.23",
+        "detail": [
+            {
+                "goodsId":"123",
+                "goodsName": "止咳糖浆",
+                "salesCount": "126",
+                "salesMoney": "123.23"
+            },
+            {
+                "goodsId":"124",
+                "goodsName": "白加黑",
+                "salesCount": "96",
+                "salesMoney": "189.00"
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片",
+                "salesCount": "987",
+                "salesMoney": "82.03"
+            },
+            {
+                "goodsId":"66",
+                "goodsName": "咽炎片",
+                "salesCount": "190",
+                "salesMoney": "63.27"
+            }
+        ]
+    }
+}

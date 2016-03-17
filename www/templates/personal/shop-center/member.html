@@ -1,0 +1,36 @@
+<!--会员信息 王爽-->
+<ion-view view-title="会员信息" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">会员信息</span>
+    </ion-header-bar>
+    <ion-content class="padding cyx-shop-center-content">
+        <div class="cyx-goods-search-div">
+            <div class="search-border">
+                <input type="text" placeholder="请输入会员手机号码" class="search-input" ng-model="search.memberTel"/>
+                <img ng-src="img/icon-search-white.png" class="search-icon" ng-click="screenByMemberID();"/>
+            </div>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <div class="cyx-member-information">
+            <span>会员信息</span>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <table class="cyx-shop-center-table">
+            <tr>
+                <th>会员手机</th>
+                <th>抵值券</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="item in memberList">
+                <td ng-click="goConsumption(item.memberId,item.memberAccount);" ng-bind="item.memberAccount"></td>
+                <td class="cyx-price" ng-bind="item.totalCouponAmount | currency:'&yen;'"></td>
+                <td ng-bind="item.payTime"></td>
+            </tr>
+        </table>
+        <ion-infinite-scroll distance="2%" ng-if="hasMoreData" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+    </ion-content>
+    <ion-footer-bar style="height: 50px">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

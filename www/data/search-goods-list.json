@@ -1,0 +1,47 @@
+{
+  "code":0,
+  "data":[
+    {
+      "goodsId":"gd001",
+      "goodsName":"【仁和】复方虫草口服液 15ml",
+      "imgUrl":"data/temp-img/goods-img0.png",
+      "couponMoney":"8.5",
+      "isCollected":false
+    },
+    {
+      "goodsId":"gd001",
+      "goodsName":"复方虫草口服液强身健体提高免疫力 30ml",
+      "imgUrl":"data/temp-img/goods-img1.png",
+      "couponMoney":"999.99",
+      "isCollected":true
+    },
+    {
+      "goodsId":"gd001",
+      "goodsName":"【仁和】复方虫草口服液 60ml",
+      "imgUrl":"data/temp-img/goods-img0.png",
+      "couponMoney":"8.5",
+      "isCollected":false
+    },
+    {
+      "goodsId":"gd001",
+      "goodsName":"【仁和】复方虫草口服液 100ml",
+      "imgUrl":"data/temp-img/goods-img1.png",
+      "couponMoney":"8.5",
+      "isCollected":false
+    },
+    {
+      "goodsId":"gd001",
+      "goodsName":"【仁和】复方虫草口服液 300ml",
+      "imgUrl":"data/temp-img/goods-img0.png",
+      "couponMoney":"8.5",
+      "isCollected":false
+    },
+    {
+      "goodsId":"gd001",
+      "goodsName":"【仁和】复方虫草口服液 500ml",
+      "imgUrl":"data/temp-img/goods-img1.png",
+      "couponMoney":"8.5",
+      "isCollected":false
+    }
+  ]
+}

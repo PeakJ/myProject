@@ -1,0 +1,193 @@
+<ion-view view-title="商品详情" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+    <span class="title">商品详情</span>
+  </ion-header-bar>
+  <ion-content class="bg-background" delegate-handle="detailHandle">
+    <ion-slide-box delegate-handle="picHandle" class="cyx-home-ads" >
+      <ion-slide ng-repeat="picItem in goodsData.picList" >
+        <img ng-src="{{picItem.picUrl}}"/>
+      </ion-slide>
+    </ion-slide-box>
+    <!--
+    <div class="cyx-goods-detail-collect">
+      <div class="icon-bg">
+        <img ng-src="data/temp-img/collect-goods.png" class="margin-top-5"
+             ng-if="!goodsData.isCollected" ng-click="collectGoods()"/>
+        <img ng-src="data/temp-img/goods-collected.png" class="margin-top-5"
+             ng-if="goodsData.isCollected" ng-click="cancelCollectGoods()"/>
+        <div ng-bind="goodsData.collectCount" class="collect-count"></div>
+      </div>
+    </div>-->
+    <div class="bg-white border-bottom">
+      <p ng-bind="goodsData.name" class="cyx-goods-detail-name"></p>
+
+      <div class="cyx-goods-detail-price-div">
+        零售价：<span ng-bind="goodsData.retaiPrice | currency:'&yen'"></span>
+        <div class="coupon-div">
+          抵值券：<span ng-bind="goodsData.couponAmount | currency:'&yen'"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cyx-goods-detail-count-div">
+      <div class="item-attr">规格：<span ng-bind="goodsData.specifications"></span></div>
+
+      <div class="count-bg">
+        <span>购买数量：</span>
+
+        <img class="count-img" ng-src="{{minusImg}}" ng-click="changeCount(-1)" >
+        <input ng-model="buyParams.count"/>
+        <img class="count-img" ng-src="img/goods-plus.png" ng-click="changeCount(1)">
+      </div>
+    </div>
+
+    <div class="cyx-goods-tab border-bottom">
+      <div class="cyx-store-tab-title">
+        <div class="inner-div" ng-class="{'active':activeTab==0}" ng-click="changeTab(0)">
+          <div>售卖药店</div>
+        </div>
+      </div>
+      <div class="cyx-store-tab-title">
+        <div class="inner-div" ng-class="{'active':activeTab==1}" ng-click="changeTab(1)">
+          <div>商品亮点</div>
+        </div>
+      </div>
+      <div class="cyx-store-tab-title">
+        <div class="inner-div" ng-class="{'active':activeTab==2}" ng-click="changeTab(2)">
+          <div>说明书</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 售卖药店START -->
+    <div ng-if="activeTab==0" class="bg-background float-l cyx-width-full margin-bottom-10">
+      <div ng-repeat="shopItem in shopList" class="bg-white ">
+        <div style="margin-left: 10px;margin-right: 10px;" class="cyx-goods-detail-shop-div"
+          ng-class="{true:'dash-line',false:'border-bottom'}[$index!=shopList.length-1]">
+          <div style="display: inline-block;vertical-align: top">
+            <img ng-src="img/icon-shop.png" class="shop-icon"/>
+          </div>
+          <div style="display: inline-block">
+            <div class="shop-name" ng-click="toShopHome(shopItem.storeId)">
+              <span ng-bind="shopItem.storeName"></span>
+            </div>
+            <div class="shop-tel">
+              <img ng-src="img/icon-tel.png"/>
+              <span>电话：<span ng-bind="shopItem.phoneNumber"></span></span>
+              <button class="search-btn" ng-click="toMap(shopItem.shopName)">搜索店铺位置</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- 售卖药店END -->
+
+    <!-- 商品亮点START -->
+    <div ng-if="activeTab==1" class="float-l cyx-width-full padding bg-white">
+      <div ng-bind-html="goodsData.sellDesc"></div>
+    </div>
+    <!-- 商品亮点END -->
+
+    <!-- 商品说明书START -->
+    <div ng-if="activeTab==2" class="float-l cyx-width-full padding bg-white">
+      <div class="cyx-goods-detail-attr">
+        <div class="label">通用名称：</div>
+        <div class="value">
+          <span ng-bind="goodsData.genericName"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">药品成分：</div>
+        <div class="value">
+          <span ng-bind="goodsData.ingredients"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">用药禁忌：</div>
+        <div class="value">
+          <span ng-bind="goodsData.contraindication"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">功能主治：</div>
+        <div class="value">
+          <span ng-bind="goodsData.functions"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">用法用量：</div>
+        <div class="value">
+          <span ng-bind="goodsData.usageDosage"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">药品症状：</div>
+        <div class="value">
+          <span ng-bind="goodsData.symptom"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">不良反应：</div>
+        <div class="value">
+          <span ng-bind="goodsData.adverseReactions"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">储藏条件：</div>
+        <div class="value">
+          <span ng-bind="goodsData.storageConditions"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">有效期：</div>
+        <div class="value">
+          <span ng-bind="goodsData.validityPeriod"></span>
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">注意事项：</div>
+        <div class="value" ng-bind="goodsData.attention">
+        </div>
+      </div>
+      <div class="cyx-goods-detail-attr">
+        <div class="label">相互作用：</div>
+        <div class="value">
+          <span ng-bind="goodsData.interaction"></span>
+        </div>
+      </div>
+    </div>
+    <!-- 商品说明书END -->
+  </ion-content>
+  <ion-footer-bar>
+    <div class="cyx-goods-detail-bottom">
+      <div  class="border-top footer-icon">
+        <img ng-src="img/icon-collect.png"
+             ng-if="!goodsData.collected" ng-click="collectGoods()"/>
+        <img ng-src="img/icon-collected.png"
+             ng-if="goodsData.collected" ng-click="cancelCollectGoods()"/>
+        <div class="label-text">收藏</div>
+      </div>
+      <div  class="border-top footer-icon" ng-click="toShare()">
+        <img ng-src="img/icon-share-white.png" />
+        <div class="label-text" >分享</div>
+      </div>
+      <div  class="border-top footer-icon" ng-click="toShoppingCart()">
+        <img ng-src="img/icon-shopcart.png" />
+        <div class="label-text">购物车</div>
+      </div>
+      <div class="btn-bg">
+        <div class="footer-btn add" ng-click="addToShoppingCart(goodsData.goodsId)">
+          加入购物车
+        </div>
+        <div class="footer-btn buy" ng-click="createOrder()">
+          生成订单
+        </div>
+      </div>
+
+
+    </div>
+
+  </ion-footer-bar>
+</ion-view>

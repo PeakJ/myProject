@@ -1,0 +1,16 @@
+{
+  "code":0,
+  "data":{
+    "commonName":"复方虫草口服液",
+    "ingredients":"[仁和]复方虫草口服液",
+    "contraindication":"儿童、糖尿病患者禁用",
+    "functions":"滋补肝肾、润肺。",
+    "usage":"口服，一次10毫升，一日2次",
+    "drugProperties":"本品为棕色粘稠液体",
+    "effects":"不明确",
+    "storageCondition":"密封、阴凉干燥处",
+    "expireDate":"24个月",
+    "attention":"1.忌辛辣、生冷、油腻食物。2.感冒发热病热不宜服用。",
+    "interaction":"如果与其他药物同时使用可能会发生药物的相互作用。"
+  }
+}

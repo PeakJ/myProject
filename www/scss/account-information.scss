@@ -1,0 +1,191 @@
+.cyx-personal-information-part {
+  float: right;
+  position: relative;
+  .cyx-check-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/goods-check.png");
+    background-size: 20px 20px;
+    border: none;
+  }
+  .cyx-uncheck-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/goods-un-check.png");
+    background-size: 20px 20px;
+    border: none;
+  }
+}
+.cyx-personal-Information-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius:50%;
+}
+
+.cyx-avatar-position {
+  position: absolute;
+  top: 20%;
+  right: 0;
+}
+
+.cyx-personal-sex {
+  position: relative;
+  bottom: 5px;
+}
+
+.cyx-password-group {
+  padding: 10px;
+}
+
+.cyx-password-button {
+  width: 90%;
+  background-color: #ff8d39;
+  border: none;
+  height: 45px;
+  margin: 0 5%;
+}
+
+.cyx-logo-img {
+  width: 40%;
+  height: 60px;
+  margin: 50px 30% 0;
+}
+
+.cyx-register-bg {
+  background: url("../img/login-bg.png") no-repeat fixed top;
+  background-size: 100% auto;
+}
+
+.cyx-register-group {
+  padding: 5%;
+  width: 90%;
+  margin-left: 5%;
+  position: relative;
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #fff;
+  }
+}
+
+.cyx-register-input {
+  background-color: transparent;
+  width: 100%;
+  border-bottom: 2px solid white !important;
+  height: 30px !important;
+  color: white !important;
+  margin-top: 30px;
+}
+.cyx-verifycode-input{
+  width: 60%;
+}
+
+.cyx-verifycode-btn{
+  position: absolute;
+  left: 63%;
+  top: 100px;
+  color: white;
+  background-color: transparent;
+  padding: 5px;
+  border: solid 1px white;
+  width: 31%;
+  text-align: center;
+}
+
+.cyx-register-btn{
+  background-color: white;
+  width: 80%;
+  height: 44px;
+  border: none;
+  margin:20px 10% 0;
+}
+
+.cyx-login-group{
+  padding: 10px 2px 10px 18%;
+  margin-top: 50px;
+}
+.cyx-login-group .row{
+  width: 80%;
+  color: white;
+  border-bottom: solid 1px white;
+  height: 30px;
+  margin-top: 25px;
+}
+.cyx-login-group .col-30{
+  padding-top: 5px;
+  height: 24px;
+}
+.cyx-login-group .col-70{
+  background-color: transparent;
+  width: 90%;
+  height: 30px !important;
+  color: white !important;
+}
+.cyx-forget-password-btn{
+  color: white;
+  position: relative;
+  left: 65%;
+  margin-top: 20px;
+}
+
+.cyx-login-btn{
+  color: black;
+  background-color: white;
+  width: 40%;
+  height: 44px;
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  margin: 0 5%;
+  float: left;
+}
+
+.cyx-first-register-btn{
+  color: white;
+  background-color: transparent;
+  width: 40%;
+  height: 44px;
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  margin: 0 5%;
+  float: left;
+  border: solid 1px white;
+}
+
+.cyx-login-register-btn{
+  width: 76%;
+  margin: 20px auto;
+}
+
+.item.account-information{
+  margin: 5px 0;
+}
+.information-icon-right{
+  float: right;
+}
+.information-icon-right img{
+  width: 9px;
+  height: 17px;
+}
+.cyx-password-group .col-70{
+  background-color: transparent;
+}
+.cyx-password-group .row{
+  border-bottom: solid 1px #dddddd;
+  padding: 10px 5px;
+  line-height: 35px;
+}

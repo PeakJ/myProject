@@ -1,0 +1,178 @@
+<ion-view view-title="畅优享" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <div class="cyx-home-city" ng-style="headerCity" ng-click="openModal()" >
+      <span ng-bind="currentCity"></span>
+      <span class="icon ion-ios-arrow-down" style=" margin-left: 5px;"></span>
+    </div>
+    <span class="title">畅优享</span>
+    <img ng-src="img/person-white.png" ng-style="headerPerson" class="float-r" ng-click="toPersonalCenter()"/>
+    <img ng-src="img/search-white.png" ng-style="headerSearch" class="float-r" ng-click="toSearch()"/>
+  </ion-header-bar>
+  <ion-tabs class="tabs-top tabs-striped cyx-home-tabs cyx-home-tab-extend-ionic" ng-class="{true:'cyx-home-tabs-ios',false:'cyx-home-tabs'}[homeTabbar]" delegate-handle="homeTab">
+    <ion-tab title="健康" class="position-r" on-select="selectTab(aaa)" >
+      <ion-view>
+        <ion-content ng-style="homeTabContent" on-swipe-left="toRight()">
+          <ion-slide-box delegate-handle="healthAdHandle" class="cyx-home-ads" auto-play="true">
+            <ion-slide ng-repeat="adItem in healthAdList" >
+              <img ng-src="{{healthBanner}}" ng-click="toGoodsDetail(adItem.goodsId)"/>
+            </ion-slide>
+          </ion-slide-box>
+          <!-- goods list 的第一个元素 特殊的位置 需要一个半透明层 ， 显示 品牌 ，name ，优惠价  -->
+          <div  ng-repeat="goodsItem in healthGoodsList" class="position-r home-goods-item-wraper" ng-if="$index==0">
+            <div style="width: 100%;height:100%;position: relative;">
+              <img  ng-src="{{goodsImg}}" class="cyx-z-index-n-100 " style="width: 100%"
+                    ng-click="toGoodsDetail(goodsItem.goodsId)"/>
+              <div class="cyx-home-goods-name"  ng-click="toGoodsDetail(goodsItem.goodsId)">
+                <div class="home-goods-brand-name"><span style="letter-spacing: -1px;word-spacing: 0;">────&nbsp;</span><span>北京同仁堂</span><span style="letter-spacing: -1px;word-spacing: 0;">&nbsp;────</span></div>
+                <div class="home-goods-name"><span>{{goodsItem.goodsName}}</span></div>
+                <div class="home-goods-coupon-price">
+                  <span>抵值券 :</span>
+                  <span ng-bind="goodsItem.couponMoney|currency:'&yen'" ></span>
+                </div>
+                <div class="home-goods-to-go">
+                  <div class="home-goods-to-go-wrap">
+                    <span class="relative-top-little" style="margin-left:5px;">立即进入&nbsp;</span><span class="icon ion-ios-arrow-right " style="position: relative;top: -1px;"></span>
+                  </div>
+                </div>
+              </div>
+              <img ng-src="img/white-border-heart.png"  ng-if="!goodsItem.isCollected"
+                   class="cyx-home-health-collect" ng-click="collectGoods()"/>
+              <img ng-src="img/red-heart.png" ng-if="goodsItem.isCollected"
+                   class="cyx-home-shop-collect" ng-click="cancelCollectGoods()"/>
+            </div>
+          </div>
+
+          <div class="position-r margin-top-10">
+            <div class="cyx-home-topic  home-topic-help-fix" ng-repeat="topicItem in healthTopicList" ng-click="toHealthTopic(topicItem.id,topicItem.name)" >
+              <img ng-src="{{healthTopicImg}}" class="home-health-topic-img"/>
+              <div class="home-health-topic-img-title">
+                <span class="title-span home-health-topic-span">{{topicItem.name}} </span>
+              </div>
+            </div>
+          </div>
+          <div  ng-repeat="goodsItem in healthGoodsList" class="position-r home-goods-item-wraper" ng-if="$index!=0">
+            <div style="width: 100%;height:100%;position: relative;">
+              <img  ng-src="{{goodsImg}}" class="cyx-z-index-n-100 " style="width: 100%"
+                    ng-click="toGoodsDetail(goodsItem.goodsId)"/>
+              <div class="cyx-home-goods-name"  ng-click="toGoodsDetail(goodsItem.goodsId)">
+                <div class="home-goods-brand-name"><span style="letter-spacing: -1px;word-spacing: 0;">────&nbsp;</span><span>北京同仁堂</span><span style="letter-spacing: -1px;word-spacing: 0;">&nbsp;────</span></div>
+                <div class="home-goods-name"><span>{{goodsItem.goodsName}}</span></div>
+                <div class="home-goods-coupon-price">
+                  <span>抵值券 :</span>
+                  <span ng-bind="goodsItem.couponMoney|currency:'&yen'" ></span>
+                </div>
+                <div class="home-goods-to-go">
+                  <div class="home-goods-to-go-wrap">
+                    <span class="relative-top-little" style="margin-left:5px;">立即进入&nbsp;</span><span class="icon ion-ios-arrow-right " style="position: relative;top: -1px;"></span>
+                  </div>
+                </div>
+                <!--<div ng-bind="goodsItem.goodsName" class="name-div"></div>-->
+                <!--<span>抵值券 :</span>-->
+                <!--<span ng-bind="goodsItem.couponMoney|currency:'&yen'" class="color-text-red"></span>-->
+              </div>
+              <img ng-src="img/white-border-heart.png"  ng-if="!goodsItem.isCollected"
+                   class="cyx-home-health-collect" ng-click="collectGoods()"/>
+              <img ng-src="img/red-heart.png" ng-if="goodsItem.isCollected"
+                   class="cyx-home-shop-collect" ng-click="cancelCollectGoods()"/>
+            </div>
+          </div>
+
+          <ion-infinite-scroll distance="0%" ng-if="healthHasMore" icon="icon-svg-loading" on-infinite="getGoodList(true)"></ion-infinite-scroll>
+        </ion-content>
+        <div class="cyx-home-cart" ng-click="toShoppingCart()">
+          <img ng-src="data/temp-img/icon-cart.png" class="margin-top-10"/>
+        </div>
+      </ion-view>
+    </ion-tab>
+    <ion-tab title="生活" on-select="selectTab()" >
+      <ion-view>
+        <ion-content ng-style="homeTabContent">
+          <ion-slide-box delegate-handle="lifeAdHandle" class="cyx-home-ads" >
+            <ion-slide ng-repeat="adItem in lifeAdList" >
+              <img ng-src="{{lifeBanner}}" ng-click="toShopHome(adItem.shopId)"/>
+            </ion-slide>
+          </ion-slide-box>
+
+          <div  ng-repeat="shopItem in lifeShopList track by $index" class="position-r home-goods-item-wraper" ng-if="$index==0">
+            <div style="width: 100%;height:100%;position: relative;">
+              <img  ng-src="{{shopItem.imgUrl}}" class="cyx-z-index-n-100 " style="width: 100%"
+                    ng-click="toShopHome(shopItem.shopId)"/>
+              <div class="cyx-home-goods-name"  ng-click="toShopHome(shopItem.shopId)">
+                <div class="home-goods-brand-name"><span style="letter-spacing: -1px;word-spacing: 0;">──</span><span>钻石</span><span style="letter-spacing: -1px;word-spacing: 0;">──</span></div>
+                <div class="home-goods-name"><span>{{shopItem.shopName}}</span></div>
+                <div class="home-goods-coupon-price">
+                  <span>店铺广告一句话</span>
+                </div>
+              </div>
+              <img ng-src="img/white-border-heart.png"  ng-if="!shopItem.isCollected"
+                   class="cyx-home-health-collect" ng-click="collectShopItem()"/>
+              <img ng-src="img/red-heart.png" ng-if="shopItem.isCollected"
+                   class="cyx-home-shop-collect" ng-click="collectShopItem()"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-25" ng-repeat="topicItem in lifeTopicList"
+                 ng-click="toLifeTopic(topicItem.id,topicItem.name)" >
+              <img ng-src="{{lifeTopicImg}}" class="home-life-4-img-a-line" />
+              <div class="topic-title home-life-4-title-a-line">
+                <div class="title-bg">
+                  <span class="title-span">{{topicItem.name}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div  ng-repeat="shopItem in lifeShopList track by $index" class="position-r home-goods-item-wraper" ng-if="$index==0">
+            <div style="width: 100%;height:100%;position: relative;">
+              <img  ng-src="{{shopItem.imgUrl}}" class="cyx-z-index-n-100 " style="width: 100%"
+                    ng-click="toShopHome(shopItem.shopId)"/>
+              <div class="cyx-home-goods-name"  ng-click="toShopHome(shopItem.shopId)">
+                <div class="home-goods-brand-name"><span style="letter-spacing: -1px;word-spacing: 0;">──</span><span>钻石</span><span style="letter-spacing: -1px;word-spacing: 0;">──</span></div>
+                <div class="home-goods-name"><span>{{shopItem.shopName}}</span></div>
+                <div class="home-goods-coupon-price">
+                  <span>店铺广告一句话</span>
+                </div>
+              </div>
+              <img ng-src="img/white-border-heart.png"  ng-if="!shopItem.isCollected"
+                   class="cyx-home-health-collect" ng-click="collectShopItem()"/>
+              <img ng-src="img/red-heart.png" ng-if="shopItem.isCollected"
+                   class="cyx-home-shop-collect" ng-click="collectShopItem()"/>
+            </div>
+          </div>
+          <ion-infinite-scroll distance="0%" ng-if="shopHasMore" icon="icon-svg-loading" on-infinite="getShopList(true)"></ion-infinite-scroll>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+    <ion-tab title="VIP" on-select="selectTab()"  >
+      <ion-view>
+        <ion-content ng-style="homeTabContent">
+          <a ng-click="toLink(vipItem.link)"  ng-repeat="vipItem in vipList" class="width-full position-r cyx-home-vip-item" >
+            <img  ng-src="{{vipItem.imgUrl}}" class="cyx-z-index-n-100 width-full"/>
+            <div class="cyx-home-goods-name">
+              <div ng-bind="vipItem.shopName" class="cyx-home-shop-name"></div>
+              <img src="data/temp-img/collect-goods.png" class="cyx-home-shop-collect"/>
+            </div>
+          </a>
+
+          <ion-infinite-scroll distance="0%" ng-if="VIPHasMore" icon="icon-svg-loading" on-infinite="getVIPList(true)"></ion-infinite-scroll>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+  </ion-tabs>
+</ion-view>
+<script id="templates/city-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bg-white">
+      <img style="width: 14px;height: 14px;margin-top: 10px; margin-left: 10px;" ng-click="hideModal()" src="img/city-list-close.png"/>
+      <h1 class="title">请选择城市</h1>
+    </ion-header-bar>
+    <ion-content class="">
+      <div class="">
+        <div class="row cyx-home-city-group" style="background-color: #efefef;padding: 10px 0;padding-left:10px;" ng-bind="'S'"></div>
+        <div class="row cyx-home-city-group" style="padding: 10px 0;padding-left:10px;" ng-bind="city.cityName" ng-repeat="city in cityGroupList['S'] track by $index"> </div>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

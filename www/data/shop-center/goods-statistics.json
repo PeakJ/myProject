@@ -1,0 +1,81 @@
+{
+    "code": 0,
+    "data": {
+        "goodsCount": "236",
+        "totalSalesCount": "12000",
+        "detail": [
+            {
+                "goodsId":"123",
+                "goodsName": "止咳糖浆",
+                "salesVolume": 126,
+                "couponMoney": 123.23
+            },
+            {
+                "goodsId":"124",
+                "goodsName": "白加黑",
+                "salesVolume": 96,
+                "couponMoney": 189.00
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片11",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片12",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片22",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片35",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片66",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片55",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片876",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片-0987",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"15",
+                "goodsName": "甘草片-0987654",
+                "salesVolume": 987,
+                "couponMoney": 82.03
+            },
+            {
+                "goodsId":"66",
+                "goodsName": "咽炎片",
+                "salesVolume": 190,
+                "couponMoney": 63.27
+            }
+        ]
+    }
+}

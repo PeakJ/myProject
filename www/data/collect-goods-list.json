@@ -1,0 +1,53 @@
+{
+  "code":0,
+  "data":[
+    {
+      "goodsId":"gd001",
+      "goodsName":"复方虫草口服液 15ml",
+      "picturePath":"/data/temp-img/goods-img0.png",
+      "retaiPrice":"198.00",
+      "specifications":"10mg*14片",
+      "couponAmount":"8.5"
+    },
+    {
+      "goodsId":"gd002",
+      "goodsName":"复方虫草口服液 15ml",
+      "picturePath":"/data/temp-img/goods-img0.png",
+      "retaiPrice":"100.00",
+      "specifications":"10mg*14片",
+      "couponAmount":"1.0"
+    },
+    {
+      "goodsId":"gd003",
+      "goodsName":"复方虫草口服液 15ml",
+      "picturePath":"/data/temp-img/goods-img0.png",
+      "retaiPrice":"200.00",
+      "specifications":"15mg*24片",
+      "couponAmount":"1.0"
+    },
+    {
+      "goodsId":"gd006",
+      "goodsName":"复方虫草口服液 16ml",
+      "picturePath":"/data/temp-img/goods-img0.png",
+      "retaiPrice":"100.00",
+      "specifications":"14mg*14片",
+      "couponAmount":"1.0"
+    },
+    {
+      "goodsId":"gd005",
+      "goodsName":"复方虫草口服液 15ml",
+      "picturePath":"/data/temp-img/goods-img0.png",
+      "retaiPrice":"100.00",
+      "specifications":"14mg*11片",
+      "couponAmount":"1.0"
+    },
+    {
+      "goodsId":"gd004",
+      "goodsName":"复方虫草口服液 14ml",
+      "picturePath":"/data/temp-img/goods-img0.png",
+      "retaiPrice":"400.00",
+      "specifications":"11mg*12片",
+      "couponAmount":"4.0"
+    }
+  ]
+}

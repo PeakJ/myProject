@@ -1,0 +1,82 @@
+<!--商品统计 王爽-->
+<ion-view view-title="商品统计" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">商品统计</span>
+    </ion-header-bar>
+    <ion-content class="padding cyx-shop-center-content">
+        <div class="row cyx-shop-center-header">
+            <div class="col">
+                <div class="text-align-c">在售商品</div>
+                <br/>
+                <div class="font-size-18 cyx-shop-center-right text-align-c" ng-bind="goodsData.salesGoodsCount"></div>
+            </div>
+            <div class="col col-10">
+                <hr class="cyx-shop-vertical-line"/>
+            </div>
+            <div class="col">
+                <div class="text-align-c">总销量</div>
+                <br>
+                <div class="font-size-18 cyx-shop-center-right text-align-c" ng-bind="goodsData.totalSoldCount"></div>
+            </div>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <div class="item item-input cyx-shop-statistics">
+            <div class="search-border">
+                <input type="text" placeholder="请输入药品名称" class="search-input" ng-model="search.goodsName"/>
+                <img ng-src="img/icon-search-white.png" class="search-icon" ng-click="screenByGoodsName();"/>
+            </div>
+            <button class="item item-input cyc-date-screen-button" ng-click="openModal();">
+                <img class="cyx-icon-left" ng-src="img/screen.png">
+                <span class="text-align-c">筛选</span>
+                <img class="cyx-icon-right" ng-src="img/arrow-down.png">
+            </button>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <div id="goodsPieGraph" class="cyx-shop-center-pie "></div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <table class="cyx-shop-center-table">
+            <tr>
+                <th>商品名称</th>
+                <th>销量</th>
+                <th>抵值券</th>
+            </tr>
+            <tr ng-repeat="detail in detailGoodsList">
+                <td ng-click="goSingleGoods(detail.goodsId);" ng-bind="detail.goodsName"></td>
+                <td ng-bind="detail.amount"></td>
+                <td class="cyx-price" ng-bind="detail.couponAmount | currency:'&yen;'"></td>
+            </tr>
+        </table>
+        <ion-infinite-scroll distance="2%" ng-if="true" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+    </ion-content>
+    <div ng-show="isShowDate">
+        <div>
+            <ion-header-bar class="cyx-common-title" align-title="center">
+                <button ng-click="closeModal();" class="button button-clear title-back-button"></button>
+                <span class="title">时间筛选</span>
+            </ion-header-bar>
+            <ion-content class="cyx-shop-center-content">
+                <div class="list cyx-shop-center-date">
+                    <label class="item item-input">
+                        <span>开始时间</span>
+                        <input type="text" id="gStartDate" name="startDate"
+                               onclick="showDate('gStartDate');" ng-model="search.screenStart">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                    <label class="item item-input">
+                        <span>结束时间</span>
+                        <input type="text" id="gEndDate" name="endDate"
+                               onclick="showDate('gEndDate');" ng-model="search.screenEnd">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                </div>
+                <div class="cyx-shop-date-button">
+                    <button ng-click="dateScreen();" class="button">筛选</button>
+                </div>
+            </ion-content>
+        </div>
+    </div>
+    <ion-footer-bar style="height: 50px">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

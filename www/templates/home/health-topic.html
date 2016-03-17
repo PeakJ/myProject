@@ -1,0 +1,41 @@
+<ion-view view-title="健康专栏" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+    <span class="title" ng-bind="viewTitle"></span>
+    <img src="data/temp-img/icon-account.png" class="float-r" ng-click="toPersonalCenter()" ng-if="false"/>
+  </ion-header-bar>
+  <ion-content>
+    <img ng-src="{{healthData.topicImage}}" class="cyx-health-top-img"/>
+    <div class="cyx-health-title" style="top:80px" ng-bind="viewTitle"></div>
+    <p ng-bind="healthData.introduction" class="cyx-health-intro"></p>
+
+    <div  ng-repeat="goodsItem in goodsList" class="position-r home-goods-item-wraper" >
+      <div style="width: 100%;height:100%;position: relative;">
+        <img  ng-src="{{goodPicForTest}}" class="cyx-z-index-n-100 " style="width: 100%"
+              ng-click="toGoodsDetail(goodsItem.id)"/>
+        <div class="cyx-home-goods-name"  ng-click="toGoodsDetail(goodsItem.id)">
+          <div class="home-goods-brand-name"><span style="letter-spacing: -1px;word-spacing: 0;">────&nbsp;</span><span ng-bind="goodsItem.brandName"></span><span style="letter-spacing: -1px;word-spacing: 0;">&nbsp;────</span></div>
+          <div class="home-goods-name"><span>{{goodsItem.name}}</span></div>
+          <div class="home-goods-coupon-price">
+            <span>抵值券 :</span>
+            <span ng-bind="goodsItem.couponAmount|currency:'&yen'" ></span>
+          </div>
+          <div class="home-goods-to-go">
+            <div class="home-goods-to-go-wrap">
+              <span class="relative-top-little" style="margin-left:5px;">立即进入&nbsp;</span><span class="icon ion-ios-arrow-right " style="position: relative;top: -1px;"></span>
+            </div>
+          </div>
+          <!--<div ng-bind="goodsItem.goodsName" class="name-div"></div>-->
+          <!--<span>抵值券 :</span>-->
+          <!--<span ng-bind="goodsItem.couponMoney|currency:'&yen'" class="color-text-red"></span>-->
+        </div>
+        <img ng-src="img/white-border-heart.png"  ng-if="!goodsItem.collected"
+             class="cyx-home-health-collect" ng-click="collectGoods()"/>
+        <img ng-src="img/red-heart.png" ng-if="goodsItem.collected"
+             class="cyx-home-shop-collect" ng-click="cancelCollectGoods()"/>
+      </div>
+    </div>
+
+    <ion-infinite-scroll distance="2%" ng-if="hasMore" icon="icon-svg-loading" on-infinite="loadData(true)"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

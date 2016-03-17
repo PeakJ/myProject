@@ -1,0 +1,107 @@
+{
+  "code":0,
+  "data":[
+    {
+      "id":"001",
+      "goodsMoney":"100",
+      "couponAmount":"8.5",
+      "payMoney": "150.00",
+      "orderDate":"2016-03-04 11:36:35",
+      "detailList": [
+        {
+          "goodsId": "gd001",
+          "goodsName": "资生堂柔肤水1号",
+          "amount": "3",
+          "goodsMoney": "10.00",
+          "couponAmount": "1.00",
+          "picturePath": "data/temp-img/goods-img0.png"
+        }
+      ]
+    },
+    {
+      "id":"002",
+      "goodsMoney":"100",
+      "couponAmount":"8.5",
+      "payMoney": "150.00",
+      "orderDate":"2016-03-05 11:36:35",
+      "detailList": [
+        {
+          "goodsId": "gd001",
+          "goodsName": "资生堂柔肤水2号",
+          "amount": "13",
+          "goodsMoney": "22.00",
+          "couponAmount": "2.00",
+          "picturePath": "data/temp-img/goods-img0.png"
+        }
+      ]
+    },
+    {
+      "id":"003",
+      "goodsMoney":"130",
+      "couponAmount":"18.5",
+      "payMoney": "150.00",
+      "orderDate":"2016-03-04 11:36:35",
+      "detailList": [
+        {
+          "goodsId": "gd001",
+          "goodsName": "资生堂柔肤水3号",
+          "amount": "3",
+          "goodsMoney": "55.00",
+          "couponAmount": "5.00",
+          "picturePath": "data/temp-img/goods-img0.png"
+        }
+      ]
+    },
+    {
+      "id":"004",
+      "goodsMoney":"100",
+      "couponAmount":"8.5",
+      "payMoney": "150.00",
+      "orderDate":"2016-03-04 11:36:35",
+      "detailList": [
+        {
+          "goodsId": "gd001",
+          "goodsName": "资生堂柔肤水4号",
+          "amount": "3",
+          "goodsMoney": "55.00",
+          "couponAmount": "5.00",
+          "picturePath": "data/temp-img/goods-img0.png"
+        }
+      ]
+    },
+    {
+      "id":"001",
+      "goodsMoney":"100",
+      "couponAmount":"8.5",
+      "payMoney": "150.00",
+      "orderDate":"2016-03-04 11:36:35",
+      "detailList": [
+        {
+          "goodsId": "gd001",
+          "goodsName": "资生堂柔肤水2号",
+          "amount": "3",
+          "goodsMoney": "55.00",
+          "couponAmount": "5.00",
+          "picturePath": "data/temp-img/goods-img0.png"
+        }
+      ]
+    },
+    {
+      "id":"006",
+      "goodsMoney":"100",
+      "couponAmount":"6.5",
+      "payMoney": "660.00",
+      "orderDate":"2016-03-04 11:36:35",
+      "detailList": [
+        {
+          "goodsId": "gd006",
+          "goodsName": "资生堂柔肤水6号",
+          "amount": "6",
+          "goodsMoney": "66.00",
+          "couponAmount": "6.00",
+          "picturePath": "data/temp-img/goods-img0.png"
+        }
+      ]
+    }
+  ]
+}

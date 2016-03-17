@@ -1,0 +1,15 @@
+<ion-view view-title="请选择区" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title" align-title="center">
+    <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+    <span class="title">地址列表</span>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <div class="item item-icon-right" ng-repeat="addressItem in addressList"
+           ng-class="{true:'address-color-active'}[addressItem.id==areaId]" ng-click="onSelect(addressItem.id)">
+        <span ng-bind="addressItem.name"></span>
+        <span class="icon ion-ios-arrow-right"></span>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,12 @@
+{
+  "code":0,
+  "data":{
+    "headerImage":"data/temp-img/personal-head-picture.png",
+    "accountNum":"13478521062",
+    "role":"销售员",
+    "phoneNumber":"13478521061",
+    "address":"辽宁省沈阳市和平区中山路205号",
+    "email":"mingwei.zhang@dhc.com.cn",
+    "sex":"男"
+  }
+}

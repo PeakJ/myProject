@@ -1,0 +1,52 @@
+{
+  "code":0,
+  "data":{
+    "topicName":"补血药",
+    "introduction":"补血滋润、益精填髓。用于血虚萎黄、眩晕心悸、月经不调、血崩不止、肝肾阴亏、潮热盗汗、遗精阳痿、不育不孕、月经不调、崩漏下血、腰膝酸软、耳鸣耳聋、头目昏花、须发早白、消渴、便秘、肾虚喘促。",
+    "topicImage":"data/temp-img/topic-image.png",
+    "goodsList":[
+      {
+        "goodsId":"gd001",
+        "goodsName":"【仁和】复方虫草口服液 15ml",
+        "imgUrl":"data/temp-img/goods-img0.png",
+        "couponMoney":"8.5",
+        "isCollected":true
+      },
+      {
+        "goodsId":"gd001",
+        "goodsName":"复方虫草口服液强身健体提高免疫力 30ml",
+        "imgUrl":"data/temp-img/goods-img1.png",
+        "couponMoney":"999.99",
+        "isCollected":false
+      },
+      {
+        "goodsId":"gd001",
+        "goodsName":"【仁和】复方虫草口服液 60ml",
+        "imgUrl":"data/temp-img/goods-img0.png",
+        "couponMoney":"8.5",
+        "isCollected":true
+      },
+      {
+        "goodsId":"gd001",
+        "goodsName":"【仁和】复方虫草口服液 100ml",
+        "imgUrl":"data/temp-img/goods-img1.png",
+        "couponMoney":"8.5",
+        "isCollected":true
+      },
+      {
+        "goodsId":"gd001",
+        "goodsName":"【仁和】复方虫草口服液 300ml",
+        "imgUrl":"data/temp-img/goods-img0.png",
+        "couponMoney":"8.5",
+        "isCollected":true
+      },
+      {
+        "goodsId":"gd001",
+        "goodsName":"【仁和】复方虫草口服液 500ml",
+        "imgUrl":"data/temp-img/goods-img1.png",
+        "couponMoney":"8.5",
+        "isCollected":true
+      }
+    ]
+  }
+}

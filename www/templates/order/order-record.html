@@ -1,0 +1,84 @@
+<ion-view view-title="核销记录" hide-nav-bar="true" class="bg-background">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">核销记录</span>
+    </ion-header-bar>
+    <div class=" padding-10  input-margin-top">
+        <div class="cyx-goods-search-div">
+            <div class="search-border">
+                <input type="text" placeholder="请输入会员手机号……" class="search-input" ng-model="orderRecord.id"/>
+                <img ng-src="img/icon-search-white.png" class="search-icon"
+                     ng-click="onScreenRecordClick(orderRecord.id);"/>
+            </div>
+        </div>
+    </div>
+    <div class="  bg-white   cyx-record-search">
+        <span class="font-bold  padding-left-10  font-size-16">核销记录</span>
+        <button class="item item-input cyc-date-screen-button margin-top--25" ng-show="isShowButton" ng-click="openModal();">
+            <img class="cyx-icon-left" src="img/screen.png">
+            <span class="text-align-c">筛选</span>
+            <img class="cyx-icon-right" src="img/arrow-down.png">
+        </button>
+    </div>
+    <ion-content class="bg-line ion-content-margin-top">
+        <div class=" item " ng-repeat="orderRecord in orderRecords" >
+            <div class="width-full position-r ">
+                <div class="position-r cyx-order-record-div float-l ">
+                    <span class="font-size-12 color-text-white" ng-bind="$index+1"></span>
+                </div>
+                <div class=" cyx-order-left-div font-size-12" ng-click="onRecordNumClick(orderRecord.orderId)">
+                    订单编号&nbsp:&nbsp
+                    <span class="font-size-12" ng-bind="orderRecord.orderId"></span>
+                </div>
+                <div class="cyx-cancel-record-btn float-r position-a bottom-0 right-0"
+                     ng-click="onCancelRecordClick(orderRecord.orderId)">取消
+                </div>
+                <div class="cyx-order-left-div margin-top  color-text-l font-size-12">
+                    抵&nbsp&nbsp值&nbsp&nbsp券&nbsp:&nbsp
+                    <span class="font-size-12 color-text-red  "
+                          ng-bind="orderRecord.detailList[0].couponAmount|currency:'&yen'"> </span>
+                </div>
+                <div class="cyx-order-left-div margin-top  color-text-l font-size-12">会员手机&nbsp:&nbsp
+                    <span class="color-text-l font-size-12 " ng-bind="orderRecord.mobile"></span>
+                </div>
+                <div class="cyx-order-left-div margin-top  color-text-l font-size-12">核销时间&nbsp:&nbsp
+                    <span class="color-text-l font-size-12 " ng-bind="orderRecord.payTime"></span>
+                </div>
+            </div>
+        </div>
+      <ion-infinite-scroll distance="2%" ng-if="hasMoreData" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+
+    </ion-content>
+    <div ng-show="isShowDate">
+        <div>
+            <ion-header-bar class="cyx-common-title" align-title="center">
+                <button ng-click="closeModal();" class="button button-clear title-back-button"></button>
+                <span class="title">时间筛选</span>
+            </ion-header-bar>
+            <ion-content class="cyx-shop-center-content">
+                <div class="list cyx-shop-center-date">
+                    <label class="item item-input">
+                        <span>开始时间</span>
+                        <input type="text" id="orderStartDate"
+                               onclick="showDate('orderStartDate');" ng-model="search.screenStart">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                    <label class="item item-input">
+                        <span>结束时间</span>
+                        <input type="text" id="orderEndDate"
+                               onclick="showDate('orderEndDate');" ng-model="search.screenEnd">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                </div>
+                <div class="cyx-shop-date-button">
+                    <button ng-click="dateScreen();" class="button">筛选</button>
+                </div>
+            </ion-content>
+        </div>
+    </div>
+    <ion-footer-bar class="height-50">
+
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>
+

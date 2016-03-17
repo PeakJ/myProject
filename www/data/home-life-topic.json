@@ -1,0 +1,25 @@
+{
+  "code":0,
+  "data":[
+    {
+      "id":"t001",
+      "name":"高端药店",
+      "img":"data/temp-img/life-topic-01.png"
+    },
+    {
+      "id":"t001",
+      "name":"老字号",
+      "img":"data/temp-img/life-topic-01.png"
+    },
+    {
+      "id":"t001",
+      "name":"医药连锁",
+      "img":"data/temp-img/life-topic-01.png"
+    },
+    {
+      "id":"t001",
+      "name":"中医药店",
+      "img":"data/temp-img/life-topic-01.png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<ion-view view-title="联系我们" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">联系我们</span>
+    </ion-header-bar>
+    <ion-content class="bg-background">
+        <div>
+            <img class="contract-us-headImage" ng-src="{{contactInfo.imgPath}}"/>
+            <pre class="cyx-contact-us-text-bg" ng-bind="contactInfo.desc"></pre>
+        </div>
+        <div class="cyx-contact-us-division">
+            <span class="contact-us-line"></span>
+            <span class="line-contact-line">联系我们</span>
+            <span  class="contact-us-line"></span>
+        </div>
+        <div class="cyx-company-info">
+            <div>邮编：<span ng-bind="contactInfo.postcode"></span></div>
+            <div>电话：<span ng-bind="contactInfo.telephone"></span></div>
+            <div>传真：<span ng-bind="contactInfo.fax"></span></div>
+            <div>地址：<span ng-bind="contactInfo.address"></span></div>
+        </div>
+        <div id="container_mini"></div>
+    </ion-content>
+    <ion-footer-bar style="height: 50px">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

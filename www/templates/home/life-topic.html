@@ -1,0 +1,30 @@
+<ion-view view-title="{{viewTitle}}" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+    <span class="title" ng-bind="viewTitle"></span>
+    <img src="data/temp-img/icon-account.png" class="float-r" ng-click="toPersonalCenter()" ng-if="false"/>
+  </ion-header-bar>
+  <ion-content>
+    <img ng-src="{{lifeData.topicImage}}" class="cyx-health-top-img"/>
+    <div class="cyx-health-title" style="top:90px;" ng-bind="viewTitle"></div>
+    <p ng-bind="lifeData.introduction" class="cyx-health-intro"></p>
+
+    <div  ng-repeat="shopItem in lifeData.shopList track by $index" class="position-r home-goods-item-wraper" >
+      <div style="width: 100%;height:100%;position: relative;">
+        <img  ng-src="{{shopItem.imgUrl}}" class="cyx-z-index-n-100 " style="width: 100%"
+              ng-click="toShopHome(shopItem.shopId)"/>
+        <div class="cyx-home-goods-name"  ng-click="toShopHome(shopItem.shopId)">
+          <div class="home-goods-brand-name"><span style="letter-spacing: -1px;word-spacing: 0;">──</span><span>钻石</span><span style="letter-spacing: -1px;word-spacing: 0;">──</span></div>
+          <div class="home-goods-name"><span>{{shopItem.shopName}}</span></div>
+          <div class="home-goods-coupon-price">
+            <span>店铺广告一句话</span>
+          </div>
+        </div>
+        <img ng-src="img/white-border-heart.png"  ng-if="!shopItem.isCollected"
+             class="cyx-home-health-collect" ng-click="collectShopItem()"/>
+        <img ng-src="img/red-heart.png" ng-if="shopItem.isCollected"
+             class="cyx-home-shop-collect" ng-click="collectShopItem()"/>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

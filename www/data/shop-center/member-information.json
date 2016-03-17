@@ -1,0 +1,30 @@
+{
+    "code":0,
+    "data":[
+        {
+            "memberTel":"15102031234",
+            "couponMoney":"563.00",
+            "payDate":"2015-04-23"
+        },
+        {
+            "memberTel":"18702031234",
+            "couponMoney":"230.00",
+            "payDate":"2016-01-06"
+        },
+        {
+            "memberTel":"13911232203",
+            "couponMoney":"210.00",
+            "payDate":"2016-01-10"
+        },
+        {
+            "memberTel":"18978205630",
+            "couponMoney":"321.00",
+            "payDate":"2016-02-15"
+        },
+        {
+            "memberTel":"15169532034",
+            "couponMoney":"493.00",
+            "payDate":"2015-09-30"
+        }
+    ]
+}

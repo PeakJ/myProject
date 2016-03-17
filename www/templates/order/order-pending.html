@@ -1,0 +1,46 @@
+<ion-content class="bg-background">
+  <div ng-if="!hasData" >还没有待核销订单</div>
+  <div ng-if="hasData">
+  <div class="cyx-pending-order-div margin-bottom-10 item" ng-repeat="dealOrderItem in dealOrderListData" >
+
+    <div class="num-div  position-r font-size-12 color-text-l">订单编号：
+      <span class="color-text-l font-size-12" ng-bind="dealOrderItem.id"></span>
+
+    </div>
+
+    <div class="order-goods-div">
+      <img class="pending-goods-img" ng-src="{{dealOrderItem.detailList[0].picturePath}}" ng-click="onGoodsDetailClick(dealOrderItem.detailList[0].goodsId)">
+
+      <span class="pending-goods-name font-size-14"ng-bind="dealOrderItem.detailList[0].goodsName"></span>
+      <div class="goods-price-div color-text-s font-size-12">零售价&nbsp:&nbsp
+        <span class="color-text-s  font-size-12" ng-bind="dealOrderItem.detailList[0].goodsMoney|currency:'&yen'"></span>
+
+      </div>
+      <div class=" position-a margin-top-15 right-0 bottom-0 margin-bottom-10">
+        <span class="color-text-s goods-count-txt-span " >X</span>
+        <span class="color-text-s font-size-18 goods-count-span position-r  "ng-bind="dealOrderItem.detailList[0].amount"></span>
+      </div>
+      <div class="goods-coupon-div  color-text-s font-size-12">抵值券&nbsp:&nbsp
+        <span class="color-text-red font-size-12 "ng-bind="dealOrderItem.detailList[0].couponAmount|currency:'&yen'"></span>
+      </div>
+    </div>
+    <div class="cyx-dashed"></div>
+    <div class="pending-goods-price-total font-size-12 color-text-s">
+      零售价合计&nbsp:&nbsp<span class="font-size-12 color-text-s"ng-bind="dealOrderItem.goodsMoney|currency:'&yen'"></span>
+      <p class="margin-top-5">
+        <span class="font-size-12 color-text-s margin-top-10">抵&nbsp&nbsp&nbsp&nbsp值&nbsp&nbsp&nbsp券&nbsp:&nbsp</span><span class="color-text-red font-size-12"ng-bind="dealOrderItem.couponAmount|currency:'&yen'"></span>
+      <div class="cyx-build-order-div position-a right-0 bottom-15 margin-right-10 text-center margin-bottom-10" ng-click="onBuildCouponClick(dealOrderItem.id,(dealOrderItem.couponAmount|currency:'&yen'),dealOrderItem.qrCode)">
+        <span class="font-size-12 color-text-white">生成抵值券</span></div>
+    </div>
+  </div>
+
+  <ion-infinite-scroll distance="2%" ng-if="hasMoreData" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+  </div>
+</ion-content>
+<ion-footer-bar style="height: 50px">
+  <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+</ion-footer-bar>
+
+
+
+

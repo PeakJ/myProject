@@ -1,0 +1,24 @@
+<ion-view view-title="登录" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="$ionicGoBack();" class="button button-clear title-back-button"></button>
+        <span class="title">登录</span>
+    </ion-header-bar>
+    <ion-content class="cyx-register-bg">
+        <img class="cyx-logo-img" ng-src="img/logo-white.png"/>
+        <div class="cyx-login-group">
+            <div class="row">
+                <span class="col-30">手机号</span>
+                <input class="col-70" type="tel" ng-model="userInfo.phone"/>
+            </div>
+            <div class="row">
+                <span class="col-30">密&nbsp;&nbsp;&nbsp;码</span>
+                <input class="col-70" type="password" ng-model="userInfo.password"/>
+            </div>
+        </div>
+        <div class="cyx-forget-password-btn" ui-sref="forgetPassword">忘记密码？</div>
+        <div class="cyx-login-register-btn">
+            <div class="cyx-login-btn" ng-click="login();">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+            <div class="cyx-first-register-btn" ui-sref="register">注&nbsp;&nbsp;&nbsp;&nbsp;册</div>
+        </div>
+    </ion-content>
+</ion-view>

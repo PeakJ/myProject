@@ -1,0 +1,29 @@
+{
+  "code":0,
+  "data":[
+    {
+      "shopId":"s001",
+      "shopName":"成大方圆",
+      "address":"辽宁省沈阳市和平区中山路205号",
+      "phoneNumber":"024-82710699"
+    },
+    {
+      "shopId":"s001",
+      "shopName":"海王星辰",
+      "address":"辽宁省沈阳市和平区中山路205号",
+      "phoneNumber":"024-82710699"
+    },
+    {
+      "shopId":"s001",
+      "shopName":"百和堂大药房",
+      "address":"辽宁省沈阳市和平区中山路205号",
+      "phoneNumber":"024-82710699"
+    },
+    {
+      "shopId":"s001",
+      "shopName":"同仁堂",
+      "address":"辽宁省沈阳市和平区中山路205号",
+      "phoneNumber":"024-82710699"
+    }
+  ]
+}

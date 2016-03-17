@@ -1,0 +1,52 @@
+<ion-view view-title="商品搜索" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+    <span class="title">商品搜索</span>
+  </ion-header-bar>
+  <ion-content>
+    <div class="cyx-goods-search-div">
+      <div class="search-border">
+        <input type="text" placeholder="搜你想要的" class="search-input" ng-model="searchParams.keywords"/>
+        <img ng-src="img/icon-search-white.png" class="search-icon" ng-click="toGoodsList()"/>
+      </div>
+    </div>
+
+
+    <div class="row row-no-padding" ng-class="cyx-width-full" >
+      <!--一级分类-->
+      <div class="col col-33 cyx-category-bg">
+        <ion-scroll id="category-first-type" ng-style="{height:'{{deviceHeight-44-44}}px'}" delegate-handle="left" scrollbar-y="false">
+          <ul class="list" ng-style="leftScrollHeight">
+            <li class="item cyx-first-category-li"
+                ng-class="{true:'cyx-category-activated-li'}[firstCat.id==activeItem.id]"
+                ng-repeat="firstCat in firstCatList track by $index"
+                ng-click="showSecondCatList(firstCat);" >
+              {{firstCat.name}}
+              <img ng-src="img/icon-right.png"/>
+            </li>
+          </ul>
+        </ion-scroll>
+      </div>
+
+      <!-- 二级分类 -->
+      <div class="col cyx-store-category-right-col light-bg">
+        <ion-scroll ng-style="{height:'{{deviceHeight-44-44}}px'}" delegate-handle="right" scroll="true">
+          <div class="padding-bottom-20">
+            <li class="item cyx-category-second-cat-title cyx-ellipsis">
+              <span class="cyx-category-title-span" ng-bind="activeItem.name"></span>
+            </li>
+            <div class="list">
+              <div class="cyx-category-right-item cyx-ellipsis"
+                   ng-repeat="catItem in secondCatList track by $index"
+                   ng-click="toGoodsList(catItem.id)"
+                   ng-bind="catItem.name" ></div>
+            </div>
+          </div>
+        </ion-scroll>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar style="height: 50px">
+    <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+  </ion-footer-bar>
+</ion-view>

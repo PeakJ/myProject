@@ -1,0 +1,168 @@
+.cyx-order-record-div{
+  width: 25px;
+  height:  25px;
+  background: url('../img/dirty-yellow-round.png') no-repeat;
+  background-size:100% auto;
+  text-align: center;
+}
+.cyx-order-left-div{
+  margin-left: 35px;
+
+}
+
+.cyx-cancel-record-btn{
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  padding-top: 4px;
+  color: #ff8d39;
+  font-size: 12px;
+  border:solid 1px #ff8d39;
+}
+.cyx-record-search-btn{
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  padding-top: 4px;
+  background: url('../img/go_pay_img.png') no-repeat;
+  background-size:100% 100%;
+}
+  .cyx-order-confirm {
+    width: 100%;
+    height: 200px;
+    padding-left: 10px;
+    margin-bottom: 1px;
+    .cyx-deal-order-num-div {
+      height: 30px;
+      width: 100%;
+      .cyx-order-div {
+        padding-top: 5px;
+        text-align: center;
+        height: 30px;
+        width: 80px;
+        font-size: $font-size-14;
+        color: $color-text-white;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url(../img/go_pay_img.png);
+        background-size: 100% 100%;
+        border-radius: 5px;
+      }
+    }
+    .cyx-deal-order-goods-div {
+      width: 100%;
+      height: 80px;
+      position: relative;
+
+      .cyx-deal-order-goods-img {
+        position: absolute;
+        left: 5px;
+        width: 70px;
+        height: 70px;
+        background: url('../data/temp-img/home-ad1.png') no-repeat;
+        background-size: 70px 70px;
+      }
+      .cyx-deal-order-goods-name {
+        position: absolute;
+        left: 80px;
+        margin-left: 5px;
+      }
+      .cyx-deal-order-goods-price-div {
+        position: absolute;
+        left: 80px;
+        top: 25px;
+        margin-left: 5px;
+        .cyx-deal-order-goods-count-div {
+          margin-left: 100px;
+          top: -10px;
+          position: relative;
+          .cyx-deal-order-goods-count-txt-span {
+            position: absolute;
+            margin-left: 50px;
+            padding-top: 8px;
+          }
+          .cyx-deal-order-goods-count-span {
+            position: absolute;
+            margin-left: 60px;
+            padding-top: 5px;
+          }
+        }
+      }
+      .cyx-deal-order-goods-coupon-div {
+        position: absolute;
+        left: 80px;
+        top: 50px;
+        margin-left: 5px;
+      }
+    }
+    .cyx-deal-order-goods-price-total-div {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    .cyx-deal-order-goods-btn-div {
+      width: 100px;
+      height: 35px;
+      margin: 0 auto;
+      background: url(../img/go_pay_img.png);
+      background-size: 100% 100%;
+      border-radius: 5px;
+
+    }
+    .cyx-deal-order-goods-btn {
+      font-size: $font-size-14;
+      color: $color-text-white;
+      text-align: center;
+      line-height: 35px;
+    }
+
+  }
+  .cyx-footer-div {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    margin:auto;
+    font-size: $font-size-14;
+    position: relative;
+    .cyx-ok-btn {
+      width: 100px;
+      height: 35px;
+      margin-top: 30px;
+      color: $color-text-white;
+      background: url(../img/go_pay_img.png);
+      background-size: 100% auto;
+      border-radius: $margin-5;
+      position: absolute;
+      left: 20%;
+      padding-top: 7px;
+    }
+    .cyx-cancel-btn {
+      width: 100px;
+      height: 35px;
+      margin-top: 30px;
+      color: $color-text-white;
+      background: url(../img/go_browse_img.png);
+      background-size: 100% auto;
+      border-radius: $margin-5;
+      position: absolute;
+      right: 20%;
+      padding-top: 7px;
+    }
+  }
+ .input-margin-top{
+  margin-top: 40px
+ }
+ .ion-content-margin-top{
+   margin-top: 115px
+ }
+.margin-top{
+  margin-top: 10px;
+};
+.cyx-record-search{
+  height: 50px;
+  padding-top: 15px;
+  margin-top:-10px ;
+}
+.height-50{
+  height: 50px;
+}

@@ -1,0 +1,18 @@
+<ion-view view-title="我的订单" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <button ui-sref="personalCenter" class="button button-clear title-back-button"></button>
+    <span class="title">我的订单</span>
+  </ion-header-bar>
+<ion-tabs class="tabs-top tabs-striped cyx-order-tabs  cyx-home-tabs">
+  <ion-tab title="待核销订单" class=" font-bold   " ui-sref="myOrder.deal">
+    <ion-nav-view name="myOrder-deal"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="已核销订单 " class="font-bold " ui-sref="myOrder.completed">
+    <ion-nav-view name="myOrder-completed"></ion-nav-view>
+
+  </ion-tab>
+</ion-tabs>
+
+
+
+

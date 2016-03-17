@@ -1,0 +1,13 @@
+{
+  "code":0,
+  "data":{
+    "headImg":"data/temp-img/personal-head-picture.png",
+    "mobile":"15012345678",
+    "userName":"用户名",
+    "sex":"0",
+    "region":"大连",
+    "detailAddress":"华信软件园西门快递中转站",
+    "role":"销售员",
+    "mail":"ldgeshuo@sina.com"
+  }
+}

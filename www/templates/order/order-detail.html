@@ -1,0 +1,70 @@
+<ion-view view-title="核销记录" hide-nav-bar="true">
+  <ion-header-bar class="cyx-common-title"  align-title="center">
+    <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+    <span class="title">核销记录</span>
+  </ion-header-bar>
+
+  <ion-content class="bg-background">
+
+
+    <div class="bg-white  cyx-order-title margin-top-10 " >
+      <div class="cyx-confirm-order-title-bg"></div><span class="font-bold padding-bottom-5 padding-left-10  font-size-16">
+      订单信息</span>
+    </div>
+    <div class="cyx-order-confirm-div item bg-white margin-bottom-10"  >
+
+      <div class="cyx-deal-order-num-div  position-r color-text-l font-size-12">订单编号：
+        <span class="color-text-l font-size-12"ng-bind="orderInfo.orderId"></span>
+      </div>
+
+      <div class="goods-div">
+        <img class="confirm-goods-img" ng-src="{{goodsInfo.picturePath}}">
+
+        <span class="goods-name color-text-l font-size-14" ng-bind="goodsInfo.goodsName"></span>
+        <div class="confirm-goods-price-div  color-text-s font-size-12">零售价&nbsp:&nbsp
+          <span class="color-text-s font-size-12  "  ng-bind="goodsInfo.goodsMoney|currency:'&yen'"></span>
+        </div>
+        <div class="goods-coupon-div  color-text-s font-size-12">抵值券&nbsp:&nbsp
+          <span class="color-text-red   font-size-12" ng-bind="goodsInfo.couponAmount|currency:'&yen'"></span>
+        </div>
+        <div class=" position-a margin-top-15 right-0 bottom-0 margin-bottom-10">
+          <span class="color-text-s goods-count-txt-span " >X</span>
+          <span class="color-text-s font-size-18 goods-count-span position-r  "ng-bind="goodsInfo.amount"></span>
+        </div>
+      </div>
+      <div class="cyx-dashed"></div>
+      <div class="confirm-goods-price-div color-text-s font-size-12">
+        零售价合计&nbsp:&nbsp<span class="color-text-s font-size-12 margin-right-100"ng-bind="orderInfo.totalGoodsMoney|currency:'&yen'"></span>
+        <span class=" color-text-s font-size-12 margin-left-20">抵值券&nbsp:&nbsp</span><span class="color-text-red  font-size-12 "ng-bind="orderInfo.totalCouponAmount|currency:'&yen'"></span>
+      </div>
+
+    </div>
+    <div style="height: 130px;width: 100%;"class="bg-white">
+      <div class="bg-white  cyx-order-title margin-top-10 " >
+        <div class="cyx-confirm-order-title-bg"></div><span class="font-bold padding-bottom-5 padding-left-10  font-size-16">
+      会员信息</span>
+      </div>
+      <div class=" font-size-12 color-text-s padding-top-15 border-top" ><span class="margin-left-20">会员手机：</span>
+        <span class="margin-left-20 font-size-12 color-text-s " ng-bind="orderInfo.mobile"></span></div>
+      <div class=" margin-left-20 font-size-12 color-text-s margin-top-10 padding-bottom-15">注册时间：
+        <span class="margin-left-20 font-size-12 color-text-s" ng-bind="orderInfo.registerDate"></span></div>
+    </div>
+    <div style="height: 130px;width: 100%;"class="bg-white">
+      <div class="bg-white  cyx-order-title margin-top-10 " >
+        <div class="cyx-confirm-order-title-bg"></div><span class="font-bold padding-bottom-5 padding-left-10  font-size-16">
+      核销信息</span>
+      </div>
+      <div class=" font-size-12 color-text-s padding-top-15 border-top" ><span class="margin-left-20">核销账号：</span>
+        <span class="margin-left-20 font-size-12 color-text-s " ng-bind="orderInfo.sellerName"></span></div>
+      <div class=" margin-left-20 font-size-12 color-text-s margin-top-10 padding-bottom-15">核销时间：
+        <span class="margin-left-20 font-size-12 color-text-s" ng-bind="orderInfo.verifyDate"></span></div>
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+
+    <ion-footer-bar class="height-50">
+
+      <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>
+

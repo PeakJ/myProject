@@ -1,0 +1,15 @@
+{
+  "code":0,
+  "data":[
+    {
+      "shopId":"s001",
+      "imgUrl":"data/temp-img/home-ad1.png",
+      "shopName":"中式风格药店-展柜"
+    },
+    {
+      "shopId":"s001",
+      "imgUrl":"data/temp-img/home-ad2.png",
+      "shopName":"欧式风格药店-吧台式服务"
+    }
+  ]
+}

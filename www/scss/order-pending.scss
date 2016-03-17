@@ -1,0 +1,167 @@
+.cyx-pending-order-div {
+  width: 100%;
+  height:200px;
+  .num-div {
+    height: 30px;
+    width: 100%;
+    .cyx-order-div{
+      padding-top: 5px;
+      text-align: center;
+      height: 30px;
+      width:80px;
+      font-size: $font-size-14;
+      color: $color-text-white;
+      position: absolute;
+      right:0;
+      top:0;
+      background: url(../img/go_pay_img.png);
+      background-size: 100% 100%;
+      border-radius: 5px;
+    }
+  }
+  .order-goods-div {
+    width: 100%;
+    height: 80px;
+    position: relative;
+
+    .pending-goods-img {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: url('../data/temp-img/home-ad1.png') no-repeat;
+      background-size: 70px 70px;
+    }
+    .pending-goods-name {
+      position: absolute;
+      left: 80px;
+      margin-left: 5px;
+    }
+    .goods-price-div {
+      position: absolute;
+      left: 80px;
+      top: 25px;
+      margin-left: 5px;
+      .goods-count-div{
+      margin-left: 100px;
+        top:-10px;
+        position: relative;
+        .goods-count-txt-span{
+          position: absolute;
+          margin-left: 50px;
+          padding-top: 8px;
+        }
+        .goods-count-span{
+          position: absolute;
+          margin-left: 60px;
+          padding-top: 5px;
+        }
+    }
+    }
+    .goods-coupon-div {
+      position: absolute;
+      left: 80px;
+      top: 50px;
+      margin-left: 5px;
+    }
+  }
+  .pending-goods-price-total {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+ .cyx-build-order-div{
+   width: 80px;
+   height: 30px;
+   padding-top: 5px;
+   background: $color-orange;
+   background-size: 100% 100%;
+ }
+
+}
+.cyx-dashed{
+  border-top: #dddddd 1px dashed;
+  overflow: hidden;
+  height: 1px ;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 10px
+}
+.cyxOrderPopup .popup {
+  width: 300px !important;
+  .popup-buttons {
+    width: 50px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-top:none;
+    .button {
+      width: 50px;
+      height: 30px;
+      min-width: 50px;
+      margin-right: 10px;
+      background: white;
+      color: #ff8d39;
+      border: solid 1px #ff8d39 !important;
+    }
+  }
+}
+     .cyx-barcode-pop-left-btn {
+      width: 50px !important;
+      height: 30px !important;
+       min-width:75px!important;
+      text-align: center !important;
+      padding-top: 4px !important;
+      color: #ff8d39 !important;
+      font-size: 12px !important;
+      border: solid 1px #ff8d39 !important;
+      margin-left: 10px !important;
+    }
+    .cyx-barcode-pop-center-btn {
+      width: 50px !important;
+      min-width:75px!important;
+      height: 30px !important;
+      text-align: center !important;
+      padding-top: 4px !important;
+      color: #ffffff !important;
+      font-size: 12px !important;
+      background: #ff8d39 !important;
+
+    }
+     .cyx-barcode-pop-right-btn {
+      width: 100px!important;
+      height: 30px!important;
+       min-width:110px!important;
+      text-align: center!important;
+      padding-top: 4px!important;
+      color: #ffffff!important;
+      background: #ff8d39 !important;
+      font-size: 12px!important;
+      margin-right: 10px!important;
+
+    }
+
+.cyxVipPopup .popup {
+  width: 350px !important;
+  //height: 150px!important;
+  background: url("../img/vip-bg.png");
+  background-size: 100% 100%;
+  .popup-body {
+    padding: 0px !important;
+    width: 100%;
+    position: relative !important;
+     text-align: left !important;
+  }
+  .popup-buttons {
+    width: 50px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-top:none;
+    .button {
+      width: 50px;
+      height: 30px;
+      min-width: 50px;
+      margin-right: 10px;
+      background: white;
+      color: #ff8d39;
+      border: solid 1px #ff8d39 !important;
+    }
+  }
+}

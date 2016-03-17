@@ -1,0 +1,15 @@
+{
+  "code":0,
+  "data":[
+    {
+      "goodsId":"gd001",
+      "imgUrl":"data/temp-img/home-ad1.png",
+      "goodsName":"冬虫夏草是如何形成的？"
+    },
+    {
+      "goodsId":"gd002",
+      "imgUrl":"data/temp-img/home-ad2.png",
+      "goodsName":"冬虫夏草有哪些保健作用？"
+    }
+  ]
+}

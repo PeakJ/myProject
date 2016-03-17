@@ -1,0 +1,50 @@
+<!--销售员统计 王爽-->
+<ion-view view-title="销售员统计" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">销售员统计</span>
+    </ion-header-bar>
+    <ion-content class="padding cyx-shop-center-content">
+        <div class="row width-full cyx-shop-center-header">
+            <div class="col">
+                <div class="text-align-c">销售员数</div>
+                <br/>
+                <div class="font-size-18 text-align-c" ng-bind="salespersonTotal.sellerCount"></div>
+            </div>
+            <div class="col col-10">
+                <hr class="cyx-shop-vertical-line"/>
+            </div>
+            <div class="col">
+                <div class="text-align-c">销售额</div>
+                <br>
+                <div class="font-size-18 text-align-c" ng-bind="salespersonTotal.totalSalesMoney"></div>
+            </div>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <div class="cyx-goods-search-div">
+            <div class="search-border">
+                <input type="text" placeholder="请输入销售员手机号" class="search-input" ng-model="search.mobile"/>
+                <img ng-src="img/icon-search-white.png" class="search-icon" ng-click="screenSalesPerson();"/>
+            </div>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <table class="cyx-shop-center-table">
+            <tr>
+                <th>销售员</th>
+                <th>销量</th>
+                <th>销售额</th>
+                <th>积分</th>
+            </tr>
+            <tr ng-repeat="item in detailSalespersonList">
+                <td ng-bind="item.sellerName"></td>
+                <td ng-bind="item.salesCount"></td>
+                <td class="cyx-price" ng-bind="item.salesMoney | currency:'&yen;'"></td>
+                <td class="cyx-credits" ng-bind="item.score"></td>
+            </tr>
+        </table>
+        <ion-infinite-scroll distance="2%" ng-if="hasMoreData" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+    </ion-content>
+    <ion-footer-bar style="height: 50px">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,117 @@
+.cyx-left-yellow-block{
+  width: 15px;
+  height: 15px;
+}
+
+.cyx-phone-number{
+  width: 100%;
+  height: 30px;
+  display: inline-block;
+  border-bottom: dashed 1px #dddddd;
+  line-height: 30px;
+}
+
+.cyx-shop-address{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.cyx-shop-time{
+  width: 100%;
+  height: 30px;
+  border-top: dashed 1px #dddddd;
+  line-height: 30px;
+}
+.cyx-brand-image{
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  border: solid 4px white;
+}
+.cyx-dec-image{
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+}
+.cyx-work-time{
+  color: #c8a775;
+}
+
+.cyx-shop-home-item{
+  padding: 0 10px 0 25px;
+  font-size: 12px;
+}
+.cyx-shop-image{
+  height: 150px;
+  width: 100%;
+}
+.cyx-arrow-span{
+  float: right;
+}
+.cyx-shophome-collect{
+  position: absolute;
+  right: 50px;
+  top: 160px;
+  width: 22px;
+  height: 22px;
+}
+.cyx-shop-header{
+  background-color: transparent;
+}
+.shop-icon-share{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.shop-icon-back{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.shop-collect-count{
+  position: absolute;
+  top: 160px;
+  right: 13px;
+  color: #333333;
+}
+.cyx-shop-content{
+  margin-top: 48px;
+}
+.cyx-shop-content .col-7{
+  margin: 4px 8px 0 0;
+}
+.shop-icon-right{
+  float: right;
+}
+.shop-icon-right img{
+  width: 5px;
+  height: 9px;
+}
+.shop-introduction-title{
+  margin: 15px 0 5px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px #EEEEEE;
+}
+.cyx-shop-content .row{
+  border-bottom: solid 1px #EEEEEE;
+}
+.cyx-custom-square{
+  background-color:#c8a775 ;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+.cyx-introduction-content{
+  padding: 10px;
+}
+.cyx-introduction-content p{
+  font-size: 12px;
+  color: #333333;
+}

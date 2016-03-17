@@ -1,0 +1,29 @@
+{
+  "code":0,
+  "data":[
+    {
+      "categoryId":"c001",
+      "categoryName":"抗氧化"
+    },
+    {
+      "categoryId":"c002",
+      "categoryName":"调节三高"
+    },
+    {
+      "categoryId":"c003",
+      "categoryName":"纤体排毒"
+    },
+    {
+      "categoryId":"c004",
+      "categoryName":"养颜饮品"
+    },
+    {
+      "categoryId":"c004",
+      "categoryName":"调节血压"
+    },
+    {
+      "categoryId":"c004",
+      "categoryName":"缓解疲劳"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "code":0,
+  "data":{
+    "goodsName":"复方虫草口服液",
+    "goodsSpec":"10mg*14片",
+    "price":"50.00",
+    "couponMoney":"20.00",
+    "isCollected":false,
+    "collectCount":"76",
+    "pictureList":[
+      {
+        "picUrl":"data/temp-img/goods-img0.png"
+      },
+      {
+        "picUrl":"data/temp-img/goods-img0.png"
+      }
+    ]
+  }
+}

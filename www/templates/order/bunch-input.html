@@ -1,0 +1,23 @@
+  <ion-view view-title="优惠券核销" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title"  align-title="center">
+      <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+      <span class="title">优惠券核销</span>
+    </ion-header-bar>
+  <ion-content class="bg-white">
+    <div class="cyx-bunch-input-div bg-line"  >
+      <div class="bunch-input-title ">
+      <span class="color-text-l  font-size-20 ">输入二维码下方串码，进行核销</span>
+      </div>
+      <div class="bunch-input">
+        <input type="tel" class="color-text-l font-size-20 input" ng-model="inputData.value">
+      </div>
+      <div class=" cyx-bunch-input-footer-div margin-top-10">
+        <div class="footer-ok-btn font-size-16"ng-click="goConfirmOrder()" ><span >确认</span></div>
+        <div class="footer-cancel-btn font-size-16"ui-sref="myOrder.deal" >取消</div>
+      </div>
+      <div class="margin-bottom-25 " style="margin-left: 5%" ng-click="changeStatus()"><span class="color-text-orange  font-size-20 ">切换二维码扫描</span></div>
+</div>
+  </ion-content>
+
+</ion-view>
+

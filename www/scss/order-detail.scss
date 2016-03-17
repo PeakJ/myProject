@@ -1,0 +1,88 @@
+.cyx-deal-order-div {
+  width: 100%;
+  height:170px;
+  .cyx-deal-order-num-div {
+    height: 30px;
+    width: 100%;
+    .cyx-order-div{
+      padding-top: 5px;
+      text-align: center;
+      height: 30px;
+      width:80px;
+      font-size: $font-size-14;
+      color: $color-text-white;
+      position: absolute;
+      right:0;
+      top:0;
+      background: url(../img/go_pay_img.png);
+      background-size: 100% 100%;
+      border-radius: 5px;
+    }
+  }
+  .cyx-deal-order-goods-div {
+    width: 100%;
+    height: 80px;
+    position: relative;
+
+    .cyx-deal-order-goods-img {
+      position: absolute;
+      left: 5px;
+      width: 70px;
+      height: 70px;
+      background: url('../data/temp-img/home-ad1.png') no-repeat;
+      background-size: 70px 70px;
+    }
+    .cyx-deal-order-goods-name {
+      position: absolute;
+      left: 80px;
+      margin-left: 5px;
+    }
+    .cyx-deal-order-goods-price-div {
+      position: absolute;
+      left: 80px;
+      top: 25px;
+      margin-left: 5px;
+      .cyx-deal-order-goods-count-div{
+      margin-left: 100px;
+        top:-10px;
+        position: relative;
+        .cyx-deal-order-goods-count-txt-span{
+          position: absolute;
+          margin-left: 50px;
+          padding-top: 8px;
+        }
+        .cyx-deal-order-goods-count-span{
+          position: absolute;
+          margin-left: 60px;
+          padding-top: 5px;
+        }
+    }
+    }
+    .cyx-deal-order-goods-coupon-div {
+      position: absolute;
+      left: 80px;
+      top: 50px;
+      margin-left: 5px;
+    }
+  }
+  .cyx-deal-order-goods-price-total-div {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+  .cyx-deal-order-goods-btn-div {
+    width: 100px;
+    height: 35px;
+    margin: 0 auto;
+    background: url(../img/go_pay_img.png);
+    background-size: 100% 100%;
+    border-radius: 5px;
+
+  }
+  .cyx-deal-order-goods-btn {
+    font-size: $font-size-14;
+    color: $color-text-white;
+    text-align: center;
+    line-height: 35px;
+  }
+
+}

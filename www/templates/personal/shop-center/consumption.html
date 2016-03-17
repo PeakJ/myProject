@@ -1,0 +1,88 @@
+<!--会员消费记录 王爽-->
+<ion-view view-title="会员消费记录" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">会员消费记录</span>
+    </ion-header-bar>
+    <ion-content class="padding cyx-shop-center-content">
+        <div class="cyx-goods-search-div">
+            <div class="search-border">
+                <input type="text" placeholder="请输入订单编号" class="search-input" ng-model="search.orderId"/>
+                <img ng-src="img/icon-search-white.png" class="search-icon" ng-click="screenByOrderID();"/>
+            </div>
+        </div>
+        <div class="row cyx-consumption-record">
+            <div><span>会员“<a ng-bind="memberAccount"></a>”的消费记录</span></div>
+            <button class="item item-input cyc-date-screen-button" ng-click="openModal();">
+                <img class="cyx-icon-left" ng-src="img/screen.png">
+                <span class="text-align-c">筛选</span>
+                <img class="cyx-icon-right" ng-src="img/arrow-down.png">
+            </button>
+        </div>
+        <hr class="cyx-member-hr width-full"/>
+        <div class="list cyx-member-list" ng-repeat="item in consumptionList">
+            <div class="row item cyx-consumption-item">
+                <div class="col col-10 ">
+                    <div class="cyx-consumption-order">
+                        <span  ng-bind="$index+1"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col col-33">订单编号：</div>
+                        <div class="col" ng-bind="item.orderId"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-33">商品名称：</div>
+                        <div class="col" ng-bind="item.detailList[0].goodsName"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-33">数量：</div>
+                        <div class="col" ng-bind="item.detailList[0].amount"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-33">抵值券：</div>
+                        <div class="col cyx-consumption-coupon"
+                             ng-bind="item.detailList[0].couponAmount | currency:'&yen;'"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-33">消费店铺：</div>
+                        <div class="col" ng-bind="item.detailList[0].storeName"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-33">消费时间：</div>
+                        <div class="col" ng-bind="item.payTime"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll distance="2%" ng-if="hasMoreData" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+    </ion-content>
+    <div ng-show="isShowDate">
+        <div>
+            <ion-header-bar class="cyx-common-title" align-title="center">
+                <button ng-click="closeModal();" class="button button-clear title-back-button"></button>
+                <span class="title">时间筛选</span>
+            </ion-header-bar>
+            <ion-content class="cyx-shop-center-content">
+                <div class="list cyx-shop-center-date">
+                    <label class="item item-input">
+                        <span>开始时间</span>
+                        <input type="text" id="cStartDate"
+                               onclick="showDate('cStartDate');" ng-model="search.screenStart">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                    <label class="item item-input">
+                        <span>结束时间</span>
+                        <input type="text" id="cEndDate"
+                               onclick="showDate('cEndDate');" ng-model="search.screenEnd">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                </div>
+                <div class="cyx-shop-date-button">
+                    <button ng-click="dateScreen();" class="button">筛选</button>
+                </div>
+            </ion-content>
+        </div>
+    </div>
+</ion-view>

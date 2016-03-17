@@ -1,0 +1,70 @@
+<!--积分信息 王爽-->
+<ion-view view-title="积分信息" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">积分信息</span>
+    </ion-header-bar>
+    <ion-content class="padding cyx-shop-center-content">
+        <div class="cyx-integral-credits">
+            <div class="row">
+                <img ng-src="{{headImg}}">
+                <div>
+                    <span>累计积分总额：</span>
+                    <a ng-bind="score"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row cyx-integral-detail">
+            <span class="cyx-span">积分明细</span>
+            <button class="item item-input cyc-date-screen-button" ng-click="openModal();">
+                <img class="cyx-icon-left" ng-src="img/screen.png">
+                <span class="text-align-c">筛选</span>
+                <img class="cyx-icon-right" ng-src="img/arrow-down.png">
+            </button>
+        </div>
+        <hr class="cyx-shop-center-hr width-full"/>
+        <table class="cyx-shop-center-table"  >
+            <tr>
+                <th  >订单编号</th>
+                <th  >获得积分</th>
+                <th  >获取时间</th>
+            </tr>
+            <tr ng-repeat="integral in integralData">
+                <td    ng-bind="integral.orderId"></td>
+                <td  class="cyx-credits" ng-bind="integral.points"></td>
+                <td   ng-bind="integral.date"></td>
+            </tr>
+        </table>
+        <ion-infinite-scroll distance="2%" ng-if="hasMoreData" icon="icon-svg-loading" on-infinite="loadMore()"></ion-infinite-scroll>
+    </ion-content>
+    <div ng-show="isShowDate">
+        <div>
+            <ion-header-bar class="cyx-common-title" align-title="center">
+                <button ng-click="closeModal();" class="button button-clear title-back-button"></button>
+                <span class="title">时间筛选</span>
+            </ion-header-bar>
+            <ion-content class="cyx-shop-center-content">
+                <div class="list cyx-shop-center-date">
+                    <label class="item item-input">
+                        <span>开始时间</span>
+                        <input type="text" id="iStartDate" name="startDate"
+                               onclick="showDate('iStartDate');" ng-model="search.screenStart">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                    <label class="item item-input">
+                        <span>结束时间</span>
+                        <input type="text" id="iEndDate" name="endDate"
+                               onclick="showDate('iEndDate');" ng-model="search.screenEnd">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </label>
+                </div>
+                <div class="cyx-shop-date-button">
+                    <button ng-click="dateScreen();" class="button">筛选</button>
+                </div>
+            </ion-content>
+        </div>
+    </div>
+    <ion-footer-bar style="height: 50px">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

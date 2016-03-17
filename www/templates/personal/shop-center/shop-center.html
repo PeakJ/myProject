@@ -1,0 +1,76 @@
+<!--药店中心 王爽-->
+<ion-view view-title="药店中心" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">药店中心</span>
+    </ion-header-bar>
+    <ion-content class="padding cyx-shop-center-content">
+        <div class="cyx-shop-center-name">
+            <img class="cyx-bigImage" ng-src="{{shopCenterData.storeLogo}}">
+            <!--<div class="cyx-name" ng-bind="shopCenterData.shopName"></div>-->
+            <img class="cyx-brandImage" ng-src="{{shopCenterData.storeImgPath}}">
+            <div class="width-full cyx-shop-center-integration">
+                <span>累积积分总额：</span>
+                <a ng-bind="shopCenterData.score"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="button cyx-shop-center-button" ui-sref="member">
+                    <img ng-src="img/member-information.png" >
+                    <br>
+                    <span>会员信息</span>
+                </button>
+            </div>
+            <div class="col">
+                <button class="button cyx-shop-center-button" ng-click="onIntegralClick()">
+                    <img ng-src="img/integral-information.png">
+                    <br>
+                    <span>积分信息</span>
+                </button>
+            </div>
+            <div class="col">
+                <button class="button cyx-shop-center-button" ng-click="onOrderDealClick()" >
+                    <img ng-src="img/coupon-verification.png">
+                    <br>
+                    <span>优惠券核销</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-33">
+                <button class="button cyx-shop-center-button" ui-sref="orderRecord" >
+                    <img ng-src="img/verification-record.png">
+                    <br>
+                    <span>核销记录</span>
+                </button>
+            </div>
+            <div class="col" ng-if="role == 2" >
+                <button class="button cyx-shop-center-button" ui-sref="goodsStatistics">
+                    <img ng-src="img/goods-statistics.png">
+                    <br>
+                    <span>商品统计</span>
+                </button>
+            </div>
+            <div class="col" ng-if="role == 2">
+                <button class="button cyx-shop-center-button" ui-sref="volumeStatistics">
+                    <img ng-src="img/volume-statistics.png">
+                    <br>
+                    <span>销售额统计</span>
+                </button>
+            </div>
+        </div>
+        <div class="row" ng-if="role == 2">
+            <div class="col col-33">
+                <button class="button cyx-shop-center-button" ui-sref="salesperson">
+                    <img ng-src="img/person-statistics.png">
+                    <br>
+                    <span>销售员统计</span>
+                </button>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar style="height: 50px">
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

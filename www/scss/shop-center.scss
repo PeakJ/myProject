@@ -1,0 +1,358 @@
+//药店中心
+.cyx-shop-center-content {
+    padding: 0;
+    background-color: $color-background;
+}
+
+.cyx-shop-center-name {
+    width: 100%;
+    height: 175px;
+    margin-bottom: 10px;
+    .cyx-bigImage {
+        width: 100%;
+        height: 175px;
+    }
+    /*  .cyx-name {
+          z-index: 2;
+          height: 30px;
+          width: 90%;
+          border: 4px white double;
+          color: $color-text-white;
+          position: absolute;
+          top: 60px;
+          left: 5%;
+          text-align: center;
+          word-wrap: break-word;
+      }*/
+    .cyx-brandImage {
+        z-index: 4;
+        height: 54px;
+        position: absolute;
+        top: 115px;
+        left: 20px;
+    }
+}
+
+.cyx-shop-center-integration {
+    color: $color-text-white;
+    z-index: 3;
+    filter: Alpha(Opacity=50); /* for IE */
+    background-color: rgba(0, 0, 0, 0.5); /*for FF*/
+    height: 30px;
+    position: absolute;
+    top: 145px;
+    left: 0;
+    line-height: 30px;
+    span {
+        position: absolute;
+        left: 80px;
+    }
+    a {
+        color: $color-text-red;
+        position: absolute;
+        left: 180px;
+    }
+}
+
+.cyx-shop-center-button {
+    height: 110px;
+    padding: 0;
+    line-height: 15px;
+    width: 100%;
+    img {
+        width: 60px;
+        padding: 10px;
+    }
+    span {
+        font-size: 12px;
+        color: $color-title;
+    }
+}
+
+.cyx-shop-center-table {
+    width: 100%;
+    table-layout:fixed ;
+    tr:nth-child(odd) {
+        border-bottom: 1px lightgrey dashed;
+        background-color: $color-white;
+    }
+    tr:nth-child(even) {
+        border-bottom: 1px lightgrey dashed;
+        background-color: #f8f8f8;
+    }
+    th {
+        padding: 10px;
+        font-weight: bold;
+        color: $color-text-l;
+    }
+    td {
+        text-align: center;
+        color: $color-text-m;
+        padding: 10px;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .cyx-price {
+        color: $color-text-red;
+    }
+    .cyx-credits {
+        color: $color-green;
+    }
+}
+
+.cyx-shop-center-header {
+    padding: 20px;
+    color: white;
+    background: url('../img/head-bg.png') no-repeat;
+    background-size: 100% 100px;
+    width: 100%;
+    height: 100px;
+}
+
+.cyx-shop-vertical-line {
+    background-color: $color-white;
+    width: 1px;
+    height: 60px;
+    position: relative;
+    left: 48%;
+    bottom: 10px;
+}
+
+.cyx-shop-center-pie {
+    width: 100%;
+    height: 250px;
+}
+
+.cyc-date-screen-button {
+    background-color: $color-orange;
+    position: absolute;
+    right: 10px;
+    width: 80px;
+    height: 30px;
+    padding-left: 5px;
+    .cyx-icon-left {
+        height: 15px;
+    }
+    .cyx-icon-right {
+        height: 10px;
+    }
+    span {
+        color: $color-text-white;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}
+
+.cyx-shop-center-single {
+    background-color: $color-white;
+    div {
+        width: 82%;
+        margin-top: 6px;
+        span {
+            a {
+                color: $color-text-active;
+            }
+        }
+    }
+}
+
+.cyx-shop-center-broken {
+    width: 100%;
+    height: 250px;
+    background-color: $color-background;
+}
+
+.cyx-shop-center-hr {
+    margin: 0;
+    border: none;
+    width: 100%;
+    height: 7px;
+    background-color: $color-background;
+}
+
+.cyx-shop-statistics {
+    background-color: $color-background;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    .search-border {
+        background-color: $color-white;
+        width: 70%;
+        border: 1px lightgrey solid;
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .search-input {
+        float: left;
+        width: 83%;
+        margin-left: 10px;
+    }
+    .search-icon {
+        height: 20px;
+        margin-top: 6px;
+        float: left;
+    }
+}
+
+//积分信息
+.cyx-integral-credits {
+    color: $color-text-white;
+    background: url('../img/head-bg.png') no-repeat;
+    background-size: 100% 100px;
+    height: 100px;
+    div {
+        img {
+            z-index: 3;
+            height: 54px;
+            position: absolute;
+            top: 40px;
+            left: 20px;
+        }
+        div {
+            color: $color-text-white;
+            width: 100%;
+            z-index: 2;
+            filter: Alpha(Opacity=50); /* for IE */
+            background-color: rgba(0, 0, 0, 0.5); /*for FF*/
+            height: 30px;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            line-height: 30px;
+            span {
+                position: absolute;
+                left: 80px;
+            }
+            a {
+                color: $color-text-red;
+                position: absolute;
+                left: 180px;
+            }
+        }
+    }
+}
+
+.cyx-integral-detail {
+    background-color: $color-white;
+    margin-top: 10px;
+    height: 36px;
+    .cyx-span {
+        margin-left: 10px;
+    }
+}
+
+//会员信息
+.cyx-member-information {
+    background-color: $color-white;
+    height: 40px;
+    padding-left: 10px;
+    line-height: 40px;
+    span {
+        font-size: 16px;
+    }
+}
+
+//会员消费记录
+.cyx-consumption-record {
+    background-color:$color-white ;
+    font-size: 14px;
+    height: 40px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    div{
+        height: 30px;
+        line-height: 30px;
+    }
+    a{
+        color: $color-text-active;
+    }
+}
+
+.cyx-consumption-item {
+    border: none;
+    font-size: 13px;
+}
+
+.cyx-consumption-coupon {
+    color: $color-text-red;
+}
+.cyx-member-hr{
+    border: none;
+    background-color:$color-background ;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+}
+.cyx-member-list{
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+.cyx-consumption-order{
+    color: $color-text-white;
+    text-align: center;
+    width: 25px;
+    height:  25px;
+    margin-top: 12px;
+    background: url('../img/dirty-yellow-round.png') no-repeat;
+    background-size:100% auto;
+    span{
+        vertical-align: middle;
+    }
+}
+//单个商品统计
+.cyx-single-goods-table {
+    table-layout: fixed;
+    tr:nth-child(odd) {
+        border-bottom: 1px lightgrey dashed;
+        background-color: $color-white;
+    }
+    tr:nth-child(even) {
+        border-bottom: 1px lightgrey dashed;
+        background-color: #f8f8f8;
+    }
+    td {
+        text-align: center;
+        color: $color-text-m;
+        padding: 8px;
+        width: 50%;
+    }
+    th {
+        padding: 8px;
+        font-weight: bold;
+        color: $color-text-l;
+    }
+}
+
+//时间筛选
+.cyx-shop-center-date {
+    label {
+        height: 50px;
+        span {
+            width: 30%;
+        }
+        input {
+            background-color: $color-white;
+            width:60%;
+            text-align: right;
+        }
+        i{
+            margin-right: 15px;
+        }
+    }
+}
+
+.cyx-shop-date-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    button {
+        width: 50%;
+        background-color: $color-orange;
+        color: $color-text-white;
+        font-size: 16px;
+    }
+}

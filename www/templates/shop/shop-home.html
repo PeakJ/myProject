@@ -1,0 +1,49 @@
+<ion-view view-title="店铺首页" hide-nav-bar="true">
+    <ion-content>
+            <img ng-src="{{shopInfo.storeImgPath}}" class="cyx-shop-image"/>
+            <img ng-src="img/icon-back-black.png" class="shop-icon-back" ng-click="goBack();"/>
+            <img ng-src="img/icon-share.png" class="shop-icon-share" ng-click="toShare()"/>
+        <div>
+            <img class="cyx-brand-image" ng-src="{{shopInfo.storeLogoPath}}"/>
+            <img src="img/icon-collect.png" class="cyx-shophome-collect"
+                 ng-click="collectShop(shopInfo.id)" ng-if="!shopInfo.collected"/>
+            <img src="img/icon-collected.png" class="cyx-shophome-collect"
+                 ng-click="cancelCollectShop(shopInfo.id)" ng-if="shopInfo.collected"/>
+            <div class="shop-collect-count" ng-bind="shopInfo.collectCount"></div>
+        </div>
+        <div class="cyx-shop-content">
+            <div class="row">
+                <div class="col-7">
+                    <img ng-src="img/icon-shop.png" class="cyx-left-yellow-block"/>
+                </div>
+                <div class="col-93">
+                    <span ng-bind="shopInfo.name"></span>
+                </div>
+            </div>
+            <div class="cyx-shop-home-item">
+                <div class="cyx-phone-number" ng-click="callPhone()">
+                    <span><img class="cyx-dec-image" ng-src="img/icon-tel.png"/></span>
+                    <span>联系电话：<span ng-bind="shopInfo.telephone"></span></span>
+                    <span class="shop-icon-right"><img ng-src="img/icon-right-black.png"/></span>
+                </div>
+                <div class="cyx-shop-address" ui-sref="shopMap({address:shopInfo.address})">
+                    <span><img class="cyx-dec-image" ng-src="img/icon-location.png"/></span>
+                    <span>店铺地址：<span ng-bind="shopInfo.address"></span></span>
+                    <span class="shop-icon-right"><img ng-src="img/icon-right-black.png"/></span>
+                </div>
+                <div class="cyx-shop-time">
+                    <span><img class="cyx-dec-image" ng-src="img/icon-time.png"/></span>
+                    <span>营业时间：<span class="cyx-work-time" ng-bind="shopInfo.businessTime"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="cyx-introduction-content">
+                <div class="shop-introduction-title">
+                    <span class="cyx-custom-square"></span>
+                    <span>店铺介绍</span>
+                </div>
+                <div ng-bind-html="shopInfo.description"></div>
+            </div>
+        </div>
+    </ion-content>
+

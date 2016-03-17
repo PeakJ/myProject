@@ -1,0 +1,273 @@
+.cyx-first-category-li {
+  text-align: center;
+  background-color: $color-title;
+  color: white;
+  font-size: $font-size-14;
+  border: none !important;
+  padding: 15px 10px!important;
+  img{
+    width: 10px !important;
+    margin-top: 2px;
+    vertical-align: sub;
+    margin-left: 5px;
+  }
+}
+.cyx-category-activated-li {
+  background-color: $color-text-active !important;
+  color: white !important;
+}
+.cyx-store-category-right-col {
+  padding-left: 15px !important;
+  padding-top: 0;
+  @include border-top;
+}
+.cyx-category-second-cat-title {
+  font-size: $font-size-12;
+  padding: 10px 16px;
+  border: none;
+  margin-top: 1px !important;
+}
+.cyx-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.cyx-category-title-span {
+  position: relative;
+  left: -10px;
+  color: #3e3e3e;
+  font-size: $font-size-14;
+}
+.cyx-category-right-item {
+  display: inline-block;
+  text-align: left;
+  font-size: 12px;
+  color: $color-text-s;
+  width: 32%;
+  padding: 5px;
+  margin-bottom: 5px !important;
+}
+.cyx-goods-search-div{
+  width: 100%;
+  padding: 10px;
+  background: $color-background;
+  .search-border{
+    background: white;
+    width: 100%;
+    border: 1px solid;
+    border-color: $color-line;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+  }
+  .search-input{
+    float: left;
+    width: 70%;
+    margin-left: 10px;
+    height: 100%;
+  }
+  .search-icon{
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    bottom:9px;
+  }
+  .search-btn{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
+}
+.cyx-width-full{
+  width: 100%;
+}
+.cyx-category-bg{
+  padding-bottom: 10px;
+  background-color: $color-title;
+}
+.cyx-goods-tab{
+  float: left;
+  width: 100%;
+  background: white;
+  margin-top: 15px;
+}
+.cyx-store-tab-title{
+  width: 33%;
+  display: inline-block;
+  background: white;
+  text-align: center;
+  padding-top: 10px;
+  float: left;
+  .active{
+    border-bottom: 2px solid;
+    border-color: $color-text-active;
+    color: $color-text-active;
+  }
+  .inner-div{
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-bottom: 5px;
+  }
+}
+.cyx-goods-detail-collect{
+  position: relative;
+  .icon-bg{
+    position: absolute;
+    top: -25px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .collect-count{
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+.cyx-goods-detail-name{
+  padding-left: 10px;
+  font-size: 16px;
+}
+.cyx-goods-detail-price-div{
+  color: $color-text-m;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  .coupon-div{
+    margin-left: 10px;
+    display: inline-block;
+    span{
+      color: $color-text-red;
+      font-size: $font-size-16;
+    }
+  }
+}
+.cyx-goods-detail-count-div{
+  padding: 10px;
+  margin-top: 10px;
+  @include border-bottom;
+  @include border-top;
+  background: white;
+  width: 100%;
+  .item-attr{
+    display: inline-block;
+  }
+  .count-bg{
+    display: inline-block;
+    position: absolute;
+    margin-left: 20px;
+    span{
+      position: relative;
+      top: -5px;
+    }
+  }
+  .count-img{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+  }
+  input{
+    height: 20px;
+    width: 40px;
+    border:none;
+    text-align: center;
+    position: relative;
+    top: -5px;
+  }
+
+}
+.cyx-goods-detail-shop-div{
+  padding: 10px;
+  background: white;
+  position: relative;
+  &.dash-line{
+    border-bottom: 1px dashed $color-line;
+  }
+  .shop-name{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+  }
+  .shop-icon{
+    width: 16px;
+    margin-top: 8px;
+  }
+  .search-btn{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: none;
+    border: none;
+    color: $color-orange;
+  }
+  .shop-tel{
+    font-size: $font-size-12;
+    color: $color-text-m;
+    img{
+      vertical-align: top;
+      margin-top: 2px;
+      width: 12px;
+    }
+  }
+}
+.cyx-goods-detail-attr{
+  padding-top: 10px;
+  font-size: $font-size-12;
+  .label{
+    width: 24%;
+    text-align: right;
+    float: left;
+  }
+  .value{
+    width: 70%;
+    display: inline-block;
+  }
+}
+.cyx-goods-item{
+  min-height: 100px;
+}
+.cyx-goods-detail-bottom{
+  width: 100%;
+  .footer-icon{
+    width: 50px;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 3px;
+    float: left;
+    img{
+      width: 22px;
+    }
+    .label-text{
+      position: relative;
+      top: -8px;
+    }
+  }
+  .btn-bg{
+    position: absolute;
+    right: 0;
+    width: 53%;
+  }
+  .footer-btn{
+    float: left;
+    color: white;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+
+    &.add{
+      background: $color-orange;
+      width: 53%;
+    }
+    &.buy{
+      background: $color-red;
+      width: 47%;
+    }
+  }
+}

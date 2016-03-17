@@ -1,0 +1,72 @@
+<ion-view view-title="个人资料" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">个人资料</span>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+          <div style="width: 100% ; height: 10px ;background-color: #efefef" ></div>
+            <div class="item" style="padding: 0 16px; height: 80px;" ng-click="choosePicMenu();">
+              <span style="display: inline-block;margin-top: 30px;font-size: 12px">头像</span>
+                <div class="cyx-personal-information-part" style="margin-top: 10px;">
+                    <div style=" display: inline-block;">
+                      <img style="width: 60px;height:60px;margin-right:20px;" class="cyx-personal-Information-avatar" ng-src="{{userInfo.headImg}}"/>
+                    </div>
+                    <span style="position: relative;bottom: 25px;font-size: 20px;" class="icon ion-ios-arrow-right cyx-avatar-position"></span>
+                </div>
+            </div>
+            <!--<div class="item" ng-click="showPopup(0)"><span class="cyx-font-12px">手机号码</span>-->
+                <!--<div class="cyx-personal-information-part">-->
+                  <!--<span class="icon ion-ios-arrow-right cyx-personal-item-right  cyx-font-20px" ></span>-->
+                  <!--<span ng-bind="userInfo.mobile" class=" cyx-margin-right-20 cyx-font-12px cyx-personal-item-right"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="item" ng-click="showPopup(1)">
+              <span class="cyx-font-12px">用户名</span>
+                <div class="cyx-personal-information-part">
+                    <span class="icon ion-ios-arrow-right cyx-personal-item-right  cyx-font-20px"></span>
+                    <span ng-bind="userInfo.userName" class=" cyx-margin-right-20 cyx-font-12px cyx-personal-item-right"></span>
+                </div>
+            </div>
+            <div class="item "><span class="cyx-font-12px">性别</span>
+                <div class="cyx-personal-information-part">
+                    <div ng-click="changeMaleState(0)" style="display: inline-block" >
+                      <div  class="cyx-uncheck-box"
+                           ng-class="{true:'cyx-check-box',false:'cyx-uncheck-box'}[userInfo.sex ==='0']"> <!-- 0 男 ；1 女 -->
+                      </div>
+                      <span class="cyx-personal-sex cyx-font-12px" ng-click="changeMaleState(0)">男</span>
+                    </div>
+                    <div ng-click="changeFemaleState(1)" style="display: inline-block">
+                      <div  ng-class="{true:'cyx-check-box',false:'cyx-uncheck-box'}[userInfo.sex ==1]">
+                      </div>
+                      <span class="cyx-personal-sex cyx-font-12px" ng-click="changeMaleState(1)">女</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item" ng-click="goSelectArea()"><span class="cyx-font-12px">地区</span>
+                <div class="cyx-personal-information-part">
+                    <span class="icon ion-ios-arrow-right cyx-personal-item-right  cyx-font-20px"></span>
+                    <span ng-bind="userInfo.provinceName + userInfo.cityName + userInfo.areaName" class="cyx-margin-right-20 cyx-font-12px cyx-personal-item-right"></span>
+                </div>
+            </div>
+            <div class="item" ng-click="showPopup(2)"><span class="cyx-font-12px">详细地址</span>
+                <div class="cyx-personal-information-part">
+                  <span class="icon ion-ios-arrow-right cyx-personal-item-right  cyx-font-20px"></span>
+                    <span ng-bind="userInfo.address" class="cyx-margin-right-20 cyx-font-12px cyx-personal-item-right"></span>
+
+                </div>
+            </div>
+            <div class="item" ng-click="showPopup(3)"><span class="cyx-font-12px">邮箱</span>
+                <div class="cyx-personal-information-part">
+                    <span class="icon ion-ios-arrow-right cyx-personal-item-right  cyx-font-20px"></span>
+                    <span ng-bind="userInfo.email" class="cyx-margin-right-20 cyx-font-12px cyx-personal-item-right"></span>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100% ;text-align: center;margin-top: 45px"><button class="button" style="height: 40px;min-height: 40px;line-height: 0px;
+    width: 240px;
+    margin: 0 auto;
+    font-size: 14px;
+    border: 1px solid;">退出登录</button></div>
+    </ion-content>
+</ion-view>

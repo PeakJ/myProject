@@ -1,0 +1,27 @@
+{
+    "code": 0,
+    "data": {
+        "salesPersonCount": "3",
+        "totalSalesMoney": "12000",
+        "detail": [
+            {
+                "salesPersonId":"13401202356",
+                "salesCount": "126",
+                "salesMoney": "123.00",
+                "points":"26"
+            },
+            {
+                "salesPersonId":"15101012030",
+                "salesCount": "56",
+                "salesMoney": "213.00",
+                "points":"56"
+            },
+            {
+                "salesPersonId":"18204356920",
+                "salesCount": "150",
+                "salesMoney": "369.00",
+                "points":"65"
+            }
+        ]
+    }
+}

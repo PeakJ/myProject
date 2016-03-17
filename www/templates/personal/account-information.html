@@ -1,0 +1,26 @@
+<ion-view view-title="账号信息" hide-nav-bar="true">
+    <ion-header-bar class="cyx-common-title" align-title="center">
+        <button ng-click="$ionicGoBack();" class="button button-clear title-back-button"></button>
+        <span class="title">账号信息</span>
+    </ion-header-bar>
+    <ion-content class="bg-background">
+        <div class="list">
+            <div class="item account-information" ui-sref="personalInformation">
+                <span>个人资料</span>
+                 <span  class="information-icon-right">
+                    <img ng-src="img/icon-right-black.png"/>
+                </span>
+            </div>
+            <div class="item account-information" ui-sref="changePassword">
+                <span>修改密码</span>
+                <span  class="information-icon-right">
+                    <img ng-src="img/icon-right-black.png"/>
+                </span>
+            </div>
+            <div class="item" ui-sref="login">登录</div>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="width-full" ng-include="'templates/common/tabs.html'"></div>
+    </ion-footer-bar>
+</ion-view>

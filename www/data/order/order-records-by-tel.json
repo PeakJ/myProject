@@ -1,0 +1,26 @@
+{
+  "code":0,
+  "data":[
+    {
+      "orderId":"o001",
+      "orderCode":"oc001",
+      "couponMoney":"5.23",
+      "memberMobile":"18012345678",
+      "goodsName":"复方虫草口服液1",
+      "count":5,
+      "totalCoupon":"52.30",
+      "verifyDate":"2016-02-22 10:19:36"
+    },
+    {
+      "orderId":"o002",
+      "orderCode":"oc002",
+      "couponMoney":"15.23",
+      "totalCoupon":"52.30",
+      "goodsName":"复方虫草口服液2",
+      "memberMobile":"17012345678",
+      "count":5,
+      "verifyDate":"2016-02-23 10:19:36"
+    }
+
+  ]
+}
