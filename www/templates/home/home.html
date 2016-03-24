@@ -1,0 +1,38 @@
+<!--
+json格式说明
+数组结构，每项为一个模块
+type是模块类型
+
+-->
+
+<!--首页内容-->
+<!--<div style="position: fixed;left:0;right:0;top:0;bottom:0;background:#f00;z-index:999">
+
+</div>-->
+<ion-view has-header="true" hide-nav-bar="true">
+    <div ng-if="!query.isShowSearch">
+        <ion-header-bar id="cdfg-home-header" style="border-bottom: 1px #1e1e1e solid !important;" align-title="center" class="bar bar-header">
+            <div class="title" style="color:#ffffff">中免商城</div>
+            <img class="cdfg-personal-setting" ng-src="img/icon-research.png" ng-click="showSearch()">
+        </ion-header-bar>
+        <!--<ion-content class="has-header cdfg-has-footer" ng-show="!isOnLine">-->
+        <!--<div ng-include="'templates/home/net-error.html'"></div>-->
+        <!--</ion-content>-->
+        <ion-content class="has-header" style="background-color: #f3f5f5">
+
+            <ion-refresher on-refresh="refresh()"></ion-refresher>
+            <!--解析模块-->
+            <div ng-repeat="d in data" module-type="{{d.type}}" style="background-color: #fff;"></div>
+
+            <div ng-if="d1.showTitle==0" class="cdfg-idx-mdtitle" style="padding-top:{{d1.top}}">{{d1.title}}</div>
+        </ion-content>
+        <ion-footer-bar>
+            <div ng-include="'templates/home/tab.html'"></div>
+        </ion-footer-bar>
+    </div>
+
+    <div cdfg-search="query" ng-if="query.isShowSearch"> <!-- 搜索指令-->
+
+    </div>
+</ion-view>
+

@@ -1,0 +1,85 @@
+<ion-view hide-nav-bar="true" cache-view="false" >
+    <div ng-if="!query.isShowSearch">
+    <div class="cdfg-current-slide {{slideMenu?'cdfg-slide-menu':null}}">
+        <div class="cdfg-slide-dark" ng-click="closeInitFilter()"></div>
+        <div ng-include="'templates/product/product-list-filter.html'"></div>
+    </div>
+    <div class="cdfg-current-slide cdfg-current-select-slide {{slideMenuValue?'cdfg-slide-menu':null}}">
+        <div ng-include="'templates/product/product-list-select.html'"></div>
+    </div>
+
+    <img ng-if="showToTopImage" class="cdfg-top-icon" src="img/icon-top.png" ng-click="scrollTop()"/>
+
+    <ion-header-bar class="cdfg-product-list-header item-input-inset transition-all" align-title="center" ng-style="headerAnimate">
+        <button class="button button-clear ion-ios-arrow-left icon cdfg-header-left-arrow" ng-click="myGoBack()"></button>
+        <!-- ng-if="param.fromType == 'category'|| param.fromType== 'search'"-->
+
+        <label class="item-input-wrapper cdfg-product-list-input-bkg cdfg-header-marging-left-wrapper"
+               ng-click="showSearch()" ng-if="fromPage != 'brand'">
+            <i class="icon ion-ios-search cdfg-header-left-arrow"></i>
+                <input type="search" ng-model="query.tag" placeholder="{{placeholder}}" style="color:#3e3e3e" id="cdfg-pl-input" class="cdfg-search-input-height"/>
+        </label>
+        <div class="title cdfg-header-left-arrow" ng-if="fromPage == 'brand'" >{{title}}</div>
+        <button ng-click="initFilter();" class="button-icon cdfg-header-marging-left-wrapper"
+                style="" ng-if="fromPage != 'brand'">筛选
+        </button >
+        <button ng-click="initFilter();" class="button-icon cdfg-header-marging-left-wrapper"
+                style="position: absolute; top: 5px;right: 5px; bottom: 5px;" ng-if="fromPage == 'brand'">筛选
+        </button>
+    </ion-header-bar>
+
+    <div class="list cdfg-brandlist-order bar-subheader transition-all" ng-style="subheaderAnimate">
+        <div class="item">
+            <div id="filters">
+                <div class="{{list.show ? 'cdfg-list-view-icon':'cdfg-grid-view-icon'}}"
+                     ng-click="list.show = !list.show"></div>
+                <div click-toggle-orderby>
+                <span class="assertive" ng-click="getDatas({sortField:''}); ">综合</span>
+                <span ng-click="getDatas({sortField:'salesNum'});">销量</span>
+                <span id="priceFilter"
+                      ng-click="reverse=!reverse;reverse?sortDir='0':sortDir='1';getDatas({sortField:'salePrice',sortDir:sortDir});">价格
+                    <i class="icon icon-button {{reverse?'ion-ios-arrow-up':'ion-ios-arrow-down'}}"></i><!-- edit xuf 颠倒箭头方向 -->
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="cdfg-product-list-subheader transition-all" ng-swipe-left="initFilter()"  delegate-handle="listContent" on-scroll="onContentScroll()" ng-style="contentAnimate">
+
+        <!--<div class="list light-bg" ng-if="param.fromType== 'search'" >-->
+        <!--<div class="row">-->
+        <!--<div class="col-25"><img style="height: 50px;width: 100%;"
+src="http://img2.zhongmian.com/upload/601/603/225646/225651/225700/271549_10_pic270_7628.jpg"></div>-->
+        <!--<div class="col text-center"><span style="margin-top:auto">路易威登旗舰店</span></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!-- 品牌列表 -->
+        <div class="cdfg-product-list-demo" ng-if="!networkError">
+            <div ng-if="!listNumber">
+                <!--下拉刷新-->
+                <ion-refresher pulling-text="小编正在拼命加载" on-refresh="doRefresh()"></ion-refresher>
+                <!--引入列表 -->
+                <div ng-include="'templates/product/link-product-list-template.html'" style="margin-top: 10px"></div>
+                <!--上拉加载更多-->
+                <ion-infinite-scroll ng-if="hasMore()" on-infinite="loadMore()"></ion-infinite-scroll>
+
+                <div ng-if="!hasMore()" class="cdfg-has-more"><span ng-if="!moreFont">没有更多产品啦……</span></div>
+
+            </div>
+            <div class="cdfg-product-list-empty" ng-if="listNumber">
+                <p>呀~还没找到<br/>要不去看看热门搜索</p>
+            </div>
+        </div>
+
+        <div ng-include="'templates/common/network-error.html'" ng-if="networkError" ng-click="restartPage()"></div>
+
+        <div class="cdfg-detail-empty-height"></div>
+
+    </ion-content>
+    </div>
+    <div cdfg-search="query" ng-if="query.isShowSearch"> <!-- 搜索指令-->
+
+    </div>
+</ion-view>

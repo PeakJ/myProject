@@ -1,0 +1,70 @@
+<ion-view hide-nav-bar="true">
+    <!-- ADD START BY 葛硕20150809：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">登录</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150809：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content>
+        <div class="cdfg-login-wrap">
+            <form name="loginform">
+                <div class="cdfg-form-state cdfg-form-state-pass cdfg-form-state-login">
+                    <div class="row">
+                        <div class="col cdfg-relative" reg-is-empty cdfg-validate>
+                            <input style="ime-mode:disabled" name="phone" class="form-input" type="text" ng-model="data.loginName"
+                                    placeholder="邮箱名/手机号"  required/>
+                        </div>
+                    </div>
+                    <!--密码-->
+                    <div class="row">
+                        <div class="col cdfg-pass-eye" cdfg-validate>
+                            <input style="ime-mode:disabled" name="password" class="form-input" type="{{showPwd.type}}" ng-model="data.pwd"
+                                   placeholder="密码" ng-minlength="6" ng-maxlength="20" required/>
+                            <i ng-class="{'true':'icon-eye','false': 'icon-eye-open'}[showPwd.show]"
+                               class="icon button-icon " ng-click="togglePwdShow()"></i>
+
+                        </div>
+
+                    </div>
+                    <!--验证码-->
+                    <div class="row" ng-if="validCodeObj.needIdentifyingCode">
+                        <div class="col" cdfg-validate>
+                            <input name="validCode" class="form-input " ng-model="data.validCode" type="number"
+                                   placeholder="验证码" ng-minlength="4" size="4" maxlength="4" required/>
+                        </div>
+                        <div class="col validate-code" style="min-width: 140px;">
+                            <img width="95" ng-src="{{validateCode}}" >
+                            <a class="cdfg-font-general-sub cdfg-fr" ng-click="changeValidate()">看不清</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cdfg-form-button">
+                    <button type="button" class="button button-block button-assertive"
+                            ng-disabled="data.loginName==''||data.pwd==''" ng-click="login(loginform)">登录
+                    </button>
+                    <div class="clearfix cdfg-login-link">
+                        <a class="cdfg-fl c-general" ng-click="toRegister()"> 手机快速注册</a>
+                        <a class="cdfg-fr c-general-sub" ui-sref="reset-password">找回密码</a>
+                    </div>
+                </div>
+
+            </form>
+            <div class="cdfg-quick-login">
+                <div class="cdfg-login-line">
+                    <i></i>
+
+                    <div><span>第三方快速登录</span></div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col" ng-click="loginthird('wechat')"><img ng-src="img/icon-share-wechat.png"></div>
+                    <div class="col" ng-click="loginthird('qq')"><img ng-src="img/icon-share-qq.png"></div>
+                    <div class="col" ng-click="loginthird('sina')"><img ng-src="img/icon-share-sina.png"></div>
+                    <div class="col" ng-click="loginthird('alipay')"><img ng-src="img/icon-loading-alipay.png"></div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

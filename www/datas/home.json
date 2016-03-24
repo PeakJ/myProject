@@ -1,0 +1,136 @@
+[
+  {
+    "columns":[{
+      "type":"slidebox",
+      "data":[
+        {
+          "href":"#active/10",
+          "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033632124.jpg"
+        },
+        {
+          "href":"#active/11",
+          "img":"http://img1.zhongmian.com/upload/2015/6/2/20150602100454318.jpg"
+        }]
+    }]
+
+  },{
+  "columns":[
+    {
+      "type":"imgad",
+      "data":[
+        {
+          "href":"#active/10",
+          "img":"http://img2.zhongmian.com/upload/2015/6/1/20150601034309982.jpg"
+        }]
+    },{
+      "type":"imgad",
+      "data":[
+        {
+          "href":"#active/10",
+          "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+        }]
+    }
+
+  ]
+
+},{
+  "columns":[{
+    "type":"imgad",
+    "data":[
+      {
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      }]
+
+  }]
+},{
+  "columns":[{
+    "type":"imgad",
+    "data":[
+      {
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      }]
+
+  },{
+    "type":"imgad",
+    "data":[
+      {
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      }]
+
+  }]
+},{
+  "columns":[{
+    "type":"hotcat",
+    "moduleName":"热门分类标题可换",
+    "data":[
+      {
+        "title":"女装1",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装2",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装3",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装4",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装5",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装6",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装7",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "title":"女装8",
+        "info":"时尚搭配",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      }]
+
+  }]
+},{
+  "columns":[{
+    "type":"prolist",
+    "moduleName":"更多惊喜",
+    "data":[
+      {
+        "sku":"123456",
+        "price":"254",
+        "title":"CHACKOn女士长袖连衣裙",
+        "mark":"减",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      },{
+        "sku":"123456",
+        "price":"12548",
+        "title":"CHACKOn女士长袖连衣裙",
+        "mark":"赠",
+        "href":"#active/10",
+        "img":"http://img3.zhongmian.com/upload/2015/6/1/20150601033458208.jpg"
+      }]
+
+  }]
+}
+
+]

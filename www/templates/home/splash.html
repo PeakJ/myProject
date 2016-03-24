@@ -1,0 +1,25 @@
+<!-- 动态获取启动画面  BY 葛硕 20150825 -->
+<ion-view  hide-nav-bar="true" cache-view="false">
+    <ion-content has-bouncing="false">
+        <!--本地欢迎页面：每次更新版本时显示-->
+        <ion-slide-box slide-interval="1000" active-slide="pageData.localIndex"
+                show-pager="false" ng-if="showLocal" on-drag-left="swipeLocalLeft()">
+            <ion-slide ng-repeat="slideItem in localImages">
+                <div style="background: url({{slideItem}}) no-repeat;background-size: 100% 100%"
+                     ng-click="clickLocalPage($index)" class="cdfg-full">
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+
+
+        <ion-slide-box on-slide-changed="slideContent($index)" auto-play="autoPlay" slide-interval="{{SLIDE_INTERVAL}}"
+                       show-pager="false" ng-if="!showLocal && contentPages"  on-touch="setAutoPlay(false)"
+                on-hold="setAutoPlay(false)" on-release="setAutoPlay(true)" active-slide="pageData.pageIndex"
+                on-drag-left="swipeLeft()">
+            <ion-slide ng-repeat="page in contentPages">
+                <div class="cdfg-full" bind-html="page.content" ng-style="contentStyle"></div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>
+

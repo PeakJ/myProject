@@ -1,0 +1,97 @@
+/*
+   订单提交
+
+*/
+
+ .cdfg-order-item-title{
+    padding:0 22px 0 19px;
+    height:40px; line-height: 40px;
+   i{
+      min-height:20px; line-height: 20px; padding:0 5px; margin-top:8px;
+   }
+   span.item-note{
+    font-size:$f-Weak; color: $c-general;
+   }
+ }
+.dark-border{
+  margin-top:$cdfg-margin-15;
+  .list{
+    padding:0 $f-assertive;
+    background: #fff;
+    .item{
+      border-right:none; border-left:none; padding:11px 0;padding-right:22px;font-size:$cdfg-margin-15;
+      span.item-note{
+        font-size:$f-Weak;
+      }
+      .icon{
+        right:-9px; color:$c-general-sub;font-size: 28px;
+      }
+      &:last-child{
+        border-bottom:none;
+      }
+      .checkbox{
+        min-width: 210px;
+        input{
+          float:left;margin-right:10px;
+        }
+      }
+    }
+    .cdfg-order-img{
+      height:82px;line-height:50px;padding:16px 0;color:$c-general;
+      .col-59{
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 59%;
+        -moz-box-flex: 0;
+        -moz-flex: 0 0 59%;
+        -ms-flex: 0 0 59%;
+        flex: 0 0 59%;
+        max-width: 59%;
+      }
+      .cdfg-order-img-queue{
+        white-space: nowrap;overflow: hidden;
+        img{
+          width:50px; height: 50px; margin-right:$cdfg-margin-15;
+        }
+      }
+
+    }
+    &.cdfg-confirm-order-list{
+      .item{
+        padding:11px 37px 11px 15px;
+        .icon{
+          right:8px; color:$c-general-sub;
+        }
+        &.item-input-wrapper{
+          padding:10px 15px 15px;min-height:113px;background:#fff;
+          textarea{
+            min-height:88px;width:100%;background:$c-Weak;border-radius: 3px;padding:9px 12px;font-size:$f-general;line-height:$f-Weak * 2;vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+  &.cdfg-order-total-price{
+    padding:11px 30px 18px 0;
+    text-align: right;
+    background:#fff;
+    p{
+      margin: 0;
+    }
+    span{
+      width:4.5rem ;
+      display: inline-block;
+    }
+  }
+}
+//发票信息
+.cdfg-invoic .scroll-content{background:#f3f5f5;padding-top:1rem}
+.cdfg-invoic-bd{
+  background: #fff;
+  padding: 0.8rem 1.2rem;
+  .cdfg-gray-input{margin:0.5rem 0;padding-left:0.5rem;background:#eee;border: 1px #ddd solid;color:#999;width:100%}
+}
+.cdfg-invoic-ft{padding:1rem 0 2.5rem 1.3rem}
+.cdfg-confirm-order-list .badge{
+  font-weight: normal;
+
+}

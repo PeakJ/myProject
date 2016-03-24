@@ -1,0 +1,88 @@
+<!-- 个人中心->中免卡  by geshuo 2015/07/09 -->
+<ion-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">中免卡</span>
+    </ion-header-bar>
+    <ion-tabs class="tabs-top tabs-striped cdfg-coupon-tabs" tabindex="indexObj.index">
+        <ion-tab title="充值绑定" >
+            <ion-view>
+                <ion-content>
+                    <ion-refresher on-refresh="loadData()"></ion-refresher>
+                    <div class="cdfg-card-remain cdfg-card-margin-top-21" >
+                        <span class="cdfg-font-second-dark">您的卡内余额：</span>
+                        <!--<span class="cdfg-font-second-assertive">￥</span>-->
+                        <span class="cdfg-font-second-assertive" ng-bind="cardData.cardMoney | currency:'&yen;'"></span>
+                    </div>
+                    <div class="margin-top" ng-include="'templates/personal/assets/card-recharge-template.html'"></div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="消费记录">
+            <ion-view>
+                <img ng-if="showPayTopImage" class="cdfg-top-icon" src="img/icon-top.png" ng-click="scrollPayToTop()"/>
+                <ion-content delegate-handle="payHandle" on-scroll="onPayListScroll()">
+                    <ion-refresher pulling-text="下拉刷新" on-refresh="getPayList(false);"></ion-refresher>
+
+                    <!--网络错误-->
+                    <div ng-if="payListError" ng-include="'templates/common/network-error.html'"
+                         ng-click="getPayList(false);">
+                    </div>
+
+                    <div class="cdfg-card-item" ng-repeat="payItem in cardPayList"
+                         ng-class="{'cdfg-card-margin-top-21':$index==0,'margin-top':$index!=0}"
+                         ng-click="toOrderDetail(payItem.orderId)">
+                        <span class="cdfg-font-general-dark">订单编号：</span>
+                        <span class="cdfg-font-general-dark"  ng-bind="payItem.orderCode"></span>
+                        <div class="cdfg-fr">
+                            <span class="cdfg-font-general-dark">使用金额：</span>
+                            <span class="cdfg-font-big-assertive" ng-bind="payItem.money | currency:'&yen;'"></span>
+                        </div>
+                        <div class="margin-top-small">
+                            <span class="cdfg-font-sub-light" ng-bind="payItem.date"></span>
+                        </div>
+                    </div>
+                    <ion-infinite-scroll ng-if="hasMorePayData" distance="1%" on-infinite="getPayList(true)"></ion-infinite-scroll>
+
+                    <div class="cdfg-card-list-empty" ng-if="cardPayList.length == 0&&payListBack&&!payListError">
+                        <p class="cdfg-list-no-records">暂无记录</p>
+                    </div>
+
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="充值记录">
+            <ion-view>
+                <img ng-if="showRechargeTopImage" class="cdfg-top-icon" src="img/icon-top.png" ng-click="scrollRechargeToTop()"/>
+                <ion-content delegate-handle="rechargeHandle" on-scroll="onRechargeListScroll()">
+                    <ion-refresher pulling-text="下拉刷新"  on-refresh="getRechargeList(false)"></ion-refresher>
+
+                    <!--网络错误-->
+                    <div ng-if="rechargeListError" ng-include="'templates/common/network-error.html'"
+                         ng-click="getRechargeList(false)">
+                    </div>
+
+                    <div class="cdfg-card-item" ng-class="{'cdfg-card-margin-top-21':$index==0,'margin-top':$index!=0}"
+                         ng-repeat="rechargeItem in rechargeList">
+                        <span class="cdfg-font-general-dark">卡号：</span>
+                        <span class="cdfg-font-general-dark"  ng-bind="rechargeItem.cardCode"></span>
+                        <div class="price-bg">
+                            <span class="cdfg-font-general-dark">金额：</span>
+                            <span class="cdfg-font-big-assertive" ng-bind="rechargeItem.money | currency:'&yen;'"></span>
+                        </div>
+                        <div class="margin-top-small">
+                            <span class="cdfg-font-sub-light" ng-bind="rechargeItem.date"></span>
+                        </div>
+                    </div>
+                    <ion-infinite-scroll ng-if="hasMoreRechargeData" distance="1%" on-infinite="getRechargeList(true)"></ion-infinite-scroll>
+
+                    <div class="cdfg-card-list-empty" ng-if="rechargeList.length == 0&&rechargeListBack&&!rechargeListError">
+                        <p class="cdfg-list-no-records">暂无记录</p>
+                    </div>
+
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>

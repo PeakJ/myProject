@@ -1,0 +1,8 @@
+<!--焦点图-->
+<div ng-if="d.showTitle==0" class="cdfg-idx-mdtitle" style="padding-top:{{d.top}}">{{d.title}}</div>
+<ion-slide-box class="" style="height:200px" slide-interval="2000" auto-play="true" does-continue="true">
+    <ion-slide  ng-repeat="item in d.rows" >
+        <a href="{{item.url}}"><img width="100%" ng-src="{{item.pic |  imgUrlFilter}}"/></a>
+    </ion-slide>
+
+</ion-slide-box>

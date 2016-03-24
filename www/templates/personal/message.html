@@ -1,0 +1,28 @@
+<ion-view hide-nav-bar="true">
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">消息中心</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content>
+        <div class="list">
+            <!--<a class="item cdfg-message">-->
+                <!--<p class="title">系统消息<span class="cdfg-fr datetime">2015-07-12 20:30:21</span></p>-->
+
+                <!--<p class="detail">您的订单1234567890，已递交给快递小哥，请耐心等候。</p>-->
+            <!--</a>-->
+
+            <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+            <div class="item cdfg-message" ng-repeat="message in messageList" ng-click="readMessage(message)">
+                <p class="title">{{message.title}}<span class="cdfg-fr datetime">{{message.sendDateTime}}</span></p>
+
+                <div class="detail" bind-html="message.content"></div>
+            </div>
+        </div>
+        <ion-infinite-scroll immediate-check="true" on-infinite="loadMore()" ng-if="moreDataCanBeLoaded()">
+        </ion-infinite-scroll>
+
+        <div ng-if="!moreDataCanBeLoaded()">没有更多消息了</div>
+    </ion-content>
+</ion-view>

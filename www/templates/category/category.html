@@ -1,0 +1,65 @@
+<ion-view has-header="true"   hide-nav-bar="true" >
+    <div ng-if="!query.isShowSearch">
+        <ion-header-bar class="cdfg-category-header bar bar-header  item-input-inset" >
+            <!--<a href="#" class="button button-icon icon ion-ios-arrow-left cdfg-header-left-arrow"  ng-click="closeSearch();"  ></a>&lt;!&ndash; ng-style="headerLeftArrowStyle" &ndash;&gt;-->
+            <!--<div class="item-input item-input-wrapper cdfg-input-wrapper cdfg-bkg-white-important"  >  &lt;!&ndash;ng-style="searchInputStyle" &ndash;&gt;-->
+                <label class="item-input-wrapper cdfg-bkg-white-important cdfg-header-marging-left-wrapper"
+                       ng-click="showSearch()" style="  margin-left: 20px; margin-right: 20px;">
+                    <!--CHG START BY 葛硕 20150827：修改搜索图标-------------------------------------------->
+                    <!--<i class="icon ion-ios-search cdfg-category-label cdfg-header-left-arrow"></i>-->
+                    <img src="img/icon-category-search.png" class="cdfg-category-search"/>
+                    <!--CHG END   BY 葛硕 20150827：修改搜索图标-------------------------------------------->
+                    <input type="search" ng-model="query.tag" placeholder="搜索商品或免税店" class="cdfg-category-inut cdfg-bkg-white-important cdfg-search-input-height">
+                </label>
+            <!--</div>-->
+            <!--<button class="button-icon cdfg-header-marging-left-wrapper">取消</button>-->
+        </ion-header-bar>
+        <ion-content >
+            <!--网络错误-->
+            <div ng-if="networkError" ng-include="'templates/common/network-error.html'" style="height:100%"
+                 ng-click="reload();">
+            </div>
+            <div class="row cdfg-category-row" style="" ng-if="!networkError">
+                <div class="col col-25 cdfg-category-left-col" >
+                    <ion-scroll id="category-first-type" style="height: 100%" delegate-handle="left">
+                        <ul class="list" ng-style="leftScrollHeight">
+                            <li  class="item cdfg-category-item {{item.isActive}}" ng-repeat="item in fistTypeList"
+                                 ng-click="getSecondTypeList(item.id);getActivated(item.id)" ng-model="item">
+                               {{item.name}}
+                            </li>
+                        </ul>
+                    </ion-scroll>
+                </div>
+                <div class="col cdfg-category-right-col light-bg">
+                    <ion-scroll  style="height: 100%" delegate-handle="right">
+                     <div ng-style="rightScrollHeight" nav-direction="forward">
+                    <div  ng-repeat="st in secondTypeList" ng-model="secondTypeList" class="cdfg-category-st-div">
+
+                        <li class="item cdfg-category-second-level-title" >
+                            <span class="cdfg-category-title-span">  {{st.name}} </span>
+                        </li>
+                        <div class="list" >
+                            <a   ng-repeat="item in st.children track by $index" ng-model="item" ng-style="item.isShow"
+                                 href="#/productList/category/{{::item.id}}///view"
+                               class="item col-33 item-borderless margin-bottom" style=" display: inline-block;padding: 0;text-align: center;width: 33%;">
+                                <img  width="100%" ng-src="{{ item.icon | imgUrlFilter}}" alt="" style="height: 80px"/>
+                                <!--CHG START BY 葛硕 20150821：字号颜色调整 ------------------------------------>
+                                <h2 class="cdfg-font-second-light" style="margin-top: 10px;">{{item.name}}</h2>
+                                <!--CHG END   BY 葛硕 20150821：字号颜色调整 ------------------------------------>
+                            </a>
+                        </div>
+                    </div>
+                        </div>
+                    </ion-scroll>
+                </div>
+            </div>
+
+        </ion-content>
+        <ion-footer-bar >
+            <div ng-include="'templates/home/tab.html'"></div>
+        </ion-footer-bar>
+    </div>
+    <div cdfg-search="query" ng-if="query.isShowSearch"> <!-- 搜索指令-->
+
+    </div>
+</ion-view>

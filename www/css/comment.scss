@@ -1,0 +1,63 @@
+/*
+  author:haosijia@cdfg.com.cn
+  create time:2015/06/17
+*/
+
+/* 评论列表 */
+
+.cdfg-comment-subheader{
+  margin-top:15px;padding-top: 15px !important;
+  height:60px;overflow:hidden;border-bottom:1px solid $c-general-thd;
+  .col{
+    padding:0;text-align:center;line-height:1.4rem;font-size:$f-general;color:$c-dark;
+    &.assertive{
+      border-bottom:3px solid $c-assertive;margin-bottom:-1px;color:$c-assertive;
+    }
+    small{
+      display:block;line-height:1rem;font-size:$f-Weak;
+    }
+  }
+}
+
+.cdfg-comment-has-subheader{
+  //top:118px;
+  margin-top: 28px;
+  .list{
+    //margin-top:10px;//comment out by geshuo
+    font-size:$f-Weak;line-height:1.1875rem;
+  }
+  .item{
+    border:none;border-bottom:1px solid $c-general-thd;height:37px;line-height:37px;padding:0 21px 0 45px;font-size:$f-Weak;
+    i{
+      display: inline-block;width:20px;height:20px;/*border:1px solid #ccc;*/border-radius: 3px;margin-top:8px;left:16px;
+      img{
+        width:100%;height:100%;
+      }
+    }
+    .item-note{
+      color:$c-general-sub;font-size:$f-Weak;
+    }
+
+  }
+  .cdfg-comment-list-content{
+    padding:15px 0 17px 19px;
+    .ion-ios-star{
+      margin-right:4px;
+    }
+    .comment-box{
+      padding:9px 0;
+    }
+    .info{
+      padding-top:$cdfg-margin-5;
+    }
+  }
+}
+.cdfg-has-more{
+  text-align: center;color:$c-general-sub;
+}
+.bar-footer{
+  height:50px;border:none;
+  .button-center{
+    margin: 0 auto;border-radius: 0;padding:0 20px;font-size:$f-assertive;font-family: $font-family;min-width:100px;height:50px;opacity: 1;
+  }
+}

@@ -1,0 +1,97 @@
+<!-- 用户中心->订单列表画面 by葛硕 20150625 -->
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title" ng-bind="pageTitle"></span>
+    </ion-header-bar>
+
+    <img ng-if="showToTopImage" class="cdfg-top-icon" src="img/icon-top.png" ng-click="scrollTop()"/>
+
+    <ion-content class="cdfg-personal-order-list-main-bg" delegate-handle="orderContent" on-scroll="onContentScroll()">
+        <ion-refresher on-refresh="doRefreshOrders()"></ion-refresher>
+        <div class="list margin-top-15">
+
+            <!--网络错误-->
+            <div ng-if="networkError" ng-include="'templates/common/network-error.html'"
+                    ng-click="loadData();">
+            </div>
+
+            <div class="cdfg-order-list-empty" ng-if="orderDataList.length == 0&&responseBack&&!networkError">
+                <p class="cdfg-list-no-records">暂无订单</p>
+            </div>
+
+            <div ng-repeat="orderData in orderDataList" ng-class="{'margin-top':$index!=0}"
+                 class="light-bg">
+
+                <!-- 店铺信息 -->
+                <div class="cdfg-personal-order-item-title"
+                     ng-if="fromType!=WAIT_REMARK">
+                    <span ng-bind="orderData.storeName" ng-click="toShopDetail(orderData.storeId)"
+                          class="cdfg-personal-order-item-shop-text margin-left-small"></span>
+                    <img class="cdfg-personal-order-right-arrow" ng-if="orderData.orderType==2" src="img/icon-right.png">
+                    <span ng-bind="getStatus(orderData.status)"
+                          class="cdfg-personal-order-item-status cdfg-fr"></span>
+                </div>
+
+                <!-- 待评价订单：编号信息 -->
+                <div class="cdfg-personal-order-item-title"
+                        ng-if="fromType==WAIT_REMARK">
+                    <span class="cdfg-personal-order-item-title-text">订单编号：</span>
+                    <span class="cdfg-personal-order-item-title-text" ng-bind="orderData.code"></span>
+                </div>
+
+                <!-- 一个商品 -->
+                <div class="cdfg-orderlist-item" ng-if="orderData.items.length==1"
+                     ng-click="toOrderDetail(orderData.id)" >
+                    <img ng-src="{{orderData.items[0].mainPic | imgUrlFilter}}"
+                         class="cdfg-orderlist-item-img cdfg-fl cdfg-default-hy"/>
+                    <div class="cdfg-orderlist-title" ng-bind="orderData.items[0].prodName"></div>
+                </div>
+
+
+                <!-- 多个商品 -->
+                <div class="row cdfg-orderlist-scroll-item" ng-if="orderData.items.length>1"
+                     ng-click="toOrderDetail(orderData.id)">
+                    <ion-scroll direction="x" scrollbar-x="false" delegate-handle="{{orderData.id}}">
+                        <div ng-style="{width:orderData.items.scrollWidth}" >
+                            <img ng-repeat="goods in orderData.items" ng-src="{{goods.mainPic | imgUrlFilter}}"
+                                 ng-class="{'margin-left-15':$index!=0}"
+                                 class="cdfg-orderlist-item-img cdfg-default-hy" />
+                        </div>
+                    </ion-scroll>
+                </div>
+
+                <div class="cdfg-personal-orderlist-bottom">
+                    <span>实付款：</span>
+                    <span ng-bind="orderData.realChargeFee | currency:'&yen;'"></span>
+
+                    <!-- 可操作按钮 -->
+                    <div class="cdfg-fr" ng-if="orderData.status==NOT_PAY">
+                        <button class="button-assertive button cdfg-personal-order-list-bottom-button"
+                                ng-click="toImmediatePay(orderData.id)">立即付款</button>
+                    </div>
+                    <div class="cdfg-fr" ng-if="orderData.status==DELIVERED">
+                        <button class="button-assertive button cdfg-personal-order-list-bottom-button"
+                                ng-click="confirmReceive(orderData.id)">确认收货</button>
+                    </div>
+                    <div class="cdfg-fr" ng-if="orderData.status==DEAL && fromType!=WAIT_REMARK && orderData.comment==0">
+                        <button class="button assertive cdfg-personal-order-list-bottom-button light-bg assertive-border"
+                                ng-click="remarkOrder(orderData.id,orderData.items)">评价晒单</button>
+                    </div>
+
+                    <div class="cdfg-fr" ng-if="orderData.status==DEAL&&fromType==WAIT_REMARK">
+                        <button class="button button-assertive cdfg-personal-order-list-bottom-button"
+                                ng-click="remarkOrder(orderData.id,orderData.items)">评价</button>
+                    </div>
+                    <div class="cdfg-fr" ng-if="orderData.status==6&&fromType==WAIT_REMARK">
+                        <button class="button cdfg-personal-order-list-bottom-button cdfg-personal-order-list-disable-btn">
+                            已评价
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="getOrder(true)" ng-if="hasMoreOrder"
+                distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

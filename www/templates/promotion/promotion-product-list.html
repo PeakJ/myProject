@@ -1,0 +1,35 @@
+<ion-view has-header="true"   hide-nav-bar="true" >
+    <ion-header-bar class="cdfg-promotion-product-header" >
+        <a href="#" class="button button-icon icon ion-ios-arrow-left"  ng-click="myGoBack();" ></a>
+        <div class="title" ng-style="headerTitleStyle">{{title}} </div>
+    </ion-header-bar>
+    <ion-content class="cdfg-brand-list-content" ng-style="contentBkgStyle">
+       <div class="cdfg-promotion-header-below">
+           <ul class="cdfg-promotion-ul">
+               <li class="item cdfg-promotion-li">
+                    <span class="cdfg-promotion-tag-span">{{pType}}</span>
+                    <span style=" display: inline-block;font-size: 12px">{{pDescription}}</span>
+               </li>
+           </ul>
+       </div>
+        <div class="cdfg-product-list-demo" ng-if="total">
+
+            <!--下拉刷新-->
+            <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+            <!--引入列表 -->
+            <div ng-include="'templates/promotion/product-list.html'" style="margin-top: 10px"></div>
+
+            <!--上拉加载更多-->
+            <ion-infinite-scroll ng-if="hasMore()" on-infinite="loadMore()"></ion-infinite-scroll>
+
+            <div ng-if="!hasMore()" class="cdfg-has-more">没有更多产品了</div>
+
+        </div>
+        <div class="cdfg-product-list-empty" ng-if="!total">
+            <p>呀~还没找到<br/>要不去看看热门搜索</p>
+        </div>
+        <div class="cdfg-detail-empty-height"></div>
+
+    </ion-content>
+
+</ion-view>

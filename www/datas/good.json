@@ -1,0 +1,29 @@
+{
+  "id":"0930245455",
+  "code":"0930245455",
+  "brandId":"2456",
+  "bcId":1,
+  "storeId":"564",
+  "storeName":"广州白云山国际机场免税店",
+  "brandName":"Michael Kors",
+  "name":"红石榴多酚滋养沐浴露",
+  "subtitle":"迈克 科尔斯 吹牛皮 女士 单肩 手提包 30S5VCYS1L 黑色",
+  "goodsNo":"1",
+  "spuImgs":[
+    "http://img3.zhongmian.com/upload/601/603/225646/225648/225672/265421_1_pic500_3465.jpg",
+    "http://img3.zhongmian.com/upload/601/603/225646/225648/225672/265421_2_pic500_1283.jpg",
+    "http://img2.zhongmian.com/upload/601/603/225646/225648/225672/265421_3_pic500_1962.jpg"
+  ],
+  "type":1,
+  "status":1,
+  "salerGuarantee":["正品保证","维修保养","权威鉴定","七天退货","国家免税"],
+  "whId":1,
+  "saleMode":"满300减100",
+  "inventoryMode":1,
+  "spuId":"6666666666",
+  "salePrice":99,
+  "marketPrice":189,
+  "innerPrice":59,
+  "detail":["http://img1.zhongmian.com/upload/2015/1/16/20150116045716255.jpg"],
+  "attr" :"商品编码=093029133||品牌=Michael kors||规格=白色S||尺寸=S||产地=意大利"
+}

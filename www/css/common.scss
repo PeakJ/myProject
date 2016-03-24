@@ -1,0 +1,718 @@
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]{
+  -webkit-appearance : none ;  /*解决iphone safari上的圆角问题*/
+}
+input, button, select, textarea{
+  font-family: "Microsoft Yahei";
+}
+
+
+/*
+   common style
+
+*/
+/*命名*/
+//强调      assertive    //红色
+//重要      dark     //黑色 如大标题 楼层标题
+
+//普通      general       //灰色 6 如 常规段落文字
+//普通次要   general-sub   //灰色 9 如 辅助文字 普通按钮描边
+//普通      general-thd   //灰色 d 如 描边 边框
+
+//较弱      Weak            //灰色 #e5 如 内容底色，部分文字颜色
+//最弱      weakest          //浅灰 #f9 如 模块底色，背景色
+
+//颜色
+$c-assertive: #cf000e;
+$c-dark: #3e3e3e;
+$c-general: #666;
+$c-general-sub: #999;
+$c-general-thd: #ddd;
+$c-Weak: #e5e5e5;
+$c-weakest: #f3f5f5;
+/* add start by geshuo 20150722:标题栏底部线的颜色  */
+$c-light-gray: #bbb;
+/* add end by geshuo 20150722:标题栏底部线的颜色  */
+//文字
+$font-family: 'Microsoft Yahei';
+
+$f-assertive: 1.125rem;
+//18px;
+$f-dark: 0.9375rem;
+//15px;
+$f-general: 0.875rem;
+//14px;
+$f-general-sub: 0.8125rem;
+//13px;
+$f-Weak: 0.75rem;
+//12px;
+$f-weakest: 0.6875rem;
+//11px;
+
+/*add start by geshuo 20150727:常用间距---------------------------------*/
+$cdfg-margin-5: 0.3125rem;
+//5px;
+$cdfg-margin-10: 0.625rem;
+//10px;
+$cdfg-margin-15: 0.9375rem;
+//15px;
+$cdfg-margin-20: 1.25rem;
+//20px;
+/*add end   by geshuo 20150727:常用间距---------------------------------*/
+
+.cdfg-margin-15 {
+  margin-bottom: $cdfg-margin-15;
+}
+
+//add start by maliwei 常用颜色
+.c-assertive {
+  color: $c-assertive;
+}
+
+.c-dark {
+  color: $c-dark;
+}
+
+.c-general {
+  color: $c-general;
+}
+
+.c-general-sub {
+  color: $c-general-sub;
+}
+
+.c-general-thd {
+  color: $c-general-thd;
+}
+
+.c-Weak {
+  color: $c-Weak;
+}
+
+.c-weakest {
+  color: $c-weakest;
+}
+
+/*add start by geshuo 20150727:动态设置html根元素字体大小(根据逻辑分辨率判断)---------------------------------*/
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/*add end   by geshuo 20150727:动态设置html根元素字体大小---------------------------------*/
+/*add start by geshuo 20150728:常用字体
+ *big:18px;
+ *second:15px;
+ *general:14px;
+ *sub:12px---------------------------------*/
+//常用字体：18px  （153 153 153）
+.cdfg-font-big-lighter {
+  font-size: $f-assertive !important;
+  color: $c-general-sub !important;
+}
+
+//常用字体：18px  assertive
+.cdfg-font-big-assertive {
+  font-size: $f-assertive !important;
+  color: $c-assertive !important;
+}
+
+//常用字体：15px  （62 62 62）
+.cdfg-font-second-dark {
+  font-size: $f-dark !important;
+  color: $f-dark !important;
+}
+
+//常用字体：15px  assertive
+.cdfg-font-second-assertive {
+  font-size: $f-dark !important;
+  color: $c-assertive !important;
+}
+
+//常用字体：14px  （102 102 102）
+.cdfg-font-second-light {
+  font-size: $f-general !important;
+  color: $c-general !important;
+}
+
+//常用字体：14px  （62 62 62）
+.cdfg-font-general-dark {
+  font-size: $f-general !important;
+  color: $c-dark !important;
+}
+
+//常用字体：14px  （153 153 153）
+.cdfg-font-general-sub {
+  font-size: $f-general !important;
+  color: $c-general-sub !important;
+}
+
+//常用字体：14px  assertive
+.cdfg-font-general-assertive {
+  font-size: $f-general !important;
+  color: $c-assertive !important;
+}
+
+//常用字体：12px  （102 102 102）
+.cdfg-font-sub-light {
+  font-size: $f-Weak !important;
+  color: $c-general !important;
+}
+
+//常用字体：12px  （153 153 153）
+.cdfg-font-sub-lighter {
+  font-size: $f-Weak !important;
+  color: $c-general-sub !important;
+}
+
+//常用字体：12px  （62 62 62）
+.cdfg-font-small-dark {
+  font-size: $f-Weak !important;
+  color: $c-dark !important;
+}
+
+//常用字体：12px  assertive
+.cdfg-font-small-assertive {
+  font-size: $f-Weak !important;
+  color: $c-assertive !important;
+}
+
+/*add end   by geshuo 20150728:常用字体---------------------------------*/
+/*定义全局*/
+a {
+  color: $c-dark;
+}
+
+//底背景色
+html, body, .pane, .bg-weakest {
+  background: $c-weakest;
+  font-family: $font-family;
+}
+
+//隐藏返回按钮的文字信息
+.bar-header .button .back-text {
+  display: none;
+}
+
+//覆盖默认border样式
+.cdfg-padding {
+  padding: 0 !important;
+}
+
+.cdfg-padding-top-bottom {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.cdfg-padding-left-right {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.cdfg-border-none {
+  border: none !important;
+}
+.cdfg-border-top-none {
+  border-top: none !important;
+}
+.cdfg-border-white {
+  border-top-color: #fff;
+}
+
+.cdfg-white-space {
+  white-space: normal !important;
+}
+
+//隐藏tabs
+.tabs-hide {
+  .tabs {
+    display: none;
+  }
+  .has-tabs {
+    bottom: 0;
+  }
+}
+
+.tabs-show {
+  .tabs {
+    display: flex;
+  }
+  .has-tabs {
+    bottom: 49px;
+  }
+}
+
+//tab底线
+.tabs-striped .tabs {
+  border-bottom: none;
+}
+
+// tab样式
+.cdfg-tabs {
+  .tabs {
+    padding-top: 4px;
+    height: 51px;
+    line-height: 51px;
+  }
+  .tab-item, .tab-item.tab-item-active {
+    border: none;
+    font-family: $font-family;
+    margin: 0;
+    border: none !important;
+  }
+  .tab-item {
+    i {
+      height: 27px;
+      background-size: 21px 21px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .cdfg-home-normal {
+      background-image: url(../img/icon-footmenu-home-normal.png);
+    }
+    .cdfg-brand-normal {
+      background-image: url(../img/icon-footmenu-brand-normal.png);
+    }
+    .cdfg-category-normal {
+      background-image: url(../img/icon-footmenu-department-normal.png);
+    }
+    .cdfg-cart-normal {
+      background-image: url(../img/icon-footmenu-cart-normal.png);
+      background-size: 23px 21px;
+    }
+    .cdfg-personal-normal {
+      background-image: url(../img/icon-footmenu-mine-normal.png);
+    }
+    .cdfg-home-highlight {
+      background-image: url(../img/icon-footmenu-home-highlight.png);
+    }
+    .cdfg-brand-highlight {
+      background-image: url(../img/icon-footmenu-brand-highlight.png);
+    }
+    .cdfg-category-highlight {
+      background-image: url(../img/icon-footmenu-department-highlight.png);
+    }
+    .cdfg-cart-highlight {
+      background-image: url(../img/icon-footmenu-cart-highlight.png);
+      background-size: 23px 21px;
+    }
+    .cdfg-personal-highlight {
+      background-image: url(../img/icon-footmenu-mine-highlight.png);
+    }
+    span {
+      font-size: $f-Weak;
+      line-height: 0.9375rem;
+      color: $c-general-sub;
+    }
+  }
+  .tab-item.tab-item-active {
+
+    span {
+      color: $c-assertive;
+    }
+  }
+
+}
+
+//覆盖ionic css
+.assertive, a.assertive {
+  color: $c-assertive
+}
+
+.button.button-assertive {
+  background: $c-assertive;
+  color: #fff;
+}
+
+.general-sub, a.general-sub {
+  color: $c-general-sub;
+}
+
+.button.button-submit {
+  border: none;
+  border-radius: 0;
+}
+
+.item-checkbox {
+  padding-left: 43px;
+  padding-top: 12px;
+}
+
+.checkbox input, .checkbox-icon {
+  width: 1.3rem;
+  height: 1.3rem
+}
+
+.checkbox input:checked::before, .checkbox input:checked + .checkbox-icon::before {
+  background: $c-assertive;
+  border: none;
+
+}
+
+.checkbox input::after, .checkbox-icon::after {
+  width: 11px;
+  top: 27%;
+}
+
+.assertive-border {
+  border-color: $c-assertive;
+}
+
+//常用
+.cdfg-fl {
+  float: left;
+}
+
+.cdfg-fr {
+  float: right;
+}
+
+.cdfg-relative {
+  position: relative
+}
+
+//校验错误的红色输入框
+.cdfg-input-error {
+  color: red !important;
+}
+
+.cdfg-input-error::-webkit-input-placeholder {
+  color: red !important;
+}
+
+/*add start by geshuo 20150727:常用margin开始*/
+.margin-0{
+  margin: 0 !important;
+}
+
+.margin {
+  margin: $cdfg-margin-10;
+}
+
+.margin-right-small {
+  margin-right: $cdfg-margin-5 !important;
+}
+
+.margin-right {
+  margin-right: $cdfg-margin-10 !important;
+}
+
+.margin-right-20 {
+  margin-right: $cdfg-margin-20 !important;
+}
+
+.margin-left-small {
+  margin-left: $cdfg-margin-5 !important;
+}
+
+.margin-left {
+  margin-left: $cdfg-margin-10 !important;
+}
+
+.margin-left-15 {
+  margin-left: $cdfg-margin-15 !important;
+}
+
+.margin-top-small {
+  margin-top: $cdfg-margin-5 !important;
+}
+
+.margin-top {
+  margin-top: $cdfg-margin-10 !important;
+}
+
+.margin-top-15 {
+  margin-top: $cdfg-margin-15 !important;
+}
+
+.margin-bottom {
+  margin-bottom: $cdfg-margin-10 !important;
+}
+
+.margin-bottom-15 {
+  margin-bottom: $cdfg-margin-15 !important;
+}
+
+.padding-small {
+  padding: $cdfg-margin-5 !important;
+}
+
+.padding-top-small {
+  padding-top: $cdfg-margin-5 !important;
+}
+
+.padding-left-big {
+  padding-left: $cdfg-margin-20;
+}
+
+.padding-right-big {
+  padding-right: $cdfg-margin-20;
+}
+
+.padding-bottom-20 {
+  padding-bottom: $cdfg-margin-20;
+}
+
+.width-full {
+  width: 100%;
+}
+
+//公共icon大小
+
+$icon-size: 1rem;
+$icon-size-medium: 22px;
+.cdfg-icon {
+  font-size: $icon-size;
+  width: $icon-size;
+  height: $icon-size;
+}
+
+.cdfg-icon-medium {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}
+
+//圆角
+@mixin border-radius($radius:5px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//布局
+
+//价格
+.price-assertive {
+  font-size: $f-general;
+  color: $c-assertive;
+  font-weight: bold
+}
+
+.price-general {
+  font-size: $f-Weak;
+  color: $c-assertive;
+}
+
+.price-weak {
+  font-size: $f-Weak;
+  color: $c-dark;
+}
+
+.price-del {
+  font-size: $f-Weak;
+  color: $c-general-sub;
+}
+
+body {
+  color: $c-dark;
+}
+
+//图标
+
+//默认显示图片
+.cdfg-default-hy{
+  background:$c-weakest url(../img/icon-default-background.png) no-repeat center;background-size: 40px 40px !important;
+}
+
+//按钮
+/* add start by geshuo 20150722:标题栏 白色  */
+.cdfg-common-title {
+  border-bottom: 1px solid !important;
+  border-color: $c-light-gray !important;
+  background: $c-Weak !important;
+  .title {
+    font-size: $f-assertive !important;
+    color: $c-dark !important;
+  }
+  .title-back-button {
+    background: url(../img/icon-back.png) no-repeat !important;
+    background-size: 10px !important;
+    background-position: center !important;
+    width: 40px;
+  }
+}
+
+/* add END by geshuo 20150722:标题栏 白色  */
+/* ADD START BY geshuo 20150814:标题栏 黑色  */
+.cdfg-black-title {
+  border-bottom: 1px solid !important;
+  border-color: #1e1e1e !important;
+  background: #2e2e2e !important;
+  .title {
+    font-size: $f-assertive !important;
+    color: white !important;
+  }
+  .title-back-button {
+    background: url(../img/icon-back-white.png) no-repeat !important;
+    background-size: 10px !important;
+    background-position: center !important;
+    width: 40px;
+  }
+  .title-right-button {
+    width: 40px;
+    color: white;
+    font-size: $f-general !important;
+  }
+}
+
+/* ADD END   BY geshuo 20150814:标题栏 黑色  */
+
+/* 弹框 by haosijia */
+.backdrop.active {
+  opacity: 0.1;
+  filter: alpha(opacity=10);
+}
+
+.popup-container .popup {
+  border-radius: 3px;
+  background-color: rgba(62, 62, 62, 0.95);
+  overflow: hidden;
+  font-family: $font-family;
+}
+
+.popup-head {
+  border-bottom: none;
+  background: #3e3e3e;
+}
+
+.popup-title {
+  font-size: $f-dark;
+  color: $c-general-thd;
+}
+
+.popup-body {
+  padding: 20px 20px 10px;
+  font-size: $f-general-sub;
+  color: #fff;
+  span.tel {
+    color: #fff !important;
+  }
+}
+
+.popup-buttons {
+  padding: 10px 20px 15px;
+  min-height: 35px;
+}
+
+.popup-buttons .button {
+  height: 30px;
+  min-height: 30px;
+  margin-right: 15px;
+  font-family: $font-family;
+  font-size: $f-dark;
+  &.button-light {
+    color: $c-general-sub;
+  }
+}
+
+.popup-container.popup-alert {
+  .popup-body {
+    text-align: center;
+  }
+  .popup-buttons {
+    padding: 10px 28% 15px;
+  }
+
+}
+
+.loading-container .loading {
+  padding: 10px;
+  .icon {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+}
+
+/* 空列表页 */
+.cdfg-product-list-empty {
+  padding-top: 223px;
+  background: url(../img/icon-empty-serch.png) no-repeat center 101px;
+  background-size: 142px auto !important;
+  p {
+    font-size: $f-general;
+    line-height: 20px;
+    text-align: center;
+    color: $c-general-sub;
+  }
+}
+
+/* 404 */
+.cdfg-product-detail-empty {
+  padding-top: 258px;
+  background: url(../img/icon-404.png) no-repeat center 76.5px;
+}
+
+/*footer bar居中底部按钮*/
+.cdfg-footer-btn-bar {
+  height: 30px;
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  .button {
+    width: 25%;
+  }
+}
+
+/*购物车数量图标*/
+.tab-item.tab-title {
+  position: relative
+}
+
+.tabs .tab-title em.cdfg-tab-badge {
+  /*z-index: 2;
+  $badge: 5px;
+  background: #ff0000;
+  height: 0.7rem;
+  border-radius: $badge;
+  float: right;
+  position: absolute;
+  left: 65%;
+  top: -1.6rem;
+  line-height: 1;
+  padding: 0 1px;
+  font-size: 0.6rem;
+  color: #fff*/
+  right: -webkit-calc(50% - 23px);
+  right: calc(50% - 23px);
+  padding: 0px 2px;
+  min-width: $f-assertive;
+  height: $f-general;
+  line-height: $f-dark;
+  font-size: 0.6rem;
+  background: #ff0000;
+  color: #fff;
+  font-weight: normal;
+}
+
+.scroll-refresher .ionic-refresher-content .text-pulling {
+  font-size: $f-Weak;
+  color: $c-general-sub;
+}
+
+.spinner-ios {
+  stroke: $c-general-sub;
+}
+
+/*网络错误 BY 葛硕 20150819 */
+.cdfg-network_error {
+  padding-top: 223px;
+  background: url(../img/icon-network-error.png) no-repeat center 101px;
+  background-size: 145px 110px;
+}
+
+/*加载条样式 BY 葛硕 20150819 */
+.cdfg-progress-bar {
+  z-index: 99;
+  position: absolute;
+  margin-top: 44px;
+  width: 100%;
+}
+
+/*充满屏幕*/
+.cdfg-full {
+  width: 100%;
+  height: 100%;
+}

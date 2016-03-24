@@ -1,0 +1,155 @@
+/*
+  author:haosijia@cdfg.com.cn
+  create time:2015/06/17
+*/
+
+/* 品牌列表页 begin */
+.bar .button.df-button-icon{font-size:0.875rem}
+.cdfg-brandlist-order{margin-bottom:1px;height:2rem;line-height: 1rem;width:100%;padding-top: 0;position: static;}
+.cdfg-brandlist-order .item{padding:0.5rem 0;padding-right:21px;}
+.cdfg-brandlist-order span{padding:0 21px;font-size:$f-general-sub;  }
+.cdfg-brandlist-order .icon-button{font-size:$f-assertive;vertical-align:sub;}
+
+
+.transition-all{
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.cdfg-product-list-subheader{
+  background-color: #f3f5f5;top:88px;
+}
+.cdfg-product-list-demo{
+  padding-top:3px;clear:both;
+  .cdfg-brandlist-col2-margin{
+    width:50%;float:left;
+    &:nth-child(odd) .cdfg-brandlist-col2-item{
+      margin-right:2.5px;
+    }
+    &:nth-child(even) .cdfg-brandlist-col2-item{
+      margin-left:2.5px;
+    }
+  }
+}
+
+.cdfg-product-list-demo .cdfg-brandlist-col2-item{
+  position:relative;border:none;padding:0;background: #fff;padding:5px;border-radius: 4px;margin-bottom:8px;
+}
+.cdfg-brandlist-main-item{
+  overflow:hidden;
+}
+.cdfg-link-item{
+  img{
+    width:100%;height:100%;
+  }
+  .cdfg-brandlist-title{
+    line-height:1.5rem;font-size:$f-Weak;padding:0 5px;text-overflow:ellipsis;overflow: hidden;
+  }
+  .cdfg-brandlist-price{
+    padding:0 5px;font-size:$f-general;line-height:1;
+    del{
+      font-size:$f-Weak;color:$c-general-sub;padding-left:0.5rem;
+    }
+  }
+  .cdfg-brandlist-soldout{
+    position:absolute;display:block;top:5px;right:5px;width:42px;height:42px;line-height:42px;color:#fff;font-size:0.8rem;text-align:center;background:rgba(0,0,0,.3);border-radius:100%
+  }
+}
+.cdfg-link-item{
+  background:#fff;
+}
+.item-thumbnail-left{
+  margin:0 11px;border:none;padding:12px 16px 10px 94px;min-height:95px;border-bottom: 1px solid #f3f5f5;
+  img:first-child{
+    left:0;
+  }
+  .cdfg-brandlist-title{
+    height:2.5rem;max-height:2.8rem;line-height:1.25rem;white-space:normal;font-size:0.8rem;border-bottom:none; padding:0;margin-bottom:0.3rem;
+  }
+  .cdfg-brandlist-price{
+    padding:0;line-height:1.25rem;
+    del{
+      padding-left:1.125rem;
+    }
+  }
+  .cdfg-brandlist-soldout{
+    left:28px;top:50%;margin-top:-21px;right:auto
+  }
+}
+
+/* 品牌列表页 filter begin */
+.cdfg-slide-dark{
+  width:30px;height:100%;position: fixed;top:0;left:-30px;bottom:0;
+}
+.cdfg-current-slide{
+  position:fixed;left:0;right:0;top:0;bottom:0;z-index: 9999;border-left:30px solid rgba(34,34,34,.6);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transform: translate3d(120%, 0px, 0px);
+  -webkit-transform: translate3d(120%, 0, 0);
+  &.cdfg-current-select-slide{
+    border-left:none;
+  }
+  &.cdfg-slide-menu{
+    transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+/*.cdfg-current-slide{
+  position:fixed;left:100%;right:0;top:0;bottom:0;z-index: 9999;transition: all 0.5s;
+  &.cdfg-slide-menu{
+    left:30px;
+  }
+}*/
+
+.cdfg-filter-list{
+  margin-bottom:15px;border-bottom:1px solid $c-general-thd;padding:14px 0 17px;background:#fff;
+  .item{
+    padding:0 20px;border:none;font-size:$f-dark;height:27px;line-height:27px;
+  }
+  .col-title{
+    font-size:$f-dark;margin-right:15px;
+  }
+  .input-text-row{
+    border:1px solid #dedede; max-width:85px; width:30%; text-align: center;height:25px;line-height:20px;border-radius: 3px;float:left;
+  }
+  span{
+    display:inline-block;width:23px;font-size: 25px;float:left;padding:0 5px;color:$c-general-sub;
+  }
+  .cdfg-brand-filtrate-catebutton{
+    border-top-color:#fff;margin-top:-1px;padding:14px 0 8px 20px;white-space:normal;border :0;height:auto;
+    label{
+      margin:0 20px 9px 0;height:21px;min-height:21px;line-height:20px;padding:0 9px;color:#666;background-color: #ffffff;border-color:$c-general-sub;
+      &.active{
+        border-color:#e42012;background-color:#e42012;color:#fff;box-shadow:inset 0 1px 4px rgba(0,0,0,0.1)
+      }
+    }
+    input{
+      width:0;height:0;overflow:hidden;opacity:0;filter:alpha(opacity=0);position: absolute;
+    }
+
+  }
+}
+.cdfg-filter-footer-button{
+  .button{
+    min-width:94px;
+    height: 30px;
+    padding:0 20px;
+    line-height:30px;
+    margin-top:10px;
+    font-size:$f-general;
+    font-family: $font-family;
+    &:first-child{
+      margin-right:7.6%;
+      color:$c-general-sub;
+    }
+  }
+}
+
+.cdfg-filter-select-list{
+  margin-top:15px;
+  .item{
+    padding-top:12px;padding-bottom:12px;padding-left:20px;
+  }
+}

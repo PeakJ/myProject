@@ -1,0 +1,73 @@
+{
+  "code":200,
+  "data":{
+    "brandList":[
+      {
+        "id": 267652,
+        "mainPic": "http://img1.zhongmian.com/upload/601/603/225646/225652/226240/267652_10_pic270_5999.jpg",
+        "name": "红石榴多酚滋养沐浴石榴多酚滋养沐浴石榴多酚滋养沐浴石榴多酚滋养沐浴露532ML",
+        "salePrice": 99.00,
+        "marketPrice": 156.00,
+        "innerPrice": 56.00,
+        "type": ["赠"],
+        "status": "已售罄"
+      },
+      {
+        "id": 267674,
+        "mainPic": "http://img2.zhongmian.com/upload/601/603/225646/225652/235638/267674_10_pic270_6027.jpg",
+        "name": "秋冬旅行套装",
+        "salePrice": 87.00,
+        "type": [
+          "减",
+          "赠"
+        ],
+        "status": "0"
+      },
+      {
+        "id": 267671,
+        "mainPic": "http://img1.zhongmian.com/upload/601/603/225646/225652/235638/267671_10_pic270_9398.jpg",
+        "name": "木瓜浴露套装",
+        "salePrice": 199.00,
+        "type": ["减"]
+      },
+      {
+        "id": 267643,
+        "mainPic": "http://img1.zhongmian.com/upload/601/602/235654/267643_10_pic270_3282.jpg",
+        "name": "野生姜盈润洗发露532ML",
+        "salePrice": 139.00,
+        "type": ["减"]
+      },
+      {
+        "id": 267674,
+        "mainPic": "http://img2.zhongmian.com/upload/601/603/225646/225652/235638/267674_10_pic270_6027.jpg",
+        "name": "秋冬旅行套装",
+        "salePrice": 87.00,
+        "type": [
+          "减",
+          "赠"
+        ]
+      },
+      {
+        "id": 267671,
+        "mainPic": "http://img1.zhongmian.com/upload/601/603/225646/225652/235638/267671_10_pic270_9398.jpg",
+        "name": "木瓜浴露套装",
+        "salePrice": 199.00,
+        "type": ["减"]
+      },
+      {
+        "id": 267643,
+        "mainPic": "http://img1.zhongmian.com/upload/601/602/235654/267643_10_pic270_3282.jpg",
+        "name": "野生姜盈润洗发露532ML",
+        "salePrice": 139.00,
+        "type": ["减"]
+      },
+      {
+        "id": 267643,
+        "mainPic": "http://img1.zhongmian.com/upload/601/602/235654/267643_10_pic270_3282.jpg",
+        "name": "1222222野生姜盈润洗发露532ML",
+        "salePrice": 139.00,
+        "type": ["减"]
+      }
+    ]
+  }
+}

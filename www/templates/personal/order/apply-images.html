@@ -1,0 +1,37 @@
+<!-- 个人中心->申请售后->图片  by 葛硕 2015/07/13 -->
+<ion-view hide-nav-bar="true">
+    <ion-content class="dark-bg">
+        <div class="bar bar-clear" style="background: rgba(0,0,0,0.5)">
+            <button ng-click="goBack();" class="button button-clear icon ion-ios-arrow-left"></button>
+            <span class="title">{{indexObj.index + 1}}/{{imageList.length}}</span>
+            <button class="button button-clear icon ion-trash-a" ng-click="deleteImg(indexObj.index)"
+                    ng-if="!clearDel&&!fromProgress"></button>
+        </div>
+
+        <ion-slide-box show-pager="false" active-slide="indexObj.index" delegate-handle="applyImgHandle"
+                       on-slide-changed="slideChange($index)">
+            <ion-slide ng-repeat="imageItem in imageList">
+
+                <ion-scroll direction="xy" zooming="true" scrollbar-x="false" scrollbar-y="false"
+                            delegate-handle="scrollHandle{{$index}}"
+                            on-scroll="scrollImg('scrollHandle'+{{$index}})"
+                            style="width: 100%;height: 100%;background: black" max-zoom="3" min-zoom="1"
+                            on-drag-left="dragToLeft({{$index}})" on-drag-right="dragToRight({{$index}})">
+                    <div style="width: 100%;height: 100%;display: table">
+                        <div class="cdfg-personal-order-table-cell">
+                            <img ng-src="{{imageItem.url}}" id="idImage{{$index}}" style="width:100%;"
+                                 ng-if="!fromProgress"
+                                 on-tap="onTap('scrollHandle'+{{$index}})" />
+
+                            <!--售后进度查询 图片展示-->
+                            <img ng-src="{{imageItem.url|imgUrlFilter}}" id="idProgressImage{{$index}}" style="width:100%;"
+                                 ng-if="fromProgress"
+                                 on-tap="onTap('scrollHandle'+{{$index}})" />
+                        </div>
+                    </div>
+                </ion-scroll>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+
+</ion-view>

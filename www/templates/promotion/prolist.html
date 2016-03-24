@@ -1,0 +1,16 @@
+<!-- 和首页 prolist 模板类似-->
+<div class="cdfg-product-list-demo cdfg-promotion-margin-top">
+    <div class="cdfg-brandlist-main-item">
+
+        <a ng-href="{{item.url}}" ng-class="list.show?'item item-thumbnail-left':'item cdfg-brandlist-col2-item'" ng-repeat="item in d.rows" style="background-color: #ffffff">
+            <p ng-if="!list.show" cdfg-auto-height="{{0.99697}}"><img ng-src="{{item.pic |  imgUrlFilter:'200;200'}}"></p>
+            <div class="cdfg-brandlist-title">{{item.prodname}}</div>
+            <!-- 销售价大于  商品的市场价 的 95% 不显示市场价 -->
+            <div class="cdfg-brandlist-price"><span class="assertive">￥{{item.price}}</span>
+                <!--<del ng-if="item.price<item.mPrice*0.95">￥{{item.mPrice}}</del>-->
+            </div>
+            <div class="cdfg-brandlist-soldout" ng-if="item.status == '已售罄'">已售罄</div>
+        </a>
+    </div>
+    <div>&nbsp;</div>
+</div>

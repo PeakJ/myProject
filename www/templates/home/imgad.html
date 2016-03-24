@@ -1,0 +1,10 @@
+<!--图片-->
+<div style="background-color:#{{d.blankColor}};margin-top:{{d.top}}"><!-- by xuf 增加了背景颜色-->
+    <div ng-if="d.showTitle==0" class="cdfg-idx-mdtitle">{{d.title}}</div>
+    <div class="row row-no-padding">
+        <div ng-if="d.type==1||d.type==2" class="col " ng-repeat="item in d.rows">
+            <a href="{{item.url}}">
+                <img style="width:100%;height:{{imgConfig.imgH}}" ng-src="{{item.pic | imgUrlFilter}}"/></a>
+        </div>
+    </div>
+</div>

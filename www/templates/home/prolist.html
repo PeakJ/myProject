@@ -1,0 +1,14 @@
+<!--更多惊喜-->
+<div ng-if="d.showTitle==0" class="cdfg-idx-mdtitle"  style="margin-top:{{d.top}}">{{d.title}}</div>
+
+<div class="cdfg-link-item padding cdfg-padding-top-bottom cdfg-product-list-demo">
+    <div class="cdfg-brandlist-col2-margin" ng-repeat="item in d.rows">
+        <a ng-href="{{item.url}}" class="item cdfg-brandlist-col2-item">
+            <img ng-src="{{item.pic |  imgUrlFilter:'186;165'}}" width="100%" cdfg-auto-height="{{0.88}}"  alt="" class="cdfg-default-hy" />
+            <div class="cdfg-brandlist-title">{{item.prodname}}</div>
+            <div class="cdfg-brandlist-price">
+                <span class="assertive"> {{item.price | currency:'&yen;'}}</span>
+            </div>
+        </a>
+    </div>
+</div>

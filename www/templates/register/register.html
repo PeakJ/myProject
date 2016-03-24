@@ -1,0 +1,77 @@
+<ion-view hide-nav-bar="true" cache-view="false">
+    <!-- ADD START BY 葛硕20150809：[APP-99] 注册和返回图标重叠 -------------------------------->
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">注册</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150809：[APP-99] 注册和返回图标重叠 ---------------------------------->
+    <ion-content>
+        <form name="form" autocomplete="off">
+            <div class="cdfg-form-state" ng-if="state == states[0]">
+                <div class="row">
+                    <label class="col col-15 label-for" for="phone">手机号</label>
+                    <div class="col content" reg-is-empty>
+                        <input name="phone" id="phone" class="form-input" type="tel" ng-model="data.phone" placeholder="请输入手机号" ng-pattern="getRegExp('mobile')" required  onkeyup="this.value=this.value.replace(/\D/g,'')" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="register-form-line font-small" ng-if="state == states[1]">
+                <div class="tip-send padding">我们已经发送验证码到这个号码<b>{{data.phone}}</b></div>
+                <div class="cdfg-form-state cdfg-form-state1">
+                    <div class="row">
+                        <label class="col col-15 label-for">验证码</label>
+                        <div class="col col-45 content" reg-is-empty>
+                            <input name="validateCode" class="form-input" type="tel" ng-model="data.validCode" placeholder="短信验证码" ng-pattern="getRegExp('mobileCode')" required  onkeyup="this.value=this.value.replace(/\D/g,'')" />
+                        </div>
+                        <div class="col-40 send-code" ng-show="counter != 0">
+                            <div class="button button-small">{{counter}}秒后重新获取</div>
+                        </div>
+                        <div class="col-40" ng-show="counter == 0">
+                            <div class="button button-small" ng-click="sendRegisterVcode(data.phone)">重新发送</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cdfg-form-state cdfg-form-state-pass" ng-if="state == states[2]">
+                <div class="row">
+                    <label class="col col-23 label-for">邀请码</label>
+
+                    <div class="col content" reg-is-empty>
+                        <input name="invitation" class="form-input" type="tel" ng-model="data.inviteCode" placeholder="如有邀请码，请输入" />
+                    </div>
+                </div>
+                <div class="row">
+
+                    <label class="col col-23 label-for">密码</label>
+
+                    <div class="col content" reg-is-empty>
+                        <input name="password" class="form-input" type="password" ng-model="data.password" placeholder="密码为6-20位字母数字组合" required oncopy="return false" onpaste="return false" onselectstart="return false" ondragenter="return false" />
+                    </div>
+                </div>
+                <div class="row">
+
+                    <label class="col col-23 label-for">确认密码</label>
+<!-- cdfg-validate
+                         compare-target="password"
+                         compare-tip="两次输入密码不同"-->
+                    <div class="col content" reg-is-empty>
+                        <input name="repassword" class="form-input" type="password" ng-model="data.repassword" placeholder="请再次输入密码" required ng-copy="$event.preventDefault()" ng-paste="$event.preventDefault()"  oncut="return false;"  onselectstart="return false" ondragenter="return false" />
+                    </div>
+                </div>
+            </div>
+            <div class="cdfg-form-button">
+                <button type="button" class="button button-block button-assertive" ng-disabled="form.$invalid ||!data.accept || submitBtn.disabled" ng-click="submit()">{{submitBtn.text}}</button>
+            </div>
+            <div class="cdfg-register-form-protocol" ng-if="state == states[2]">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="data.accept" class="cdfg-checkbox-icon-self" /><i></i>我已阅读并同意遵守
+                </label>
+                <span ng-click="protocolShow()">《中免商城用户服务协议》</span>
+            </div>
+        </form>
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,70 @@
+/*
+  author:haosijia@cdfg.com.cn
+  create time:2015/06/17
+*/
+
+/* 免税店政策 */
+.cdfg-button-cart{
+  width:21px;height:20.5px;margin-right:16px;margin-top:8px;background:url(../img/icon-headmenu-cart.png) no-repeat; background-size: contain; position: relative;
+  .badge{
+    position: absolute;top:-7px;right: calc(50% - 18px);background:$c-assertive;padding: 0px 4px;min-width:18px;height:14px;line-height:15px;font-size:10px;border-radius: 18px;font-weight: normal;color:#fff;
+  }
+}
+.cdfg-policy-wrap{
+  border-top:1px solid $c-general-thd;margin-top:15px;padding:0 16px 105px;color:$c-dark;
+  .cdfg-policy-border-top{
+    border-top:1px solid $c-general-thd;
+  }
+  h3{
+    font-size:$f-general;line-height:44px;margin:0;color:$c-dark
+  }
+  ul{
+    padding:8px 0 6px;
+    li{
+      font-size:$f-Weak;line-height:25px;
+      i{
+        color:#a40105;margin-right:6px;font-size:8px;
+      }
+    }
+  }
+  .dfg-policy-info{
+    font-size:$f-Weak;line-height:20px; margin-top:-5px;margin-bottom:8px;
+  }
+  h2{
+    margin:0;padding-left:31px;line-height: 70px;font-size:1rem;font-weight:700;color:$c-dark
+  }
+  .cdfg-policy-flow{
+    padding-left:22px;padding-top:2.5px;
+    .cdfg-policy-flow-num{
+      position:relative;height:38px;line-height:38px;margin:8.5px 0;font-size:$f-dark;display:inline-block;width:100%;
+      span{
+        position:absolute;left:0;top:50%;height:55px;width:55px;border-radius: 55px;margin-top:-55px/2 *1;background-color:$c-general-thd !important;
+        &.cdfg-policy-flow-1{
+          background:url(../img/icon-policy-plane.png) no-repeat center;background-size: 23px 23px;
+        }
+        &.cdfg-policy-flow-2{
+          background:url(../img/icon-footmenu-cart-highlight.png) no-repeat center;background-size: 23px 21px;
+        }
+        &.cdfg-policy-flow-3{
+          background:url(../img/icon-policy-card.png) no-repeat center;background-size: 25px 18px;
+        }
+        &.cdfg-policy-flow-4{
+          background:url(../img/icon-policy-avoid.png) no-repeat center;background-size: 22px 22px;
+        }
+      }
+      p{
+        height: 38px;overflow:hidden;margin:0;width:82%;min-width: 246.5px;background:$c-Weak;border-radius: 38px;margin-left:4px;
+      }
+      i{
+        display:inline-block;height:55px;padding-left:50px;width:78px;text-align: center;color:$c-dark;background:#d0d0d0;border-radius: 55px;line-height:55px;margin-top:-8.5px;margin-right:7.5px;font-size:$f-dark;
+      }
+      em{
+        position: absolute;left:89.5px;top:38px;line-height:30px;color:$c-general;font-size:$f-Weak;
+      }
+    }
+    .cdfg-policy-line{
+      height:44px;margin-left:22.5px;background:url(../img/icon-policy-line.png) no-repeat;background-size: contain;
+    }
+  }
+
+}

@@ -1,0 +1,53 @@
+<!-- 个人中心->售后商品列表  by 葛硕 2015/08/06 -->
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">售后服务-商品列表</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg">
+        <ion-refresher on-refresh="loadData()"></ion-refresher>
+        <div class="cdfg-after-sale-item margin-top-15" >
+            <div class="cdfg-after-sale-item-title">
+                <span class="cdfg-font-general-dark">订单号：</span>
+                <span class="cdfg-font-general-dark" ng-bind="afterSaleGoods.code"></span>
+                <br/>
+                <span class="cdfg-font-sub-light">下单时间：</span>
+                <span class="cdfg-font-sub-light" ng-bind="afterSaleGoods.createdDate"></span>
+            </div>
+
+            <!-- 商品列表 -->
+            <div class="cdfg-after-sale-item-goods"
+                 ng-repeat="goods in afterSaleGoods.items">
+                <span class="cdfg-gift-text gift" ng-if="goods.type==2">赠品</span>
+                <img ng-src="{{goods.mainPic | imgUrlFilter}}"  ng-click="toOrderDetail(afterSaleGoods.id)"
+                     class="cdfg-default-hy"/>
+                <div class="name" ng-click="toOrderDetail(afterSaleGoods.id)">
+                    <div class="cdfg-orderlist-title margin-bottom" ng-bind="goods.prodName"></div>
+                    <span  class="cdfg-font-sub-light padding-left">数量：</span>
+                    <span class="cdfg-font-sub-light" ng-bind="goods.num"></span>
+                </div>
+
+
+                <!-- 售后状态 -->
+                <div class="status" ng-class="{'cdfg-after-sale-status-bg':goods.afterSale!=0}">
+                    <div class="apply-btn-bg">
+                        <button class="button button-small cdfg-after-sale-status-btn"
+                                ng-if="goods.afterSale==0" ng-bind="goods.statusText"
+                                ng-click="toAfterSaleApply(afterSaleGoods.id,goods,afterSaleGoods.items.length)">
+                        </button>
+                    </div>
+                    <div class="apply-btn-bg padding-left">
+                        <div class="cdfg-after-sale-status-text"
+                              ng-click="toAfterSaleProgress(afterSaleGoods.id,goods.id)"
+                              ng-if="goods.afterSale!=0">
+                            <pre class="cdfg-font-general-dark" ng-bind="goods.statusText">
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

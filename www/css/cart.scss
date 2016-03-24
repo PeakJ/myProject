@@ -1,0 +1,220 @@
+/*
+   购物车
+
+*/
+
+
+/*首页*/
+.cdfg-idx-mdtitle{font-size:12px;line-height:1.8;margin-left: 3%}
+.slider-pager .slider-pager-page{color:#fff;}
+.slider-pager{width: auto;right:0;margin-right:3%}
+/*header*/
+.bar-header{
+   background: $c-Weak;
+   color:$c-dark ;
+   border-bottom-color: #bbb;
+}
+
+.bar-footer{
+   height: 50px;
+   background:rgba(0,0,0,0.77);
+   padding: 0;
+   color: #fff;
+}
+//
+//购物车列表
+//覆盖
+#cdfg-home-footer > div{
+   background: #1e1e1e;}
+
+.item-options .button{
+   background: $c-assertive;
+   color: #fff;
+}
+.checkbox input::before, .checkbox .checkbox-icon::before{border-color:#999}
+
+
+//覆盖end
+.cdfg-img-mark{}
+//购物车
+.cdfg-cart-empty{
+   width:9rem;
+   margin: 30% auto 0;
+   text-align: center;
+}
+//活动标
+.button-cdfg{color:$c-assertive;}
+.item .c-dark{color: $c-dark}
+#cdfg-cart-list-div{
+   .cdfg-order-detail-goods{
+      padding:0 2rem;
+      background:#fff;
+      position: relative;
+      border-bottom:1px #ddd solid
+   }
+   .cdfg-order-detail-goods{
+      height:5.2rem;
+   }
+   .cdfg-gift-text{
+      left:2rem;
+      top:0.8rem;
+   }
+   .item-complex {
+      .checkbox{padding-left: 0}
+      .item-content{padding-right:1rem;padding-left:0.6rem}
+
+   }
+   .propertyinfo{font-size:0.85rem;color: $c-general-sub}
+   .list{
+      span{font-size:12px}
+      .item-checkbox{
+         padding-top:0;
+         .item-content{
+            padding: 0;
+         }
+      }
+
+   }
+   //活动标题
+   .cdfg-cart-actlist{
+      padding-bottom: 0;
+      .item{
+         padding: 0.5rem;
+      }
+   }
+   //商品列表
+   .cdfg-cartlist{
+      margin: 0 .5rem;
+
+      .item{
+         border-left: none;
+         border-right:none;
+         border-bottom: none;
+
+      }
+   }
+   .item-checkbox{border:none;
+      float: left;
+      padding-left: 33px;
+      background:none;
+      padding-bottom: 0;
+   }
+   .item-checkbox .checkbox{left:0;}
+   //活动tag
+   .acttag{
+      border: 1px $c-assertive solid;
+      @include border-radius(2px);
+      padding: 2px;
+      font-size:15px;
+      margin-right: 1rem;
+   }
+   //底栏
+   .bar-footer{
+      height: 50px;
+      background:rgba(0,0,0,0.77);
+      padding: 0;
+      color: #fff;
+   }
+   .bar-footer .item{
+      background: none;
+      border:none;
+      color: #fff;
+      font-size:13px;
+   }
+   .cdfg-cart-quantity{color:$c-general-sub;float: right;font-size:12px;}
+
+}
+
+.cdfg-quantity-label{
+   width:auto;
+   float:right;
+   padding-right:0;
+   padding-bottom: 0;
+   .button-icon{width:22px;height:22px;border:1px #ccc solid;float: left;}
+   input{
+      width: 36px;display: inline;height:22px;
+      border-top:1px #ccc solid;border-bottom:1px #ccc solid;
+      float: left;
+      text-align: center;
+   }
+
+}
+//提交订单
+
+//选择支付页
+.cdfg-paytype{
+   .cdfg-paytype-hd{
+      background: #fff;
+      margin: 1rem 0;
+      padding: 0.8rem 0 0.8rem 1.2rem;
+   }
+   .item{
+      padding-left: 2rem;
+      border-top: 1px #f3f3f3 solid;
+   }
+}
+
+.cartgift{
+   background: #fff;
+   z-index: 1000;
+   top:1px;
+   padding-left:1rem;
+   position: relative;
+   a{
+      border: 1px #ccc solid;
+      border-radius: 3px;
+   }
+
+}
+.cdfg-cart-promotion-title{
+   position: relative;
+   padding-bottom:3px;
+}
+
+
+
+
+.cdfg-cart-footer{
+   position:absolute;right:0;top:.5rem;
+   button{margin-right:1rem;width:6rem;float: left}
+}
+.cdfg-cart-header {
+   .button.button-submit{
+      top:0;bottom:0;right:0;
+      width:6rem;
+      font-size:1rem;
+      text-align: center;
+      height:100%;
+      i{font-size:0.6rem;}
+   }
+   .item-address-info{
+      white-space:normal;
+      .item-note{
+      white-space: normal;
+      }
+   }
+   .cdfg-cart-checkall{
+      margin-top: .3rem;
+      white-space: nowrap;
+      margin-left: .3rem;
+      label{color: #fff;line-height: 1.4rem;margin-top:0.1rem;}
+      .cdfg-checkbox-icon-self{
+         display: inline-block;
+         vertical-align: top;
+      }
+   }
+   .cdfg-cart-total{
+      margin-top: 0.9rem;
+      margin-left:0.6rem;
+      white-space: nowrap;
+   }
+   .cdfg-cart-fee{
+      position: absolute;
+      right:6.5rem;color:#999;bottom:0;
+      margin-bottom:5px;
+      font-size:0.6rem;
+   }
+}
+.cdfg-cart-item{border-top: 1px #ccc solid;}
+.promotionfirst{margin-top:15px;background: #fff;border-top:0;}
+.cdfg-cart-unpromotion .promotionfirst .cdfg-cart-item{border:none}

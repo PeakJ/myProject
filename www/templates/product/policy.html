@@ -1,0 +1,43 @@
+<!--政策说明-->
+<ion-view title="免税店政策" hide-nav-bar="true">
+
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="$ionicGoBack();" class="button button-clear title-back-button"></button>
+        <span class="title">免税店政策</span>
+        <a class="button button-icon cdfg-button-cart" ui-sref="cart"><span class="badge" ng-if="shoppingCartTotal.total>0">{{shoppingCartTotal.total}}</span></a>
+    </ion-header-bar>
+
+    <ion-content class="has-header cdfg-has-footer">
+
+        <div bind-html="policyStatementInfo">
+
+        </div>
+        <!--<div class="cdfg-policy-wrap">
+            <h3>购买条件</h3>
+            <ul class="cdfg-policy-border-top">
+                <li><i class="icon ion-record"></i>免税商品需要到<span class="assertive">免税店自提</span></li>
+                <li><i class="icon ion-record"></i>出境免税需要提供<span class="assertive">护照</span>或<span class="assertive">出境信息</span></li>
+                <li><i class="icon ion-record"></i>离岛免税需要提供<span class="assertive">身份证</span>或<span class="assertive">离岛信息</span></li>
+            </ul>
+            <h3 class="cdfg-policy-border-top">什么是免税店</h3>
+            <p class="dfg-policy-info">是国家特批的实体店,出售零关税的国外商品.相对国内比较便宜。仅对出境（离岛）开放人士开放。</p>
+            <h2 class="cdfg-policy-border-top">网上免税预定流程：</h2>
+            <ul class="cdfg-policy-flow">
+                <li class="cdfg-policy-flow-num"><span class="cdfg-policy-flow-1"></span><p><i>1</i>选择出境免税店</p></li>
+                <li class="cdfg-policy-line"></li>
+                <li class="cdfg-policy-flow-num"><span class="cdfg-policy-flow-2"></span><p><i>2</i>免税商品网上结算</p></li>
+                <li class="cdfg-policy-line"></li>
+                <li class="cdfg-policy-flow-num"><span class="cdfg-policy-flow-3"></span><p><i>3</i>网上确认身份</p><em>护照信息、提货时间</em></li>
+                <li class="cdfg-policy-line"></li>
+                <li class="cdfg-policy-flow-num"><span class="cdfg-policy-flow-4"></span><p><i>4</i>线下免税店提货</p></li>
+            </ul>
+        </div>-->
+
+    </ion-content>
+    <div class="bar bar-footer tabs">
+        <!-- 库存量显示按钮是否可点 -->
+        <button class="button-assertive button button-center tab-item" ng-click="openShopcart()" ng-if="prodSpuNumber!=0">加入购物车</button>
+        <button class="button-assertive button button-center cdfg-disabled-button tab-item" disabled ng-if="!prodSpuNumber">售罄</button>
+    </div>
+
+    </ion-view>

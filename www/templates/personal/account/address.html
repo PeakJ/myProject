@@ -1,0 +1,60 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">收货地址管理</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-background">
+        <a class="item item-icon-left item-icon-right cdfg-border-none" ui-sref="addressDetail({init:true})">
+        <!--<a class="item item-icon-left item-icon-right cdfg-border-none" ng-click="goAddressDetail()">-->
+            <i class="icon ion-plus"></i>
+            新增收货地址
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+        <ion-list>
+            <!--联网数据-->
+            <div ng-repeat="addr in addressList" class="cdfg-addr-item margin-top">
+                <span class="cdfg-fl cdfg-addr-default" ng-if="addr.isDefault==1">默认</span>
+                <ion-item class="cdfg-border-none">
+
+                    <label class="checkbox cdfg-addr-check cdfg-fl" ng-if="selectedAddress">
+                        <input type="radio" ng-model="selectedAddress" value="{{addr.addrId}}"
+                               ng-change="selectAddressData(addr)">
+                    </label>
+
+                    <div class="cdfg-addr-content"  ng-click="selectAddressData(addr)">
+                        <!--收货人姓名-->
+                        <p><span class="receiver">{{addr.receiver}}</span>
+                            <!--手机号-->
+                            <span class="mobile">{{addr.mobile}}</span></p>
+                        <!--省市区县-->
+                        <p class="address">{{addr.geoName}}</p>
+                        <!--详细地址-->
+                        <p class="address">{{addr.addr}}</p>
+                        <!--身份证 业务取消-->
+                        <!--<p ng-if="addr.idCardNo">-->
+                        <!--<span class="receiver">身份证：</span>-->
+                        <!--<span class="number">{{addr.idCardNo}}</span>-->
+                        <!--</p>-->
+                        <!--护照号 地址中不显示-->
+                        <!--<p ng-if="addr.passportNo">-->
+                        <!--<span class="receiver">护照号：</span>-->
+                        <!--<span class="number">{{addr.passportNo}}</span>-->
+                        <!--</p>-->
+                    </div>
+                    <!--右侧编辑按钮-->
+                    <div class="cdfg-addr-item-right" ui-sref="addressDetail({addressId:addr.addrId})">
+                        <img ng-src="img/icon-addr-edit.png"/>
+                    </div>
+                    <!--侧滑选项-->
+                    <ion-option-button class="button-assertive" ng-click="setDefaultAddress(addr.addrId)">
+                        设置默认
+                    </ion-option-button>
+                    <ion-option-button class="button-assertive" ng-click="deleteAddress(addr.addrId)">
+                        删除
+                    </ion-option-button>
+                </ion-item>
+            </div>
+
+        </ion-list>
+    </ion-content>
+</ion-view>

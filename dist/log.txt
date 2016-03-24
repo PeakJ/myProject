@@ -1,0 +1,63 @@
+Running command: "E:\Program Files\nodejs\node.exe" F:\git-project\cdfg-app\hooks\after_prepare\010_add_platform_class.js F:\git-project\cdfg-app
+add to body class: platform-android
+Running command: cmd "/s /c "F:\git-project\cdfg-app\platforms\android\cordova\build.bat --release""
+ANDROID_HOME=E:\Program Files\adt-bundle20140702\adt-bundle-windows-x86_64-20140702\sdk
+JAVA_HOME=E:\Program Files\jdk1.8.0_45
+Running: F:\git-project\cdfg-app\platforms\android\gradlew cdvBuildRelease -b F:\git-project\cdfg-app\platforms\android\build.gradle -Dorg.gradle.daemon=true
+:preBuild
+:preReleaseBuild
+:checkReleaseManifest
+:CordovaLib:compileLint
+:CordovaLib:copyReleaseLint UP-TO-DATE
+:CordovaLib:mergeReleaseProguardFiles UP-TO-DATE
+:CordovaLib:preBuild
+:CordovaLib:preReleaseBuild
+:CordovaLib:checkReleaseManifest
+:CordovaLib:prepareReleaseDependencies
+:CordovaLib:compileReleaseAidl UP-TO-DATE
+:CordovaLib:compileReleaseRenderscript UP-TO-DATE
+:CordovaLib:generateReleaseBuildConfig UP-TO-DATE
+:CordovaLib:generateReleaseAssets UP-TO-DATE
+:CordovaLib:mergeReleaseAssets UP-TO-DATE
+:CordovaLib:generateReleaseResValues UP-TO-DATE
+:CordovaLib:generateReleaseResources UP-TO-DATE
+:CordovaLib:packageReleaseResources UP-TO-DATE
+:CordovaLib:processReleaseManifest UP-TO-DATE
+:CordovaLib:processReleaseResources UP-TO-DATE
+:CordovaLib:generateReleaseSources UP-TO-DATE
+:CordovaLib:compileReleaseJava UP-TO-DATE
+:CordovaLib:processReleaseJavaRes UP-TO-DATE
+:CordovaLib:packageReleaseJar UP-TO-DATE
+:CordovaLib:compileReleaseNdk UP-TO-DATE
+:CordovaLib:packageReleaseJniLibs UP-TO-DATE
+:CordovaLib:packageReleaseLocalJar UP-TO-DATE
+:CordovaLib:packageReleaseRenderscript UP-TO-DATE
+:CordovaLib:bundleRelease UP-TO-DATE
+:prepareAndroidCordovaLibUnspecifiedReleaseLibrary UP-TO-DATE
+:prepareReleaseDependencies
+:compileReleaseAidl UP-TO-DATE
+:compileReleaseRenderscript UP-TO-DATE
+:generateReleaseBuildConfig UP-TO-DATE
+:generateReleaseAssets UP-TO-DATE
+:mergeReleaseAssets
+:generateReleaseResValues UP-TO-DATE
+:generateReleaseResources UP-TO-DATE
+:mergeReleaseResources UP-TO-DATE
+:processReleaseManifest UP-TO-DATE
+:processReleaseResources
+:generateReleaseSources
+:compileReleaseJava UP-TO-DATE
+:lintVitalRelease
+:compileReleaseNdk UP-TO-DATE
+:preDexRelease UP-TO-DATE
+:dexRelease UP-TO-DATE
+:processReleaseJavaRes UP-TO-DATE
+:packageRelease
+:assembleRelease
+:cdvBuildRelease
+
+BUILD SUCCESSFUL
+
+Total time: 37.113 secs
+Built the following apk(s):
+    F:\git-project\cdfg-app\platforms\android\build\outputs\apk\android-release-unsigned.apk

@@ -1,0 +1,67 @@
+<ion-view hide-nav-bar="true">
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">帐户管理</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="cdfg-background">
+        <div class="list">
+            <div class="item item-icon-right cdfg-account-item cdfg-padding-item cdfg-divder-big cdfg-border-none"
+                 ng-click="takePhoto()">
+                <div class="title">
+                    <p class="cdfg-fl cdfg-item-title">头像</p>
+                </div>
+                <div class="cdfg-account-photo">
+                    <img class="cdfg-fr" ng-src="{{localUser.headerPic| UserPhotoFilter:'300;300'}}"/>
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </div>
+
+            </div>
+            <!--<a class="item item-icon-right" href="#/tab/common/edit/USER_NAME">-->
+            <a class="item item-icon-right cdfg-border-none cdfg-list-divder"
+               ui-sref="commonEdit({selectMode:'USER_NAME',defaultValue:localUser.nickName})">
+                <p>昵称 <span style="float: right;">{{localUser.nickName}}</span></p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+
+            <a class="item item-icon-right cdfg-border-none cdfg-list-divder"
+               ui-sref="commonSelect({selectMode:'SEX',defaultValue:localUser.gender})">
+                <p>性别 <span style="float: right;">{{(localUser.gender==1 || localUser.gender==2)?localUser.gender==1?"男":"女":"保密"}}</span>
+                </p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+
+            <div class="item item-icon-right cdfg-border-none cdfg-list-divder" ng-click="pickDate()">
+                <p>出生日期
+                    <!--<input type="date"-->
+                    <!--style="height:20px;text-align:right;float:right;padding:0;background: rgba(255, 255, 255, 0)"-->
+                    <!--ng-model="birthday" ng-change="pickDate()" placeholder="yyyy-MM-dd"/>-->
+                    <span style="float: right;">日</span>
+                    <span style="float: right;" ng-bind="localUser.day"></span>
+                    <span style="float: right;">月</span>
+                    <span style="float: right;" ng-bind="localUser.month"></span>
+                    <span style="float: right;">年</span>
+                    <span style="float: right;" ng-bind="localUser.year"></span>
+                </p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </div>
+
+            <a class="item item-icon-right cdfg-border-none cdfg-divder" ui-sref="address">
+                <p>地址管理 <i class="icon ion-chevron-right icon-accessory"></i></p>
+            </a>
+            <a class="item item-icon-right cdfg-border-none cdfg-list-divder" ui-sref="security">
+                <p>账户安全 <i class="icon ion-chevron-right icon-accessory"></i></p>
+            </a>
+
+            <!--<a class="item item-icon-right cdfg-border-none cdfg-divder" ui-sref="goabroad({addrId:'000'})">-->
+                <!--<p>出境人测试 <i class="icon ion-chevron-right icon-accessory"></i></p>-->
+            <!--</a>-->
+            <!--<a class="item item-icon-right cdfg-border-none cdfg-divder"-->
+               <!--ui-sref="goabroadTraffic({shop:'广州白云山国际机场免税店'})">-->
+                <!--<p>航班信息<i class="icon ion-chevron-right icon-accessory"></i></p>-->
+            <!--</a>-->
+
+        </div>
+    </ion-content>
+</ion-view>

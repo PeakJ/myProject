@@ -1,0 +1,158 @@
+<html ng-app="cdfgApp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no" />
+    <title>Inline Tabs</title>
+    <!-- start 框架级-->
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/ionic/js/angular-ui/angular-ui-router.min.js"></script>
+    <script src="lib/ionic/js/angular-ui/angular-touch.min.js"></script>
+
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <!-- end 框架级-->
+
+    <!--数据资源文件-->
+    <!--<script src="http://192.168.103.218/resource/Geo.js"></script>-->
+    <script src="js/geo.js"></script>
+    <script src="js/app/static-key.js"></script>
+
+    <!--start common级-->
+    <script src="js/app/app.js"></script>
+    <script src="js/app/route.js"></script>
+    <script src="js/service/localcache-service.js"></script>
+    <script src="js/service/location-service.js"></script>
+    <script src="js/service/url-service.js"></script>
+    <script src="js/service/user-service.js"></script>
+    <script src="js/service/unitelogin.js"></script>
+    <script src="js/service/cart-service.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
+    <!--end common级-->
+    <!--maliwei scripts start-->
+    <script type="text/javascript" src="js/home/tab.js"></script>
+    <script type="text/javascript" src="js/home/home.js"></script>
+    <script type="text/javascript" src="js/login/login.js"></script>
+    <script type="text/javascript" src="js/order/cart.js"></script>
+    <script type="text/javascript" src="js/order/confirm-order.js"></script>
+    <script type="text/javascript" src="js/order/cart-pro-list.js"></script>
+    <script type="text/javascript" src="js/order/cart-invalid.js"></script>
+    <script type="text/javascript" src="js/order/paywap.js"></script>
+    <script type="text/javascript" src="js/order/paytype.js"></script>
+    <script type="text/javascript" src="js/order/pay-success.js"></script>
+
+    <!--maliwei end-->
+    <!--haosijia scripts start-->
+    <script type="text/javascript" src="js/popup/popup.js"></script>
+    <script type="text/javascript" src="js/brand/brand.js"></script>
+    <script type="text/javascript" src="js/register/register.js"></script>
+    <script type="text/javascript" src="js/register/validate.js"></script>
+    <script type="text/javascript" src="js/register/sms.js"></script>
+    <script type="text/javascript" src="js/product/product.js"></script>
+    <script type="text/javascript" src="js/comment/comment.js"></script>
+    <script type="text/javascript" src="js/directives/bind-html.js"></script>
+    <script type="text/javascript" src="js/directives/reg-is-empty.js"></script>
+
+    <!--haosijia end-->
+
+    <!--zhuchuanpeng scripts start-->
+    <script src="js/common/select.js"></script>
+    <script src="js/common/edit.js"></script>
+    <script src="js/personal/account/account.js"></script>
+    <script src="js/personal/feedback.js"></script>
+    <script src="js/personal/message.js"></script>
+    <script src="js/personal/setting/setting.js"></script>
+    <script src="js/personal/favourite.js"></script>
+    <script src="js/personal/account/address-detail.js"></script>
+    <script src="js/personal/account/address.js"></script>
+    <script src="js/personal/account/security/security.js"></script>
+    <script src="js/personal/account/security/password.js"></script>
+    <script src="js/personal/account/security/pay-password.js"></script>
+    <script src="js/personal/account/security/validation.js"></script>
+    <script src="js/personal/account/security/bind.js"></script>
+    <script src="js/personal/setting/connect-us.js"></script>
+    <script src="js/personal/setting/company.js"></script>
+    <script src="js/login/reset-password.js"></script>
+    <script src="js/login/reset-password.js"></script>
+    <script src="js/personal/account/goabroad.js"></script>
+    <script src="js/personal/account/goabroad-detail.js"></script>
+    <script src="js/personal/account/goabroad-traffic.js"></script>
+
+    <!--zhuchuanpeng end-->
+
+    <!--geshuo scripts start-->
+    <script src="js/personal/personal.js"></script>
+    <script src="js/personal/order/order-list.js"></script>
+    <script src="js/personal/order/order-detail.js"></script>
+    <script src="js/personal/order/order-express.js"></script>
+    <script src="js/personal/order/shop-location.js"></script>
+    <script src="js/personal/order/shop-location-image.js"></script>
+    <script src="js/personal/order/remark-goods-list.js"></script>
+    <script src="js/personal/order/remark-goods.js"></script>
+    <script src="js/personal/order/after-sale-list.js"></script>
+    <script src="js/personal/order/after-sale-goods.js"></script>
+    <script src="js/personal/order/after-sale-apply.js"></script>
+    <script src="js/personal/order/after-sale-progress.js"></script>
+    <script src="js/personal/order/apply-images.js"></script>
+    <script src="js/personal/assets/coupon-list.js"></script>
+    <script src="js/personal/assets/card-list.js"></script>
+    <script src="js/shop/shop-guide.js"></script>
+    <script src="js/shop/shop-list-filter.js"></script>
+    <script src="js/home/splash.js"></script>
+
+    <!-- TODO:免税店筛选页面，定位功能依赖百度地图API，暂定使用个人debug用的key -->
+    <script src="http://api.map.baidu.com/api?type=quick&ak=c7c52269bc7f60507239aa5fc090927b&v=1.0"></script>
+    <!--geshuo end-->
+
+    <!--xufeng scripts start-->
+    <!--<script type="text/javascript" src="lib/ionic/js/underscore.js"></script>-->
+    <script type="text/javascript" src="js/category/category.js"></script>
+    <script type="text/javascript" src="js/promotion/promotion.js"></script>
+    <!--<script type="text/javascript" src="js/product/filter.js"></script>-->
+    <script type="text/javascript" src="js/product/search.js"></script>
+    <script type="text/javascript" src="js/product/product-list.js"></script>
+    <script type="text/javascript" src="js/shop/shop.js"></script>
+    <script type="text/javascript" src="js/shop/shop-list.js"></script>
+
+    <script type="text/javascript" src="js/product/search-in-product-list.js"></script>
+    <script type="text/javascript" src="js/shop/shop-product-list.js"></script>
+    <script type="text/javascript" src="js/shop/shop-category.js"></script>
+    <script type="text/javascript" src="js/shop/shop-test.js"></script>
+    <script type="text/javascript" src="js/directives/search.js"></script>
+
+    <!--xuf end-->
+
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            navigator.splashscreen.hide();
+        }
+    </script>
+
+</head>
+<body>
+<ion-nav-bar animation="nav-title-slide-ios7"
+             type="bar-positive"
+             back-button-type="button-icon"
+             back-button-icon="ion-arrow-left-c"
+             align-title="center">
+    <ion-nav-back-button class="button-icon icon ion-ios-arrow-left"></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view animate="slide-left-right"></ion-nav-view>
+
+<!--ADD START BY 葛硕 20150820：进度条--------------------------------------------------------------->
+<!--~spinner宽度：28px;  ~headerBar高度：44px; ~footerBar高度：50px;-->
+<ion-spinner icon="ios" class="cdfg-progress-bar" ng-if="showLoading"
+        ng-style="{'padding-left':(deviceWidth-28)/2,'padding-top':(deviceHeight-44-50-28)/2,'height':spinnerHeight}">
+</ion-spinner>
+<!--ADD END   BY 葛硕 20150820：进度条--------------------------------------------------------------->
+</body>
+</html>
+
+
+

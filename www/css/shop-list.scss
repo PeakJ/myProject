@@ -1,0 +1,138 @@
+/**
+ *@author:ge shuo
+
+ *2015/8/14
+ *免税店列表
+ */
+@mixin center-text{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+@mixin shop-list-padding{
+  padding-left: $cdfg-margin-15;
+  padding-right: $cdfg-margin-15;
+}
+.cdfg-shop-list{
+  background: #0d0d0d !important;
+  .title-bg{
+    width: 100%;
+    position: relative;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    .guide-text{
+      @include center-text;
+      top: 2rem;
+      span{
+        font-size: 1.5625rem;//25px;
+        color: white;
+      }
+    }
+    .condition-text{
+      @include center-text;
+      top:4rem;
+      span{
+        font-size: $f-general;
+        color: white;
+      }
+    }
+    .guide-button{
+      position: absolute;
+      bottom: $cdfg-margin-10;
+      right: $cdfg-margin-15;
+      button{
+        height: 22px;
+        line-height: 20px;
+        min-width: 5rem !important;
+        width: 5rem !important;
+        font-size: $f-Weak !important;
+        background: transparent !important;
+        color: white;
+        border-color: white;
+        padding-right: $cdfg-margin-5;
+      }
+      .button-small.icon-right:before{
+        margin-top: 2px !important;
+      }
+    }
+  }
+  .list-view{
+    @include shop-list-padding;
+    .shop-item{
+      margin-top: $cdfg-margin-15;
+      width: 100%;
+      min-height: 100px;
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      .shop-name{
+        @include shop-list-padding;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 2.5rem;
+        background: black;
+        opacity: 0.3;
+        img{
+          width: 10px;
+          position: absolute;
+          right: 0;
+          margin-right: $cdfg-margin-15;
+          margin-top: $cdfg-margin-10
+        }
+        span{
+          font-size: $f-dark;
+          color: white;
+          line-height: 2.5rem;
+        }
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .bottom{
+    @include shop-list-padding;
+    margin-top: $cdfg-margin-20;
+    margin-bottom: $cdfg-margin-20;
+    width: 100%;
+    text-align: center;
+    img{
+      width: 25%;
+      margin-top: 9px;
+    }
+  }
+}
+.shop-filter{
+  padding-top: $cdfg-margin-15;
+  .title-text{
+    @include shop-list-padding;
+    background: white;
+    height: 44px;
+    span{
+      line-height: 44px;
+    }
+  }
+  .city-bg{
+    @include cdfg-personal-order-border-top;
+    @include shop-list-padding;
+    background: white;
+    height: 44px;
+    span{
+      line-height: 44px;
+    }
+  }
+  .check-mark{
+    width: 13px;
+    height: 12px;
+    margin-top: 7px;
+  }
+  .shop-radio-icon{
+    right: 30px !important;
+  }
+}
+.cdfg-shop-index{
+  top: 45px !important;
+}

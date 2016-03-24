@@ -1,0 +1,79 @@
+<ion-view hide-nav-bar="true" class="cdfg-personal-order-list-main-bg">
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="$ionicGoBack();" class="button button-clear title-back-button"></button>
+        <span class="title">商品评价</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <!-- 模拟 商品评价 入口 End -->
+
+    <div class="bar bar-subheader row cdfg-comment-subheader cdfg-padding">
+        <div class="col {{params.status == '0' ? 'assertive': null}}" ng-click="statusToggle('0')">全部评价<br/>
+            <small>{{commentNumber.good + commentNumber.medium + commentNumber.bad}}</small>
+        </div>
+        <div class="col {{params.status == '1' ? 'assertive': null}}" ng-click="statusToggle('1')">好评
+            <small>{{commentNumber.good}}</small>
+        </div>
+        <div class="col {{params.status == '2' ? 'assertive': null}}" ng-click="statusToggle('2')">中评
+            <small>{{commentNumber.medium}}</small>
+        </div>
+        <div class="col {{params.status == '3' ? 'assertive': null}}" ng-click="statusToggle('3')">差评
+            <small>{{commentNumber.bad}}</small>
+        </div>
+    </div>
+
+    <ion-content class="has-header has-subheader cdfg-comment-has-subheader  cdfg-has-footer">
+        <div ng-include="'templates/common/network-error.html'" ng-if="networkError" ng-click="restartPage()"></div>
+       <ul class="list" ng-if="!networkError">
+
+            <!--下拉刷新-->
+            <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+
+            <!-- 评论列表 -->
+        <li ng-repeat="comment in commentDate" class="margin-top light-bg">
+                <div class="item item-icon-left">
+                    <i class="icon headerPic">
+                        <img ng-src="{{comment.pic? comment.pic :'img/icon-default-comment.png'}}" />
+                        <!--<img ng-src="img/icon-default-comment.png" />-->
+                    </i>
+                    {{comment.nickName}}
+                    <time class="item-note">{{comment.createDate}}</time>
+                </div>
+
+                <div class="cdfg-comment-list-content">
+                    <div class="starBox" star-number="{{comment.rate}}"></div>
+                    <div class="comment-box">{{comment.comment}}</div>
+
+                    <!--<ion-scroll direction="x" style="width: 100%;">
+                        <div class="scrollxPic" style="width:{{8*comment.pic.length}}rem">
+                            <p class="product cdfg-fl" ng-repeat="pic in comment.pic">
+                                <img ng-src="{{pic}}" on-tap="zoomPic(pic)" count-position />
+                            </p>
+                        </div>
+                    </ion-scroll>-->
+
+                    <div class="info general-sub">
+                        <!--<pre>{{comment.spuSpecName}}:{{comment.spuSpecValueName}}，{{comment.skuSpecName}}:{{comment.skuSpecValueName}}</pre>-->
+                        {{comment.spuName}}，{{comment.skuName}}<br />
+                        购买日期：<small><time>{{comment.buyDate}}</time></small>
+                    </div>
+                </div>
+
+            </li>
+
+            <!--上拉加载更多-->
+            <ion-infinite-scroll ng-if="hasMore()" on-infinite="loadMore()"></ion-infinite-scroll>
+
+            <div ng-if="!hasMore()" class="cdfg-has-more"></div>
+
+        </ul>
+
+    </ion-content>
+
+    <div class="bar bar-footer tabs" ng-if="!networkError">
+        <!-- 库存量显示按钮是否可点 -->
+        <button class="button-assertive button button-center tab-item" ng-click="openShopcart()" ng-if="prodSpuNumber!=0">加入购物车</button>
+        <button class="button-assertive button button-center cdfg-disabled-button tab-item" disabled ng-if="!prodSpuNumber">售罄</button>
+    </div>
+
+</ion-view>

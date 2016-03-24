@@ -1,0 +1,12 @@
+{
+  "orderId":"orderId001",
+  "spuId":"spuId001",
+  "skuId":"skuId001",
+  "num":2,
+  "mainPic":"http://img1.zhongmian.com/upload/601/603/225646/225652/226240/267652_10_pic270_5999.jpg",
+  "prodName":"玫瑰精油沐浴露美白保湿多效合一正品包邮",
+  "type":"1",
+  "trans_price":150.00,
+  "totalPrice":"300.00",
+  "retOrderId":"retOrderId001"
+}

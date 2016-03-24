@@ -1,0 +1,176 @@
+<!--搜索-->
+<ion-view has-header="true" hide-nav-bar="true">
+    <div ng-show="!query.isShowSearch">
+        <ion-header-bar class=" bar bar-header item-input-inset"
+                        style="position: absolute;z-index: 20 ; background-color: #3e3e3e; border-bottom: solid 1px #ddd !important;">
+            <a class="button button-clear icon-right ion-ios-arrow-left cdfg-header-back-button-font"
+               ng-click="myGoBack()" style="color:#fff"></a>
+            <label class="item-input-wrapper cdfg-input-wrapper-label cdfg-product-list-input-bkg cdfg-header-marging-left-wrapper"
+                   ng-click="showSearch()" style="  margin-left: 10px; margin-right: 20px;">
+                <i class="icon ion-ios-search cdfg-category-label cdfg-header-left-arrow"></i>
+                <input type="search" ng-model="query.tag" placeholder="搜索店内商品"
+                       class="cdfg-category-inut cdfg-bkg-white-important cdfg-search-input-height">
+            </label>
+            <button class="button icon cdfg-button-shop-share"
+                    style="margin-left: 0;margin-right: 5px;margin-top: 10px;" ng-click="share();"></button>
+        </ion-header-bar>
+        <div class="header sub-header shop-header-div cdfg-shop-detail-header" ng-style="shopHeader" style="width:100%">
+            <div ng-if="true"
+                 style="position: absolute;width: 100%;height: 25px;background-color: rgb(236,223,214); z-index: 30"
+                 ui-sref="shop-guide">
+                <span style="float: left; padding-top: 2px; margin-left: 5px">仅支持出境人士购买</span>
+                <span style="float: right; margin-right: 25px; padding-top: 2px; color: rgb(177,162,169)">了解详情</span>
+                <a class="button button-clear icon-right ion-ios-arrow-right"
+                   style="right: 0; position: absolute; top: -10px;"></a>
+            </div>
+            <div class="bar" style="background-color: rgba(0,0,0,0);color: #fff;top:25px">
+
+                <div class="title"> {{storeName }}</div>
+
+            </div>
+            <div class="row row-no-padding" style="height: 200px; overflow: hidden;width:100%;">
+                <a href="#" style="width: 100%">
+                    <img style="width:100%;height:200px"
+                         ng-src="{{ backPic |  imgUrlFilter }}"/>
+                </a>
+            </div>
+        </div>
+        <!-- 字母索引 -->
+        <ul class="cdfg-alphabet cdfg-store-alphabet" cdfg-alphabet-touch="store" id="brand-alphabet"
+            style="top: 95px;">
+            <li ng-repeat="item in letter" letter="store-brand-{{item | uppercase}}">{{item | uppercase}}</li>
+        </ul>
+        <!-- tabsAnimate 变化 导致 tabs 上下移动-->
+        <ion-cdfg-tabs class="tabs-top cdfg-shop-detail-tabs cdfg-tabs {{tabsAnimate}}"
+                       delegate-handle="shopTabsDelegate">
+
+            <ion-cdfg-tab title="首页" cdfgTab="1" icon="true"
+                          icon-on="cdfg-home-highlight" icon-off="cdfg-home-normal">
+                <ion-view ng-style="viewHeight" class="cdfg-shop-tab-view">
+                    <ion-content on-scroll="" on-release="scroll(1); " delegate-handle="t1">
+                        <div style="width:100%;height:50px">
+                        </div>
+                        <div ng-repeat="d in cmsData" module-type="{{d.type}}" style="background-color: #fff;"></div>
+                    </ion-content>
+                </ion-view>
+            </ion-cdfg-tab>
+            <ion-cdfg-tab title="全部商品" cdfgTab="1" icon="false" number="{{prodNum}}">
+                <ion-view ng-style="viewHeight">
+                    <ion-content on-release="scroll(2);" delegate-handle="t2">
+                        <div style="width:100%;height:50px">
+                        </div>
+                        <div class="list cdfg-brandlist-order bar-subheader" style="position: static;padding-top: 0">
+                            <div class="item">
+                                <div id="filters">
+                                    <div class="{{list.show ? 'cdfg-list-view-icon':'cdfg-grid-view-icon'}}"
+                                         ng-click="list.show = !list.show"></div>
+                                    <div click-toggle-orderby>
+                                        <span class="assertive" ng-click="getDatas({sortField:''}); ">综合</span>
+                                        <span ng-click="getDatas({sortField:'salesNum'});">销量</span>
+                                        <span id="priceFilter"
+                                              ng-click="reverse=!reverse;reverse?sortDir='0':sortDir='1';getDatas({sortField:'salePrice',sortDir:sortDir});">价格
+                                            <i class="icon icon-button {{reverse?'ion-ios-arrow-up':'ion-ios-arrow-down'}}"></i><!-- edit xuf 颠倒箭头方向 -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cdfg-product-list-demo" ng-if="!listNumber">
+
+                            <!--下拉刷新-->
+                            <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+                            <!--引入列表 -->
+                            <div ng-include="'templates/product/link-product-list-template.html'"
+                                 style="margin-top: 10px"></div>
+
+                            <!--上拉加载更多-->
+                            <ion-infinite-scroll ng-if="hasMore()" icon="ion-android-sync"
+                                                 on-infinite="loadMore()"></ion-infinite-scroll>
+
+                            <div ng-if="!hasMore()" class="cdfg-has-more">没有更多产品啦……</div>
+
+                        </div>
+                        <div class="cdfg-product-list-empty" ng-if="listNumber">
+                            <p>呀~还没找到<br/>要不去看看热门搜索</p>
+                        </div>
+                        <div class="cdfg-detail-empty-height"></div>
+                    </ion-content>
+                </ion-view>
+            </ion-cdfg-tab>
+            <ion-cdfg-tab title="品牌" cdfgTab="1" icon="false" number="{{brandNum}}">
+                <ion-view ng-style="viewHeight">
+                    <ion-content on-release="scroll(3);" delegate-handle="t3" class="cdfg-brand-content"
+                                 delegate-handle="store-brand-scroll">
+                        <div style="width:100%;height:50px"></div>
+                        <div>
+                            <div ng-include="'templates/common/network-error.html'" ng-if="networkError"
+                                 ng-click="restartPage()"></div>
+                            <div ng-if="!networkError">
+                                <div class="cdfg-brand-recommend cdfg-store-brand-recommend" id="brand-recommend">
+                                    <!-- 免税店推荐品牌 -->
+                                    <div class="cdfg-brand-recommend-list" ng-repeat="commend in commends">
+                                        <a ng-click="goShopBrandId(commend.id)">
+                                                <img ng-src="{{commend.logo | imgUrlFilter:'210;141'}}" cdfg-auto-height="{{141/210}}"  class="{{!commend.logo ? 'default':null}}" />
+                                            <p>{{commend.enName}}<br/>{{commend.name}}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- 品牌列表 -->
+                                <div class="cdfg-brand-menu" on-touch="alphabetShow($event)">
+                                    <ul class="cdfg-brand-menu-list">
+                                        <li ng-repeat="item in brandList">
+                                            <h3 ng-if="isShowTitle(item)"
+                                                id="store-brand-{{item.enName | limitTo : 1 | uppercase}}">{{item.enName
+                                                | limitTo : 1 | uppercase}}</h3>
+                                            <a ng-click="goShopBrandId(item.id)">{{item.enName}}</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-cdfg-tab>
+            <ion-cdfg-tab title="分类" cdfgTab="1" icon="true" icon-on="cdfg-category-highlight"
+                          icon-off="cdfg-category-normal">
+                <ion-view ng-style="viewHeight">
+                    <ion-content on-release="scroll(4);" delegate-handle="t4">
+                        <div style="width:100%;height:50px">
+
+                        </div>
+                        <!-- 分类指令 category 存放与父scope 交互参数-->
+                        <!--<div class="list">-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                            <!--<div class="item">1111</div><div class="item">1111</div><div class="item">1111</div><div class="item">1111</div>-->
+                        <!--</div>-->
+                        <div cdfg-shop-category="category"></div>
+                    </ion-content>
+                </ion-view>
+            </ion-cdfg-tab>
+        </ion-cdfg-tabs>
+    </div>
+    <div ng-show="query.isShowSearch" cdfg-search="query">
+
+    </div>
+</ion-view>
+
+
+<!--</div>-->
+<!--<div cdfg-search="query" ng-if="query.isShowSearch">-->
+<!--</div>-->
+
+<!--<div class="bar bar-header">-->
+<!--<a ng-style="leftArrow" class="button button-clear icon-right ion-ios-arrow-left cdfg-header-left-arrow cdfg-header-back-button-font"-->
+<!--ng-click="myGoBack()">-->
+<!--</a>-->
+<!--<div class="title">广州白云山机场免税店</div>-->
+<!--<button ng-click="" class="button-icon cdfg-header-marging-left-wrapper" style="position: absolute; top: 5px;right: 5px; bottom: 5px;" >分享-->
+<!--</button>-->
+<!--<div>-->

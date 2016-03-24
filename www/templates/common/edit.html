@@ -1,0 +1,27 @@
+<ion-view hide-nav-bar="true" >
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title" ng-bind="editData.title"></span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="cdfg-background">
+        <div style="height: 100%;">
+            <form name="editForm">
+
+                <label class="item item-input cdfg-border-none cdfg-divder-big cdfg-relative" reg-is-empty>
+                    <input type="text" ng-model="editData.info" required
+                           ng-pattern="{{editData.pattern}}"
+                           minlength="{{editData.min}}" maxlength="{{editData.max}}" name="input"
+                           ng-class="{'true':'cdfg-input-error'}[!editForm.input.$valid && validate]"
+                           placeholder="{{validate?editData.warnMsg:editData.hint}}"/>
+
+                </label>
+                <button ng-disabled="editForm.input.$error.required" class="button button-block button-assertive"
+                        style="position: absolute;bottom: 16px;"
+                        ng-click="submitText()">确定
+                </button>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

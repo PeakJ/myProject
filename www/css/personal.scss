@@ -1,0 +1,431 @@
+/**
+*@author:ZCP
+*2015/6/29
+*personal center
+*/
+$img-square-large-width: 2rem;
+$cdfg-item-height: 4rem;
+
+.cdfg-background {
+  background: $c-weakest;
+}
+
+.cdfg-background-white {
+  background: #ffffff;
+}
+
+//设置图标
+.cdfg-personal-setting {
+  width: 33px;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  height: 33px;
+}
+
+//用户头像
+.cdfg-personal-photo-large {
+  text-align: center;
+  height: 175px;
+  padding-top: 28px;
+  padding-bottom: 1rem;
+  background: {
+    image: url("../img/background.png");
+  }
+  //头像
+  img {
+    width: 85px;
+    height: 85px;
+    border-radius: 5rem;
+  }
+  //用户昵称
+  p {
+    padding-top: 14px;
+    color: #ffffff;
+    //text-shadow: 1px 1px #d3d3d3;
+    font-size: $f-dark;
+  }
+}
+
+//list的item上下边界，用来覆写掉ionic的16px边界
+.cdfg-padding-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+//1像素分割线
+.cdfg-list-divder {
+  margin-top: 2px;
+}
+
+//10像素分割线
+.cdfg-divder {
+  margin-top: 10px;
+}
+
+//15像素分割线
+.cdfg-divder-big {
+  margin-top: 15px !important;
+}
+
+//平铺列表-5个订单状态
+.cdft-horizontal-list {
+  width: 100%;
+  height: 85px;
+  text-align: center;
+  padding: 20px 10px 26px 0px;
+  background: #FFFFFF;
+  position: relative;
+  //订单，待XX
+  .cdfg-personal-oderbutton {
+    width: 20%;
+    display: inline;
+    img {
+      width: 18px;
+      height: 16px;
+    }
+    p {
+      font-size: $f-Weak;
+      color: $c-general;
+    }
+  }
+}
+
+//小红点
+.cdfg-badge {
+  position: relative;
+  .num {
+    z-index: 2;
+    $badge: 12px;
+    color: #ffffff;
+    background: #ff0000;
+    width: $badge;
+    height: $badge;
+    border-radius: $badge;
+    float: right;
+    position: absolute;
+    left: 60%;
+    top: -10px;
+    .text {
+      margin-top: -4px;
+      font-size: $badge - 6px;
+    }
+  }
+}
+
+//列表样式
+.cdfg-item {
+  background: #ffffff;
+  padding-left: 45px;
+  padding-right: 45px;
+  position: relative;
+  //左侧标题
+  span {
+    font-size: $f-general;
+    color: $c-dark;
+    display: inline-table;
+  }
+  //右侧标题
+  .subtitle {
+    float: right;
+    color: $c-general-sub;
+    font-size: $f-Weak;
+  }
+
+  //列表左侧icon
+  .cdfg-item-left {
+    left: 11px;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 32px;
+    img {
+      padding: 8px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  //列表右侧icon
+  .cdfg-item-right {
+    right: 11px;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 32px;
+    img {
+      padding: 8px 12px 8px 12px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  i {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: auto;
+    right: 3px;
+
+  }
+  .photo {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+//猜你喜欢
+.cdfg-personal-guess {
+  width: 1000%;
+  .product {
+    width: 8rem;
+  }
+  img {
+    width: 8rem;
+  }
+}
+
+/** 消息中心 **/
+.cdfg-message {
+  .title {
+    font-size: $f-general;
+    color: $c-dark;
+  }
+  .datetime {
+    font-size: $f-Weak;
+    color: $c-general-sub;
+  }
+  .detail {
+    margin-top: 14px;
+    font-size: $f-Weak;
+    color: $c-general;
+  }
+}
+
+/** 意见反馈 **/
+.cdfg-feedback-textarea {
+  height: 200px;
+  padding: 8px;
+  resize: none;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.cdfg-placeholder {
+  font-size: $f-general-sub;
+  color: $c-general;
+}
+
+//.cdfg-feedback-textarea::-webkit-input-placeholder {
+//  word-break: break-all;
+//  word-wrap: break-word;
+//  color: red;
+//  content: "第1行  \n 第2行 <br> 第3行 \A 第4行  第5行   测试测试测试测试----\A请留下您的宝贵意见，\r\n我们将努力改进（不少于5个字）。"; /*  \A 表示换行  */
+//
+//}
+//
+//.cdfg-feedback-textarea::-webkit-input-placeholder:after {
+//  display: block;
+//  content: "第12行  \n 第2行 <br> 第3行 \A 第4行  第5行   测试测试测试测试----\A请留下您的宝贵意见，\r\n我们将努力改进（不少于5个字）。"; /*  \A 表示换行  */
+//  color: red;
+//}
+
+/** 我的收藏 **/
+.cdfg-personal-favourite {
+  height: auto;
+  .className {
+    padding: 8px 35px 8px 35px;
+    //border: 1px solid $c-general-thd;
+    img {
+      width: 32px;
+      height: 16px;
+      padding: 4px 4px 0 4px;
+      float: right;
+    }
+  }
+
+  .selectedItem {
+    color: red !important;
+  }
+  ul {
+    width: 100%;
+    //height: 100px;
+    padding: 4px 25px 4px 25px;
+  }
+}
+
+.noMore {
+  width: 100%;
+  text-align: center;
+  span {
+    font-size: $f-general-sub;
+    color: $c-general;
+  }
+  img {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+
+.cdfg-favourite-product {
+  position: relative;
+  overflow: hidden;
+  .productBox {
+    width: 50%;
+    float: left;
+    .proItem {
+      width: 98%;
+      margin-bottom: 5px;
+      float: left;
+      padding: 5px;
+      img {
+        width: 100%;
+      }
+      p {
+        position: absolute;
+        z-index: 10;
+        padding: 0 4px 0 4px;
+        color: #ffffff;
+        background-color: $c-general-sub;
+        border-radius: 2px;
+        font-size: $f-Weak;
+      }
+      label {
+        position: absolute;
+        margin-left: 40%;
+        z-index: 10;
+        input {
+          margin-left: -20px;
+          z-index: 10;
+        }
+      }
+    }
+    .image-divder {
+      width: 2%;
+      float: left;
+    }
+    .brand {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      white-space: nowrap;
+      font-size: $f-Weak;
+      color: $c-general;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .price {
+      font-size: $f-general;
+      color: $c-assertive;
+    }
+
+  }
+}
+
+//红色的删除按钮
+.cdfg-favourite-delete {
+  height: 30px;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 8px;
+  button {
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+  }
+}
+
+//背景不透明度设置
+.cdfg-favourite-footer {
+  background-color: rgba(59, 59, 59, 0.772549) !important;
+}
+
+/** 公司简介 **/
+.company {
+  .title {
+    padding-top: 16px;
+    margin-left: 20px;
+    font-size: $f-general;
+    color: $c-general;
+  }
+  .divder {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    .divder1 {
+      height: 2px;
+      width: 88px;
+      background-color: red;
+    }
+    .divder2 {
+
+      height: 1px;
+      width: 100%;
+      background-color: $c-general-thd;
+    }
+  }
+
+  .detail {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: $f-Weak;
+    color: $c-general;
+  }
+}
+
+/** 联系我们 **/
+.cdfg-connect-us {
+  .title {
+    padding-top: 16px;
+    margin-left: 20px;
+    font-size: $f-general;
+    color: $c-general;
+  }
+
+  table {
+    margin-left: 20px;
+    margin-right: 20px;
+    .title {
+      width: 80px;
+    }
+  }
+  .divder {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    .divder1 {
+      height: 2px;
+      width: 58px;
+      background-color: red;
+    }
+    .divder2 {
+
+      height: 1px;
+      width: 100%;
+      background-color: $c-general-thd;
+    }
+
+  }
+}

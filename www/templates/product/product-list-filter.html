@@ -1,0 +1,74 @@
+<div  ng-swipe-right="closeInitFilter()">
+    <ion-header-bar align-title="center">
+        <h1 class="title" style="width: 100%;">筛选</h1>
+    </ion-header-bar>
+    <ion-content class="has-header cdfg-has-footer">
+
+        <div class="list cdfg-filter-list">
+
+            <div class="item" ng-show="dataSc">
+                <div class="cdfg-filter-close-wrapper" ng-if="dataSc.selection"><a class="icon" id="cdfg-type-checked-tag">{{dataSc.selection.name}}</a><a class="icon ion-ios-close-outline" ng-class="" id="cdfg-type-checked-close" ng-click="checkedClose()"></a></div>
+                <div class="col-title">类别</div>
+            </div>
+            <div class="item cdfg-brand-filtrate-catebutton" >
+                <label ng-repeat="value in dataSc"
+                       ng-class="{button: true, 'button-small': true, active: value.id == dataSc.selection.id}">
+                    <input type="radio" name="myTestRadio" ng-model="dataSc.selection" ng-value="value" ng-checked="value.selection.id == value"
+                            ng-click="getAttrsFn(value.id)"/>{{value.name}}
+                </label>
+            </div>
+            <div class="item">
+                <div class="col-title cdfg-fl">价格</div>
+                <input class="input-text-row" type="number" ng-model="param.lowPrice" value="{{param.lowPrice}}" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+                <span class="icon ion-ios-minus-empty"></span>
+                <input class="input-text-row" type="number" ng-model="param.heightPrice" value="{{param.heightPrice}}" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+            </div>
+
+        </div>
+
+        <!--  ---------   属性  ----------  -->
+        <div class="clearfix" style="overflow: hidden">
+        <!--品牌-->
+        <div class="item item-icon-right cdfg-filter-attr-item" ng-repeat="filter in dataBrand" ng-click="initFilterSelections(filter,'brand')" ng-model="filter" ng-if="dataBrand.length>0">
+            <div class="row cdfg-padding-top-bottom">
+                <span class="col col-33">{{filter.cateName}}</span>
+                <span class="col text-center">{{selectAttrVal.brand[filter.cateName].name || '不限'}}</span>
+            </div>
+            <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <!--SpuSpec-->
+        <div class="item item-icon-right cdfg-filter-attr-item" ng-repeat="filter in dataSpuSpec" ng-click="initFilterSelections(filter,'spuSpec')" ng-model="filter" ng-if="dataSpuSpec.length>0">
+            <div class="row cdfg-padding-top-bottom">
+                <span class="col col-33">{{filter.cateName}}</span>
+                <span class="col text-center">{{selectAttrVal.spuSpec[filter.cateName].name || '不限'}}</span>
+            </div>
+            <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <!--SkuSpec-->
+        <div class="item item-icon-right cdfg-filter-attr-item" ng-repeat="filter in dataSkuSpec" ng-click="initFilterSelections(filter,'skuSpec')" ng-model="filter" ng-if="dataSkuSpec.length>0">
+            <div class="row cdfg-padding-top-bottom">
+                <span class="col col-33">{{filter.cateName}}</span>
+                <span class="col text-center">{{selectAttrVal.skuSpec[filter.cateName].name || '不限'}}</span>
+            </div>
+            <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <!--SpuAttr-->
+        <div class="item item-icon-right cdfg-filter-attr-item" ng-repeat="filter in dataSpuAttr" ng-click="initFilterSelections(filter,'spuAttr')" ng-model="filter" ng-if="dataSpuAttr.length>0">
+            <div class="row cdfg-padding-top-bottom">
+                <span class="col col-33">{{filter.cateName}}</span>
+                <span class="col text-center">{{selectAttrVal.spuAttr[filter.cateName].name || '不限'}}</span>
+            </div>
+            <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <!--  ---------   属性  ----------  -->
+        </div>
+    </ion-content>
+    <div class="bar bar-footer cdfg-filter-footer-button">
+        <div class="title">
+            <button class="button" ng-click="cancelFilter()">清除选项</button>
+            <button class="button button-assertive" ng-click="applyFilter()">确定</button>
+        </div>
+    </div>
+</div>
+
+

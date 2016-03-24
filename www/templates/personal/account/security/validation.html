@@ -1,0 +1,107 @@
+<ion-view hide-nav-bar="true">
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">手机验证</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="cdfg-background-white">
+        <div>
+            <!--修改绑定手机指示器-->
+            <div class="row cdfg-security-sign">
+                <div class="cdfg-security-col"
+                     ng-class="{'check': 'cdfg-password-active'}[step]">1
+                    <div class="text">验证身份</div>
+                </div>
+                <div class="col cdfg-padding cdfg-security-arrow">
+                    <img ng-src="img/icon-right.png">
+                </div>
+                <div class="cdfg-security-col" ng-class="{'bind': 'cdfg-password-active'}[step]">2
+                    <div class="text">绑定手机</div>
+                </div>
+                <div class="col cdfg-padding cdfg-security-arrow">
+                    <img ng-src="img/icon-right.png">
+                </div>
+                <div class="cdfg-security-col" ng-class="{'done': 'cdfg-password-active'}[step]">3
+                    <div class="text">完成</div>
+                </div>
+            </div>
+        </div>
+        <form name="validationForm">
+
+            <div ng-if="step=='check' && phoneOrPay == 'phone'" class="cdfg-password-panel padding">
+                <p>已验证手机:{{phone.text}} </p>
+                <button ng-disabled="phone.locker" ng-click="getPassCode()">
+                    {{phone.buttonText}} <span ng-if="phone.timer!=0">({{phone.timer}})</span>
+                </button>
+                <div class="cdfg-relative" reg-is-empty>
+
+                    <input class="valudateCode" ng-model="phone.inputCode" name="validateCode"
+                           pattern="^\d{6}$" required type="tel" max="999999" maxlength="6"
+                           ng-class="{'true':'cdfg-input-error'}[!validationForm.validateCode.$valid && validate]"
+                           placeholder="{{validate?'请输入正确的手机验证码':'手机验证码'}}"/>
+                </div>
+                <button ng-disabled="!validationForm.validateCode.$valid" class="button button-block button-assertive"
+                        ng-click="checkCode()">
+                    下一步
+                </button>
+                <a ng-click="checkByPay()">通过支付密码来验证</a>
+            </div>
+
+            <div ng-if="step=='check' && phoneOrPay == 'pay'" class="cdfg-password-panel padding">
+
+                <!--支付密码-->
+                <div class="cdfg-relative" reg-is-empty>
+
+                    <input class="valudateCode" ng-model="pay.payPassword" name="payPassword"
+                           pattern="^(?!\D+$)(?![^a-z]+$)[a-zA-Z\d]{6,}$" required type="password"
+                           ng-class="{'true':'cdfg-input-error'}[!validationForm.payPassword.$valid && validate]"
+                           placeholder="{{validate?'验证码错误':'请输入支付密码'}}"/>
+                </div>
+                <!--验证码-->
+                <div class="cdfg-relative" reg-is-empty>
+
+                    <input class="valudateImgCode" ng-model="pay.inputCode" name="valudateImgCode"
+                           pattern="^\d{4}$" required type="tel" max="9999" maxlength="4"
+                           ng-class="{'true':'cdfg-input-error'}[!validationForm.valudateImgCode.$valid && validate]"
+                           placeholder="{{validate?'验证码':'验证码'}}"/>
+                </div>
+                <img class="valudateImg" ng-src="{{pay.imgCode}}"/>
+
+                <div class="reflashCode" ng-click="reflashCode()"><u>看不清</u></div>
+                <button ng-disabled="!validationForm.$valid"
+                        class="button button-block button-assertive"
+                        ng-click="checkPhonePayCode()">
+                    下一步
+                </button>
+            </div>
+
+            <div ng-if="step=='bind' || step=='done'" class="cdfg-password-panel padding">
+                <!--手机修改-->
+                <div class="cdfg-relative" reg-is-empty>
+
+                    <input class="valudateCode" type="tel" ng-model="newPhone.newNumber"
+                           name="newPhone" maxlength="11"
+                           ng-class="{'true':'cdfg-input-error'}[!validationForm.newPhone.$valid && validate]"
+                           pattern="^1\d{10}$" required
+                           placeholder="{{validate?'请输入正确的手机号':'手机号'}}"/>
+                </div>
+                <button ng-disabled="newPhone.locker || !validationForm.newPhone.$valid" ng-click="getNewPhoneCode()">
+                    {{newPhone.buttonText}} <span ng-if="newPhone.timer!=0">({{newPhone.timer}})</span>
+                </button>
+                <div class="cdfg-relative" reg-is-empty>
+
+                    <input class="ValudateCode" ng-model="newPhone.newCode" name="newValidateCode"
+                           pattern="^\d{6}$" required type="tel" max="999999" maxlength="6"
+                           ng-class="{'true':'cdfg-input-error'}[!validationForm.validateCode.$valid && validate]"
+                           placeholder="{{validate?'请输入正确的手机验证码':'手机验证码'}}"/>
+                </div>
+                <button ng-disabled="!validationForm.newValidateCode.$valid"
+                        class="button button-block button-assertive"
+                        ng-click="checkNewPhoneCode()">完成
+                </button>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>

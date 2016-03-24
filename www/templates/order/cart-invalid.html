@@ -1,0 +1,26 @@
+<!--购物车内容-->
+<ion-view has-header="true"  title="订单提示">
+	<div class="bar-subheader" title="失效商品"></div>
+	<ion-content>
+		<div class="list" >
+			<!--正常商品-->
+			<div class="item" ng-repeat="item in validProlist" >
+				<!--<div class="text-right">{{item.storeName}}</div>-->
+
+				<img ng-src="{{item.pic}}"/>
+				<p>{{item.pName}} <span>{{item.skuSName}} {{item.skuSValName}} {{item.spuSName}} {{item.spuSValName}}</span></p>
+				<!--<span>{{item.mPrice | currency('&yen;')}}</span>-->
+				<p class="assertive">
+					{{item.msg || '该商品已失效'}}
+				</p>
+			</div>
+		</div>
+	</ion-content>
+
+
+
+
+	<ion-footer-bar>
+		<button ng-click="backToCart()">返回购物车修改</button>
+	</ion-footer-bar>
+</ion-view>

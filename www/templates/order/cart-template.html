@@ -1,0 +1,110 @@
+<!--购物车内容-->
+<ion-content class="has-footer has-header padding-bottom" id="cdfg-cart-list-div">
+    <ion-refresher on-refresh="refreshCart()" ></ion-refresher>
+    <!--渲染有活动商品-->
+    <ion-list can-swipe="true"  ng-repeat="sku in cartlist.promotionSkus" >
+
+        <!--渲染活动-->
+        <div class="" style="padding: 0;" >
+            <!--渲染规则-->
+            <div class="item cdfg-cart-promotion-title"
+                 ng-repeat="promotion in sku.promotions" ng-class="{true:'promotionfirst'}[$index==0]" ng-if="promotion.show">
+                <a class="button-small cdfg-fr"
+                   ui-sref="promotionProductList({promId:promotion.id})">去凑单 <i
+                        class="icon ion-ios-arrow-right"></i></a>
+                <span class="c-assertive acttag cdfg-promotion-red-tag"
+                      ng-bind="cartlist.promotionsInfo[promotion.id].promotionType | promotionType"></span>
+                <span class="cdfg-promotion-tag-info">{{cartlist.promotionsInfo[promotion.id].name}}</span>
+            </div>
+            <div class="cartgift">
+            <a class="button-small assertive " ng-if="sku.giftPromotionId&&sku.skuInfo.checked"
+               ng-click="selectGift(sku.giftPromotionId,sku)">领取赠品</a>
+            </div>
+            <!--渲染已选赠品-->
+            <div class="cdfg-order-detail-goods" ng-repeat="gift in sku.selectedGift" skuid="{{sku.skuId}}">
+                <i class="cdfg-gift-text gift">赠品</i>
+                <!--图片-->
+                <img class="cdfg-fl" width="70" ng-src="{{gift.pic |imgUrlFilter:'100;100'}}"/>
+
+                <!--标题-->
+                <p class="c-dark">{{gift.skuId}}{{gift.pName}} </p>
+
+                <p class="propertyinfo">{{gift.skuSName}} {{gift.skuSValName}} {{gift.spuSName}}
+                    {{item.spuSValName}}</p>
+                <!--价格-->
+                <span class="c-assertive">{{gift.price | currency:'&yen;'}}</span>
+
+            </div>
+        </div>
+        <!--渲染活动结束-->
+        <!--渲染商品-->
+        <div class="cdfg-cartlist ">
+            <!--渲染当前sku商品-->
+            <div ng-init="item=sku.skuInfo;key='promotionSkus'" ng-include="'templates/order/cart-item.html'"></div>
+        </div>
+    </ion-list>
+
+
+    <!--渲染非活动商品-->
+
+
+        <ion-list can-swipe="true" class="cdfg-cartlist cdfg-cart-unpromotion"  ng-if="cartlist.unpromotions.length>0">
+            <div ng-repeat="item in cartlist.unpromotions | orderBy:'hasActiveId'" ng-class="{true:'promotionfirst'}[$index==0]">
+                <!--渲染活动-->
+                <div ng-if="item.hasActiveId" class="item icon-right" ui-sref="promotionProductList({promId:item.hasActiveId})">
+                    还不能享受活动，去凑单吧&gt;
+                </div>
+                <div ng-init="key='unpromotions'" ng-include="'templates/order/cart-item.html'"></div>
+            </div>
+        </ion-list>
+
+
+
+    <!--渲染失效商品-->
+    <div class="promotionfirst" ng-if="cartlist.invalid.length>0">
+        <span class="padding">以下有{{cartlist.invalid.length}}个失效商品</span>
+        <div class="list">
+            <div ng-repeat="item in cartlist.invalid" class="item">
+                <a class="cdfg-fl margin-top  button-icon button-large ion-ios-trash-outline"
+                   ng-click="deleteCart(item,'invalid',$index)"></a>
+                <img class="cdfg-fl" width="65" ng-src="{{item.pic |imgUrlFilter:'100;100'}}"/>
+
+                <p class="cdfg-fl" style="width:65%">{{item.pName}}</p>
+
+            </div>
+        </div>
+        <div class="text-center margin ">
+            <a class="button button-cdfg" ng-click="removeInvalidPro()">清除失效商品</a>
+        </div>
+    </div>
+<div style="height:42px;"></div>
+</ion-content>
+
+<ion-footer-bar ng-hide="editstatus">
+    <div ng-if="invaidPro.length>0">
+        您有{{invaidPro.length}}条失效商品
+    </div>
+    <div class="cdfg-cart-checkall">
+        <label class="checkbox" >
+            <input type="checkbox" ng-change="chkAll(chkall)" ng-disabled="item.disabled&&!editstatus" ng-model="chkall"
+                   class="cdfg-checkbox-icon-self"/><i></i>
+            全选
+        </label>
+    </div>
+    <p class="cdfg-cart-total" style="white-space: nowrap">合计 : {{totalPrice|currency:'&yen;'}}</p>
+
+    <p class="cdfg-cart-fee">不含运费</p>
+    <button ng-disabled="total<1" class="button button-assertive button-submit pull-right" type="submit"
+            ng-click="settlement()">结算<i>({{total}})</i></button>
+</ion-footer-bar>
+<ion-footer-bar ng-show="editstatus">
+    <div class="cdfg-cart-checkall">
+        <label class="checkbox">
+            <input type="checkbox" ng-change="chkAll(chkall)" ng-model="chkall" class="cdfg-checkbox-icon-self"/><i></i> 全选
+        </label>
+    </div>
+    <div class="cdfg-cart-footer">
+        <button class="button button-cdfg" ng-disabled="total<1" ng-click="moveToCollect()">移入收藏夹</button>
+        <button ng-disabled="total<1" class=" button button-cdfg" ng-click="batchDeleteCart()">删除</button>
+    </div>
+</ion-footer-bar>

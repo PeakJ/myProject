@@ -1,0 +1,43 @@
+<ion-view hide-nav-bar="true">
+    <div ng-if="!query.isShowSearch">
+        <ion-header-bar class="bar bar-header cdfg-product-list-header item-input-inset item" align-title="center">
+            <a ng-style="leftArrow" class="button button-clear icon-right ion-ios-arrow-left cdfg-header-left-arrow cdfg-header-back-button-font"
+               ng-click="myGoBack()"></a>
+            <label class="item-input-wrapper cdfg-product-list-input-bkg cdfg-header-marging-left-wrapper"
+                   ng-click="showSearch();" >
+                <i class="icon ion-ios-search cdfg-header-left-arrow"></i>
+                <input type="search" ng-model="query.tag" placeholder="搜索店内商品" style="color:#3e3e3e" id="cdfg-pl-input" class="cdfg-search-input-height"/>
+            </label>
+        </ion-header-bar>
+        <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+        <ion-content class="cdfg-background">
+            <div class="list">
+                <div class="item item-icon-right cdfg-shop-first-category-item" ng-model="all" ng-click="goShopProductList(all.id)">
+                    <p>全部</p>
+                    <i ng-if="all.isChecked" class="icon ion-ios-checkmark-empty assertive"></i>
+                </div>
+                <div ng-repeat="c in categoryList"><!-- 一级分类 -->
+                    <div class="item item-icon-right cdfg-shop-first-category-item"  ng-click="c.isExpanded = !c.isExpanded;" >
+                        <p>{{c.name}}</p>
+                        <i ng-if="true" class="icon {{c.isExpanded?'ion-ios-arrow-up':'ion-ios-arrow-down'}}"></i>
+                    </div>
+                    <div class="item item-icon-right cdfg-shop-first-category-list"
+                         ng-if=" c.subList.length>0 && c.isExpanded">
+                        <div class="list">
+                            <div class="item item-icon-right cdfg-shop-second-category-item"
+                                 ng-repeat="sc in c.subList track by $index" ng-click="sc.isChecked=true;
+                             goShopProductList(sc.id);">
+                                <p>{{sc.name}}</p>
+                                <i ng-if="sc.isChecked " class="icon ion-ios-checkmark-empty assertive"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+
+    </div>
+    <div cdfg-search="query" ng-if="query.isShowSearch">
+
+    </div>
+</ion-view>

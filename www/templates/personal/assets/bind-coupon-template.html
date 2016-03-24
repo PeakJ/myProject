@@ -1,0 +1,11 @@
+<!-- 优惠券绑定 -->
+<div class="margin-top-20 width-full cdfg-coupon-recharge">
+    <div class="input-bg cdfg-fl light-bg content" reg-is-empty>
+        <input type="text" placeholder="输入优惠券号" ng-model="rechargeParams.couponNo"
+               ng-maxlength="16"/>
+    </div>
+    <button class="button button-small" ng-click="bindCoupon()"
+            ng-class="{'recharge':rechargeParams.couponNo,'not-available':!rechargeParams.couponNo}">
+        绑定使用
+    </button>
+</div>

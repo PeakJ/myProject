@@ -1,0 +1,55 @@
+<ion-modal-view class="cdfg-select-modal" ng-class="{'animation':addToCartAnimation}">
+    <ion-content>
+        <div class="modal cdfg-select-content">
+            <div class="list">
+                <!--选中信息-->
+                <div class="item cdfg-padding-top-bottom item-avatar-left">
+                    <img ng-src="{{nowProduct.spuImgs[0] | imgUrlFilter}}"/>
+                    <div>
+                        <h3 class="cdfg-white-space">{{prodItemInfo.brandName}}/{{prodItemInfo.subtitle}}</h3>
+                        <span class="select-price assertive">{{selectShowPrice.price | currency : '&yen'}}</span>
+                        <p>
+                            <span ng-if="(nowProduct)">已选"{{nowProduct.specValueName}}"</span>
+                            <span ng-if="(selectSize)">,"{{selectSize}}"</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--规格 颜色-->
+            <div class="cdfg-select-list">
+                <p>{{productItem[0].type}}</p>
+                <img ng-repeat="color in productItem"
+                     ng-click="changeProduct(color.pid)" ng-src="{{color.url | imgUrlFilter}}" ng-class="color.name == nowProduct.specValueName ? 'selectli':null" class="select-img-box {{color.status==0?'disable':null}}" />
+
+            </div>
+            <!--规格 尺码-->
+            <div ng-show="(productSize.length > 0)" class="cdfg-select-list">
+                <p>{{productSize[0].type}}</p>
+                <i ng-repeat="size in productSize" ng-class="size.name == selectSize ? 'selectli':null" class="select-size-box {{size.status==0?'disable':null}}" ng-click="changeSize(size.skuId, size.status)">{{size.name}}</i>
+            </div>
+            <!--添加数量-->
+            <div class="cdfg-select-list">
+                <p>购买数量</p>
+
+                <div class="cdfg-select-buy-number">
+                    <!--交换加减位置 by xuf-->
+                    <span class="{{stockNum.curStock <= 1?'disable':null}}" ng-click="minusStock()"><i class="icon ion-ios-minus-empty"></i></span>
+                    <input type="number" maxlength="{{productStoreNum}}" ng-model="stockNum.curStock" onkeyup="this.value=this.value.replace(/\D/g,'')" ng-change="changeStock(stockNum.curStock)" />
+                    <span class="{{!productStoreNum || stockNum.curStock == productStoreNum?'disable':null}}" ng-click="plusStock()"><i class="icon ion-ios-plus-empty"></i></span>
+                    <i class="i_Stock">件 (<em ng-if="productStoreNum!=0">库存<i class="assertive">{{productStoreNum}}</i>件</em><em ng-if="!productStoreNum">库存不足</em>)</i>
+                </div>
+            </div>
+            <div class="cdfg-detail-empty-height"></div>
+
+        </div>
+
+    </ion-content>
+    <!--确认取消按钮-->
+    <div class="bar bar-footer cdfg-detail-footer cdfg-detail-select-footer">
+        <h1 class="title" style="padding-top:10px;">
+            <!--<a ng-click="cancelAdd()">取消</a>-->
+            <a ng-click="addShopcart()" class="assertive" ng-if="prodSpuNumber!=0">加入购物车</a>
+            <a class="cdfg-disabled-button" disabled ng-if="!prodSpuNumber">售罄</a><!--storeNum-->
+        </h1>
+    </div>
+</ion-modal-view>

@@ -1,0 +1,83 @@
+<!-- 个人中心->售后服务进度  by 葛硕 2015/07/08 -->
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">售后服务进度</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg">
+        <ion-refresher on-refresh="loadData()"></ion-refresher>
+        <!-- 商品信息 -->
+        <div class="cdfg-after-sale-progress-title">
+            <span class="cdfg-font-general-dark cdfg-fl">订单号：</span>
+            <span class="cdfg-font-general-dark cdfg-fl margin-right" ng-bind="progressData.code"></span>
+            <div class="cdfg-fl ">
+                <span class="cdfg-font-sub-light">申请时间：</span>
+                <span class="cdfg-font-sub-light" ng-bind="progressData.createDate"></span>
+            </div>
+            <div class="cdfg-clear-float"></div>
+        </div>
+        <div class="cdfg-after-sale-progress-goods" ng-click="toOrderDetail(orderId)"
+             ng-repeat="goods in progressData.items">
+            <img ng-src="{{goods.pic | imgUrlFilter}}" class="cdfg-default-hy"/>
+            <div class="cdfg-orderlist-title goods-name" ng-bind="goods.prodName"></div>
+            <div class="margin-top-small">
+                <span class=" padding-left" ng-bind="goods.transPrice | currency:'&yen;'"></span>
+                <span class="padding-left">数量：</span>
+                <span ng-bind="goods.returnNumber"></span>
+            </div>
+        </div>
+
+        <div class="cdfg-order-detail-pay-type cdfg-personal-order-border-bottom">
+            <span class="cdfg-font-second-light">售后类型：</span>
+            <span class="cdfg-font-second-light" ng-bind="progressData.returnTypeText"></span>
+            <span class="cdfg-font-general-dark">理由：<span ng-bind="progressData.reasonTypeText"></span></span>
+        </div>
+        <div class="cdfg-after-sale-description light-bg">
+            <span class="cdfg-font-general-dark">问题描述</span>
+            <br/>
+            <div class="cdfg-font-sub-light" ng-bind="progressData.returnReason"></div>
+
+            <!-- 图片位置 -->
+            <div class="row row-no-padding">
+                <div class="cdfg-after-sale-apply-img margin-top" ng-click="toApplyImages($index)"
+                     ng-class="{'margin-left-small':$index!=0}"
+                     ng-repeat="imageItem in progressData.imageList"
+                     ng-style="{'background-size':imageItem.isVertical?'100% auto':'auto 100%'}"
+                     style="background:url({{imageItem.url|imgUrlFilter}}) no-repeat center;">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="margin-top light-bg ">
+            <!--<div class="cdfg-after-sale-description padding cdfg-personal-order-border-bottom">
+                <span class="cdfg-font-general-dark">审核留言</span>
+                <br />
+                <div class="cdfg-font-sub-light" ng-bind="content.serviceText"></div>
+            </div>-->
+
+            <!-- 退款流程时间轴 -->
+            <div class="cdfg-time-line light-bg padding" ng-if="progressData.progress.length!=0">
+                <article>
+                    <section ng-repeat="progressItem in progressData.progress">
+                        <div class="horizon-line">
+                            <span class="progress-base point-big"></span>
+                            <aside>
+                                <span ng-bind="progressItem.createTime" class="cdfg-font-general-dark"></span>
+                                 <p><span ng-bind="progressItem.content"
+                                          ng-class="{'cdfg-personal-order-general-assertive':$index==0,'cdfg-personal-order-sub-light':$index!=0}"></span></p>
+                            </aside>
+                        </div>
+                    </section>
+                    <button class="cdfg-fr margin-right cdfg-red-border" ng-if="progressData.statusText"
+                            ng-bind="progressData.statusText" ></button>
+                    <section>
+                        <span class="progress-base point-small"></span>
+                    </section>
+                </article>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,29 @@
+<div class="cdfg-brandlist-main-item">
+<!--#/product/prod/{{::item.prodId}}/detail-->
+    <!--横向列表-->
+    <div class="cdfg-link-item" ng-if="list.show">
+        <a ng-href="#/product/spu/{{::item.spuId}}/detail" ng-repeat="item in productData" class="item item-thumbnail-left">
+            <!-- 删除了 计算高度的指令 by xuf-->
+            <img ng-src="{{item.frontPic?item.frontPic:item.backPic | imgUrlFilter: '300;300'}}" cdfg-auto-height="{{1}}" class="cdfg-default-hy" />
+            <div class="cdfg-brandlist-title" ng-bind='item.prodName'></div>
+            <div class="cdfg-brandlist-price">
+                <span class="assertive" ng-if="item.mobilePrice > 0" ng-bind="item.mobilePrice | currency : '&yen'"></span>
+                <span class="assertive" ng-if="item.mobilePrice <= 0 || !item.mobilePrice" ng-bind="item.salePrice | currency : '&yen'"></span>
+            </div>
+        </a>
+    </div>
+    <!--纵向列表-->
+    <div class="cdfg-link-item padding cdfg-padding-top-bottom" ng-if="!list.show">
+        <div class="cdfg-brandlist-col2-margin" ng-repeat="item in productData">
+            <a ng-href="#/product/spu/{{::item.spuId}}/detail" class="item cdfg-brandlist-col2-item">
+                <img ng-src="{{item.frontPic?item.frontPic:item.backPic | imgUrlFilter: '300;300'}}" cdfg-auto-height="{{1}}" class="cdfg-default-hy" />
+                <div class="cdfg-brandlist-title"><span ng-bind="item.brandName"></span> <span ng-bind="item.subtitle"></span></div>
+                <div class="cdfg-brandlist-price">
+                    <span class="assertive" ng-if="item.mobilePrice > 0" ng-bind="item.mobilePrice | currency : '&yen'"></span>
+                    <span class="assertive" ng-if="item.mobilePrice <= 0 || !item.mobilePrice" ng-bind="item.salePrice | currency : '&yen'"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div>&nbsp;</div>

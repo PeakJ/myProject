@@ -1,0 +1,12 @@
+<ion-modal-view  ng-class="{'animation':addToCartAnimation}" title="用户服务协议">
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="closeModal();" class="button button-clear title-back-button"></button>
+        <span class="title">用户服务协议</span>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <!--引入模版 -->
+        <div  bind-html="protocolInfo" style="margin-top: 10px"></div>
+
+    </ion-content>
+
+</ion-modal-view>

@@ -1,0 +1,21 @@
+<ion-view has-header="true"   hide-nav-bar="true" >
+    <ion-header-bar class="cdfg-category-header" >
+        <a href="#" class="button button-icon icon ion-ios-arrow-left"  ng-click="myGoBack();" ></a>
+        <div class="title" ng-style="headerTitleStyle"> {{title}}</div>
+    </ion-header-bar>
+
+
+    <ion-content style="background-color: #e5e5e5">
+        <div class="cdfg-promotion-clock-div" ng-style="positionX" ng-model="clockObj" ng-if="!clockObj.isExpired">
+            <img src="img/icon-clock.png" style="width: 16px;height: 16px;margin:6px 5px auto 15px">
+            <div style="font-size: 16px;display: inline-block;margin-right: 10px;color:#fff;">剩余{{clockObj.dayLeft}}天&nbsp{{clockObj.timeLeft}}</div>
+        </div>
+        <div  class="cdfg-promotion-clock-div" ng-style="positionX" ng-if="clockObj.isExpired" ng-model="clockObj">
+            <div style="font-size: 16px;display: inline-block;margin-right: 10px;color:#fff;">{{clockObj.expiredMsg}}</div>
+        </div>
+        <div ng-repeat="d in pcp.data" promotion-module-type="{{d.type}}" style="background-color: #e5e5e5;"></div>
+        <!--<div ng-repeat="d in $scope.pcp.data">{{d.rows[0].pic}}</div>{{}}-->>
+        <div class="cdfg-detail-empty-height"></div>
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,50 @@
+<!-- 个人中心->评价商品 by 葛硕  2015/07/04 -->
+<ion-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">评价商品</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg" >
+        <ion-refresher on-refresh="loadData();"></ion-refresher>
+
+        <div class="cdfg-remark-goods margin-top-15 light-bg" >
+            <img ng-src="{{goodsData.mainPic|imgUrlFilter}}"
+                 class="cdfg-orderlist-item-img cdfg-fl cdfg-default-hy"/>
+            <div class="cdfg-orderlist-title" ng-bind="goodsData.prodName"></div>
+        </div>
+
+        <div class="light-bg padding-bottom-20">
+            <div class="cdfg-remark-service-label margin-top">
+                <span>服务评价</span>
+                <span>满意请给5星哦</span>
+            </div>
+            <div class="margin-top-15">
+                <div class="row row-no-padding cdfg-rating-item" ng-repeat="ratingItem in ratingData.ratingBars">
+                    <div style="width: 40%">
+                        <span ng-bind="ratingItem.label"></span>
+                    </div>
+                    <rating-bar value="ratingItem.value"></rating-bar>
+                </div>
+            </div>
+        <textarea
+                class="cdfg-remark-goods-textarea"
+                placeholder="长度在10-500个字之间" rows="5"
+                ng-model="ratingData.ratingText"></textarea>
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar class="cdfg-personal-order-border-top">
+        <div class="cdfg-remark-submit">
+            <div class="checkbox margin-top">
+                <input type="checkbox" class="cdfg-checkbox-icon-self cdfg-fl" ng-model="ratingData.isAnonymity" value="on">
+                <span ng-click="checkAnonymity()">匿名</span>
+            </div>
+            <button class="button button-assertive"
+                    ng-click="submitRemark()">
+                提交
+            </button>
+
+        </div>
+    </ion-footer-bar>
+</ion-view>

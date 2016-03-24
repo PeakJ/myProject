@@ -1,0 +1,126 @@
+<!-- 个人中心->申请售后服务  by 葛硕 2015/07/07 -->
+<ion-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">申请售后服务</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg">
+        <!-- 商品信息 -->
+        <div class="cdfg-after-sale-progress-goods margin-top-15" ng-click="toOrderDetail(orderId)">
+            <img ng-src="{{afterSaleGoods.mainPic | imgUrlFilter}}" class="cdfg-default-hy"/>
+            <div class="cdfg-orderlist-title goods-name" ng-bind="afterSaleGoods.prodName"></div>
+            <div class="margin-top">
+                <span class=" padding-left">￥</span>
+                <span ng-bind="afterSaleGoods.transPrice | currency:'&yen;'"></span>
+                <span class="padding-left">数量：</span>
+                <span ng-bind="afterSaleGoods.num"></span>
+            </div>
+        </div>
+
+        <!-- 填写售后信息 -->
+        <div class="margin-top light-bg">
+            <div class="cdfg-apply-type">
+                <span class="cdfg-font-general-dark">服务类型</span>
+                <br />
+                <button class="cdfg-font-general-dark">退货</button>
+            </div>
+            <div class="cdfg-apply-type">
+                <span class="cdfg-font-general-dark">申请数量</span>
+                <div class="row row-no-padding margin-top">
+                    <div class="row row-no-padding cdfg-after-sale-count">
+                        <div class="cdfg-after-sale-change-count"
+                             ng-click="addCount(-1)">
+                            <div class="cdfg-personal-order-table-cell left">
+                                <img src="img/icon-minus.png">
+                            </div>
+                        </div>
+                        <div class="amount">
+                            <input class="cdfg-font-general-dark"
+                                   type="text" ng-model="applyParams.count"/>
+                        </div>
+                        <div class="cdfg-after-sale-change-count"
+                             ng-click="addCount(1)">
+                            <div class="cdfg-personal-order-table-cell right">
+                                <img src="img/icon-add.png"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="margin-left-15">
+                        <span class="cdfg-font-sub-lighter">
+                        您最多可提交数量
+                        <span class="cdfg-font-sub-lighter" ng-bind="afterSaleGoods.num"></span>
+                        个
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="cdfg-apply-type">
+                <span class="cdfg-font-general-dark">申请凭证</span>
+                <div class="row row-no-padding margin-top">
+                    <div class="col-34 row row-no-padding checkbox">
+                        <input type="radio" class="cdfg-checkbox-icon-self" name="has-bill" value="0"
+                               ng-model="applyParams.hasBill"/>
+                        <div class="cdfg-font-sub-light padding-left" ng-click="checkBill(0)">有发票</div>
+                    </div>
+                    <div class="col-66 row row-no-padding checkbox" style="margin-top: 0">
+                        <input type="radio" class="cdfg-checkbox-icon-self" name="has-bill" value="1" ng-model="applyParams.hasBill"/>
+                        <div class="cdfg-font-sub-light padding-left" ng-click="checkBill(1)">无发票，需扣相应税点</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cdfg-personal-order-padding ">
+                <div class="cdfg-apply-select">
+                    <select class="cdfg-font-general-dark"
+                            ng-options="reason.value for reason in applyParams.reasons"
+                            ng-model="applyParams.reasons.selectVal" >
+                    </select>
+                </div>
+
+                <div class="margin-top-15">
+                    <span class="cdfg-font-general-dark">问题描述</span>
+                </div>
+                <textarea class="cdfg-after-sale-textarea padding"
+                          placeholder="请您在此详细描述问题" ng-model="applyParams.reasonDetail"></textarea>
+            </div>
+        </div>
+
+        <!-- 上传图片、提交按钮 -->
+        <div class="cdfg-personal-order-padding light-bg margin-top">
+            <span class="cdfg-font-general-dark">上传图片</span>
+
+            <!-- 图片位置 -->
+            <div class="row row-no-padding">
+                <!--<img  class="cdfg-after-sale-apply-img"
+                      ng-repeat="imageItem in imageList" ng-src="{{imageItem}}"/>-->
+                <div class="cdfg-after-sale-apply-img margin-top" ng-click="toApplyImages($index)"
+                     ng-class="{'margin-left-small':$index!=0,'margin-right-small':$index==imageList.length-1}"
+                     ng-repeat="imageItem in imageList"
+                     ng-style="{'background-size':imageItem.isVertical?'100% auto':'auto 100%'}"
+                     style="background:url({{imageItem.url}}) no-repeat center;">
+                </div>
+
+                <!--添加图标-->
+                <div class="cdfg-after-sale-add-img margin-top"
+                     ng-if="imageList.length<3"
+                     ng-click="addImage()"
+                     style="text-align: center;display: table">
+                    <div class="cdfg-personal-order-table-cell">
+                        <img src="img/icon-add-image.png">
+                    </div>
+                </div>
+            </div>
+            <div class="margin-top">
+                <span class="cdfg-font-sub-lighter">最多上传3张，每张不超过5M，支持JPG、BMP、PNG</span>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="cdfg-apply-submit">
+            <button class="button button-assertive cdfg-order-detail-btn-positive" ng-click="submitApply()">
+                提交申请
+            </button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

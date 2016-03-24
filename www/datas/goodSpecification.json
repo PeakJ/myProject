@@ -1,0 +1,96 @@
+{
+  "id":"0930245455",
+  "brandId":"15",
+  "bcId":1,
+  "storeId":"564",
+  "storeName":"广州白云山国际机场",
+  "brandName":"Michael Kors",
+  "name":"红石榴多酚滋养沐浴露",
+  "subtitle":"迈克 科尔斯 吹牛皮 女士 单肩 手提包 30S5VCYS1L",
+  "promotion":"满2000减500，满3000减800",
+  "skuSpecItems":"s||m||l||xl",
+  "spuItems":[
+    {
+      "id":110,
+      "specName":"颜色",
+      "specValueName":"黑色",
+      "marketPrice":"市 800b.00",
+      "salePrice":"销 700b.00",
+      "innerPrice":"员500b.00",
+      "salerGuarantee":["正品保证","维修保养","权威鉴定","七天退货","国家免税"],
+      "attrs" :"商品编码=093029133||品牌=Michael kors||规格=黑色||尺寸=S||产地=意大利||袖长=无袖||裙长=中裙||弹力=无弹",
+      "detail":["/photo/ProductStyleImg/10000143/1000014301/130798019223353713.jpg"],
+      "spuImgs": [
+        "/photo/ProductStyleImg/10000143/1000014301/130798019223353713.jpg",
+        "/photo/ProductStyleImg/10000143/1000014301/130798019172913607.jpg"
+      ],
+
+      "skuItems":
+      [
+        {
+          "id":"265291",
+          "storeNum":7,
+          "specName":"尺寸",
+          "specValueName":"s",
+          "marketPrice":"市1498bs.00",
+          "salePrice":"销839bs.00",
+          "innerPrice":"员739bs.00"
+        },
+        {
+          "id":"265292",
+          "storeNum":5,
+          "specName":"尺寸",
+          "specValueName":"m",
+          "marketPrice":"市 1298bm.00",
+          "salePrice":"销 819bm.00",
+          "innerPrice":"员 719bm.00"
+        }
+      ]
+    },
+    {
+      "id":5043,
+      "specName":"颜色",
+      "specValueName":"白色",
+      "marketPrice":"市 300w.00",
+      "salePrice":"销 200w.00",
+      "innerPrice":"员 100w.00",
+      "salerGuarantee":["正品保证","维修保养","权威鉴定","国家免税"],
+      "attrs" :"商品编码=093029133||适用季节=春秋||面料成分=100%涤纶||尺寸=S||衣门襟=拉链",
+      "detail":["/photo/ProductStyleImg/10000145/1000014501/130798019418043802.jpg"],
+      "spuImgs":
+      [
+        "/photo/ProductStyleImg/10000145/1000014501/130798019418043802.jpg",
+        "/photo/ProductStyleImg/10000145/1000014501/130798019454479876.jpg"
+      ],
+      "skuItems":
+      [
+        {
+          "id":"265296",
+          "storeNum":0,
+          "specName":"尺寸",
+          "specValueName":"m",
+          "marketPrice":"市 1498wm.00",
+          "salePrice":"销 839wm.00",
+          "innerPrice":"员 739wm.00"
+        },
+        {
+          "id":"265295",
+          "storeNum":3,
+          "specName":"尺寸",
+          "specValueName":"l",
+          "marketPrice":"市 1398wl.00",
+          "salePrice":"销 889wl.00",
+          "innerPrice":"员 779wl.00"
+        },
+        {
+          "id":"265299",
+          "storeNum":10,
+          "specName":"尺寸",
+          "specValueName":"s",
+          "marketPrice":"市 1298ws.00",
+          "salePrice":"销 819ws.00",
+          "innerPrice":"员 719ws.00"
+        }
+      ]
+    }
+  ]}

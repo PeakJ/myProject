@@ -1,0 +1,72 @@
+
+    [{
+      "id": 110,
+      "prodId":110,
+      "pic": "http://img1.zhongmian.com/upload/601/603/225646/225652/226240/267652_10_pic270_5999.jpg",
+      "name": "红石榴多酚滋养沐浴石榴多酚滋养沐浴石榴多酚滋养沐浴石榴多酚滋养沐浴露532ML",
+      "price": 99.00,
+      "status": "已售罄"
+    },
+    {
+      "id": 267674,
+      "prodId":267674,
+      "pic": "http://img2.zhongmian.com/upload/601/603/225646/225652/235638/267674_10_pic270_6027.jpg",
+      "name": "秋冬旅行套装",
+      "price": 87.00,
+      "type": [
+        "减",
+        "赠"
+      ],
+      "status": "0"
+    },
+    {
+      "id": 267671,
+      "prodId":267674,
+      "pic": "http://img1.zhongmian.com/upload/601/603/225646/225652/235638/267671_10_pic270_9398.jpg",
+      "name": "木瓜浴露套装",
+      "price": 199.00,
+      "type": ["减"]
+    },
+    {
+      "id": 267643,
+      "prodId":267674,
+      "pic": "http://img1.zhongmian.com/upload/601/602/235654/267643_10_pic270_3282.jpg",
+      "name": "野生姜盈润洗发露532ML",
+      "price": 139.00,
+      "type": ["减"]
+    },
+    {
+      "id": 267674,
+      "pic": "http://img2.zhongmian.com/upload/601/603/225646/225652/235638/267674_10_pic270_6027.jpg",
+      "name": "秋冬旅行套装",
+      "price": 87.00,
+      "type": [
+        "减",
+        "赠"
+      ]
+    },
+    {
+      "id": 267671,
+      "prodId":267674,
+      "pic": "http://img1.zhongmian.com/upload/601/603/225646/225652/235638/267671_10_pic270_9398.jpg",
+      "name": "木瓜浴露套装",
+      "price": 199.00,
+      "type": ["减"]
+    },
+    {
+      "id": 267643,
+      "prodId":267674,
+      "pic": "http://img1.zhongmian.com/upload/601/602/235654/267643_10_pic270_3282.jpg",
+      "name": "野生姜盈润洗发露532ML",
+      "price": 139.00,
+      "type": ["减"]
+    },
+    {
+      "id": 267643,
+      "prodId":267674,
+      "pic": "http://img1.zhongmian.com/upload/601/602/235654/267643_10_pic270_3282.jpg",
+      "name": "1222222野生姜盈润洗发露532ML",
+      "price": 139.00,
+      "type": ["减"]
+    }]
+

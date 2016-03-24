@@ -1,0 +1,59 @@
+
+<!--购物车内容-->
+<ion-view has-header="true"  hide-nav-bar="true" class="cdfg-cart-header" >
+	<!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+	<!-- <ion-nav-buttons  side="right" style="background-color: #af3ddd">
+
+	</ion-nav-buttons> -->
+	<ion-header-bar  class="cdfg-common-title"  align-title="center">
+		<button ng-click="goBack();" class="button button-clear title-back-button"></button>
+		<span class="title">购物车</span>
+		<button ng-if="!cartstatu.cartempty" class="button button-clear margin-right" ng-click="toggleEdit()" style="color:#666" ng-switch="editstatus">
+			<span ng-switch-when="false"  class="cdfg-font-second-light">编辑</span>
+			<span ng-switch-when="true" class="cdfg-font-second-light">完成</span>
+		</button>
+	</ion-header-bar>
+	<!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+
+	<div ng-if="cartstatu.cartempty" ng-include="'templates/order/cart-empty.html'"></div>
+	<div ng-if="cartlist&&(cartlist.valid.length>0||cartlist.invalid.length>0)" ng-include="'templates/order/cart-template.html'"></div>
+</ion-view>
+
+<!--领取赠品-->
+<script id="modal-selectgift.html" type="text/ng-template">
+	<div class="modal">
+		<!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+		<!--<ion-header-bar class="item-button-left item">
+			<h1 class="title">领取赠品</h1>
+			<button class="button button-icon ion-ios-arrow-left" ng-click="closemodal()"></button>
+		</ion-header-bar>-->
+		<ion-header-bar  class="cdfg-common-title"  align-title="center">
+			<button ng-click="closemodal();" class="button button-clear title-back-button"></button>
+			<span class="title">领取赠品</span>
+		</ion-header-bar>
+		<!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+		<ion-content>
+
+			<!--Sku列表-->
+			<div class="list"  ng-repeat="skus in skudata">
+				<label class="item item-avatar item-radio" on-touch="checkGift(item)" ng-repeat="item in skus"  >
+					<input type="radio" name="gift"/>
+					<div class="item-content">
+						<img width="70" ng-src="{{item.pic |imgUrlFilter:'100;100'}}"/>
+						<p>{{item.pName}} <span>{{item.skuSName}} {{item.skuSValName}} {{item.spuSName}} {{item.spuSValName}}</span></p>
+						<span class="c-assertive">{{item.sPrice | currency:'&yen;'}}</span>
+					</div>
+					<i class="radio-icon ion-checkmark assertive"></i>
+				</label>
+
+			</div>
+		</ion-content>
+
+		<ion-footer-bar>
+			<div class="button-bar">
+				<button class="button button-assertive" ng-disabled="!curSku.tempGift" ng-click="submitgift()">确定</button>
+			</div>
+		</ion-footer-bar>
+
+	</div>
+</script>

@@ -1,0 +1,38 @@
+<ion-item skuid="{{item.skuId}}" class="item-borderless cdfg-cart-item">
+    <!--店铺信息-->
+    <div class="text-right margin-bottom"><h4 class="c-general-sub" ui-sref="shop({id:item.sId})">{{item.sName}}</h4></div>
+
+    <label class="checkbox cdfg-fl">
+        <input type="checkbox"  ng-change="updateCheckedStatus(item)" ng-disabled="item.disabled&&!editstatus"
+               ng-model="item.checked" class="cdfg-checkbox-icon-self cdfg-fl margin-top"/><i></i>
+    </label>
+    <!--主体-->
+    <div class="cdfg-cart-item-bd">
+        <div ui-sref="product.detail({type:'sku',id:item.skuId})" class="cdfg-fl margin-right"> <img width="65" ng-src="{{item.pic |imgUrlFilter:'100;100'}}"/></div>
+        <p class="c-dark" ui-sref="product.detail({type:'sku',id:item.skuId})">{{item.pName}} </p>
+
+        <p class="propertyinfo">{{item.skuSName}} {{item.skuSValName}} {{item.spuSName}}
+            {{item.spuSValName}}</p>
+        <!--价格-->
+        <div>
+            <span class="assertive">{{item.price | currency:"&yen;"}}</span>
+
+            <!--数量-->
+            <div class="cdfg-quantity-label input-label" ng-show="editstatus">
+                <button ng-disabled="item.quantity==1" ng-click="fnChangeCart(item,'-')" class=" button-icon ion-minus"></button>
+
+                <input  ng-disabled="item.stock==0" type="tel" name="pro{{item.id}}"  ng-model="item.quantity"
+                        value="{{item.quantity}}" required/>
+                <button ng-disabled="item.stock<=item.quantity" class="button-icon ion-plus"
+                        ng-click="fnChangeCart(item,'+')"></button>
+            </div>
+            <div class="cdfg-cart-quantity" ng-hide="editstatus" class="text-right">x{{item.quantity}}</div>
+ <span class="assertive cdfg-fr margin-right"
+       ng-show="item.quantity>item.stock">
+                库存剩余{{item.stock}}件
+            </span>
+        </div>
+    </div>
+
+    <ion-option-button ng-click="deleteCart(item,key,$index)">删除</ion-option-button>
+</ion-item>

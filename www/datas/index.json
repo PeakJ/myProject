@@ -1,0 +1,456 @@
+{
+  "data": [
+    {
+      "top": 5,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 0,
+      "title": "搜索条",
+      "type": "0",
+      "rows": []
+    },
+    {
+      "top": 0,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 1,
+      "title": "轮播",
+      "type": "5",
+      "rows": [
+        {
+          "alt": "",
+          "sn": "1",
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/01/170316.50549228_140X210X4.jpg",
+          "url": ""
+        },
+        {
+          "alt": "",
+          "sn": "2",
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/29/140639.24377108_140X210X4.jpg",
+          "url": ""
+        },
+        {
+          "alt": "",
+          "sn": "3",
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/29/140639.24377108_140X210X4.jpg",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "top": 33,
+      "showTitle": 0,
+      "icon": "22",
+      "style": "default",
+      "sn": 2,
+      "title": "单一图片",
+      "type": "1",
+      "rows": [
+        {
+          "urlType": "55",
+          "alt": "44",
+          "sn": 0,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/24/095659.10934613_75X100.jpg",
+          "url": "/brand"
+        }
+      ]
+    },
+    {
+      "top": 50,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 3,
+      "title": "平台推荐",
+      "type": "9",
+      "rows": [
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 0,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 1,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 2,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 3,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 4,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 5,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 6,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 7,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        }
+      ]
+    },
+    {
+      "top": 38,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 4,
+      "title": "热销",
+      "type": "8",
+      "rows": [
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 0,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 1,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 2,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 3,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 4,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        }
+      ]
+    },
+    {
+      "top": 30,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 5,
+      "title": "新品",
+      "type": "7",
+      "rows": [
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 0,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 1,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 2,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 3,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 4,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 5,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        }
+      ]
+    },
+    {
+      "top": 22,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 6,
+      "title": "多个商品",
+      "type": "6",
+      "rows": [
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 0,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 1,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 2,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 3,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 4,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 5,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 6,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 7,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 8,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        },
+        {
+          "price": 99.99,
+          "alt": "测试",
+          "prodname": "中华人民共和国",
+          "pic": "http://y0.ifengimg.com/a/2015_27/803f8ff6d72a581.png",
+          "sn": 9,
+          "actiType": "增小吃",
+          "url": "http://www.zhongmian.com/"
+        }
+      ]
+    },
+    {
+      "top": 22,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 7,
+      "title": "左一右一",
+      "type": "2",
+      "rows": [
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 0,
+          "pic": "rid:http://img31.mtime.cn/mt/2014/02/23/050134.64566121_96X128.jpg",
+          "url": "#"
+        },
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 0,
+          "pic": "rid:http://img21.mtime.cn/mt/2010/08/27/173555.23585209_96X128.jpg",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "top": 20,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 8,
+      "title": "左一右二",
+      "type": "3",
+      "rows": [
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 0,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/24/105023.54733580_75X100.jpg",
+          "url": "#"
+        },
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 1,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/24/105023.54733580_75X100.jpg",
+          "url": "#"
+        },
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 2,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/06/24/105023.54733580_75X100.jpg",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "top": 30,
+      "showTitle": 0,
+      "icon": "",
+      "style": "default",
+      "sn": 9,
+      "title": "左二右一",
+      "type": "4",
+      "rows": [
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 0,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/07/03/143003.84728657_75X100.jpg",
+          "url": "#"
+        },
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 1,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/07/03/143003.84728657_75X100.jpg",
+          "url": "#"
+        },
+        {
+          "urlType": "0",
+          "alt": "",
+          "sn": 2,
+          "pic": "rid:http://img31.mtime.cn/mt/2015/07/03/143003.84728657_75X100.jpg",
+          "url": "#"
+        }
+      ]
+    }
+  ],
+  "jsonType": "0"
+}

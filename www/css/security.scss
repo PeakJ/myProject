@@ -1,0 +1,123 @@
+/**
+* @author:ZCP
+* 2015/6/29
+* security center
+*/
+/** 账户安全 **/
+//标题
+.cdfg-security-title {
+  font-size: $f-general;
+  color: $c-dark;
+}
+
+//二级标题
+.cdfg-security-sub {
+  font-size: $f-Weak;
+  color: $c-general;
+}
+
+//绑定手机的红字警告
+.cdfg-security-warn {
+  padding-left: 18px;
+  font-size: $f-Weak;
+  color: $c-assertive;
+}
+
+/** 密码修改页面 **/
+//公用的上方箭头，第几步提示符号
+.cdfg-security-sign {
+  padding: 16px 45px 16px 45px;
+  margin-bottom: 40px;
+  //横线和箭头
+  .cdfg-security-arrow {
+    text-align: center;
+    border-color: $c-general-thd;
+    background: $c-general-thd;
+    height: 1px;
+    margin-top: 10px;
+    //箭头图片
+    img {
+      margin-top: -5px;
+      width: 10px;
+      height: 10px;
+
+    }
+  }
+}
+//灰色、红色step
+.cdfg-security-col {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  background: $c-general-sub;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  //下面的说明文字
+  .text {
+    color: $c-dark;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    display: block;
+    width: 100px;
+    margin-left: -40px;
+    margin-top: 10px;
+    font-size: $f-general;
+  }
+}
+//第一步  当前步骤图表
+.cdfg-password-active {
+  background: $c-assertive;
+}
+
+//支付密码下方动态面板
+.cdfg-password-panel {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 2px;
+  background: $c-weakest;
+
+  select {
+    width: 100%;
+    border-color: $c-Weak;
+    padding: 8px 22px 8px 16px;
+    font-size: $f-general;
+    color: $c-general-sub;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+
+  .valudateCode {;
+    width: 100%;
+    padding: 4px 22px 4px 16px;
+    margin-top: 14px;
+    margin-bottom: 16px;
+  }
+  .valudateImgCode {;
+    width: 100px;
+    padding: 4px 16px 4px 16px;
+    //margin-top: 14px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    float: left;
+  }
+  .valudateImg {;
+    width: 30%;
+    height: 35px;
+    //margin-top: 14px;
+    float: left;
+  }
+  .reflashCode{
+    padding: 4px 0 4px 0;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 16px;
+    float: left;
+
+  }
+}
+
+/** 支付密码密码修改页面 **/
+
+

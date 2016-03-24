@@ -1,0 +1,22 @@
+<div>
+    <ion-header-bar align-title="center">
+        <h1 class="title">筛选</h1>
+    </ion-header-bar>
+    <ion-content class="has-header bg-weakest">
+
+        <div class="list cdfg-filter-select-list">
+
+                <div class="item item-icon-right" ng-repeat="item in selectFilter.list" ng-model="item" ng-click="onSelect(item,type)">
+                    <p>{{item.name}}</p>
+                    <i ng-if="
+                    type=='brand' && selectAttrVal.brand[selectFilter.cateName].name == item.name
+                    || type=='spuSpec' && selectAttrVal.spuSpec[selectFilter.cateName].name == item.name
+                    || type=='skuSpec' && selectAttrVal.skuSpec[selectFilter.cateName].name == item.name
+                    || type=='spuAttr' && selectAttrVal.spuAttr[selectFilter.cateName].name == item.name
+                    " class="icon ion-ios-checkmark-empty assertive"></i>
+                </div>
+
+        </div>
+
+    </ion-content>
+</div>

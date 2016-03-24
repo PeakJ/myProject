@@ -1,0 +1,83 @@
+<ion-view hide-nav-bar="true">
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">收货地址</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content>
+        <form name="addressDetailForm" ng-controller="AddressDetailFormController">
+            <div class="cdfg-addr-list">
+                <div class="row row-no-padding">
+                    <div class="col">
+
+                        <div class="item item-input cdfg-relative" reg-is-empty>
+                            <span class="cdfg-star">*</span>
+
+                            <p class="cdfg-addr-label">收货人：　</p>
+                            <input type="text" maxlength="16" name="receiver" minlength="2"
+                                   ng-class="{'true':'cdfg-input-error'}[!addressDetailForm.receiver.$valid && validate]"
+                                   ng-model="addressInfo.receiver" required
+                                   focus-me="focusReceiver"
+                                   placeholder="{{validate?'请填写收货人姓名':'收货人姓名'}}"/>
+
+                        </div>
+                        <div class="item item-input  cdfg-relative" reg-is-empty>
+                            <span class="cdfg-star">*</span>
+
+                            <p class="cdfg-addr-label">手机号：　</p>
+                            <input name="mobile" maxlength="11" ng-model="addressInfo.mobile"
+                                   pattern="^1\d{10}$" required
+                                   ng-class="{'true':'cdfg-input-error'}[!addressDetailForm.mobile.$valid && validate]"
+                                   type="tel"
+                                   focus-me="focusMobile"
+                                   placeholder="{{validate?'请填写手机号':'手机号码'}}"/>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div class="contact" ng-click="selectContact()">
+                            <img ng-src="img/icon-addr-contact.png">
+
+                            <p>选择联系人</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item item-input item-icon-right"
+                     ui-sref="commonSelect({selectMode:'LOCATION',defaultValue:addressInfo.provnceValue})">
+                    <span class="cdfg-star">*</span>
+
+                    <p class="cdfg-addr-label">所在地区：
+                        <span ng-class="{'true':'cdfg-input-error'}[validate &&(!addressInfo.province || !addressInfo.city ||!addressInfo.county )]">{{addressInfo.provinceText}} </span>
+                        <span ng-class="{'true':'cdfg-input-error'}[validate &&(!addressInfo.city||!addressInfo.county )]">{{addressInfo.cityText}} </span>
+                        <span ng-class="{'true':'cdfg-input-error'}[validate && (!addressInfo.county)]">{{addressInfo.countyText}}</span>
+                        <span>{{addressInfo.townText}}</span>
+                    </p>
+                    <i class="icon ion-chevron-right icon-accessory icon-accessory"></i>
+                </div>
+
+                <div class="item item-input cdfg-relative" reg-is-empty>
+                    <span class="cdfg-star">*</span>
+
+                    <p class="cdfg-addr-label">详细地址：</p>
+                    <input type="text" maxlength="50" required name="addr" minlength="5"
+                           focus-me="focusAddr"
+                           ng-class="{'true':'cdfg-input-error'}[!addressDetailForm.addr.$valid && validate]"
+                           ng-model="addressInfo.addr" placeholder="{{validate?'请填写详细地址':'详细地址'}}">
+                </div>
+            </div>
+            <div class="cdfg-addr-note-title">
+                <span class="title">
+                <img ng-src="img/icon-warnning.png">
+                <b>中免海外购提醒请填写真实资料</b></span>
+            </div>
+            <div class="cdfg-addr-note">
+                <p>1、海关需对海外购物查验身份信息，错误信息可能导致无法正常通关。</p>
+
+                <p>2、身份证信息将加密报关，中免将保证您信息安全。</p>
+            </div>
+            <button class="button button-block button-assertive" ng-click="submitAddress()">保存</button>
+        </form>
+
+    </ion-content>
+</ion-view>

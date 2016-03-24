@@ -1,0 +1,15 @@
+<!--选择列表-->
+<ion-view title="{{title}}" >
+    <ion-header-bar>
+        <ion-nav-back-button></ion-nav-back-button>
+        <div class="title">{{title}}</div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+
+            <ion-radio ng-repeat="item in selectoption"  ng-click="checkselect(item)" ng-value="item.value">{{item.text}}
+            </ion-radio>
+        </div>
+    </ion-content>
+</ion-view>
+

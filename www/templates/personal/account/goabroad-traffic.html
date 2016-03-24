@@ -1,0 +1,43 @@
+<ion-view hide-nav-bar="true">
+    <!--<ion-nav-buttons side="left">
+    </ion-nav-buttons>-->
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">出境方式</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="cdfg-background">
+
+        <ion-list>
+            <form class="cdfg-background-white cdfg-divder-big" name="trafficForm">
+                <div class="item item-input">
+                    <span class="cdfg-star">*</span>
+
+                    <p class="cdfg-addr-label">航班号：　</p>
+                    <input type="text" maxlength="50" required minlength="4" name="flight"
+                           ng-class="{'true':'cdfg-input-error'}[!trafficForm.flight.$valid && validate]"
+                           ng-model="flight.fid" placeholder="{{validate?'请填写航班':'航班号'}}">
+                </div>
+                <div class="item item-input" ng-click="pickDateTime()">
+                    <span class="cdfg-star">*</span>
+
+                    <p class="cdfg-trafffic-label">出境(离岛)时间：</p>
+
+                    <p class="cdfg-trafffic-date"
+                       ng-class="{'true':'cdfg-input-error'}[!flight.dateTime && validate]"
+                       ng-if="!flight.dateTime">{{placeholder}}</p>
+
+                    <p class="cdfg-trafffic-date"
+                       ng-class="{'true':'cdfg-input-error'}[!flight.dateTime && validate]">
+                        {{flight.dateTime}}</p>
+                </div>
+            </form>
+            <div class="cdfg-traffic-shop">
+                *{{shop}}*
+            </div>
+
+            <button class="button button-block button-assertive cdfg-submit" ng-click="submit()">确定</button>
+        </ion-list>
+    </ion-content>
+</ion-view>

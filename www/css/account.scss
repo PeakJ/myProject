@@ -1,0 +1,24 @@
+/**
+*@author:ZCP
+*2015/6/29
+*personal center
+*/
+.cdfg-account-item {
+  .title {
+    width: auto;
+    float: left;
+    padding-top: 20px;
+  }
+  .cdfg-account-photo {
+    width: 50px;
+    height: 50px;
+    float: right;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      position: absolute;
+    }
+  }
+
+}

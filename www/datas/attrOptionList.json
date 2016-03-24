@@ -1,0 +1,11 @@
+[
+  { "optionName":"白色",
+    "optionId":1
+    },
+  { "optionName":"红色",
+    "optionId":2
+  },
+  { "optionName":"蓝色",
+    "optionId":3
+  }
+]

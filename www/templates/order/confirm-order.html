@@ -1,0 +1,339 @@
+<!--购物车内容-->
+<ion-view hide-nav-bar="true" class="cdfg-cart-header">
+    <!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <!--<ion-header-bar>
+    <button class="button button-icon ion-ios-arrow-left" side="left" ng-click="back()"></button>
+    <h1 class="title">填写订单</h1>
+    </ion-header-bar>-->
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="back();" class="button button-clear title-back-button"></button>
+        <span class="title">填写订单</span>
+    </ion-header-bar>
+    <!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+
+
+    <ion-content>
+        <!--免税店开始-->
+        <div class="dark-border " ng-if="orderProList.freePro.length>0">
+            <div class="item cdfg-order-item-title cdfg-border-white">
+                <i class="button button-outline button-assertive cdfg-font-second-assertive cdfg-fl">免税店自提</i>
+                <span class="item-note cdfg-fr">{{orderProList.freePro[0].sName}}</span>
+            </div>
+
+                <!--无出境人信息-->
+                <div ng-if="!selfTaking.passportNo" class="item item-icon-right" ng-click="changeAction('goabroad')"  ui-sref="goabroad({addrId:-1})">
+                    选择出境人信息
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <!--有出境人信息-->
+                <div ng-if="selfTaking.passportNo"  ui-sref="goabroad({addrId:selfTaking.id})" ng-click="changeAction('goabroad')" class="item item-icon-right item-address-info">
+                    <div class="cdfg-fl"> {{selfTaking.receiver}}</div>
+                    <span class="item-note">{{selfTaking.passportNo}}</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <!--选择出境提货时间-->
+                <div class="item item-icon-right" ng-if="!goabroad.flight" ng-click="showGoAbroadTime()">
+                    选择出境提货时间
+                    <span class="item-note assertive">请出境30分钟前下单</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <div class="item item-icon-right" ng-if="goabroad.flight" ng-click="showGoAbroadTime()">
+                    {{goabroad.flight}}
+                    <span class="item-note assertive"> {{goabroad.time}}</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <!--显示商品列表-->
+            <div class="list item-borderless">
+                <div class="cdfg-order-img row" ui-sref="cart-pro-list({type:'freePro'})">
+                    <div class="col-59 cdfg-padding cdfg-order-img-queue">
+                        <div class="cdfg-fl">
+                            <img width="100" ng-repeat="item in orderProList.freePro" ng-if="$index<3" ng-src="{{item.pic | imgUrlFilter}}" alt=""/>
+                        </div>
+                        <div class="cdfg-fl" ng-repeat="item in orderProList.giveawaysDetail" ng-if="$index<giftShowLength" >
+                            <i class="cdfg-gift-text gift">赠品</i>
+                            <img width="100" ng-src="{{item.pic | imgUrlFilter}}" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-10 cdfg-padding" ng-if="orderProList.freePro.length>3">……</div>
+                    <div class="col cdfg-padding text-right">
+                        <span>共{{orderProList.freeTotal}}件</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--免税店结束-->
+        <!--快递到家开始-->
+        <div class="dark-border" ng-if="orderProList.commPro.length>0">
+            <div class="item cdfg-order-item-title cdfg-border-white">
+                <i class="button button-outline button-assertive cdfg-font-general-assertive">快递到家</i>
+            </div>
+                <!--无收货地址-->
+                <div ng-if="!addressInfo.id" ng-click="changeAction('addr')"  ui-sref="addressDetail" class="item item-icon-right">
+                    新增收货地址
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <!--有收货地址-->
+                <div ng-if="addressInfo.id"  ui-sref="address({addrId:addressInfo.id})" class="item item-icon-right item-address-info">
+                    <div class="cdfg-fl"> 收货人：{{addressInfo.receiver}}</div>
+                    <span class="item-note">{{addressInfo.addr}}</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <div class="item item-icon-right" ui-sref="commonSelect({selectMode:'DELIVERYTIME',defaultValue:0})">
+                    送货时间
+                    <span class="item-note">{{deliveryTime.text}}</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <!--显示商品列表-->
+            <div class="list item-borderless">
+                <div class="cdfg-order-img row" ui-sref="cart-pro-list({type:'commonPro'})">
+                    <div class="col-59 cdfg-padding cdfg-order-img-queue">
+                        <div class="cdfg-fl">
+                            <img width="100" ng-repeat="item in orderProList.commPro" ng-if="$index<3" ng-src="{{item.pic | imgUrlFilter}}" alt=""/>
+                        </div>
+                        <div class="cdfg-fl" ng-repeat="item in orderProList.giveawaysDetail" ng-if="$index<giftShowLength" >
+                            <i class="cdfg-gift-text gift">赠品</i>
+                            <img width="100" ng-src="{{item.pic | imgUrlFilter}}" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-10 cdfg-padding" ng-if="orderProList.commPro.length>3">……</div>
+                    <div class="col cdfg-padding text-right">
+                        <span>共{{orderProList.total-orderProList.freeTotal}}件</span>
+                    </div>
+                </div>
+
+        </div>
+        </div>
+        <div class="dark-border">
+            <div class="list cdfg-confirm-order-list cdfg-padding">
+                <div class="item item-icon-right">
+                    付款方式
+                    <span class="item-note">在线支付</span>
+                </div>
+
+                <div class="item item-icon-right" ng-click="showCoupon()">
+                    优惠券
+                    <span class="item-note">
+                        <span ng-if="accountInfo.couponCount==0">无可用</span>
+                        <span ng-if="accountInfo.couponCount>0&&!coupon.coupnPrice">可用<i class="assertive">{{accountInfo.couponCount}}</i>张，未使用</span>
+                        <span ng-if="coupnPrice.coupnPrice">{{coupnPrice.coupnPrice | currency:'&yen;'}}券</span>
+                    </span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+
+                <div class="item item-icon-right" ng-click="showZmCard()">
+                    中免卡
+                    <span class="item-note">
+                        <span ng-if="accountInfo.usecard==0">余额<i class="assertive">{{accountInfo.zmcardVal}}</i>元</span>
+                        <span ng-if="accountInfo.usecard>0">使用余额{{accountInfo.usecard}}元</span>
+                    </span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+                <!--发票-->
+                <div class="item">
+                    <label class="checkbox cdfg-padding">
+                        <input type="checkbox" ng-change="Invoicing()" ng-model="invoice.checked" ng-checked="invoice.checked" class="cdfg-checkbox-icon-self"/><i></i>开发票
+                    </label>
+                    <span class="item-note">{{invoice.info}}</span>
+                </div>
+                <label class="item item-input-wrapper">
+                    <textarea ng-model="userRemark.info" maxlength="45"  type="text" name="userRemark"  placeholder="给中免留言（限45个字符）"></textarea>
+                </label>
+            </div>
+
+        </div>
+        <div class="dark-border text-right cdfg-order-total-price">
+            <p>商品总额：<span class="assertive">{{orderProList.skusPrice|currency:'&yen;'}}</span></p>
+            <p ng-if="orderProList.fee!=''">总运费：<span class="assertive">+{{orderProList.fee|currency:'&yen;'}}</span></p>
+
+            <p>订单优惠：<span class="assertive">-{{orderProList.promotionFeeMoney+coupnPrice |currency:'&yen;'}}</span></p>
+            <p>中免卡：<span class="assertive">-{{accountInfo.usecard | currency:'&yen;'}}</span></p>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="item-button-right">
+
+        <p class="cdfg-cart-total" >合计 ： <span ng-bind="(realChargeFee=orderProList.skusPrice-coupnPrice+orderProList.fee-orderProList.promotionFeeMoney-accountInfo.usecard)|currency:'&yen;'"></span></p>
+        <button class="button button-submit button-assertive text-center" side="right" style="width:auto;padding:0 0.7rem;" ng-click="submitOrder()" type="submit">提交订单</button>
+    </ion-footer-bar>
+
+</ion-view>
+<!--优惠券-->
+<script id="modal-coupon.html" type="text/ng-template">
+    <div class="modal">
+        <ion-header-bar  class="cdfg-common-title"  align-title="center">
+            <button ng-click="closeCouponModal();" class="button button-clear title-back-button"></button>
+            <span class="title">优惠券</span>
+        </ion-header-bar>
+        <ion-content class="cdfg-has-footer">
+            <div class="cdfg-radio-coupon" ng-include="'templates/personal/assets/bind-coupon-template.html'"></div>
+
+            <label class="item item-radio cdfg-coupon-item checkbox"  ng-repeat="coupon in couponList | orderBy:'skus'" on-touch="checkCoupon(coupon)" >
+                <input type="radio" name="coupon" class="checkbox-icon" ng-disabled="coupon.usable!=1"/>
+                <div class="coupon-content item-content">
+                    <div class="money">
+                        <span class="cdfg-font-big-lighter " ng-class="{true: 'assertive'}[coupon.usable==1]" ng-bind="coupon.price"></span>
+                        <span class="cdfg-font-sub-lighter">元</span>
+                    </div>
+
+                    <div class="coupon-info">
+                        <span class="cdfg-font-sub-lighter">*</span>
+                        <span class="cdfg-font-sub-lighter" ng-bind="coupon.description"></span>
+                        <br />
+                        <span class="cdfg-font-sub-lighter">*</span>
+
+                        <br />
+                        <div class="coupon-date">
+                            <span class="cdfg-font-sub-lighter" ng-bind="coupon.timeInfo"></span>
+
+                        </div>
+                    </div>
+                </div>
+                <!--<i class="checkbox-icon assertive"></i>-->
+           </label>
+        </ion-content>
+        <div class="bar bar-footer">
+            <div class="cdfg-footer-btn-bar">
+                <button class="button" ng-click="closeCouponModal(true)">取消</button>
+                <button class="button button-assertive"  ng-click="confirmCoupon()">确定使用</button>
+            </div>
+        </div>
+    </div>
+</script>
+        <!--中免卡-->
+<script id="modal-zmcard.html" type="text/ng-template">
+    <div class="modal cdfg-invoic">
+        <ion-header-bar  class="cdfg-common-title"  align-title="center">
+            <button ng-click="closeZmCard();" class="button button-clear title-back-button"></button>
+            <span class="title">中免卡</span>
+        </ion-header-bar>
+        <ion-content>
+            <div class="cdfg-invoic-bd" >
+                <span>余额：{{accountInfo.zmcardVal | currency:'&yen;'}}元</span>
+                <div class="content" reg-is-empty>
+                    <input type="text" ng-disabled="accountInfo.zmcardVal==0" class="cdfg-gray-input margin-top" ng-model="accountInfo.zmcard"  placeholder="输入使用金额"/>
+                </div>
+            </div>
+            <p class="cdfg-invoic-ft">*金额数量不能超过订单金额，且不能大于余额</p>
+            <a class="item-borderless item item-button-right margin-left" ng-click="showZmCard('add')">
+                <i class="icon ion-plus"></i> 添加中免卡
+                <i class="button button-icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-content>
+        <ion-footer-bar>
+            <div class="cdfg-footer-btn-bar">
+                <button class="button" ng-click="closeZmCard()">取消</button>
+                <button class="button button-assertive" ng-disabled="accountInfo.zmcard==''||accountInfo.zmcard<0||accountInfo.zmcard>parseInt(accountInfo.zmcardVal)" ng-click="useZmCard()">确定使用</button>
+            </div>
+        </ion-footer-bar>
+    </div>
+</script>
+
+<!--添加中免卡-->
+<script id="modal-zmcard-add.html" type="text/ng-template">
+    <div class="modal">
+        <!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+        <!--<ion-header-bar class="item-button-left">
+            <h1 class="title">添加中免卡</h1>
+            <button class="button button-icon ion-ios-arrow-left"  ng-click="closeZmCard('add')"></button>
+        </ion-header-bar>-->
+        <ion-header-bar  class="cdfg-common-title"  align-title="center">
+            <button ng-click="closeZmCard('add')" class="button button-clear title-back-button"></button>
+            <span class="title">添加中免卡</span>
+        </ion-header-bar>
+        <!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+        <div class="scroll-content has-header padding">
+            <div class="margin-top" ng-include="'templates/personal/assets/card-recharge-template.html'"></div>
+        </div>
+    </div>
+</script>
+
+<!--出境时间-->
+<script id="modal-goabroad.html" type="text/ng-template">
+    <div class="modal cdfg-invoic">
+        <ion-header-bar  class="cdfg-common-title"  align-title="center">
+            <button ng-click="closemodal('goabroadModal')" class="button button-clear title-back-button"></button>
+            <span class="title">选择出境时间</span>
+        </ion-header-bar>
+
+        <ion-content>
+            <div class="cdfg-invoic-bd">
+                <form name="goabroadForm">
+                <div class="bar item-input-inset item-button-right" ng-click="showDatePicker()">
+                    选择出境离岛时间
+                    <span>{{goabroad.temptime}}</span>
+                    <i class="button button-icon ion-ios-arrow-right"></i>
+                </div>
+                <div class="bar item-input-inset">
+                    航班号
+                    <label class="item-input-wrapper content" reg-is-empty>
+                        <input class="cdfg-gray-input" size="6" ng-minlength="6" maxlength="6" type="text" name="flight"  ng-model="goabroad.tempflight"  placeholder="填写航班号" required ng-pattern="/^[a-zA-Z]{2}\d{4}/" /></label>
+                </div>
+                <p class="text-center">* {{orderProList.freePro[0].sName}} *</p>
+                </form>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="">
+            <div class="button-bar">
+                <button ng-disabled="goabroad.tempflight.length<6" class="button button-assertive"  ng-click="confirmGoabroad()">确定</button>
+            </div>
+        </ion-footer-bar>
+    </div>
+</script>
+
+<!--发票信息-->
+<script id="modal-invoic.html" type="text/ng-template">
+    <div class="modal cdfg-invoic">
+        <ion-header-bar  class="cdfg-common-title"  align-title="center">
+            <button ng-click="closemodal()" class="button button-clear title-back-button"></button>
+            <span class="title">开具发票</span>
+        </ion-header-bar>
+        <ion-content>
+            <div class="cdfg-invoic-bd">
+                <div class="padding-left">
+                    发票抬头
+                    <div class="content" reg-is-empty>
+                    <input class="cdfg-gray-input block" type="text"  value="{{invoice.info}}" ng-model="invoice.type"  placeholder="个人/单元名称" /></div>
+                </div>
+                <div class="checkbox checkbox-input-hidden">
+                    <input type="checkbox" checked="true">
+                    <i class="checkbox-icon checkbox-assertive cdfg-fl margin-right"></i>商品明细
+                </div>
+            </div>
+            <p class="cdfg-invoic-ft">注：国家规定免税商品和行邮税商品不能开具发票。</p>
+        </ion-content>
+        <ion-footer-bar class="">
+            <div class="button-bar">
+            <button class="button button-assertive" ng-disabled="invoice.type==''" ng-click="confirminvoice()">确定</button>
+            </div>
+        </ion-footer-bar>
+    </div>
+</script>
+<!--失效商品-->
+<script id="modal-orderHint.html" type="text/ng-template">
+    <div class="modal">
+        <ion-header-bar>
+            <h1 class="title">订单提示</h1>
+            <button class="button-icon ion-ios-arrow-left" ng-click="closeOrderHint()"></button>
+        </ion-header-bar>
+
+        <ion-content>
+            <div class="bar-subheader text-center calm-bg">{{objOrderHint.title}}</div>
+            <div class="list" >
+                <div class="item" ng-repeat="item in objOrderHint.skus" >
+                    <!--<div class="text-right">{{item.storeName}}</div>-->
+
+                    <img ng-src="{{item.pic | imgUrlFilter:'100;100'}}"/>
+                    <p>{{item.pName}} <span>{{item.skuSName}} {{item.skuSValName}} {{item.spuSName}} {{item.spuSValName}}</span></p>
+                    <!--<span>{{item.mPrice | currency('&yen;')}}</span>-->
+                    <span class="assertive">
+                        {{objOrderHint.msg}}
+                    </span>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="button-center">
+        <div class="button-bar">
+            <button class="button button-assertive" ng-click="closeOrderHint()">返回购物车修改</button>
+        </div>
+        </ion-footer-bar>
+    </div>
+</script>

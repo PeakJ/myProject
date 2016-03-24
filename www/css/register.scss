@@ -1,0 +1,140 @@
+/*
+  author:haosijia@cdfg.com.cn
+  create time:2015/06/17
+*/
+
+/* 注册 */
+.cdfg-form-state{
+  padding:0 20px; margin-top:25px; background:#fff;
+  .row{
+    height:45px;
+    line-height: 45px;
+    padding:0;
+    background-color: #fff;
+    & + .row {
+      margin-top:0;
+    }
+  }
+  .col{
+    padding:0;
+    &.label-for{
+      font-size:$f-general;color:$c-general;padding-right:5px;line-height: 45px; white-space: nowrap;
+    }
+
+    .form-input{
+      width:100%;height:44px;padding:15px 0 14px;line-height:15px;font-size:$f-general;font-family: $font-family;color:$c-dark;display:block
+    }
+  }
+  //  手机验证码
+  &.cdfg-form-state1{
+    .button.button-small {
+      padding: 0 4px;min-width: 3.5rem;min-height: 1.4375rem;font-size: $f-Weak;line-height: 1.4375rem;margin-top: 10px;color: $c-general-sub;border:1px solid $c-general-thd;
+    }
+  }
+  &.cdfg-form-state-pass{
+    padding:0;margin-top:30px;
+    .row{
+      padding:0 20px;
+      border-bottom:1px solid $c-general-thd;
+      &:last-child{
+        border:none;
+      }
+      .label-for{
+        line-height:44px;
+      }
+    }
+  }
+  /* 登录 */
+  &.cdfg-form-state-login{
+    margin-top:17px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .cdfg-form-state .col .form-input{
+    padding-left:10px;
+  }
+}
+.tip-send{
+  margin:14px 20px 0;background:$c-Weak;text-align: center;font-size:$f-general;color:$c-general;border-radius: 3px;
+  b{display:block}
+}
+
+
+
+
+.col-15{
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 15%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 15%;
+  -ms-flex: 0 0 15%;
+  flex: 0 0 15%;
+  max-width: 15%;
+}
+.col-23{
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 23%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 23%;
+  -ms-flex: 0 0 23%;
+  flex: 0 0 23%;
+  max-width: 23%;
+}
+.validate-block{
+  position:relative;
+  .help-block{
+    position:absolute;right:0;top:50%;margin:0;line-height:34px;color:$c-assertive;margin-top: -17px;
+  }
+}
+
+
+
+.cdfg-form-button{
+  padding:25px 20px 15px;
+  .button{
+    min-height:40px;
+    line-height:40px;
+    padding:0;
+    margin:0;
+    font-size:$f-assertive;
+    font-family: $font-family;
+    &[disabled]{
+      background: $c-general-sub;
+      border-color:$c-general-sub;
+      opacity:1;
+    }
+    &.button-assertive.activated{
+      background:#b50612;
+    }
+  }
+}
+
+.cdfg-register-form-protocol{
+  line-height:2rem;font-size:$f-Weak;color:$c-general-sub;
+  label{
+    display:inline-block;line-height:2rem;padding:0;padding-left:20px;font-size:$f-Weak;color:$c-general-sub;
+    .cdfg-checkbox-icon-self{
+      width: 0.8125rem;height: 0.8125rem;display: inline-block;margin-right: 7px;vertical-align: middle;
+      &::after{
+        width: 9px;top: 16%;left: 17%;
+      }
+      &:before{
+        border-radius: 0.8125rem;
+      }
+    }
+  }
+
+}
+
+.cdfg-icon-empty{
+  position:absolute; right:15px; top:50%;margin-top:-9px;font-size:$f-assertive;color:$c-dark;opacity:0;
+  &.has-content{
+    opacity:1;
+  }
+}
+
+
+
+
+

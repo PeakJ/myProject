@@ -1,0 +1,99 @@
+<!-- 个人中心->我的优惠券  by geshuo 2015/07/09 -->
+<ion-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">我的优惠券</span>
+    </ion-header-bar>
+
+    <ion-tabs class="tabs-striped tabs-top cdfg-coupon-tabs" tabindex="indexObj.index">
+        <ion-tab title="当前优惠券">
+            <ion-view>
+                <img ng-if="showAvailableTop" class="cdfg-top-icon" src="img/icon-top.png" ng-click="availableToTop()"/>
+                <ion-content delegate-handle="availableHandle" on-scroll="availableScroll()">
+                    <div ng-include="'templates/personal/assets/bind-coupon-template.html'"></div>
+                    <ion-refresher on-refresh="loadAvailableList(false)"></ion-refresher>
+
+                    <!--网络错误-->
+                    <div ng-if="availableError" ng-include="'templates/common/network-error.html'"
+                         ng-click="loadAvailableList(false);">
+                    </div>
+
+                    <!--没有数据-->
+                    <div class="cdfg-coupon-list-empty" ng-if="couponList.length == 0 && availableBack &&!availableError">
+                        <p class="cdfg-list-no-records">暂无优惠券</p>
+                    </div>
+
+                    <div class="cdfg-coupon-item" ng-repeat="coupon in couponList" ng-class="{'margin-top-15':$index==0}">
+                        <div class="coupon-content">
+                            <div class="money">
+                                <span class="cdfg-font-big-assertive" ng-bind="coupon.price"></span>
+                                <span class="cdfg-font-sub-lighter">元</span>
+                            </div>
+
+                            <div class="coupon-info">
+                                <span class="cdfg-font-sub-lighter">*</span>
+                                <span class="cdfg-font-sub-lighter" ng-bind="coupon.description"></span>
+                                <br />
+                                <span class="cdfg-font-sub-lighter">*</span>
+                                <span class="cdfg-font-sub-lighter" ng-bind="coupon.name"></span>
+                                <br />
+                                <div class="coupon-date">
+                                    <span class="cdfg-font-sub-lighter" ng-bind="coupon.timeInfo"></span>
+                                    <!--<span class="cdfg-font-sub-lighter">~</span>
+                                    <span class="cdfg-font-sub-lighter" ng-bind="coupon.validEndDate"></span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ion-infinite-scroll ng-if="hasMoreAvailable" distance="5%" on-infinite="loadMoreAvailable(true)"></ion-infinite-scroll>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="历史优惠券">
+            <ion-view>
+                <img ng-if="showHistoryTop" class="cdfg-top-icon" src="img/icon-top.png" ng-click="historyToTop()"/>
+                <ion-content delegate-handle="historyHandle" on-scroll="historyScroll()">
+                    <div ng-include="'templates/personal/assets/bind-coupon-template.html'"></div>
+
+                    <!--网络错误-->
+                    <div ng-if="historyError" ng-include="'templates/common/network-error.html'"
+                         ng-click="loadHistoryList(false);">
+                    </div>
+
+                    <!--没有数据-->
+                    <div class="cdfg-coupon-list-empty" ng-if="couponHistoryList.length == 0&&historyBack&&!historyError">
+                        <p class="cdfg-list-no-records">暂无优惠券</p>
+                    </div>
+                    <ion-refresher on-refresh="loadHistoryList(false)"></ion-refresher>
+                    <div class="cdfg-coupon-item" ng-repeat="historyCoupon in couponHistoryList"
+                         ng-class="{'margin-top-15':$index==0}">
+                        <div class="coupon-content">
+                            <div class="money">
+                                <span class="cdfg-font-big-lighter" ng-bind="historyCoupon.price"></span>
+                                <span class="cdfg-font-sub-lighter">元</span>
+                            </div>
+                            <div class="coupon-info">
+                                <span class="cdfg-font-sub-lighter">*</span>
+                                <span class="cdfg-font-sub-lighter" ng-bind="historyCoupon.description"></span>
+                                <br />
+                                <span class="cdfg-font-sub-lighter">*</span>
+                                <span class="cdfg-font-sub-lighter" ng-bind="historyCoupon.name"></span>
+                                <br />
+                                <div class="coupon-date">
+                                    <span class="cdfg-font-sub-lighter" ng-bind="historyCoupon.timeInfo"></span>
+                                </div>
+                            </div>
+                            <div class="coupon-status"
+                                 ng-class="{'expired':historyCoupon.type==3,'used':historyCoupon.type==2}">
+
+                            </div>
+                        </div>
+                    </div>
+                    <ion-infinite-scroll ng-if="hasMoreHistory" distance="5%" on-infinite="loadMoreHistory(true)"></ion-infinite-scroll>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>

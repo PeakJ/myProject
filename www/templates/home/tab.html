@@ -1,0 +1,28 @@
+<!--底部导航-->
+<div id="cdfg-home-footer" class="tabs-icon-top cdfg-tabs tabs-bottom tabs-standard">
+    <div class="tabs tab-nav">
+        <a class="tab-item" ng-class="{true:'tab-item-active', false: ''}[tabNav.curNav=='home']" ui-sref="home" nav-transition="none">
+            <i class="icon" ng-class="{true: 'cdfg-home-highlight', false: 'cdfg-home-normal'}[tabNav.curNav=='home']"></i>
+            <span  class="tab-title ">首页</span>
+        </a>
+        <a class="tab-item" ng-class="{true:'tab-item-active', false: ''}[tabNav.curNav=='brand']"  ui-sref="brand" nav-transition="none">
+            <i class="icon" ng-class="{true: 'cdfg-brand-highlight', false: 'cdfg-brand-normal'}[tabNav.curNav=='brand']"></i>
+            <span  class="tab-title ">品牌</span>
+        </a>
+        <a class="tab-item" ng-class="{true:'tab-item-active', false: ''}[tabNav.curNav=='category']" ui-sref="category" nav-transition="none">
+            <i class="icon" ng-class="{true: 'cdfg-category-highlight', false: 'cdfg-category-normal'}[tabNav.curNav=='category']"></i>
+            <span  class="tab-title ">分类</span>
+        </a>
+        <a class="tab-item tab-title" ng-class="{true:'tab-item-active', false: ''}[tabNav.curNav=='cart']" ui-sref="cart" nav-transition="none">
+            <i class="icon" ng-class="{true: 'cdfg-cart-highlight', false: 'cdfg-cart-normal'}[tabNav.curNav=='cart']"></i>
+            <!--<span  class="tab-title ">购物车<i ng-if="cartInfo.total>0" class="cdfg-tab-badge">{{cartInfo.total}}</i></span>-->
+            <span  class="tab-title ">购物车</span>
+            <em ng-if="cartInfo.total>0" class="badge cdfg-tab-badge">{{cartInfo.total}}</em>
+        </a>
+        <a class="tab-item" ng-class="{true:'tab-item-active', false: ''}[tabNav.curNav=='personal']" ui-sref="personal" nav-transition="none">
+            <i class="icon" ng-class="{true: 'cdfg-personal-highlight', false: 'cdfg-personal-normal'}[tabNav.curNav=='personal']"></i>
+            <span  class="tab-title ">我的</span>
+        </a>
+    </div>
+
+</div>

@@ -1,0 +1,59 @@
+{
+  "100001851":[
+    {
+              "title":"热卖品类",
+              "list":[{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t1018/281/1138860536/6648/415a8652/55794cebN309fa891.jpg",
+                "name":"连衣裙"
+              },{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t985/257/1174296014/9138/f29ff72d/55794d07N4f6afcfa.jpg",
+                "name":"T恤"
+              },{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t307/255/971633239/4025/2b43ba11/542a6a54N3977d9a8.jpg",
+                "name":"衬衫"
+              },{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t787/321/1160569295/7139/3498c177/55794d27N6c4e925e.jpg",
+                "name":"雪纺衫"
+              },{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t1252/73/1144781012/12672/eeefc9df/55794d42Nf8e55ab6.jpg",
+                "name":"半身裙"
+              }]
+         },
+         {
+              "title":"冬季特殊品类",
+              "list":[{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t283/319/2043479136/3662/11bba10d/544dfecaN1dcf17ef.jpg",
+                "name":"打底衫"
+              },{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t394/235/663715184/5195/b4d337a5/542a6bacNfae97760.jpg",
+                "name":"马甲"
+             },{
+                "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t433/333/733005184/3374/42abe472/542a6ab5N850a3b1f.jpg",
+                "name":"吊带背心"
+              }]
+
+    }],
+  "100001852":[
+    {
+
+          "title":"奢侈品",
+          "list":[{
+            "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t661/317/33717025/4957/2239bebd/54487368N56821519.jpg",
+            "name":"箱包"
+          },{
+            "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t331/280/1945539838/4609/f6812c67/5448737bN6b3051b4.jpg",
+            "name":"钱包"
+          },{
+            "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t694/276/28628337/4014/55c22a0/5448738bN88d6844a.jpg",
+            "name":"服饰"
+          },{
+            "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t292/190/1963169542/4059/5f3e6da9/5448739eNb8893679.jpg",
+            "name":"腰带"
+          },{
+            "img":"http://img30.360buyimg.com/mobile/s100x100_jfs/t331/306/1978387306/3241/4d7ead68/544873b0N92d22281.jpg",
+            "name":"太阳镜眼镜框"
+          }]
+
+    }]
+
+}

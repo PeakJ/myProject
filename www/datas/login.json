@@ -1,0 +1,51 @@
+{
+  "id": 2,
+  "loginName": "15210109455",
+  "pwd": null,
+  "pwdKey": null,
+  "status": 1,
+  "type": null,
+  "grade": 1,
+  "levelName": null,
+  "mobile": "15210109455",
+  "nickName": null,
+  "regDate": 1437016340000,
+  "regFrom": null,
+  "regIp": "127.0.0.1",
+  "lastLoginIp":"
+  127.0
+  .
+  0.1
+  ","
+  lastLoginDate
+  ":1437030350704,"
+  freezeById
+  ":null,"
+  freezeByName
+  ":null,"
+  freezeByDate
+  ": null,
+  "outerId": null,
+  "headerPic": null,
+  "realName": null,
+  "gender": null,
+  "birthday": null,
+  "email": null,
+  "tel": null,
+  "province": null,
+  "city": null,
+  "county": null,
+  "town": null,
+  "geoName": null,
+  "addr": null,
+  "zipCode": null,
+  "idCardNo": null,
+  "icCardFrontPic": null,
+  "idCardBackPic": null,
+  "passportNo": null,
+  "education": null,
+  "income": null,
+  "userInfo": "2|15210109455|1437030350744",
+  "ticket": "12c6a1364eea6d55594221d861281daa",
+  "userId": 2
+}

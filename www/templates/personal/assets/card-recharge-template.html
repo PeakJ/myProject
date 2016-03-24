@@ -1,0 +1,26 @@
+<div class="cdfg-card-recharge">
+    <div class="cdfg-relative" reg-is-empty>
+
+        <input type="number" class="width-full cdfg-font-general-sub" ng-maxlength="16"
+               placeholder="输入中免卡号" ng-model="rechargeParams.cardNo">
+    </div>
+    <div class="cdfg-relative" reg-is-empty>
+        <input type="password" class="margin-top-15 margin-bottom-15 width-full cdfg-font-general-sub"
+               ng-paste="$event.preventDefault()"
+               placeholder="输入中免卡密码" ng-model="rechargeParams.password">
+    </div>
+        <input type="text" class="cdfg-fl margin-right-20 cdfg-font-general-sub width-validate"
+               placeholder="输入验证码" ng-model="rechargeParams.validateCode" ng-maxlength="4">
+    <div class="validate-code">
+        <!-- 验证码占位 start -->
+        <img ng-src="{{cardData.validateCode}}">
+        <!-- 验证码占位 end -->
+        <span class="cdfg-font-general-sub margin-left" ng-click="changeValidate()">
+            看不清
+        </span>
+    </div>
+
+    <button class="button button-small recharge-btn" ng-click="recharge()">
+        充值
+    </button>
+</div>

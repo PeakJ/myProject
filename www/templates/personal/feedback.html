@@ -1,0 +1,32 @@
+<ion-view hide-nav-bar="true" cache>
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBackToHome();" class="button button-clear title-back-button"></button>
+        <span class="title">意见反馈</span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="cdfg-background">
+        <form name="feedback">
+
+            <div class="padding cdfg-background-white cdfg-divder" style="height: 100%">
+            <textarea ng-model="param.content" class="cdfg-background width-full cdfg-feedback-textarea" cols="20"
+                      maxlength="300" minlength="5" name="feedback"
+                      placeholder="请留下宝贵意见(最少5个字)。"
+                      ng-class="{'true':'cdfg-input-error'}[!feedback.feedback.$valid && validate]"></textarea>
+
+                <div class="cdfg-background width-full cdfg-divder padding-horizontal cdfg-relative" reg-is-empty>
+
+                    <input class="cdfg-background width-full" ng-model="param.mobile" type="text"
+                           name="telephone" maxlength="11"
+                           ng-class="{'true':'cdfg-input-error','false':'cdfg-placeholder'}[!feedback.telephone.$valid && validate]"
+                           placeholder="请输入手机号，以方便我们回复您。"
+                           pattern="^1\d{10}$" required>
+                </div>
+                <button class="button button-full button-assertive"
+                        ng-disabled="!feedback.telephone.$valid || !feedback.feedback.$valid"
+                        ng-click="commitFeedback()">提交
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

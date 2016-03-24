@@ -1,0 +1,47 @@
+
+    <div class="item item-icon-right cdfg-filter-attr-item" style="margin-top: 17px"
+         ng-click="goShopProductList(all.id)">
+            <div class="row cdfg-padding-top-bottom " ng-model="all" >
+                <span class="col col-33 ng-binding">全部</span>
+            </div>
+        <i class="icon ion-ios-arrow-right"></i>
+    </div>
+    <div class="list" id="shop-category-list" >
+
+            <div style="margin-top:17px;" ng-repeat="c in categoryList" class="light-bg">
+                <div class="cdfg-category-title">
+                    <span>{{c.name}}</span>
+                </div>
+                <div class="item item cdfg-border-top-none margin-0">
+                    <div class=cdfg-shop-sec-type"><!-- 二级分类-->
+                        <div style="" ng-click="goShopProductList(sc.id);"
+                             class="cdfg-shop-sec-type" ng-repeat=" sc in c.subList track by $index">
+                            <div class="cdfg-shop-sec-a {{sc.divStyle}}">
+                                <span class="cdfg-span-ling-height">{{sc.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div ng-repeat="c in categoryList">&lt;!&ndash; 一级分类 &ndash;&gt;-->
+                <!--<div class="item item-icon-right cdfg-shop-first-category-item"  ng-click="c.isExpanded = !c.isExpanded;" >-->
+                    <!--<p>{{c.name}}</p>-->
+                    <!--<i ng-if="true" class="icon {{c.isExpanded?'ion-ios-arrow-up':'ion-ios-arrow-down'}}"></i>-->
+                <!--</div>-->
+
+                <!--<div class="item item-icon-right cdfg-shop-first-category-list"-->
+                     <!--ng-if=" c.subList.length>0 && c.isExpanded">-->
+                    <!--<div class="list">-->
+                        <!--<div class="item item-icon-right cdfg-shop-second-category-item"-->
+                             <!--ng-repeat="sc in c.subList track by $index" ng-click="sc.isChecked=true; goShopProductList(sc.id);">-->
+                            <!--<p>{{sc.name}}</p>-->
+                            <!--<i ng-if="sc.isChecked " class="icon ion-ios-checkmark-empty assertive"></i>-->
+                        <!--</div>-->
+                        <!--<div class="item item-icon-right">12221</div>-->
+                        <!--&lt;!&ndash;<div class="item item-icon-right">1111</div><div class="item item-icon-right">1111</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="item item-icon-right">1111</div><div class="item item-icon-right">1111</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="item item-icon-right">1111</div><div class="item item-icon-right">1111</div>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>

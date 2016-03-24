@@ -1,0 +1,106 @@
+/*
+  author:haosijia@cdfg.com.cn
+  create time:2015/06/17
+*/
+
+
+
+ul,li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-weight:400;font-family:$font-family;}
+a{text-decoration: none;}
+
+.cdfg-brand-content{background:$c-dark;}
+
+
+/* 品牌街  brand begin */
+.bar.cdfg-brand-header{
+  background:#2e2e2e;
+  border-bottom:1px solid #a71833;
+  .button{
+    color:#f5f5f5;
+  }
+}
+//推荐品牌列表
+.cdfg-brand-recommend{
+  padding-top:19px; overflow:hidden;
+  &-list{width:50%; height:auto;@extend .cdfg-fl; margin-bottom:5px;}
+  &-list:nth-child(odd){padding-right:3px;}
+  &-list:nth-child(even){padding-left:3px;}
+  &-list span{
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+  }
+  a{
+    display:block;width:100%;height:auto;position:relative;
+    img{width:100%;height:100%;}
+    span{display:block;width:45px; height:30px;position:absolute;bottom:45px / 261px *100%;right:0;background:#000;}
+  }
+  &-list:nth-child(even) a span{right:auto;left:0;}
+
+}
+
+.touch{opacity: 0;filter:alpha(opacity=0);}
+//品牌列表
+.cdfg-brand-menu-title{
+  padding-top:45px;margin-top:-5px;padding-bottom:40px;text-align:center;
+  &-con{
+    height:1px;line-height:0;background:$c-general;
+  }
+  span{
+    display:inline-block;line-height:0.875rem;margin-top:-0.875rem/2*1;font-size:0.875rem;color:$c-general;padding:0 0.8rem; background:$c-dark;
+  }
+}
+.cdfg-brand-menu{
+  &-list{
+    padding-left:5%;padding-bottom:22px;
+    h3{
+      font-size:0.94rem;line-height:1.25rem;padding-left:3%;color:#fff;background: #1e1e1e;border-left:2.5px solid $c-assertive; margin-top:22px;
+    }
+    li:first-child h3{
+      margin-top:0px;
+    }
+    li a{
+      font-size:0.815rem;line-height:1.8rem;color:#fff;padding-left:3.7%;
+    }
+  }
+}
+//字母索引
+.cdfg-alphabet{
+  position:fixed;display:block;right:0;top:44px;bottom:0;height:auto;overflow:hidden;z-index:5;background:rgba(0,0,0,0.1);padding-top:9px;opacity:0;filter:alpha(opacity=0);
+  li{width:25px;text-align:center;font-size:$f-general-sub;line-height:19px;color:$c-general;
+    &.hover{background:#007AFF;color:#fff;}
+  }
+}
+
+//CHG BY 葛硕 20150820：逻辑像素2.0
+@media screen and (max-height: 481px)  and (-webkit-device-pixel-ratio: 2){
+  .cdfg-alphabet li{
+    line-height:1rem;
+  }
+}
+
+//ADD BY 葛硕 20150820：逻辑像素1.5
+@media screen and (max-height: 641px)  and (-webkit-device-pixel-ratio: 1.5){
+  .cdfg-alphabet li{
+    line-height:1rem;
+  }
+}
+
+/* 品牌街  brand end */
+
+/* 店铺推荐品牌 */
+.cdfg-store-brand-recommend{
+  padding:0.875rem 0.9375rem 1.125rem;overflow:hidden;
+  .cdfg-brand-recommend-list{
+    float:left; width: 33.3%;padding:0 5px $f-general;text-align:center;line-height:1rem;
+    a{
+      color:$c-general-sub;
+      img{
+        margin-bottom:0.4375rem;
+      }
+    }
+    p{
+      margin:0;height: 2rem;overflow: hidden;
+    }
+  }
+}

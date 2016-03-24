@@ -1,0 +1,50 @@
+
+<ion-view title="品牌街" hide-nav-bar="true">
+
+
+    <ion-header-bar class="bar bar-header bar-dark cdfg-brand-header" align-title="center">
+        <h1 class="title">品牌街</h1>
+    </ion-header-bar>
+
+    <ion-content class="cdfg-brand-content has-header" delegate-handle="brand-scroll" on-touch="logoTouch($event)" on-release="logoRelease($event)">
+        <div ng-include="'templates/common/network-error.html'" ng-if="networkError" ng-click="restartPage()"></div>
+        <div ng-if="!networkError">
+            <ion-refresher on-refresh="refresh()"></ion-refresher>
+            <div class="cdfg-brand-recommend" id="brand-recommend" on-touch="alphabetHide($event)">
+                <!-- 商城推荐品牌 -->
+                <div class="cdfg-brand-recommend-list" ng-repeat="commend in commends | limitTo : 20 track by $index"  ng-if="!storeId">
+                    <a ng-href="{{commend.href}}" click-title="品牌页" click-object="{{'品牌推荐_品牌id:' + commend.id}}" cdfg-auto-height="{{261/371}}">
+                        <img ng-src="{{commend.hyunPic | imgUrlFilter:'371;261'}}" class="cdfg-default-hy" />
+                        <span ng-class="opacity?'touch':''"><img ng-src="{{commend.logo | imgUrlFilter}}" /> </span>
+                    </a>
+                </div>
+            </div>
+            <!-- 品牌列表 -->
+            <div class="cdfg-brand-menu-title" cdfg-scroll-swipe>
+                <div class="cdfg-brand-menu-title-con"><span>全部品牌</span></div>
+            </div>
+
+            <div class="cdfg-brand-menu" id="brand-menu" on-touch="alphabetShow($event)">
+                <ul class="cdfg-brand-menu-list">
+                    <li ng-repeat="item in brandList">
+                        <h3 ng-if="isShowTitle(item)" id="brand-{{item.enName | limitTo : 1 | uppercase}}">{{item.enName | limitTo : 1 | uppercase}}</h3>
+                        <a ng-href="#/productList/brand/{{item.id}}/{{item.enName}}//view" >{{item.enName}}</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </ion-content>
+    <!-- 字母索引 -->
+    <ul class="cdfg-alphabet" cdfg-alphabet-touch id="brand-alphabet">
+
+        <li ng-repeat="item in letter" letter="brand-{{item | uppercase}}">
+            {{item | uppercase}}
+        </li>
+
+    </ul>
+    <ion-footer-bar >
+        <div ng-include="'templates/home/tab.html'"></div>
+    </ion-footer-bar>
+</ion-view>

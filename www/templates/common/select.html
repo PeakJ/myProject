@@ -1,0 +1,18 @@
+<ion-view hide-nav-bar="true">
+    <!-- ADD START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title" ng-bind="title"></span>
+    </ion-header-bar>
+    <!-- ADD END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="cdfg-background">
+        <div class="list cdfg-divder-big">
+            <div class="item item-icon-right cdfg-border-none cdfg-list-divder" ng-repeat="sd in selectData"  ng-click="selectItem(sd)">
+                <!--选项-->
+                <p>{{sd.text}}</p>
+                <!--选中红色对勾-->
+                <i ng-if="defaultValue == sd.value" class="icon ion-ios-checkmark-empty assertive"></i>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

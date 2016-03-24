@@ -1,0 +1,13 @@
+<!--左1右2-->
+<div ng-if="d.showTitle==0" class="cdfg-idx-mdtitle" style="margin-top:{{d.top}}">{{d.title}}</div>
+<div class="row row-no-padding">
+
+    <div class="col">
+        <a href="{{d.rows[0].url}}" ><img width="100%" ng-src="{{d.rows[0].pic |  imgUrlFilter}}" style="height:{{imgConfig.imgH}}"/></a>
+    </div>
+    <div class="col">
+        <div class="row row-no-padding" style="margin-top: 0;"><a href="{{d.rows[1].url}}" style="width: 100% ;"><img width="100%" ng-src="{{d.rows[1].pic |  imgUrlFilter}}" style="height: {{imgConfig.imgH_half}};"/></a></div>
+        <div class="row row-no-padding" style="margin-top: 0;"><a href="{{d.rows[2].url}}" style="width: 100% ;"><img width="100%" ng-src="{{d.rows[2].pic |  imgUrlFilter}}" style="height: {{imgConfig.imgH_half}};"/></a></div>
+    </div>
+
+</div>

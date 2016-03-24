@@ -1,0 +1,88 @@
+<ion-view hide-nav-bar="true">
+    <!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <!--<ion-nav-buttons side="right">
+        <button class="button" ng-click="triggerEdit()">{{isEditMode?'完成':'编辑'}}</button>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar bar-header" align-title="center"></ion-header-bar>-->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">我的收藏</span>
+        <button class="button button-clear cdfg-font-second-light margin-right"
+                ng-click="triggerEdit()" ng-bind="modeText"></button>
+    </ion-header-bar>
+    <!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <div class="bar bar-subheader cdfg-personal-favourite cdfg-background-white">
+        <div class="className" ng-click="triggerMenu()">
+            <!--全部分类-->
+            {{menu.currentClassName}}
+            <img ng-src="{{showMenu?'img/icon-up.png':'img/icon-down.png'}}">
+        </div>
+        <div ng-if="menu.showMenu && basicClass.length>0" class="padding cdfg-background-white">
+            <ul ng-repeat="clazz in basicClass" ng-click="selectClass(clazz)"
+                ng-class="{'true':'selectedItem'}[menu.currentClassId==clazz.scId]">
+                <li>{{clazz.scName}} ( {{clazz.count}} )</li>
+            </ul>
+        </div>
+    </div>
+    <ion-content class="cdfg-background has-header has-subheader">
+        <!--分类筛选器-->
+
+        <div>
+            <!--下拉刷新-->
+            <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+
+            <!--网络错误-->
+            <div ng-if="networkError" ng-include="'templates/common/network-error.html'"
+                 ng-click="init();">
+            </div>
+            <!--引入列表 -->
+            <!--<div ng-include="'templates/product/link-product-list-template.html'"></div>-->
+
+            <div class="cdfg-favourite-product padding">
+                <!--商品框架区域，包括分割线-->
+                <div class="productBox" ng-repeat="item in productData">
+
+                    <!--竖向分割线，奇数显示，偶数隐藏-->
+                    <div class="image-divder" ng-if="$odd">&nbsp;</div>
+
+                    <!--点击区域-->
+                    <div class="proItem cdfg-background-white" ng-click="clickFavourite(item)">
+                        <!--<div class="proItem cdfg-background-white"  >-->
+                        <label class="checkbox" ng-if="isEditMode">
+                            <input type="checkbox" ng-model="item.isSelected"/>
+                        </label>
+
+                        <p ng-if="item.shelfStatus != 1" ng-bind="shelfStatusText[item.shelfStatus-1]"></p>
+                        <img ng-src="{{item.pic | imgUrlFilter:'300;300'}}" cdfg-auto-height="{{1}}"
+                             onerror="img/icon-404.png"/>
+
+                        <div class="brand">{{item.prodName}}</div>
+                        <div><span class="assertive">{{item.salePrice | currency : '&yen'}}</span></div>
+                    </div>
+
+
+                    <!--竖向分割线，奇数显示，偶数隐藏-->
+                    <div class="image-divder" ng-if="!$odd">&nbsp;</div>
+                </div>
+
+
+            </div>
+
+
+            <!--上拉加载更多-->
+            <ion-infinite-scroll immediate-check="false" ng-if="hasMore()"
+                                 on-infinite="loadMore()"></ion-infinite-scroll>
+
+        </div>
+        <div ng-if="(!hasMore() && (index>2 ||productData.length == 0) && !networkError)" class="noMore">
+            <img ng-if="productData.length == 0" ng-src="img/ionic.png">
+
+            <p>没有更多收藏了</p></div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer cdfg-favourite-footer" ng-if="isEditMode">
+        <div class="cdfg-favourite-delete">
+
+            <button class="button button-assertive" ng-click="deleteFavouriteList()">删除</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

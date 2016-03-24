@@ -1,0 +1,49 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">手机验证</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-background-white">
+        <div>
+            <!--新绑定手机指示器-->
+            <div class="row cdfg-security-sign">
+                <div class="cdfg-security-col" ng-class="{'bind': 'cdfg-password-active'}[step]">1
+                    <div class="text">绑定手机</div>
+                </div>
+                <div class="col cdfg-padding cdfg-security-arrow">
+                    <img ng-src="img/icon-right.png">
+                </div>
+                <div class="cdfg-security-col" ng-class="{'done': 'cdfg-password-active'}[step]">2
+                    <div class="text">完成</div>
+                </div>
+            </div>
+        </div>
+        <form name="bindForm">
+            <div class="cdfg-password-panel padding">
+                <!--手机修改-->
+                <div class="cdfg-relative" reg-is-empty>
+                    <input class="valudateCode" type="tel" ng-model="newPhone.newNumber"
+                           name="newPhone" maxlength="11"
+                           ng-class="{'true':'cdfg-input-error'}[!bindForm.newPhone.$valid && validate]"
+                           pattern="^1\d{10}$" required
+                           placeholder="{{validate?'请输入正确的手机号':'手机号'}}"/>
+                </div>
+                <button ng-disabled="newPhone.locker || !bindForm.newPhone.$valid" ng-click="getNewPhoneCode()">
+                    {{newPhone.buttonText}} <span ng-if="newPhone.timer!=0">({{newPhone.timer}})</span>
+                </button>
+                <div class="cdfg-relative" reg-is-empty>
+                    <input class="ValudateCode" ng-model="newPhone.newCode" name="newValidateCode"
+                           pattern="^\d{6}$" required type="tel" max="999999" maxlength="6"
+                           ng-class="{'true':'cdfg-input-error'}[!bindForm.validateCode.$valid && validate]"
+                           placeholder="{{validate?'请输入正确的手机验证码':'手机验证码'}}"/>
+
+                </div>
+                <button ng-disabled="!bindForm.newValidateCode.$valid"
+                        class="button button-block button-assertive"
+                        ng-click="checkNewPhoneCode()">完成
+                </button>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>

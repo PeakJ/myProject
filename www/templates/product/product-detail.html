@@ -1,0 +1,173 @@
+<!--商品详情-->
+<ion-view hide-nav-bar="true" cache-view="false">
+    <!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <!--<ion-nav-buttons side="right">
+        <i class="button icon cdfg-button-share" ng-click="shareModal.show($event)"></i>
+    </ion-nav-buttons>-->
+    <ion-header-bar  class="cdfg-common-title"  align-title="center">
+        <button ng-click="$ionicGoBack();" class="button button-clear title-back-button"></button>
+        <span class="title" ng-bind="prodItemInfo.brandName"></span>
+        <!--<button class="button icon cdfg-button-share" ng-click="shareModal.show($event)"></button>-->
+        <button class="button cdfg-button-share" ng-click="share()"></button>
+        <!--ng-click="shareModal.show($event)"-->
+    </ion-header-bar>
+    <!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+    <ion-content class="has-header cdfg-has-footer" ng-show="pageDisplay">
+        <div ng-include="'templates/product/404.html'"></div>
+    </ion-content>
+    <ion-content class="has-header cdfg-has-footer" ng-show="networkError">
+        <div ng-include="'templates/common/network-error.html'"></div>
+    </ion-content>
+    <ion-content class="has-header cdfg-has-footer" ng-show="network404">
+
+        <div class="cdfg-product-detail-banner" cdfg-auto-height="{{1/1}}"  ng-if="detailBanner">
+            <ion-slide-box class="cdfg-product-banner" does-continue="true" auto-play="true">
+                <ion-slide ng-repeat="productBan in nowProduct.spuImgs | limitTo : 5 track by $index">
+                    <img ng-src="{{productBan | imgUrlFilter:'500;500'}}" ng-click="applyImg(nowProduct.spuImgs,$index)" />
+                </ion-slide>
+            </ion-slide-box>
+            <div class="cdfg-product-state" ng-if="shelfStatus == 2">下架</div>
+            <div class="cdfg-product-business">
+                <span class="cdfg-product-bus-icon cdfg-product-store" ng-if="prodItemInfo.businessModel == 3"></span>
+                <span class="cdfg-product-bus-icon cdfg-product-fly" ng-if="prodItemInfo.businessModel == 2"></span>
+            </div>
+        </div>
+        <!--商品信息 && 收藏-->
+        <div class="row cdfg-padding cdfg-detail-info">
+            <div class="col">
+                <p class="cdfg-white-space">{{prodItemInfo.name}}</p>
+                <!--{{nowProduct.salePrice | currency : '&yen'}}-->
+                <!--<span class="price-market">&yen;{{innerStaff?nowProduct.innerPrice:nowProduct.salePrice}}</span>
+                <span class="price-del">原价 <del>&yen;{{nowProduct.marketPrice}}</del></span>-->
+
+                <div>
+                    <span class="price-market">{{selectShowPrice.price | currency : '&yen'}}</span>
+                    <span class="price-del">原价 <del>{{selectShowPrice.marketPrice | currency : '&yen'}}</del></span>
+                </div>
+
+            </div>
+            <div class="col-19 cdfg-collect" ng-click="addToCollect()" ng-hide="collect">
+                <span><i class="icon ion-ios-collect-outline"></i><br />收藏</span>
+            </div>
+            <div class="col-19 cdfg-collect assertive" ng-click="removeTocollect()" ng-show="collect">
+                <span><i class="icon ion-ios-collect-outline"></i><br />收藏</span>
+            </div>
+
+        </div>
+        <!--商品详情 main-->
+        <div class="list cdfg-main">
+
+            <!--促销活动-->
+            <div class="item item-icon-right assertive item-promotion"  ui-sref="promotionProductList({promId:promotion.id})" ng-repeat="promotion in skuPromotion">
+                <div class="cdfg-white-space">促销：
+                    <span><em ng-if="$index != 0"><br /></em>{{oPromotionType[promotion.promotionType]}}{{promotion.name}}</span>
+                </div>
+                <i class="icon ion-ios-arrow-right"></i>
+            </div>
+            <!--店铺入口 && 政策说明-->
+            <div ui-sref="product.policy" class="item item-icon-right cdfg-border-white" ng-if="prodItemInfo.businessModel == 3">
+                <span ng-if="prodItemInfo.storeName">{{prodItemInfo.storeName}}<span class="assertive">免税自提店</span></span>
+                <span class="item-note">政策说明</span>
+                <i class="icon ion-ios-arrow-right"></i>
+            </div>
+            <!--卖家保证-->
+            <div class="item cdfg-product-detail-guarantee" ng-if="salerGuaranteeMenu">
+                <span ng-repeat="item in salerGuaranteeMenu"><i class="icon ion-ios-checkmark"></i>{{item}}</span>
+            </div>
+            <!--尺码对比 && 选择尺码、颜色-->
+            <div class="item item-icon-right cdfg-border-none cdfg-margin-15" ng-click="setSku();">
+                <span class="cdfg-title">选择{{productItem[0].type}}</span><span ng-if="(productSize[0].type)">、{{productSize[0].type}}</span><!--varietyModal.show($event)-->
+
+                <span class="item-note" ng-if="selectInfo"><i ng-if="(nowProduct)">"{{nowProduct.specValueName}}"</i><i ng-if="(selectSize)">、"{{selectSize}}"</i></span>
+            <i class="icon ion-ios-arrow-right"></i>
+            </div>
+            <!--商品参数-->
+            <div ng-if="prodParameter" class="cdfg-margin-15">
+                <div class="item cdfg-border-white cdfg-title">商品参数</span></div>
+                <div class="item cdfg-detail-attr">
+                    <div class="cdfg-white-space">
+                        <p ng-repeat="dese in prodParameter | limitTo : 5 track by $index ">{{dese}}</p>
+                        <p ng-repeat="dese in prodParameter | limitTo : -(prodParameter.length-5) track by $index " ng-show="goodparam">{{dese}}</p>
+                    </div>
+                    <div align="center" class="cdfg-detail-attr-more" ng-click="toggle('goodparam',goodparam)" ng-if="prodParameter.length>5">更多&nbsp;<i class="icon ion-ios-arrow-down" ng-class="{true: 'ion-ios-arrow-up', false: 'ion-ios-arrow-down'}[goodparam]"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!--商品描述-->
+            <div ng-if="nowProduct.detail" class="cdfg-margin-15">
+                <div class="item cdfg-border-white item-icon-right" ng-click="toggle('gooddetail',gooddetail)">
+                    <span class="cdfg-title">商品描述</span>
+                    <i class="icon ion-ios-arrow-down" ng-class="{true: 'ion-ios-arrow-right', false: 'ion-ios-arrow-down'}[gooddetail]"></i>
+                </div>
+                <div ng-hide="gooddetail" class="cdfg-detail-lazyload" bind-html="commodityDes">
+                    <!--bind-html="nowProduct.detail"-->
+
+                </div>
+            </div>
+            <!--尺码对照表-->
+            <div ng-if="nowProduct.sizeContrast" class="cdfg-margin-15">
+                <div class="item cdfg-border-none item-icon-right" ng-click="toggle('goodSize',goodSize)">
+                    <span class="cdfg-title">尺码对照表</span>
+                    <i class="icon ion-ios-arrow-down" ng-class="{true: 'ion-ios-arrow-right', false: 'ion-ios-arrow-down'}[goodSize]"></i>
+                </div>
+                <div class="item cdfg-border-none cdfg-detail-lazyload" ng-hide="goodSize" bind-html="sizeContrast">
+                    <!--bind-html="nowProduct.sizeContrast"-->
+
+                </div>
+            </div>
+            <!--评价-->
+            <div class="item cdfg-padding-left-right cdfg-border-none cdfg-padding-twoline cdfg-margin-15" ng-if="total > 0">
+
+                <div class="item cdfg-border-none item-icon-right" ui-sref="product.comment({prodId:prodId})">
+                    <div class="cdfg-title">商品评价</div>
+                    <small>好评度 <i class="assertive">{{goodNumber}}</i></small><small style="padding-left:40px;">{{total}}评论</small>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+
+            </div>
+            <!--免税店入口-->
+            <div class="item cdfg-padding-left-right cdfg-border-none cdfg-padding-twoline cdfg-margin-15" ng-if="prodItemInfo.businessModel == 3" ui-sref="shop({id:prodItemInfo.storeId})">
+                <div class="item cdfg-border-none item-icon-right" style="border-bottom:none;">
+                    <div class="cdfg-title">{{prodItemInfo.storeName}}</div>
+                    <small>享受免税服务，百分百正品保障</small>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
+            </div>
+            <!--品牌故事-->
+            <div ng-if="brandStoryInfo" class="cdfg-margin-15">
+                <div class="item item-icon-right cdfg-border-none" ng-click="toggle('goodStory',goodStory)">
+                    <span class="cdfg-title">品牌故事</span>
+                    <i class="icon ion-ios-arrow-down" ng-class="{true: 'ion-ios-arrow-right', false: 'ion-ios-arrow-down'}[!goodStory]"></i>
+                </div>
+                <div class="cdfg-detail-lazyload" ng-show="goodStory" bind-html="brandStoryInfo">
+                </div>
+            </div>
+            <!--保养说明-->
+            <div ng-if="maintainExplainInfo" class="cdfg-margin-15">
+                <div class="item item-icon-right cdfg-border-white" ng-click="toggle('goodUpkeep',goodUpkeep)">
+                    <span class="cdfg-title">保养说明</span>
+                    <i class="icon ion-ios-arrow-right" ng-class="{true: 'ion-ios-arrow-right', false: 'ion-ios-arrow-down'}[!goodUpkeep]"></i>
+                </div>
+                <div class="cdfg-detail-introduce cdfg-detail-lazyload" ng-show="goodUpkeep" bind-html="maintainExplainInfo"></div>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <div class="bar bar-footer cdfg-detail-footer" ng-if="network404">
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item store-item" ng-if="prodItemInfo.businessModel == 3" ui-sref="shop({id:prodItemInfo.storeId})"><i class="icon footmenu-store-icon-normal"></i>进店</a>
+            <span class="tab-item collect-item" ng-click="addToCollect()" ng-hide="collect" ng-if="prodItemInfo.businessModel != 3"><i class="icon ion-ios-collect-outline"></i><br/>收藏</span>
+            <span class="tab-item collect-item assertive" ng-click="removeTocollect()" ng-show="collect" ng-if="prodItemInfo.businessModel != 3"><i class="icon ion-ios-collect-outline"></i><br/>收藏</span>
+            <!-- 购物车入口 -->
+            <a class="tab-item shop-cart" ui-sref="cart"><i class="icon footmenu-cart-icon-normal"></i><span class="badge" ng-if="shoppingCartTotal.total>0">{{shoppingCartTotal.total}}</span>
+            </a>
+            <!-- 库存量显示按钮是否可点 -->
+            <a class="tab-item add-cart" ng-click="openShopcart()" ng-if="prodSpuNumber!=0 && shelfStatus!=2">加入购物车</a>
+            <a class="tab-item sold-out" disabled ng-if="!prodSpuNumber || shelfStatus==2">{{shelfStatus==2?'已下架':'售罄'}}</a><!--storeNum-->
+        </div>
+        <div class="addAnimate {{addAnimate ? 'on' : null}}">+{{stockNum.curStock}}</div>
+    </div>
+
+</ion-view>

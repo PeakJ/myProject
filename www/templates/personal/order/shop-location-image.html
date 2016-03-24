@@ -1,0 +1,20 @@
+<!-- 免税店地理位置图 by 葛硕  2015/07/02 -->
+<ion-view hide-nav-bar="true">
+    <ion-content>
+        <ion-scroll direction="xy" zooming="true"
+                    style="width: 100%;height: 100%;background: black; "
+                    delegate-handle="locationHandle"
+                    has-bouncing="false"
+                    scrollbar-x="false"
+                    scrollbar-y="false"
+                    max-zoom="3" min-zoom="1" on-tap="onTap()"
+                >
+            <div class="cdfg-image-table">
+                 <div class="image-cell">
+                     <img ng-src="{{imageUrl | imgUrlFilter}}" id="id_location_img" >
+                 </div>
+             </div>
+        </ion-scroll>
+    </ion-content>
+
+</ion-view>

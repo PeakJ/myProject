@@ -1,0 +1,36 @@
+<div class="" style="position: relative;">
+    <div class="cdfg-brand-content has-header" delegate-handle="brand-scroll">
+        <div ng-include="'templates/common/network-error.html'" ng-if="networkError" ng-click="restartPage()"></div>
+        <div ng-if="!networkError">
+            <div class="cdfg-brand-recommend cdfg-store-brand-recommend" id="brand-recommend">
+                <!-- 免税店推荐品牌 -->
+                <div class="cdfg-brand-recommend-list" ng-repeat="commend in commends">
+                    <a ng-click="goShopBrandId(commend.id)" cdfg-auto-height="{{244/210}}">
+                        <img ng-src="{{commend.logo | imgUrlFilter:'210;141'}}"cdfg-auto-height="{{141/210}}" />
+                        <br />{{commend.enName}}<br />{{commend.name}}
+                    </a>
+                </div>
+            </div>
+
+            <!-- 品牌列表 -->
+            <div class="cdfg-brand-menu" on-touch="alphabetShow($event)">
+                <ul class="cdfg-brand-menu-list">
+                    <li ng-repeat="item in brandList">
+                        <h3 ng-if="isShowTitle(item)" id="store-brand-{{item.enName | limitTo : 1 | uppercase}}">{{item.enName | limitTo : 1 | uppercase}}</h3>
+                        <a ng-click="goShopBrandId(item.id)">{{item.enName}}</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- 字母索引 -->
+    <ul class="cdfg-alphabet cdfg-store-alphabet" cdfg-alphabet-touch style="opacity: 1" id="brand-alphabet">
+
+        <li ng-repeat="item in letter" letter="store-brand-{{item | uppercase}}">
+            {{item | uppercase}}
+        </li>
+
+    </ul>
+</div>

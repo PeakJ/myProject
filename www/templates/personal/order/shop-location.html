@@ -1,0 +1,17 @@
+<!-- 免税店地理位置图 by 葛硕  2015/07/02 -->
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title" ng-bind="storeName"></span>
+    </ion-header-bar>
+    <ion-content class="cdfg-shop-location" delegate-handle="locationHandle">
+        <ion-refresher on-refresh="loadData();"></ion-refresher>
+
+        <div ng-repeat="imgUrl in imgData">
+            <img ng-src="{{imgUrl | imgUrlFilter}}" style="width: 100%;" ng-click="toLocationDetail(imgUrl)"/>
+
+            <!--<span class="location-tips padding-left">T1航站楼免税店图标位置</span>-->
+        </div>
+    </ion-content>
+
+</ion-view>

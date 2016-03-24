@@ -1,0 +1,39 @@
+{"total":20 ,
+  "data":[
+  {
+    "pic": "http://qlogo1.store.qq.com/qzone/517451872/517451872/50?1356062151",
+    "nickName": "徐娅娟",
+    "rate": "5",
+    "createDate": "2015-05-09 09:20",
+    "content": "健身比赛～",
+    "spuSpecName": "颜色",
+    "spuSpecValueName": "黑色",
+    "skuSpecName": "尺码",
+    "skuSpecValueName": "s",
+    "buyDate": "2015-04-10 09:20"
+  },
+  {
+    "pic": "http://qlogo1.store.qq.com/qzone/1078403768/1078403768/50?1371827261",
+    "nickName": "阿男",
+    "rate": "4",
+    "createDate": "2015-05-29 09:20",
+    "content": "每个人都有一个死角，自己走不出来，别人也闯不进去，我把最深的秘密放在那里，你不懂我，我不怪你。",
+    "spuSpecName": "颜色",
+    "spuSpecValueName": "白色",
+    "skuSpecName": "尺码",
+    "skuSpecValueName": "l",
+    "buyDate": "2015-04-10 14:58"
+  },
+  {
+    "pic": "http://qlogo1.store.qq.com/qzone/1078403768/1078403768/50?1371827261",
+    "nickName": "阿男",
+    "rate": "4",
+    "createDate": "2015-05-29 09:20",
+    "content": "每个人都有一个死角，自己走不出来，别人也闯不进去，我把最深的秘密放在那里，你不懂我，我不怪你。",
+    "spuSpecName": "颜色",
+    "spuSpecValueName": "白色",
+    "skuSpecName": "尺码",
+    "skuSpecValueName": "l",
+    "buyDate": "2015-04-10 14:58"
+  }
+]}

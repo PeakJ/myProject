@@ -1,0 +1,39 @@
+<!--免税店列表页面 by 葛硕 20150814-->
+<ion-view  has-header="true"  hide-nav-bar="true">
+
+    <ion-header-bar class="cdfg-black-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">免税店</span>
+        <button class="button button-clear title-right-button" ng-click="toShopFilter()">筛选</button>
+    </ion-header-bar>
+    <ion-content class="cdfg-shop-list">
+        <ion-refresher on-refresh="loadData()"></ion-refresher>
+        <div class="title-bg">
+            <img src="img/icon-shop-list-title-bg.png">
+
+            <div class="guide-text">
+                <span>免税购物指南</span>
+            </div>
+            <div class="condition-text">
+                <span>国外及出国商旅人士专享</span>
+            </div>
+            <div class="guide-button">
+                <button class="button button-small icon-right ion-ios-play" ng-click="toShopGuide()">立即查看</button>
+            </div>
+        </div>
+        <div class="list-view">
+            <div class="shop-item" ng-repeat="shopItem in shopList" ng-click="toShopDetail(shopItem.id)">
+                <img ng-src="{{shopItem.logo | imgUrlFilter}}" />
+                <div class="shop-name" >
+                    <span ng-bind="shopItem.name"></span>
+                    <img src="img/icon-arrow-right-white.png">
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <img class="cdfg-fl margin-left" src="img/icon-shop-list-bottom-left.png">
+            <span class="cdfg-font-sub-light">更多免税店敬请期待</span>
+            <img class="cdfg-fr margin-right" src="img/icon-shop-list-bottom-right.png">
+        </div>
+    </ion-content>
+</ion-view>

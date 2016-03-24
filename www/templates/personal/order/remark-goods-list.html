@@ -1,0 +1,29 @@
+<!-- 个人中心->评价订单 by 葛硕  2015/07/04 -->
+<ion-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar  class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">待评价</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg" >
+        <ion-refresher on-refresh="loadData();"></ion-refresher>
+
+        <div class="list cdfg-personal-order-list-main-bg margin-top-15">
+            <div class="cdfg-order-remark-li"
+                 ng-class="{'margin-top':$index!=0}"
+                 ng-repeat="goods in goodsList">
+                <img ng-src="{{goods.mainPic | imgUrlFilter}}"
+                     class="cdfg-orderlist-item-img cdfg-fl cdfg-default-hy" />
+                <div class="cdfg-orderlist-title" ng-bind="goods.prodName"></div>
+                <div class="cdfg-fr">
+                    <button class="button button-assertive margin-top-15 cdfg-personal-order-list-bottom-button"
+                            ng-click="toRemarkGoods($index)" ng-if="goods.comment==0">评价</button>
+                    <button class="button cdfg-personal-order-list-bottom-button cdfg-personal-order-list-disable-btn"
+                            ng-if="goods.comment==1">
+                        已评价
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

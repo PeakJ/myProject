@@ -1,0 +1,7 @@
+<!--ͼƬ һ�ж���-->
+<div ng-if="d.showTitle==0" class="cdfg-idx-mdtitle" style="margin-top:{{d.top}}">{{d.title}}</div>
+<div class="row row-no-padding">
+    <div ng-if="d.type==1||d.type==2" class="col " ng-repeat="item in d.rows">
+        <a href="{{item.url}}" style="height:width: {{100/d.rows.length+'%'}};height:{{imgConfig.imgH}}"><img width="100%" ng-src="{{item.pic |  imgUrlFilter }}"/></a>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<!-- 个人中心->物流详情画面  by geshuo 2015/6/29 -->
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">物流详情</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg">
+        <ion-refresher on-refresh="loadData();"></ion-refresher>
+
+        <!-- 物流状态 -->
+        <div class="cdfg-order-express-info">
+            <div class="icon-left">
+                <img src="img/icon-express-status.png"/>
+            </div>
+            <span class="cdfg-font-general-dark">物流状态</span>
+            <span class="cdfg-font-general-assertive margin-left-15" ng-bind="expressData.statusText"></span>
+            <br/>
+            <div class="detail">
+                <span>运单号：</span>
+                <span ng-bind="expressData.awbNo"></span>
+                <br/>
+                <span>信息来源：</span>
+                <span ng-bind="expressData.lcName"></span>
+            </div>
+        </div>
+
+        <!-- 物流详细信息 -->
+        <div class="cdfg-content light-bg margin-top">
+            <article>
+                <section ng-repeat="expressItem in expressData.detail | filter:query | orderBy:'time':true">
+                    <span class="cdfg-point-time" ng-class="{'cdfg-point-big':$index==0,'cdfg-point-small':$index!=0}"></span>
+                    <aside>
+                        <span class="main-info" ng-bind="expressItem.info" ng-class="{'cdfg-personal-order-general-dark':$index==0}"></span>
+                        <p class="brief" ><span ng-bind="expressItem.time"></span></p>
+                    </aside>
+                </section>
+            </article>
+        </div>
+
+        <!-- <div class="light-bg cdfg-personal-order-border-top">
+             <div style="text-align: center;width: 100%" class="cdfg-padding-small">
+                 <span class="cdfg-font-small"><b>猜你心动的商品</b></span>
+             </div>
+             <div ng-include="'templates/product/link-product-list-template.html'"></div>
+         </div>-->
+    </ion-content>
+
+</ion-view>

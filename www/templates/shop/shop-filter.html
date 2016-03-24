@@ -1,0 +1,45 @@
+<!--免税店列表页面 by 葛硕 20150814-->
+<ion-view  has-header="true"  hide-nav-bar="true">
+
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title">请选择出境（离岛）地</span>
+    </ion-header-bar>
+    <ion-content class="cdfg-personal-order-list-main-bg shop-filter" delegate-handle="shop-list-handle">
+
+        <div class="title-text" ng-if="currentCity">
+            <span class="cdfg-font-general-sub">当前定位城市</span>
+        </div>
+
+        <label class="item item-radio" ng-if="currentCity">
+            <input type="radio" value="-1" name="group" ng-model="cityData.selectedCity"
+                   ng-change="changeCity(currentCityCode)">
+            <div class="item-content"  style="background: white" ng-bind="currentCity">
+            </div>
+            <i class="radio-icon ion-checkmark assertive shop-radio-icon"></i>
+        </label>
+
+        <div class="title-text" ng-class="{'margin-top': currentCity}">
+            <span class="cdfg-font-general-sub">选择免税店所在城市</span>
+        </div>
+        <label class="item item-radio"
+               ng-repeat="cityItem in cityList | filter:query |orderBy:'code':false"
+               id="brand-{{cityItem.code | limitTo : 1 | uppercase}}">
+            <input type="radio" value="{{$index}}" name="group" ng-model="cityData.selectedCity"
+                   ng-change="changeCity(cityItem.code)">
+            <div class="item-content"  style="background: white" ng-bind="cityItem.name">
+            </div>
+            <i class="radio-icon ion-checkmark assertive shop-radio-icon"></i>
+        </label>
+
+    </ion-content>
+
+    <!-- 字母索引 -->
+    <ul class="cdfg-alphabet cdfg-shop-index" cdfg-alphabet-touch style="opacity: 1" id="brand-alphabet">
+
+        <li ng-repeat="item in letter" letter="brand-{{item | uppercase}}">
+            {{item | uppercase}}
+        </li>
+
+    </ul>
+</ion-view>

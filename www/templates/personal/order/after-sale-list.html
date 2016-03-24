@@ -1,0 +1,83 @@
+<!-- 个人中心->售后订单列表  by 葛硕 2015/07/06 -->
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="cdfg-common-title"  align-title="center">
+        <button ng-click="goBack();" class="button button-clear title-back-button"></button>
+        <span class="title" ng-bind="pageTitle"></span>
+    </ion-header-bar>
+
+    <img ng-if="showToTopImage" class="cdfg-top-icon" src="img/icon-top.png" ng-click="scrollTop()"/>
+
+    <ion-content class="cdfg-personal-order-list-main-bg" delegate-handle="afterSaleHandle" on-scroll="onContentScroll()">
+        <ion-refresher on-refresh="getOrderList(false)"></ion-refresher>
+
+        <!--网络错误-->
+        <div ng-if="networkError" ng-include="'templates/common/network-error.html'"
+                ng-click="loadData()">
+        </div>
+
+        <div class="cdfg-order-list-empty" ng-if="afterSaleList.length == 0&&responseBack&&!networkError">
+            <p class="cdfg-list-no-records">暂无订单</p>
+        </div>
+
+        <div class="cdfg-after-sale-item" ng-repeat="afterSaleItem in afterSaleList"
+             ng-class="{'margin-top':$index!=0,'margin-top-15':$index==0}">
+
+            <div class="cdfg-after-sale-item-title">
+                <span class="cdfg-font-general-dark">订单号：</span>
+                <span class="cdfg-font-general-dark" ng-bind="afterSaleItem.code"></span>
+                <br/>
+                <span class="cdfg-font-sub-light">下单时间：</span>
+                <span class="cdfg-font-sub-light" ng-bind="afterSaleItem.createdDate"></span>
+            </div>
+
+            <!-- 商品列表 -->
+            <div class="cdfg-after-sale-item-goods"
+                 ng-repeat="goods in afterSaleItem.items" ng-if="$index<3||showAll || fromType==FROM_ORDER_DETAIL">
+                <span class="cdfg-gift-text gift" ng-if="goods.type==2">赠品</span>
+                <img ng-src="{{goods.mainPic | imgUrlFilter}}"  ng-click="toOrderDetail(afterSaleItem.id)"
+                     class="cdfg-default-hy"/>
+                <div class="name" ng-click="toOrderDetail(afterSaleItem.id)">
+                    <div class="cdfg-orderlist-title margin-bottom" ng-bind="goods.prodName"></div>
+                    <span  class="cdfg-font-sub-light padding-left">数量：</span>
+                    <span class="cdfg-font-sub-light" ng-bind="goods.num"></span>
+                </div>
+
+
+                <!-- 售后状态 -->
+                <div class="status" ng-class="{'cdfg-after-sale-status-bg':goods.afterSale!=0&&fromType!=FROM_ORDER_DETAIL}">
+                    <div class="apply-btn-bg">
+                        <button class="button button-small cdfg-after-sale-status-btn"
+                                ng-if="goods.afterSale==0||fromType==FROM_ORDER_DETAIL" ng-bind="goods.statusText"
+                                ng-click="toAfterSaleApply(afterSaleItem.id,goods,afterSaleItem.items.length)">
+                        </button>
+                    </div>
+                    <div class="apply-btn-bg padding-left">
+                        <div class="cdfg-after-sale-status-text"
+                              ng-click="toAfterSaleProgress(afterSaleItem.id,goods.id)"
+                              ng-if="goods.afterSale!=0&&fromType!=FROM_ORDER_DETAIL">
+                            <pre class="cdfg-font-general-dark" ng-bind="goods.statusText">
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-if="afterSaleItem.item.length>3 && fromType != FROM_ORDER_DETAIL" class="cdfg-after-sale-show">
+                <!-- 展开按钮 -->
+                <div ng-click="showOrHideGoods()" ng-if="!showAll">
+                    <span>显示全部</span>
+                    <img src="img/icon-goods-show.png">
+                </div>
+
+                <!-- 收起按钮 -->
+                <div ng-click="showOrHideGoods()" ng-if="showAll">
+                    <span>收起</span>
+                    <img src="img/icon-goods-hide.png">
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="hasMoreOrder" distance="1%" on-infinite="getOrderList(true)"></ion-infinite-scroll>
+    </ion-content>
+
+</ion-view>

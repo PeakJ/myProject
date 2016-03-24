@@ -1,0 +1,42 @@
+<!--搜索-->
+<ion-view  has-header="true"  hide-nav-bar="true">
+
+    <ion-header-bar  class="cdfg-category-header bar bar-header item-input-inset item" >
+        <a href="" ng-style="leftArrow"  class="button button-clear icon-right ion-ios-arrow-left cdfg-header-left-arrow cdfg-header-back-button-font"  ng-click="closeSearch();" id="sBack"></a>
+        <!--<div class="item-input item-input-wrapper cdfg-input-wrapper cdfg-bkg-white-important" ng-style="searchInputStyle">-->
+            <label class="item-input-wrapper cdfg-input-wrapper-label cdfg-bkg-white-important cdfg-header-marging-left-wrapper">
+                <i class="icon ion-ios-search cdfg-header-left-arrow"></i>
+                <form style="width:100%">
+                    <input type="search" maxlength="15" ng-model="query.tag" placeholder="{{placeholder}}" ng-change="queryList(query.tag);"  ng-keypress="doSearch($event);" class="cdfg-bkg-white-important cdfg-search-input-height">
+                </form>
+                <i class="icon ion-close-circled cdfg-header-left-arrow " ng-click="clearSearch()"></i>
+            </label>
+        <!--</div>-->
+        <button class="button-icon cdfg-header-marging-left-wrapper" ng-click="closeSearchAndGo(query.tag)">搜索</button>
+    </ion-header-bar>
+    <ion-content class="cdfg-bkg-weakest">
+        <ion-list ng-if="results.length!=0">
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="result in results" >
+                <a class="icon-left  margin-right" href="#" ng-click="closeSearchAndGo(result);">{{result}}</a>
+            </ion-item>
+        </ion-list>
+        <div class="bar cfdg-bkg-color" style="" ng-if="!results || results.length==0 ">
+            <button class="button button-small button-clear" style="font-size: 14px">最近搜索</button>
+            <button class="button button-small button-clear" style="margin-right:15px" ng-click="clear()">
+                <img id="cdfg-search-clear-img"   src="img/icon-delete.png"/>
+            </button>
+        </div>
+        <div style="position: relative;top: 44px" class="has-header">
+            <div class="item cfdg-bkg-color" ng-if="!results || results.length==0 ">
+                <a class="button-small cfdg-search-tag" ng-repeat="tag1 in shl track by $index" href="#" style="float: left;margin-bottom: 15px;" ng-click="closeSearchAndGo(tag1.keyWord,$event);" ng-model="tag1">{{tag1.keyWord}}</a>
+            </div>
+            <div class="item cfdg-bkg-color" ng-if="!results || results.length==0 ">
+                <span class="icon-left " style="color: #cf000e;font-size: 14px">热门搜索</span>
+            </div>
+            <div class="item cfdg-bkg-color cdfg-border-bottom-none" ng-if="!results || results.length==0 ">
+                <a class=" button-small cfdg-search-tag" ng-repeat="tag in popular track by $index" href="#" style="float: left;margin-bottom: 15px;margin-right: 10px;" ng-click="closeSearchAndGo(tag);">{{tag}}</a>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

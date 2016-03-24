@@ -1,0 +1,216 @@
+<ion-view hide-nav-bar="true">
+    <!-- CHG START BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 -------------------------------->
+    <!--<ion-header-bar  align-title="center">
+        <span class="title">个人中心</span>
+        <button class="button button-icon icon ion-ios-gear-outline" ng-click="goSetting()"></button>
+    </ion-header-bar>-->
+    <ion-header-bar class="cdfg-common-title" align-title="center">
+        <span class="title">个人中心</span>
+        <img class="cdfg-personal-setting" ng-src="img/icon-setting.png" ng-click="goSetting()" />
+    </ion-header-bar>
+    <!-- CHG END   BY 葛硕20150808：[APP-95] bug:部分标题会显示样式错乱 ---------------------------------->
+
+    <ion-content class="cdfg-background">
+        <!--头像-->
+        <div class="cdfg-personal-photo-large">
+            <img ng-src="{{localPersonalUser.headerPic | UserPhotoFilter:'500;500'}}" ng-click="goAccount()"/>
+
+            <p ng-bind="localPersonalUser.nickName?localPersonalUser.nickName:'请登录'"></p>
+        </div>
+        <!--订单信息-->
+        <div class="list">
+            <div class="cdfg-item cdfg-divder-big padding" ng-click="goOrderAll()">
+                <div class="cdfg-item-left">
+                    <img ng-src="img/icon-mine-order.png"/>
+                </div>
+
+                <span>我的订单</span>
+                <span class="subtitle">查看全部订单</span>
+
+
+                <div class="cdfg-item-right">
+                    <img ng-src="img/icon-right.png"/>
+                </div>
+
+
+            </div>
+
+            <div class="cdft-horizontal-list cdfg-list-divder">
+
+
+                <a class="cdfg-personal-oderbutton cdfg-fl" nav-direction="forward"
+                   ui-sref="order-list({orderStatus:1,reload:true})">
+
+                    <div class="cdfg-badge">
+                        <div class="num" ng-if="orderBadge.waitPay > 0">
+                            <div class="text" ng-bind="orderBadge.waitPay"></div>
+                        </div>
+                        <img class="icon cdfg-icon" ng-src="img/icon-mine-payment.png"/>
+                    </div>
+                    <p>待付款</p>
+                </a>
+
+
+                <a class="cdfg-personal-oderbutton cdfg-fl" nav-direction="forward"
+                   ui-sref="order-list({orderStatus:2,reload:true})">
+
+                    <div class="cdfg-badge">
+                        <div class="num" ng-if="orderBadge.waitSend > 0">
+                            <div class="text" ng-bind="orderBadge.waitSend"></div>
+                        </div>
+                        <img class="icon  cdfg-icon" ng-src="img/icon-mine-deliver.png"/>
+                    </div>
+
+
+                    <p>待发货</p>
+                </a>
+                <a class="cdfg-personal-oderbutton cdfg-fl" nav-direction="forward"
+                   ui-sref="order-list({orderStatus:3,reload:true})">
+                    <div class="cdfg-badge">
+                        <div class="num" ng-if="orderBadge.waitReceive > 0">
+                            <div class="text" ng-bind="orderBadge.waitPay"></div>
+                        </div>
+                        <img class="icon  cdfg-icon" ng-src="img/icon-mine-goods.png">
+                    </div>
+                    <p>待收货</p>
+                </a>
+                <a class="cdfg-personal-oderbutton cdfg-fl" nav-direction="forward"
+                   ui-sref="order-list({orderStatus:4,reload:true})">
+                    <div class="cdfg-badge">
+                        <div class="num" ng-if="orderBadge.waitAppraisal > 0">
+                            <div class="text" ng-bind="orderBadge.waitAppraisal"></div>
+                        </div>
+                        <img class="icon  cdfg-icon" ng-src="img/icon-mine-evaluation.png">
+                    </div>
+
+                    <p>待评价</p>
+                </a>
+                <a class="cdfg-personal-oderbutton cdfg-fl" nav-direction="forward"
+                   ui-sref="after-sale-list({reload:true})">
+                    <div class="cdfg-badge">
+                        <div class="num" ng-if="orderBadge.sellGoods > 0">
+                            <div class="text" ng-bind="orderBadge.sellGoods"></div>
+                        </div>
+                        <img class="icon  cdfg-icon" ng-src="img/icon-mine-refund.png">
+                    </div>
+
+                    <p>售后/退货</p>
+                </a>
+            </div>
+
+            <div>
+                <div class="cdfg-item cdfg-divder padding" ng-click="goCouponList()">
+                    <div class="cdfg-item-left">
+                        <img ng-src="img/icon-mine-coupons.png"/>
+                    </div>
+
+                    <span>我的优惠券</span>
+
+                    <div class="cdfg-item-right">
+                        <img ng-src="img/icon-right.png"/>
+                    </div>
+                </div>
+
+                <div class="cdfg-item cdfg-divder padding" ng-click="goCardList()">
+                    <div class="cdfg-item-left">
+                        <img ng-src="img/icon-mine-card.png"/>
+                    </div>
+                    <span>我的中免卡</span>
+
+                    <div class="cdfg-item-right">
+                        <img ng-src="img/icon-right.png"/>
+                    </div>
+                </div>
+                <div class="cdfg-item cdfg-divder padding" ng-click="goFavourite()">
+                    <div class="cdfg-item-left">
+                        <img ng-src="img/icon-collection-mine.png"/>
+                    </div>
+
+                    <span>我的收藏</span>
+
+                    <div class="cdfg-item-right">
+                        <img ng-src="img/icon-right.png"/>
+                    </div>
+                </div>
+                <div class="cdfg-item cdfg-divder padding" ng-click="goAccount()">
+                    <div class="cdfg-item-left">
+                        <img ng-src="img/icon-mine-account.png"/>
+                    </div>
+                    <span>帐户管理</span>
+
+                    <div class="cdfg-item-right">
+                        <img ng-src="img/icon-right.png"/>
+                    </div>
+                </div>
+                <div class="cdfg-item cdfg-divder padding" ng-click="goMessage()">
+                    <div class="cdfg-item-left">
+                        <img ng-src="img/icon-mine-message.png"/>
+                    </div>
+                    <span>消息中心</span>
+
+                    <div class="cdfg-item-right">
+                        <img ng-src="img/icon-right.png"/>
+                    </div>
+                </div>
+                <div class="cdfg-item cdfg-divder padding" ng-click="goFeedback()">
+                    <div class="cdfg-item-left">
+                        <img ng-src="img/icon-mine-advice.png"/>
+                    </div>
+                    <span>意见反馈</span>
+
+                    <div class="cdfg-item-right">
+                        <img ng-src="img/icon-right.png"/>
+                    </div>
+                </div>
+                <div class="cdfg-divder-big"></div>
+            </div>
+            <!--
+                        <div>
+                            <div class="cdfg-item cdfg-list-divder padding" href="#">
+                                <div class="cdfg-item-left">
+                                    <img ng-src="img/icon-mine-collection.png"/>
+                                </div>
+                                <span>猜你喜欢</span>
+                            </div>
+                            <ion-scroll direction="x" style="width: 100%;">
+                                <div class="cdfg-personal-guess">
+                                    <a class="product cdfg-fl" ng-repeat="product in guessProduct" href="#">
+                                        <img ng-src="{{product.imgUrl}}"/>
+
+                                        <p>{{product.goodsName}}</p>
+                                    </a>
+                                    &lt;!&ndash;<a style="width: 80px;">&ndash;&gt;
+                                    &lt;!&ndash;<img ng-src="img/ionic.png" style="width: 80px;"/>&ndash;&gt;
+                                    &lt;!&ndash;<span style="width: 60px;">商品1</span>&ndash;&gt;
+                                    &lt;!&ndash;</a>&ndash;&gt;
+                                    &lt;!&ndash;<a>&ndash;&gt;
+                                    &lt;!&ndash;<img ng-src="img/ionic.png" style="width: 80px;"/>&ndash;&gt;
+                                    &lt;!&ndash;<span style="width: 60px">商品2</span>&ndash;&gt;
+                                    &lt;!&ndash;</a>&ndash;&gt;
+                                    &lt;!&ndash;<a>&ndash;&gt;
+                                    &lt;!&ndash;<img ng-src="img/ionic.png" style="width: 80px;"/>&ndash;&gt;
+                                    &lt;!&ndash;<span style="width: 60px">商品3</span>&ndash;&gt;
+                                    &lt;!&ndash;</a>&ndash;&gt;
+                                    &lt;!&ndash;<a>&ndash;&gt;
+                                    &lt;!&ndash;<img ng-src="img/ionic.png" style="width: 80px;"/>&ndash;&gt;
+                                    &lt;!&ndash;<span style="width: 60px">商品4</span>&ndash;&gt;
+                                    &lt;!&ndash;</a>&ndash;&gt;
+                                    &lt;!&ndash;<a>&ndash;&gt;
+                                    &lt;!&ndash;<img ng-src="img/ionic.png" style="width: 80px;"/>&ndash;&gt;
+                                    &lt;!&ndash;<span style="width: 60px">商品1</span>&ndash;&gt;
+                                    &lt;!&ndash;</a>&ndash;&gt;
+                                    &lt;!&ndash;<a>&ndash;&gt;
+                                    &lt;!&ndash;<img ng-src="img/ionic.png" style="width: 80px;"/>&ndash;&gt;
+                                    &lt;!&ndash;<span style="width: 60px">商品1</span>&ndash;&gt;
+                                    &lt;!&ndash;</a>&ndash;&gt;
+                                </div>
+                            </ion-scroll>
+                        </div>-->
+        </div>
+
+
+    </ion-content>
+    <ion-footer-bar>
+        <div ng-include="'templates/home/tab.html'"></div>
+    </ion-footer-bar>
+</ion-view>

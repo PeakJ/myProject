@@ -1,0 +1,86 @@
+/*
+   登录页
+   author:马丽伟
+
+*/
+.cdfg-login-wrap{
+   height:100%;
+   position: relative;
+   .bar-header{}
+}
+.cdfg-login-line{
+   position: relative;
+   height: 1.5rem;
+   i{
+      height: 1px;
+      background:$c-general-thd;
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+   }
+   div{
+      position: absolute;
+      width: 100%;
+      top:-0.5rem;
+      padding:0  0.8rem;
+      text-align: center;
+   }
+   span{
+      background: $c-weakest;color:$c-general-sub;padding:0 0.5rem;
+   }
+}
+
+.cdfg-quick-login{
+   position: absolute;
+   bottom: 0;
+   height:20%;
+   width:100%;
+   .col{
+      margin-right:1%;
+      &:last-child{
+         margin-right:0;
+      }
+      img{
+         width:55.56%;
+      }
+   }
+}
+.cdfg-login-wrap{
+   .col input.form-input{
+      line-height: normal;
+   }
+   .cdfg-login-link{
+      line-height:2.56rem;height:2.56rem;
+      .c-general{
+         color:$c-general;
+      }
+      .c-general-sub{
+         color:$c-general-sub;
+      }
+   }
+   .cdfg-form-button{
+      padding-top:1.06rem;
+   }
+   .cdfg-pass-eye{
+      position: relative;
+      i{
+         position:absolute;
+         right:0;
+         top:50%;
+         width:25px;
+         height:25px;
+         margin-top:-25px/2*1;
+
+      }
+      .icon-eye{
+         background:url(../img/icon-loading-normal.png) no-repeat;
+         background-size: contain;
+      }
+      .icon-eye-open{
+         background-image:url(../img/icon-loading-open.png);
+         background-size: contain;
+      }
+   }
+
+
+}
