@@ -8,7 +8,7 @@ CYXApp.service('UrlService', [function () {
     //数据服务器表示 0：生产环境 1：测试环境 2：本地开发环境 13478521061
 
 
-  var RUN_MODE = 1;
+  var RUN_MODE = 0;
 
 
     var SERVICE_DATA = [
